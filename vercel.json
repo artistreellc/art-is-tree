@@ -8,8 +8,6 @@
     }
   ],
   "rewrites": [
-    { "source": "/((?!assets/|.*\\..*).*)", "destination": "/index.html" }
-  ],
-  "cleanUrls": true,
-  "trailingSlash": false
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
