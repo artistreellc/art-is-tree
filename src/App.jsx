@@ -1,4 +1,3 @@
-
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
@@ -96,7 +95,6 @@ const WrappedContactPage = withRouteCSS(ContactPage, 'ContactPage');
 const WrappedGalleryPage = withRouteCSS(GalleryPage, 'GalleryPage');
 
 function App() {
-  // Removed ALL startup API / fetch logic completely
   return (
     <>
       <WwwRedirect />
@@ -108,11 +106,10 @@ function App() {
             <GoogleAdsConversion />
 
             <Router>
-              {/* RouteTracker completely removed to stop all tracking network calls */}
               <ScrollToTop />
-              
+
               <GeoSchema />
-              
+
               <ErrorBoundary>
                 <Suspense fallback={null}>
                   <BreadcrumbListSchema />
@@ -124,7 +121,7 @@ function App() {
                 <div className="min-h-screen flex flex-col relative pb-16 lg:pb-0">
                   <Navigation />
                   <SubNavigation />
-                  
+
                   <main className="flex-grow contain-content bg-gray-50">
                     <Suspense fallback={<LoadingFallback />}>
                       <Routes>
@@ -136,7 +133,7 @@ function App() {
                         <Route path="/testimonials" element={<TestimonialsPage />} />
                         <Route path="/faq" element={<FAQPage />} />
                         <Route path="/emergency" element={<EmergencyPage />} />
-                        
+
                         <Route path="/services/tree-removal" element={<TreeRemovalPage />} />
                         <Route path="/services/tree-trimming" element={<TreeTrimmingPage />} />
                         <Route path="/services/stump-grinding" element={<StumpGrindingPage />} />
@@ -144,7 +141,7 @@ function App() {
                         <Route path="/services/crane-removal" element={<CraneTreeRemovalPage />} />
                         <Route path="/services/land-clearing" element={<LandClearingPage />} />
                         <Route path="/partners" element={<PartnersPage />} />
-                        
+
                         <Route path="/case-studies" element={<CaseStudiesIndexPage />} />
                         <Route path="/case-studies/crane-safety" element={<CraneCaseStudy />} />
                         <Route path="/case-studies/chesapeake-bay-waterfront" element={<Navigate to="/case-studies/chesapeake-bay-preservation-act" replace />} />
@@ -154,7 +151,7 @@ function App() {
                         <Route path="/case-studies/property-value" element={<PropertyValueCaseStudy />} />
                         <Route path="/case-studies/unlicensed-contractors" element={<UnlicensedContractorsCaseStudy />} />
                         <Route path="/case-studies/spikeless-pruning" element={<SpikelessPruningCaseStudy />} />
-                        
+
                         <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
                         <Route path="/service-areas" element={<ServiceAreasPage />} />
                         <Route path="/service-areas/virginia-beach" element={<VirginiaBeachPage />} />
@@ -165,12 +162,12 @@ function App() {
                         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
                         <Route path="/cookies" element={<CookiePolicyPage />} />
                         <Route path="/find-us-online" element={<FindUsOnlinePage />} />
-                        
+
                         <Route path="/login" element={<Navigate to="/admin/login" replace />} />
                         <Route path="/admin/login" element={<LoginPage />} />
                         <Route path="/admin/forgot-password" element={<ForgotPasswordPage />} />
                         <Route path="/admin/reset-password" element={<ResetPasswordPage />} />
-                        
+
                         <Route path="/admin" element={
                           <ProtectedRoute>
                             <AdminPanel />
@@ -202,19 +199,19 @@ function App() {
                             <DebugGooglePlacesPage />
                           </ProtectedRoute>
                         } />
-                        
+
                         <Route path="*" element={<NotFoundPage />} />
                       </Routes>
                     </Suspense>
                   </main>
-                  
+
                   <Footer />
                   <Toaster />
                   <MobileCTABar />
+                  <CookieConsentBanner />
                 </div>
               </ErrorBoundary>
             </Router>
-            <CookieConsentBanner />
           </CookieConsentProvider>
         </AuthProvider>
       </HelmetProvider>
