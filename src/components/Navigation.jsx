@@ -176,6 +176,8 @@ const Navigation = memo(() => {
   const location = useLocation();
   const menuRef = useRef(null);
   const { user } = useAuth();
+  const [navHidden, setNavHidden] = useState(false);
+  const lastScrollY = useRef(0);
 
   const isActive = useCallback((path) => {
     if (path === '/' && location.pathname !== '/') return false;
@@ -221,6 +223,22 @@ const Navigation = memo(() => {
     return () => { document.body.style.overflow = 'unset'; };
   }, [isMobileMenuOpen]);
 
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (isMobileMenuOpen || y < 120) {
+        setNavHidden(false);
+      } else if (y > lastScrollY.current + 6) {
+        setNavHidden(true);   // scrolling down -> hide
+      } else if (y < lastScrollY.current - 6) {
+        setNavHidden(false);  // scrolling up -> show
+      }
+      lastScrollY.current = y;
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [isMobileMenuOpen]);
+
   const toggleMobileMenu = useCallback(() => setIsMobileMenuOpen(prev => !prev), []);
   const closeMobileMenu = useCallback(() => setIsMobileMenuOpen(false), []);
 
@@ -241,7 +259,7 @@ const Navigation = memo(() => {
   const logoUrl = "https://horizons-cdn.hostinger.com/1ec5599f-e2e5-4afa-b25c-06e1360f6589/d020f44d77156debf187e715175abef2.png";
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-[#1B4D3E] shadow-xl border-b border-white/10" ref={menuRef} aria-label="Main Navigation">
+    <nav className="sticky top-0 z-50 w-full bg-[#1B4D3E] shadow-xl border-b border-white/10 transition-transform duration-300 ease-in-out" style={{ transform: navHidden ? 'translateY(-100%)' : 'translateY(0)' }} ref={menuRef} aria-label="Main Navigation">
       <div className="container mx-auto px-4 py-2 md:py-3">
         <div className="flex items-center justify-between min-h-[56px]">
           <Link to="/" className="flex-shrink-0 relative z-50 touch-target" aria-label="Go to Homepage">
