@@ -1,0 +1,4 @@
+your_generated_api_key_here
+# NOTE: The filename should be renamed to match your actual IndexNow API key.
+# For example, if your VITE_INDEXNOW_API_KEY is "12345abcdef", rename this file to "12345abcdef.txt"
+# and ensure it's accessible at the root of your domain.
