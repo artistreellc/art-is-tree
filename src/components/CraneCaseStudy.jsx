@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Shield, TreePine, MapPin, ArrowRight } from 'lucide-react';
@@ -26,7 +25,7 @@ const CraneCaseStudy = () => {
       />
 
       <div className="min-h-screen bg-gray-50 pb-12">
-        <div className="container mx-auto px-4 mb-6 pt-6">
+        <div className="container mx-auto px-4 mb-3 pt-4">
           <Breadcrumbs items={[
             { label: 'Home', path: '/' },
             { label: 'Case Studies', path: '/case-studies' },
