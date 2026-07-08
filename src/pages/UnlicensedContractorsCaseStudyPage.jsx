@@ -1,4 +1,5 @@
 
+
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
@@ -13,8 +14,8 @@ const UnlicensedContractorsCaseStudyPage = () => {
   return (
     <>
       <LocalSEOMeta 
-        pageTitle="When a Neighbor's Tree Damages Your Property | Virginia Tree Law Case Study | Art-is-Tree LLC" 
-        description="A real Art-is-Tree LLC case study from Kempsville, Virginia Beach. How Fancher v. Fagella, ANSI A300, and the right approach turned a contentious neighbor tree dispute into a permitted, professional job." 
+        pageTitle="Neighbor's Tree Damage & Virginia Law | Art-is-Tree LLC" 
+        description="A real Virginia Beach case study: how Fancher v. Fagella, ANSI A300, and the right process turned a neighbor tree dispute into a permitted, professional job." 
       />
 
       <div className="pt-24 pb-8 bg-gray-50 border-b border-gray-100">
