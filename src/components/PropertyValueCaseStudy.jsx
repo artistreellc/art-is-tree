@@ -5,7 +5,6 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import CaseStudySchema from '@/components/seo/CaseStudySchema';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
 import { Button } from '@/components/ui/button';
-import LocalSEOMeta from '@/components/LocalSEOMeta';
 
 const PropertyValueCaseStudy = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
@@ -15,7 +14,6 @@ const PropertyValueCaseStudy = () => {
 
   return (
     <>
-      <LocalSEOMeta pageTitle="Property Value | Tree Service Case Study | Art-is-Tree LLC" description="How professional tree care increases property values in Virginia Beach. Real data on ROI from strategic tree trimming and maintenance by a licensed, insured team." />
       
       <CaseStudySchema 
         title={title} 
