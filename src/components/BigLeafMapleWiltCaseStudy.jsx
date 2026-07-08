@@ -1,4 +1,5 @@
 
+
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Stethoscope, Leaf, MapPin, CheckCircle, ArrowRight, Clock } from 'lucide-react';
@@ -16,7 +17,7 @@ const BigLeafMapleWiltCaseStudy = () => {
 
   return (
     <>
-      <LocalSEOMeta pageTitle="Big Leaf Maple Wilt | Disease Management Case Study | Art-is-Tree LLC" description="Big Leaf Maple disease treatment success story from Virginia Beach. Expert diagnosis and treatment saved a valuable mature tree. Licensed local tree service." />
+      <LocalSEOMeta pageTitle="Tree Disease Management Case Study | Art-is-Tree LLC" description="Big Leaf Maple disease treatment success story from Virginia Beach. Expert diagnosis and treatment saved a valuable mature tree. Licensed local tree service." />
       
       <CaseStudySchema 
         title={title} 
