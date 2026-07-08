@@ -46,7 +46,7 @@ const CaseStudiesIndexPage = () => {
   return (
     <>
       <LocalSEOMeta 
-        pageTitle="Case Studies | Professional Tree Service Projects Virginia Beach" 
+        pageTitle="Tree Service Case Studies | Virginia Beach VA" 
         description="Real-world tree care success stories from Virginia Beach. Detailed case studies showcasing crane removals, safety protocols, and environmental stewardship." 
       />
 
