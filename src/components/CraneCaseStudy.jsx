@@ -1,3 +1,5 @@
+
+
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Shield, TreePine, MapPin, ArrowRight } from 'lucide-react';
@@ -5,7 +7,6 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import CaseStudySchema from '@/components/seo/CaseStudySchema';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
 import { Button } from '@/components/ui/button';
-import LocalSEOMeta from '@/components/LocalSEOMeta';
 
 const CraneCaseStudy = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
@@ -15,7 +16,6 @@ const CraneCaseStudy = () => {
 
   return (
     <>
-      <LocalSEOMeta pageTitle="Crane Tree Removal | Virginia Beach Large Tree Service | Art-is-Tree LLC" description="Crane-assisted tree removal case study in Virginia Beach. See how we safely extract hazardous pines near endangered nesting sites using 100-ton cranes." />
       
       <CaseStudySchema 
         title={title} 
