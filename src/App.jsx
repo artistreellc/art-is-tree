@@ -24,6 +24,7 @@ import { CookieConsentProvider } from '@/contexts/CookieConsentContext';
 
 // Performance Utilities
 import { withRouteCSS } from '@/utils/routeBasedCSSLoader';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 // SEO Components (Direct import)
 import GeoSchema from '@/components/seo/GeoSchema.jsx';
@@ -209,6 +210,7 @@ function App() {
                   <Toaster />
                   <MobileCTABar />
                   <CookieConsentBanner />
+                  <SpeedInsights />
                 </div>
               </ErrorBoundary>
             </Router>
