@@ -184,24 +184,17 @@ const ContactForm = () => {
         message: formState.message.trim()
       };
       
-      // DISABLED: Email sending API fetch disabled due to stubbed sendContactEmail.js
-      /*
-      const { data, error } = await supabase.functions.invoke('send-contact-email-horizons', {
-        body: payload
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
       });
 
-      if (error) {
-        throw new Error(error.message || 'Failed to send message. Please try again.');
-      }
+      const data = await response.json().catch(() => ({}));
 
-      if (!data || data.success !== true) {
-        throw new Error(data?.error || 'Failed to send message. Please try again.');
+      if (!response.ok || data.success !== true) {
+        throw new Error(data.error || 'Failed to send message. Please try again.');
       }
-      */
-      
-      // Simulating a successful submission delay
-      await new Promise(r => setTimeout(r, 800));
-      const data = { success: true };
 
       // Legacy support for older conversion tracking scripts if present
       if (typeof window !== 'undefined' && window.gtag_report_contact_form) {
