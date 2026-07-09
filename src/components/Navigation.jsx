@@ -245,7 +245,7 @@ const Navigation = memo(() => {
     );
   }, [user, closeMobileMenu]);
 
-  const logoUrl = "https://horizons-cdn.hostinger.com/1ec5599f-e2e5-4afa-b25c-06e1360f6589/d020f44d77156debf187e715175abef2.png";
+  const logoUrl = "/logo.png";
 
   return (
     <nav className="sticky top-0 z-50 w-full bg-[#1B4D3E] shadow-xl border-b border-white/10 transition-transform duration-300 ease-in-out" style={{ transform: navHidden ? 'translateY(-100%)' : 'translateY(0)' }} ref={menuRef} aria-label="Main Navigation">
