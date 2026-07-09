@@ -7,31 +7,37 @@ const ServicesSection = () => {
   const services = [{
     icon: Trash2,
     name: 'Professional Tree Removal',
+    path: '/services/tree-removal',
     linkText: 'Learn More About Tree Removal',
     description: 'Expert tree removal in Virginia Beach using crane-assisted techniques. As a top tree service in Virginia Beach, our climbers safely remove trees of any size with advanced rigging systems.'
   }, {
     icon: Scissors,
     name: 'Tree Trimming & Pruning',
+    path: '/services/tree-trimming',
     linkText: 'Learn More About Tree Trimming',
     description: 'Professional tree trimming and crown reduction services by local tree care pros in Virginia Beach. We provide expert tree pruning following ANSI A300 standards to enhance tree health and safety.'
   }, {
     icon: Tractor,
     name: 'Land Clearing & Site Prep',
+    path: '/services/land-clearing',
     linkText: 'Learn More About Land Clearing',
     description: 'Comprehensive land clearing services for residential and commercial properties. Our local tree experts provide professional site preparation and forestry mulching throughout the region.'
   }, {
     icon: CircleDot,
     name: 'Stump Grinding & Removal',
+    path: '/services/stump-grinding',
     linkText: 'Learn More About Stump Grinding',
     description: 'Complete stump removal and tree services in Virginia Beach. Our professional team uses powerful machinery to grind stumps below grade, eliminating trip hazards and reclaiming your yard space.'
   }, {
     icon: AlertCircle,
     name: '24/7 Emergency Tree Service',
+    path: '/services/emergency-tree-service',
     linkText: 'Learn More About Emergency Tree Services',
     description: 'Rapid-response emergency tree services in Virginia Beach available 24/7. Our professionals respond immediately to storm damage and hazardous tree situations to keep your property safe.'
   }, {
     icon: Cloud,
     name: 'Storm Damage Cleanup',
+    path: '/emergency',
     linkText: 'Learn More About Storm Damage Cleanup',
     description: 'Professional storm damage tree removal and cleanup. Our local tree service team clears fallen branches, uprooted trees, and dangerous hanging limbs after severe weather events.'
   }];
@@ -75,9 +81,9 @@ const ServicesSection = () => {
                 </p>
 
                 <div className="mt-auto pt-4 border-t border-gray-100">
-                  <Link 
-                    to="/services" 
-                    className="inline-flex items-center text-[#1B4D3E] font-bold text-sm hover:text-[#D4AF37] transition-colors group/link py-2 min-h-[44px]" 
+                  <Link
+                    to={service.path}
+                    className="inline-flex items-center text-[#1B4D3E] font-bold text-sm hover:text-[#D4AF37] transition-colors group/link py-2 min-h-[44px]"
                     aria-label={service.linkText}
                   >
                     {service.linkText} <ArrowRight className="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" />
