@@ -65,8 +65,8 @@ const ServicesSection = () => {
                 className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 md:p-8 border border-gray-100 flex flex-col h-full group"
               >
                 <div className="flex flex-row md:flex-col items-center md:items-start gap-4 mb-4">
-                  <div className="bg-[#1B4D3E]/5 w-12 h-12 md:w-16 md:h-16 rounded-xl flex items-center justify-center group-hover:bg-[#1B4D3E] transition-colors duration-300 shrink-0">
-                    <Icon className="w-6 h-6 md:w-8 md:h-8 text-[#1B4D3E] group-hover:text-[#D4AF37] transition-colors duration-300" />
+                  <div className="bg-[#1B4D3E] w-12 h-12 md:w-16 md:h-16 rounded-xl flex items-center justify-center group-hover:bg-[#153e32] transition-colors duration-300 shrink-0">
+                    <Icon className="w-6 h-6 md:w-8 md:h-8 text-white group-hover:text-[#D4AF37] transition-colors duration-300" />
                   </div>
                   <h3 className="font-playfair text-xl md:text-2xl font-bold text-[#1B4D3E] group-hover:text-[#D4AF37] transition-colors">
                     {service.name}
