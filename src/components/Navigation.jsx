@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef, memo, useCallback, useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Phone, Instagram, Menu, X, ShieldCheck, Terminal, Star } from 'lucide-react';
@@ -214,15 +215,6 @@ const Navigation = memo(() => {
   }, [handleResize]);
 
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => { document.body.style.overflow = 'unset'; };
-  }, [isMobileMenuOpen]);
-
-  useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
       if (isMobileMenuOpen || y < 120) {
@@ -309,8 +301,8 @@ const Navigation = memo(() => {
 
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.2, ease: "easeInOut" }} className="bg-[#153e32] border-t border-white/10 shadow-inner overflow-hidden fixed w-full left-0 z-[60]" style={{ top: 'var(--nav-height, 0px)' }}>
-             <div className="flex flex-col p-4 space-y-2 pb-8 max-w-lg mx-auto w-full max-h-[calc(100vh-var(--nav-height,0px))] overflow-y-auto">
+          <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.2, ease: "easeInOut" }} className="absolute top-full right-0 mt-px w-full max-w-sm bg-[#153e32] border-l border-b border-white/10 rounded-bl-2xl shadow-2xl overflow-hidden z-[60]">
+             <div className="flex flex-col p-4 space-y-2 pb-6 max-h-[calc(100vh-90px)] overflow-y-auto">
                 {NAV_LINKS.map((link) => (
                   <MobileMenuItem key={link.path} link={link} isActive={isActive(link.path)} onClick={closeMobileMenu} />
                 ))}
