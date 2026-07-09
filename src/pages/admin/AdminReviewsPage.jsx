@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import ReviewManagementPanel from '@/components/admin/ReviewManagementPanel';
 import SyncReviewsButton from '@/components/SyncReviewsButton';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -7,11 +7,11 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 const AdminReviewsPage = () => {
   return (
     <>
-      <Helmet>
+      <Head>
         <title>Manage Reviews | Tree Service Virginia Beach</title>
         <meta name="description" content="Review management dashboard. Manage and display customer reviews. Admin access only." />
         <meta name="robots" content="noindex, nofollow" />
-      </Helmet>
+      </Head>
 
       <div className="min-h-screen bg-gray-50 py-12">
         <div className="container mx-auto px-4 max-w-5xl">

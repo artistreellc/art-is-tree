@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import { useAuth } from '@/contexts/SupabaseAuthContext';
 
 const ProtectedRoute = ({ children }) => {
@@ -11,9 +11,9 @@ const ProtectedRoute = ({ children }) => {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <Helmet>
+        <Head>
           <meta name="robots" content="noindex, nofollow" />
-        </Helmet>
+        </Head>
         <div className="w-8 h-8 border-4 border-[#1B4D3E] border-t-transparent rounded-full animate-spin"></div>
       </div>
     );
@@ -27,10 +27,10 @@ const ProtectedRoute = ({ children }) => {
 
   return (
     <>
-      <Helmet>
+      <Head>
         {/* Security/SEO Best Practice: Ensure protected routes are never indexed by search engines */}
         <meta name="robots" content="noindex, nofollow" />
-      </Helmet>
+      </Head>
       {children}
     </>
   );

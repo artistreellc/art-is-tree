@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import { Link } from 'react-router-dom';
 import { CheckCircle2, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -40,7 +40,7 @@ const ChesapeakePage = () => {
         pageTitle="Tree Service Chesapeake VA | Removal & Clearing"
         description="Tree removal, trimming, stump grinding and land clearing in Chesapeake, VA. Licensed, insured, BBB A+ tree service. 24/7 storm response. Free estimates."
       />
-      <Helmet>
+      <Head>
         <meta name="geo.region" content="US-VA" />
         <meta name="geo.placename" content="Chesapeake, Virginia" />
         <meta name="geo.position" content="36.7682;-76.2875" />
@@ -48,7 +48,7 @@ const ChesapeakePage = () => {
         <script type="application/ld+json">
           {JSON.stringify(localBusinessSchema)}
         </script>
-      </Helmet>
+      </Head>
 
       <div className="bg-gray-50 min-h-screen pb-16">
         <Breadcrumbs />

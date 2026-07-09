@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import { Activity, Clock, Zap, AlertTriangle, CheckCircle, RefreshCcw } from 'lucide-react';
 import { getMetrics } from '@/utils/lcpMonitoring';
 import { Button } from '@/components/ui/button';
@@ -36,11 +36,11 @@ const PerformanceMetricsPage = () => {
 
   return (
     <div className="p-6 md:p-10 max-w-7xl mx-auto">
-      <Helmet>
+      <Head>
         <title>Performance Metrics | Tree Service Virginia Beach</title>
         <meta name="description" content="Performance metrics and monitoring. Track website performance, Core Web Vitals, and optimization metrics for your professional tree care business website." />
         <meta name="robots" content="noindex, nofollow" />
-      </Helmet>
+      </Head>
 
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
         <div>

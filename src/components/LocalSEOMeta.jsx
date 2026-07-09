@@ -1,6 +1,6 @@
 
 import React, { useMemo } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import { useLocation } from 'react-router-dom';
 import { generateCanonicalUrl, stripWww } from '@/utils/seoHelpers';
 
@@ -35,7 +35,7 @@ const LocalSEOMeta = ({
   const finalKeywords = keywords ? `${keywords}, ${localKeywords}` : localKeywords;
 
   return (
-    <Helmet>
+    <Head>
       {pageTitle && <title>{pageTitle}</title>}
       {description && <meta name="description" content={description} />}
       <meta name="keywords" content={finalKeywords} />
@@ -61,7 +61,7 @@ const LocalSEOMeta = ({
           {structuredDataString}
         </script>
       )}
-    </Helmet>
+    </Head>
   );
 };
 

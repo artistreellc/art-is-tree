@@ -277,6 +277,21 @@ logger.error = (msg, options) => {
 
 export default defineConfig({
 	customLogger: logger,
+	ssgOptions: {
+		script: 'async',
+		formatting: 'minify',
+		// Keep the admin app client-only; never prerender authenticated pages
+		// or pure client redirects. Paths may arrive with or without a leading slash.
+		includedRoutes(paths) {
+			return paths.filter((raw) => {
+				const p = raw.replace(/^\/+/, '');
+				if (p.startsWith('admin')) return false;
+				if (p === 'login') return false;
+				if (p === 'case-studies/chesapeake-bay-waterfront') return false;
+				return true;
+			});
+		},
+	},
 	plugins: [
 		react(),
 		addTransformIndexHtml

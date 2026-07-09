@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -61,11 +61,11 @@ const AdminPanel = () => {
 
   return (
     <>
-      <Helmet>
+      <Head>
         <title>Admin Dashboard | Tree Service Virginia Beach</title>
         <meta name="description" content="Admin dashboard for tree service. Manage reviews, gallery, neighborhoods & site content. Admin access only." />
         <meta name="robots" content="noindex, nofollow" />
-      </Helmet>
+      </Head>
 
       <div className="min-h-screen bg-gray-50 py-12">
         <div className="container mx-auto px-4 max-w-6xl">
