@@ -17,9 +17,9 @@ const Footer = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-12 min-h-[300px]">
-          
-          <div className="space-y-6 lg:col-span-2 flex flex-col justify-start">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-10 lg:gap-8 mb-12">
+
+          <div className="space-y-6 sm:col-span-2 lg:col-span-2 flex flex-col justify-start">
             <Link to="/" className="inline-flex items-center gap-3 bg-white/5 p-2 rounded-xl hover:bg-white/10 transition-colors w-fit h-[60px]" aria-label="Home">
               <picture className="h-[36px] w-[42px] block">
                 <source srcSet={`${logoUrl}?format=webp&w=42 1x, ${logoUrl}?format=webp&w=84 2x`} type="image/webp" />
@@ -54,8 +54,10 @@ const Footer = () => {
               <li className="h-[24px]"><Link to="/gallery" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group h-full"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity inline-block"></span>Project Gallery</Link></li>
               <li className="h-[24px]"><Link to="/contact" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group h-full"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity inline-block"></span>Contact Us</Link></li>
             </ul>
+          </div>
 
-            <h3 className="font-playfair text-xl font-bold mb-6 mt-8 text-[#D4AF37]">Service Areas</h3>
+          <div className="flex flex-col">
+            <h3 className="font-playfair text-xl font-bold mb-6 text-[#D4AF37] h-[28px]">Service Areas</h3>
             <ul className="space-y-4">
               <li className="h-[24px]"><Link to="/service-areas/virginia-beach" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group h-full"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity inline-block"></span>Virginia Beach</Link></li>
               <li className="h-[24px]"><Link to="/service-areas/norfolk" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group h-full"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity inline-block"></span>Norfolk</Link></li>
@@ -63,8 +65,10 @@ const Footer = () => {
               <li className="h-[24px]"><Link to="/service-areas/portsmouth" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group h-full"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity inline-block"></span>Portsmouth</Link></li>
               <li className="h-[24px]"><Link to="/service-areas/suffolk" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group h-full"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity inline-block"></span>Suffolk</Link></li>
             </ul>
+          </div>
 
-            <h3 className="font-playfair text-xl font-bold mb-6 mt-8 text-[#D4AF37]">Case Studies</h3>
+          <div className="flex flex-col">
+            <h3 className="font-playfair text-xl font-bold mb-6 text-[#D4AF37] h-[28px]">Case Studies</h3>
             <ul className="space-y-4">
               <li className="h-[24px]"><Link to="/case-studies" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group h-full"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity inline-block"></span>All Case Studies</Link></li>
               <li className="h-[24px]"><Link to="/case-studies/crane-safety" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group h-full"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity inline-block"></span>Crane Safety</Link></li>
