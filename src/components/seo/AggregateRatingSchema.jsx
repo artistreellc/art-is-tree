@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { generateCanonicalUrl } from '@/utils/seoHelpers';
 
-const AggregateRatingSchema = ({ ratingValue = "4.8", reviewCount = "47" }) => {
+const AggregateRatingSchema = ({ ratingValue = "5.0", reviewCount = "134" }) => {
   const location = useLocation();
   const currentUrl = generateCanonicalUrl(location.pathname);
 
