@@ -15,8 +15,7 @@ const TestimonialsPage = () => {
     <>
       <LocalSEOMeta 
         pageTitle="Reviews | Tree Service Virginia Beach | Art-is-Tree" 
-        description="Read customer reviews of Art-is-Tree LLC, the BBB A+, licensed and insured tree service trusted across Virginia Beach and Hampton Roads, VA. 5-star rated." 
-        noindex={true}
+        description="Read customer reviews of Art-is-Tree LLC, the BBB A+, licensed and insured tree service trusted across Virginia Beach and Hampton Roads, VA. 5-star rated."
       />
       
       <AggregateRatingSchema />

@@ -7,6 +7,23 @@ import LocalSEOMeta from '@/components/LocalSEOMeta';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
 import ServiceLinks from '@/components/ServiceLinks';
+import GoogleMap from '@/components/GoogleMap';
+import LocationFAQ from '@/components/LocationFAQ';
+
+const suffolkFaqs = [
+  {
+    question: "Do you clear land and lots on larger Suffolk properties?",
+    answer: "Yes. Suffolk is Virginia's largest city by land area, with plenty of rural acreage. We clear trees, brush, and undergrowth for building sites, fields, food plots, driveways, and fence lines, and we can grind stumps or chip the debris on site.",
+  },
+  {
+    question: "Can you safely remove tall pines near a Suffolk home?",
+    answer: "Yes. Loblolly pines dominate Suffolk and are prone to snapping or uprooting in storms. We climb or crane them down in controlled sections, keeping heavy timber well away from your house, outbuildings, and power lines.",
+  },
+  {
+    question: "How much does tree work cost in Suffolk?",
+    answer: "Price depends on the tree's size, equipment access, proximity to structures, and cleanup. Rural lots with open access are often more affordable than tight ones. We provide a free written estimate with no hidden fees before any work begins.",
+  },
+];
 
 const SuffolkPage = () => {
   const localBusinessSchema = {
@@ -34,12 +51,6 @@ const SuffolkPage = () => {
     "image": "https://artistreevabeach.com/logo.png"
   };
 
-  const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true },
-    transition: { duration: 0.5 }
-  };
 
   return (
     <>
@@ -63,7 +74,7 @@ const SuffolkPage = () => {
         <section className="bg-[#1B4D3E] text-white pt-24 pb-20 relative overflow-hidden">
           <div className="absolute inset-0 bg-black/20 z-0"></div>
           <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
-            <div {...fadeInUp}>
+            <div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-6 mt-0">
                 Tree Service Suffolk, VA | Art-is-Tree LLC
               </h1>
@@ -87,7 +98,7 @@ const SuffolkPage = () => {
         <main className="container mx-auto px-4 py-16 max-w-4xl">
           <div 
             className="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 prose prose-lg max-w-none text-gray-700 leading-relaxed"
-            {...fadeInUp}
+           
           >
             <p>Suffolk is Virginia's largest city by land area, presenting an incredibly vast and diverse working environment that contrasts sharply with the densely packed suburban grids found in neighboring coastal cities. Much of it is rural with large acreage properties common, and expansive active farmland and pine timber stands are common sights across the landscape.</p>
 
@@ -108,7 +119,7 @@ const SuffolkPage = () => {
         <section className="container mx-auto px-4 max-w-4xl mb-16">
           <div 
             className="bg-[#1B4D3E]/5 p-8 rounded-2xl border border-[#1B4D3E]/10"
-            {...fadeInUp}
+           
           >
             <h3 className="text-2xl font-playfair font-bold text-[#1B4D3E] mb-6">Our Core Suffolk Services:</h3>
             <ul className="grid sm:grid-cols-2 gap-4">
@@ -132,7 +143,7 @@ const SuffolkPage = () => {
         <section className="container mx-auto px-4 max-w-4xl text-center">
           <div 
             className="bg-[#1B4D3E] text-white p-10 rounded-2xl shadow-xl"
-            {...fadeInUp}
+           
           >
             <h3 className="text-3xl font-playfair font-bold mb-4">Ready to manage your Suffolk property?</h3>
             <p className="text-lg mb-8 text-gray-200">
@@ -151,6 +162,12 @@ const SuffolkPage = () => {
           </div>
         </section>
       </div>
+      <section className="container mx-auto px-4 max-w-4xl my-16">
+        <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mb-6 text-center">Serving All of Suffolk</h2>
+        <GoogleMap query="Suffolk, VA" title="Art-is-Tree LLC tree service area — Suffolk, VA" />
+      </section>
+
+      <LocationFAQ city="Suffolk" faqs={suffolkFaqs} />
       <ServiceLinks cityName="Suffolk" />
       <RelatedCaseStudies currentPath="/service-areas/suffolk" preferred={['/case-studies/property-value', '/case-studies/unlicensed-contractors']} />
     </>

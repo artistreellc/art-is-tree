@@ -7,6 +7,23 @@ import ServiceSchema from '@/components/seo/ServiceSchema';
 import BreadcrumbListSchema from '@/components/seo/BreadcrumbListSchema';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
 import ServiceAreaLinks from '@/components/ServiceAreaLinks';
+import FAQSection from '@/components/FAQSection';
+import FAQPageSchema from '@/components/seo/FAQPageSchema';
+
+const stumpGrindingFaqs = [
+  {
+    question: "What's the difference between stump grinding and stump removal?",
+    answer: "Stump grinding uses a machine to chip the stump down to several inches below ground level, which is fast, affordable, and leaves your yard mostly intact. Full stump removal pulls out the entire root ball, leaving a large hole and much more disruption. Most homeowners choose grinding.",
+  },
+  {
+    question: "How deep do you grind the stump?",
+    answer: "Typically 4-6 inches below grade, which is enough to replant grass or lay sod. If you plan to install a patio, fence post, or a new tree in the same spot, we can grind deeper on request.",
+  },
+  {
+    question: "What happens to the wood chips and roots?",
+    answer: "We can haul the grindings away or leave them as free mulch, whichever you prefer. Large surface roots can be ground as well; smaller roots left underground simply decompose over time.",
+  },
+];
 
 const StumpGrindingPage = () => {
   const serviceAreas = ["Virginia Beach", "Norfolk", "Chesapeake", "Hampton Roads"];
@@ -154,6 +171,8 @@ const StumpGrindingPage = () => {
           </div>
         </div>
       </main>
+      <FAQPageSchema items={stumpGrindingFaqs} />
+      <FAQSection items={stumpGrindingFaqs} title="Stump Grinding in Virginia Beach: FAQ" />
       <ServiceAreaLinks serviceName="Stump Grinding" />
       <RelatedCaseStudies currentPath="/services/stump-grinding" preferred={['/case-studies/property-value', '/case-studies/unlicensed-contractors']} />
     </div>

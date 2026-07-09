@@ -4,12 +4,12 @@
       "source": "/(.*)",
       "has": [{ "type": "host", "value": "www.artistreevabeach.com" }],
       "destination": "https://artistreevabeach.com/$1",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/case-studies/chesapeake-bay-waterfront",
       "destination": "/case-studies/chesapeake-bay-preservation-act",
-      "permanent": true
+      "statusCode": 301
     }
   ],
   "rewrites": [

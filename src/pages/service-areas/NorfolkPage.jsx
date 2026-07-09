@@ -7,6 +7,23 @@ import LocalSEOMeta from '@/components/LocalSEOMeta';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
 import ServiceLinks from '@/components/ServiceLinks';
+import GoogleMap from '@/components/GoogleMap';
+import LocationFAQ from '@/components/LocationFAQ';
+
+const norfolkFaqs = [
+  {
+    question: "Can you remove large trees on Norfolk's tight urban lots?",
+    answer: "Yes. In neighborhoods like Ghent, Colonial Place, and Larchmont, mature willow oaks and crape myrtles often stand just feet from historic homes, fences, and neighbors. We dismantle trees piece by piece — rigging limbs and lowering timber by rope or crane — so nothing lands on structures or gardens.",
+  },
+  {
+    question: "Who is responsible for a tree in the Norfolk right-of-way?",
+    answer: "Street trees between the sidewalk and curb are typically the city's responsibility, and removing or heavily pruning them usually needs Norfolk's approval. Trees on your side of the property line are yours. We help you tell the difference and coordinate the right approvals before any work starts.",
+  },
+  {
+    question: "Do you handle storm and flood-damaged trees in Norfolk?",
+    answer: "Absolutely. Norfolk's low elevation and frequent tidal flooding stress root systems and topple weakened trees during storms. Our 24/7 emergency team clears fallen and hanging limbs, secures the site, and hauls away debris.",
+  },
+];
 
 const NorfolkPage = () => {
   const localBusinessSchema = {
@@ -134,6 +151,12 @@ const NorfolkPage = () => {
           </div>
         </section>
       </div>
+      <section className="container mx-auto px-4 max-w-4xl my-16">
+        <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mb-6 text-center">Serving Norfolk &amp; Its Historic Neighborhoods</h2>
+        <GoogleMap query="Norfolk, VA" title="Art-is-Tree LLC tree service area — Norfolk, VA" />
+      </section>
+
+      <LocationFAQ city="Norfolk" faqs={norfolkFaqs} />
       <ServiceLinks cityName="Norfolk" />
       <RelatedCaseStudies currentPath="/service-areas/norfolk" preferred={['/case-studies/property-value', '/case-studies/unlicensed-contractors']} />
     </>

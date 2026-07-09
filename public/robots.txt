@@ -3,6 +3,5 @@ Allow: /
 
 Disallow: /admin/
 Disallow: /login
-Disallow: /test-email
 
 Sitemap: https://artistreevabeach.com/sitemap.xml

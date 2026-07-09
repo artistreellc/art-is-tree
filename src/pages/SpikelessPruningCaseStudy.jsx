@@ -84,7 +84,7 @@ const SpikelessPruningCaseStudy = () => {
         <main>
           <section className="py-16 md:py-24 bg-white">
             <div className="container mx-auto px-4 max-w-4xl text-center">
-              <div initial="hidden" whileInView="visible">
+              <div>
                 <h2 className="font-playfair text-3xl md:text-5xl font-bold text-[#1B4D3E] mb-6 mt-0">
                   The New Standard in Arboriculture
                 </h2>
@@ -106,7 +106,7 @@ const SpikelessPruningCaseStudy = () => {
                     loading="lazy"
                   />
                 </div>
-                <div initial="hidden" whileInView="visible" className="space-y-6">
+                <div className="space-y-6">
                   <div className="flex items-center gap-2 text-red-600 font-bold uppercase tracking-wider text-sm">
                     <AlertTriangle className="w-5 h-5" />
                     The Problem
@@ -144,7 +144,7 @@ const SpikelessPruningCaseStudy = () => {
                 <h2 className="font-playfair text-3xl md:text-5xl font-bold mb-4 mt-0 text-white">Benefits of Spikeless Pruning</h2>
                 <p className="text-gray-300 text-xl max-w-2xl mx-auto">Protecting your trees with advanced care methods.</p>
               </div>
-              <div initial="hidden" whileInView="visible" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {[
                   { icon: Shield, title: "Eliminates Wounds", desc: "No punctures means the bark remains fully intact and protective." },
                   { icon: Leaf, title: "Reduces Disease Risk", desc: "Closes the door on fungal infections and invasive pests." },
