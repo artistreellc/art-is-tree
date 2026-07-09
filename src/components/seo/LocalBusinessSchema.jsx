@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
@@ -58,9 +59,7 @@ const LocalBusinessSchema = () => {
       { "@type": "City", "name": "Norfolk" },
       { "@type": "City", "name": "Chesapeake" },
       { "@type": "City", "name": "Portsmouth" },
-      { "@type": "City", "name": "Suffolk" },
-      { "@type": "City", "name": "Hampton" },
-      { "@type": "City", "name": "Newport News" }
+      { "@type": "City", "name": "Suffolk" }
     ],
     "sameAs": [
       "https://www.yelp.com/biz/art-is-tree-virginia-beach-5",
