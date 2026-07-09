@@ -14,8 +14,6 @@ const ServiceAreasSection = ({ title = "Areas We Serve" }) => {
     "Chesapeake",
     "Portsmouth",
     "Suffolk",
-    "Hampton",
-    "Newport News",
     "Kempsville"
   ];
 
