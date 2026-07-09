@@ -4,10 +4,12 @@ import AboutSection from '@/components/AboutSection';
 import WhyChooseSection from '@/components/WhyChooseSection';
 import GoogleReviewsDisplay from '@/components/GoogleReviewsDisplay';
 import GoogleMap from '@/components/GoogleMap';
-import { Phone, MapPin, Award, ShieldCheck, TreePine, ExternalLink } from 'lucide-react';
+import { Phone, MapPin, Award, ShieldCheck, TreePine, BadgeCheck, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import LocalSEOMeta from '@/components/LocalSEOMeta';
 import AggregateRatingSchema from '@/components/seo/AggregateRatingSchema';
+import Cite from '@/components/Cite';
+import { COMPANY_INFO } from '@/constants/seoMetadata';
 
 const GOOGLE_LISTING_URL = "https://www.google.com/maps?cid=12599844776703525086";
 
@@ -55,7 +57,8 @@ const AboutPage = () => {
                <div className="flex flex-wrap gap-4 mb-8 p-6 bg-gray-50 rounded-xl border border-gray-200 justify-center">
                  <div className="flex items-center gap-2 font-semibold text-[#1B4D3E]"><Award className="text-[#D4AF37]"/> 15+ Years Experience</div>
                  <div className="flex items-center gap-2 font-semibold text-[#1B4D3E]"><ShieldCheck className="text-[#D4AF37]"/> Licensed & Insured</div>
-                 <div className="flex items-center gap-2 font-semibold text-[#1B4D3E]"><TreePine className="text-[#D4AF37]"/> Skilled Tree Care Crew</div>
+                 <div className="flex items-center gap-2 font-semibold text-[#1B4D3E]"><BadgeCheck className="text-[#D4AF37]"/> BBB A+ Accredited<Cite href={COMPANY_INFO.socials.bbb} label="BBB" /></div>
+                 <div className="flex items-center gap-2 font-semibold text-[#1B4D3E]"><TreePine className="text-[#D4AF37]"/> TCIA Member<Cite href="https://www.tcia.org/" label="TCIA" /></div>
                </div>
 
                <h2 className="text-3xl font-bold text-[#1B4D3E] font-playfair mb-6">Our History and Foundation</h2>
