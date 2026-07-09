@@ -7,10 +7,35 @@ import ServiceSchema from '@/components/seo/ServiceSchema';
 import BreadcrumbListSchema from '@/components/seo/BreadcrumbListSchema';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
 import ServiceAreaLinks from '@/components/ServiceAreaLinks';
+import FAQSection from '@/components/FAQSection';
+import FAQPageSchema from '@/components/seo/FAQPageSchema';
 
 const TreeRemovalPage = () => {
   const serviceAreas = ["Virginia Beach", "Norfolk", "Chesapeake", "Hampton Roads"];
   const description = "Safe, licensed and insured tree removal in Virginia Beach and Hampton Roads. Hazardous, dead and large tree specialists. Crane-assisted. Free estimates.";
+
+  const faqData = [{
+    question: "How much does tree removal cost in Virginia Beach?",
+    answer: "Tree removal cost in Virginia Beach depends on the tree's height and trunk diameter, how close it is to your house or power lines, how easy it is to access, and whether you add stump grinding. A small tree in an open yard is far cheaper than a large loblolly pine over a roof that needs a crane. Every quote from Art-is-Tree LLC is free, written, and never exceeded on the day of service. Call (757) 319-5131 for an estimate."
+  }, {
+    question: "Do I need a permit to remove a tree in Virginia Beach?",
+    answer: "Most standard residential tree removals in Virginia Beach do not require a permit. However, waterfront and near-water properties can fall under the Chesapeake Bay Preservation Act, with Resource Protection Area buffers that limit clearing. If your property borders the bay, a marsh, or a canal, we help you confirm the rules before any cutting begins."
+  }, {
+    question: "Can you remove a tree that is close to my house or hanging over the roof?",
+    answer: "Yes. Trees over structures, on tight lots, or near power lines are our specialty. When a straight fell is unsafe, we section the tree down from the top with rigging, or use crane-assisted removal to lift heavy limbs and logs up and away from your roof, fence, and landscaping. If another company told you your tree was too big or too close, that is exactly the job we are built for."
+  }, {
+    question: "Is stump grinding and debris cleanup included with tree removal?",
+    answer: "Complete debris cleanup is included with every removal &mdash; we chip the brush, haul the wood, and rake the area so your yard looks better than when we arrived. Stump grinding is available as an add-on, ground below grade so you can sod, replant, or build over the spot with no leftover root system."
+  }, {
+    question: "Can you remove a fallen or storm-damaged tree fast?",
+    answer: "Yes. We offer 24/7 emergency tree removal across Hampton Roads. Coastal storms and high winds regularly drop trees onto homes, cars, and driveways in Virginia Beach, and our crew responds quickly to remove leaning or fallen trees and make your property safe."
+  }, {
+    question: "Are you licensed and insured to remove trees?",
+    answer: "Yes. Art-is-Tree LLC is fully licensed and insured, BBB A+ accredited, and a member of the Tree Care Industry Association. Tree removal is high-risk work; hiring a licensed and insured company means you are not held liable if damage or injury happens on your property during the job."
+  }, {
+    question: "What areas do you serve for tree removal?",
+    answer: "We provide tree removal in Virginia Beach, Norfolk, Chesapeake, Portsmouth, Suffolk, and the surrounding Hampton Roads region, roughly a 30-mile radius from Virginia Beach."
+  }];
 
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -32,6 +57,8 @@ const TreeRemovalPage = () => {
           { name: 'Tree Removal', url: '/services/tree-removal' }
         ]} 
       />
+
+      <FAQPageSchema items={faqData} />
 
       <section className="bg-gradient-to-br from-[#1B4D3E] to-[#0A2F24] pt-24 pb-16 px-4">
         <div className="container mx-auto max-w-5xl text-center">
@@ -153,6 +180,7 @@ const TreeRemovalPage = () => {
           </div>
         </div>
       </main>
+      <FAQSection items={faqData} title="Tree Removal in Virginia Beach: FAQ" />
       <ServiceAreaLinks serviceName="Tree Removal" />
       <RelatedCaseStudies currentPath="/services/tree-removal" preferred={['/case-studies/crane-safety', '/case-studies/unlicensed-contractors', '/case-studies/property-value']} />
     </div>
