@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
   Shield, 
@@ -52,31 +51,25 @@ const SpikelessPruningCaseStudy = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40" />
           </div>
-          
           <div className="relative container mx-auto px-4 text-center z-10">
-            <motion.span 
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
+            <span 
+             
               className="inline-block py-2 px-4 rounded-full bg-[#D4AF37]/20 border border-[#D4AF37] text-[#D4AF37] font-semibold mb-6 backdrop-blur-sm"
             >
               Industry Standard Tree Care
-            </motion.span>
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
+            </span>
+            <h1 
+             
               className="font-playfair text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight mt-0"
             >
               Spikeless Pruning Techniques
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
+            </h1>
+            <p 
+             
               className="font-inter text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto font-light"
             >
               Minimizing tree damage while achieving optimal health and appearance.
-            </motion.p>
+            </p>
           </div>
         </header>
 
@@ -91,29 +84,29 @@ const SpikelessPruningCaseStudy = () => {
         <main>
           <section className="py-16 md:py-24 bg-white">
             <div className="container mx-auto px-4 max-w-4xl text-center">
-              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
+              <div initial="hidden" whileInView="visible">
                 <h2 className="font-playfair text-3xl md:text-5xl font-bold text-[#1B4D3E] mb-6 mt-0">
                   The New Standard in Arboriculture
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed font-inter">
                   Spikeless pruning is the industry standard for maintaining tree health. Unlike older methods that rely on climbing spikes (gaffs) to ascend trees, spikeless climbing utilizes advanced rope techniques and friction hitches, or bucket trucks, to navigate the canopy. This approach is critical because every puncture wound created by a spike provides an entry point for disease, fungi, and harmful insects, directly threatening the long-term vitality of the tree.
                 </p>
-              </motion.div>
+              </div>
             </div>
           </section>
 
           <section className="py-16 md:py-24 bg-gray-50">
             <div className="container mx-auto px-4">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+                <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                   <img 
                     src="https://images.unsplash.com/photo-1702204853970-531e29d4bb02" 
                     alt="Bark damage from improper climbing spikes" 
                     className="w-full h-full object-cover" 
                     loading="lazy"
                   />
-                </motion.div>
-                <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="space-y-6">
+                </div>
+                <div initial="hidden" whileInView="visible" className="space-y-6">
                   <div className="flex items-center gap-2 text-red-600 font-bold uppercase tracking-wider text-sm">
                     <AlertTriangle className="w-5 h-5" />
                     The Problem
@@ -140,7 +133,7 @@ const SpikelessPruningCaseStudy = () => {
                       </li>
                     ))}
                   </ul>
-                </motion.div>
+                </div>
               </div>
             </div>
           </section>
@@ -151,26 +144,25 @@ const SpikelessPruningCaseStudy = () => {
                 <h2 className="font-playfair text-3xl md:text-5xl font-bold mb-4 mt-0 text-white">Benefits of Spikeless Pruning</h2>
                 <p className="text-gray-300 text-xl max-w-2xl mx-auto">Protecting your trees with advanced care methods.</p>
               </div>
-              <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div initial="hidden" whileInView="visible" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {[
                   { icon: Shield, title: "Eliminates Wounds", desc: "No punctures means the bark remains fully intact and protective." },
                   { icon: Leaf, title: "Reduces Disease Risk", desc: "Closes the door on fungal infections and invasive pests." },
                   { icon: Activity, title: "Faster Healing", desc: "Trees expend less energy recovering from human-inflicted damage." },
                   { icon: Heart, title: "Longevity & Health", desc: "Promotes vigorous growth and extends the structural integrity of the tree." }
                 ].map((item, i) => (
-                  <motion.div key={i} variants={fadeInUp} className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 hover:bg-white/20 transition-all">
+                  <div key={i} className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 hover:bg-white/20 transition-all">
                     <item.icon className="w-10 h-10 text-[#D4AF37] mb-4" />
                     <h3 className="font-playfair text-2xl font-bold mb-3 mt-0 text-white">{item.title}</h3>
                     <p className="text-gray-300">{item.desc}</p>
-                  </motion.div>
+                  </div>
                 ))}
-              </motion.div>
+              </div>
             </div>
           </section>
-          
           <section className="py-20 relative overflow-hidden bg-white border-t border-gray-200">
             <div className="container mx-auto px-4 relative z-10 text-center">
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-4xl mx-auto">
+              <div className="max-w-4xl mx-auto">
                 <h2 className="font-playfair text-3xl md:text-5xl font-bold text-[#1B4D3E] mb-6 mt-0">
                   Why Art-is-Tree LLC?
                 </h2>
@@ -185,7 +177,7 @@ const SpikelessPruningCaseStudy = () => {
                     Schedule a Consultation <ArrowRight className="ml-2 w-5 h-5" />
                   </Link>
                 </Button>
-              </motion.div>
+              </div>
             </div>
           </section>
         </main>
