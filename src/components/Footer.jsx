@@ -17,9 +17,9 @@ const Footer = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-10 lg:gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-10 lg:gap-8 mb-12">
 
-          <div className="space-y-6 sm:col-span-2 lg:col-span-2 flex flex-col justify-start">
+          <div className="space-y-6 lg:col-span-2 flex flex-col justify-start">
             <Link to="/" className="inline-flex items-center gap-3 bg-white/5 p-2 rounded-xl hover:bg-white/10 transition-colors w-fit h-[60px]" aria-label="Home">
               <picture className="h-[36px] w-[42px] block">
                 <source srcSet={`${logoUrl}?format=webp&w=42 1x, ${logoUrl}?format=webp&w=84 2x`} type="image/webp" />
