@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef, memo, useCallback, useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Phone, Instagram, Menu, X, ShieldCheck, Terminal, Star } from 'lucide-react';
@@ -206,9 +205,7 @@ const Navigation = memo(() => {
   }, [isMobileMenuOpen, handleClickOutside]);
 
   const handleResize = useThrottle(useCallback(() => {
-    if (window.innerWidth >= 768) {
-      setIsMobileMenuOpen(false);
-    }
+    // Menu now serves all screen sizes; no auto-close on resize.
   }, []), 200);
 
   useEffect(() => {
@@ -248,10 +245,10 @@ const Navigation = memo(() => {
     if (!user) return null;
     return (
       <>
-        <Link to="/admin/reviews" onClick={closeMobileMenu} className="block px-5 py-4 rounded-lg text-lg font-bold uppercase tracking-wider transition-all duration-200 min-h-[56px] flex items-center text-red-400 hover:bg-white/5 md:hidden">
+        <Link to="/admin/reviews" onClick={closeMobileMenu} className="block px-5 py-4 rounded-lg text-lg font-bold uppercase tracking-wider transition-all duration-200 min-h-[56px] flex items-center text-red-400 hover:bg-white/5">
           <ShieldCheck className="w-5 h-5 mr-2" /> Manage Reviews
         </Link>
-        <Link to="/admin/debug-google-places" onClick={closeMobileMenu} className="block px-5 py-4 rounded-lg text-lg font-bold uppercase tracking-wider transition-all duration-200 min-h-[56px] flex items-center text-blue-400 hover:bg-white/5 md:hidden">
+        <Link to="/admin/debug-google-places" onClick={closeMobileMenu} className="block px-5 py-4 rounded-lg text-lg font-bold uppercase tracking-wider transition-all duration-200 min-h-[56px] flex items-center text-blue-400 hover:bg-white/5">
           <Terminal className="w-5 h-5 mr-2" /> Debug Google API
         </Link>
       </>
@@ -302,35 +299,18 @@ const Navigation = memo(() => {
               </a>
             </Button>
             
-            <button onClick={toggleMobileMenu} className="md:hidden text-white p-2 focus:outline-none hover:bg-white/10 rounded-md transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label={isMobileMenuOpen ? "Close Menu" : "Open Menu"} aria-expanded={isMobileMenuOpen}>
+            <button onClick={toggleMobileMenu} className="text-white p-2 focus:outline-none hover:bg-white/10 rounded-md transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label={isMobileMenuOpen ? "Close Menu" : "Open Menu"} aria-expanded={isMobileMenuOpen}>
                {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
             </button>
           </div>
         </div>
 
-        <div className="hidden md:flex flex-wrap items-center justify-center gap-x-6 gap-y-3 border-t border-white/10 pt-3 mt-3">
-          {NAV_LINKS.map((link) => (
-            <NavLink key={link.path} link={link} isActive={isActive(link.path)} />
-          ))}
-          {user && (
-            <>
-              <Link to="/admin/reviews" className="group relative py-2 px-1 flex items-center gap-1">
-                <ShieldCheck className="w-4 h-4 text-red-400" />
-                <span className="text-sm font-bold uppercase tracking-wider text-red-400 hover:text-red-300 transition-colors">Reviews</span>
-              </Link>
-              <Link to="/admin/debug-google-places" className="group relative py-2 px-1 flex items-center gap-1">
-                <Terminal className="w-4 h-4 text-blue-400" />
-                <span className="text-sm font-bold uppercase tracking-wider text-blue-400 hover:text-blue-300 transition-colors">Debug</span>
-              </Link>
-            </>
-          )}
-        </div>
       </div>
 
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.2, ease: "easeInOut" }} className="md:hidden bg-[#153e32] border-t border-white/10 shadow-inner overflow-hidden fixed w-full left-0 z-[60]" style={{ top: 'var(--nav-height, 0px)' }}>
-             <div className="flex flex-col p-4 space-y-2 pb-8 max-h-[calc(100vh-var(--nav-height,0px))] overflow-y-auto">
+          <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.2, ease: "easeInOut" }} className="bg-[#153e32] border-t border-white/10 shadow-inner overflow-hidden fixed w-full left-0 z-[60]" style={{ top: 'var(--nav-height, 0px)' }}>
+             <div className="flex flex-col p-4 space-y-2 pb-8 max-w-lg mx-auto w-full max-h-[calc(100vh-var(--nav-height,0px))] overflow-y-auto">
                 {NAV_LINKS.map((link) => (
                   <MobileMenuItem key={link.path} link={link} isActive={isActive(link.path)} onClick={closeMobileMenu} />
                 ))}
