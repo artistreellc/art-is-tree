@@ -1,17 +1,22 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { cn } from '@/lib/utils';
 
-const GoogleMap = ({ className }) => {
-  const containerRef = useRef(null);
+/**
+ * Embedded Google Map. Defaults to the Art-is-Tree HQ; pass `query` (an
+ * address or "City, VA") and `title` to center it on a specific service area.
+ */
+const GoogleMap = ({
+  query = '2597 Nestlebrook Trl, Virginia Beach, VA 23456',
+  title = 'Art-is-Tree LLC Service Area — Virginia Beach',
+  className,
+}) => {
+  const src = `https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
 
   return (
-    <div 
-      ref={containerRef} 
-      className={cn("w-full rounded-xl overflow-hidden shadow-lg border border-gray-200 bg-gray-50", className)}
-    >
+    <div className={cn('w-full rounded-xl overflow-hidden shadow-lg border border-gray-200 bg-gray-50', className)}>
       <iframe
-        title="Art-is-Tree LLC Service Area — Virginia Beach"
-        src="https://www.google.com/maps?q=2597+Nestlebrook+Trl,+Virginia+Beach,+VA+23456&output=embed"
+        title={title}
+        src={src}
         className="w-full h-[400px] border-0"
         loading="lazy"
         allowFullScreen

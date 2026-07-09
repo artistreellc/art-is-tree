@@ -6,6 +6,23 @@ import { Button } from '@/components/ui/button';
 import LocalSEOMeta from '@/components/LocalSEOMeta';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
 import ServiceLinks from '@/components/ServiceLinks';
+import GoogleMap from '@/components/GoogleMap';
+import LocationFAQ from '@/components/LocationFAQ';
+
+const virginiaBeachFaqs = [
+  {
+    question: "Do I need a permit to remove a tree in Virginia Beach?",
+    answer: "On an ordinary residential lot, no permit is required to remove a tree on your own property. The main exception is waterfront and near-water property in the Chesapeake Bay Preservation Act's Resource Protection Area, where clearing within the shoreline buffer is restricted and removing many healthy trees can require Board review. Dead, dying, and hazardous trees can generally come down. We confirm the rules for your specific lot before any cutting begins.",
+  },
+  {
+    question: "How fast can you respond to a storm-damaged tree in Virginia Beach?",
+    answer: "Our emergency crew is on call 24/7 across Virginia Beach, from Sandbridge and Red Mill to Great Neck and the Oceanfront. After a nor'easter or hurricane we prioritize trees on homes, driveways, and power lines, tarping and stabilizing to prevent further damage before completing full removal and cleanup.",
+  },
+  {
+    question: "What does tree removal cost in Virginia Beach?",
+    answer: "There is no flat rate. Cost depends on the tree's size, its proximity to your house or power lines, equipment access, and whether you add stump grinding. Tall loblolly pines and sprawling live oaks on tight coastal lots cost more because they must be climbed and rigged down in sections. You get a free written estimate, and the price we quote is the price you pay.",
+  },
+];
 
 const VirginiaBeachPage = () => {
   return (
@@ -98,6 +115,12 @@ const VirginiaBeachPage = () => {
           </div>
         </section>
       </div>
+      <section className="container mx-auto px-4 max-w-4xl my-16">
+        <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mb-6 text-center">Serving All of Virginia Beach</h2>
+        <GoogleMap query="Virginia Beach, VA" title="Art-is-Tree LLC tree service area — Virginia Beach, VA" />
+      </section>
+
+      <LocationFAQ city="Virginia Beach" faqs={virginiaBeachFaqs} />
       <ServiceLinks cityName="Virginia Beach" />
       <RelatedCaseStudies currentPath="/service-areas/virginia-beach" preferred={['/case-studies/crane-safety', '/case-studies/property-value']} />
     </>

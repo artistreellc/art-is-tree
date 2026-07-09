@@ -7,6 +7,23 @@ import LocalSEOMeta from '@/components/LocalSEOMeta';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
 import ServiceLinks from '@/components/ServiceLinks';
+import GoogleMap from '@/components/GoogleMap';
+import LocationFAQ from '@/components/LocationFAQ';
+
+const portsmouthFaqs = [
+  {
+    question: "Can you remove heritage trees in Portsmouth's historic districts?",
+    answer: "Yes. Olde Towne, Cradock, and Port Norfolk hold some of Hampton Roads' oldest trees, and they often overhang historic homes. We use precise rigging and crane-assisted removal to take down massive oaks and pines section by section, lowering the timber safely without touching the surrounding architecture.",
+  },
+  {
+    question: "How do I know if an old tree on my Portsmouth property is dangerous?",
+    answer: "Internal decay is rarely visible from the ground. We provide a hazard assessment that checks for hidden rot, weak branch unions, cavities, and compromised roots that threaten foundations and rooflines, then recommend pruning, cabling, or removal based on what we find.",
+  },
+  {
+    question: "Do you offer 24/7 emergency tree service in Portsmouth?",
+    answer: "Yes. When a storm drops a heavy limb on a Portsmouth home, our emergency crew responds around the clock to remove hazardous debris, stabilize the property against further damage, and complete full cleanup.",
+  },
+];
 
 const PortsmouthPage = () => {
   const localBusinessSchema = {
@@ -34,12 +51,6 @@ const PortsmouthPage = () => {
     "image": "https://artistreevabeach.com/logo.png"
   };
 
-  const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true },
-    transition: { duration: 0.5 }
-  };
 
   return (
     <>
@@ -63,7 +74,7 @@ const PortsmouthPage = () => {
         <section className="bg-[#1B4D3E] text-white pt-24 pb-20 relative overflow-hidden">
           <div className="absolute inset-0 bg-black/20 z-0"></div>
           <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
-            <div {...fadeInUp}>
+            <div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-6 mt-0">
                 Tree Service Portsmouth, VA | Art-is-Tree LLC
               </h1>
@@ -87,7 +98,7 @@ const PortsmouthPage = () => {
         <main className="container mx-auto px-4 py-16 max-w-4xl">
           <div 
             className="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 prose prose-lg max-w-none text-gray-700 leading-relaxed"
-            {...fadeInUp}
+           
           >
             <p>Portsmouth represents one of the most historically significant residential housing stocks in the entire Hampton Roads region. Neighborhoods such as Olde Towne, Cradock, and Port Norfolk feature stunning architecture nestled alongside massive, deeply rooted heritage trees. In many cases, these incredibly mature trees actually predate the historic structures they tightly overhang.</p>
 
@@ -108,7 +119,7 @@ const PortsmouthPage = () => {
         <section className="container mx-auto px-4 max-w-4xl mb-16">
           <div 
             className="bg-[#1B4D3E]/5 p-8 rounded-2xl border border-[#1B4D3E]/10"
-            {...fadeInUp}
+           
           >
             <h3 className="text-2xl font-playfair font-bold text-[#1B4D3E] mb-6">Our Core Portsmouth Services:</h3>
             <ul className="grid sm:grid-cols-2 gap-4">
@@ -132,7 +143,7 @@ const PortsmouthPage = () => {
         <section className="container mx-auto px-4 max-w-4xl text-center">
           <div 
             className="bg-[#1B4D3E] text-white p-10 rounded-2xl shadow-xl"
-            {...fadeInUp}
+           
           >
             <h3 className="text-3xl font-playfair font-bold mb-4">Ready to secure your Portsmouth property?</h3>
             <p className="text-lg mb-8 text-gray-200">
@@ -150,7 +161,13 @@ const PortsmouthPage = () => {
             </div>
           </div>
         </section>
+        <section className="container mx-auto px-4 max-w-4xl mt-4">
+          <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mb-6 text-center">Serving Portsmouth &amp; Surrounding Neighborhoods</h2>
+          <GoogleMap query="Portsmouth, VA" title="Art-is-Tree LLC tree service area — Portsmouth, VA" />
+        </section>
       </div>
+
+      <LocationFAQ city="Portsmouth" faqs={portsmouthFaqs} />
       <ServiceLinks cityName="Portsmouth" />
       <RelatedCaseStudies currentPath="/service-areas/portsmouth" preferred={['/case-studies/unlicensed-contractors', '/case-studies/property-value']} />
     </>

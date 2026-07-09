@@ -7,6 +7,23 @@ import LocalSEOMeta from '@/components/LocalSEOMeta';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
 import ServiceLinks from '@/components/ServiceLinks';
+import GoogleMap from '@/components/GoogleMap';
+import LocationFAQ from '@/components/LocationFAQ';
+
+const chesapeakeFaqs = [
+  {
+    question: "Do you offer land and lot clearing in Chesapeake?",
+    answer: "Yes. Chesapeake's larger lots and new-construction parcels are a good fit for our land and lot clearing. We remove trees, brush, and undergrowth for building sites, fence lines, pastures, and expanded yards, then grind or haul away the debris.",
+  },
+  {
+    question: "Are there tree rules near wetlands and the Dismal Swamp in Chesapeake?",
+    answer: "Parts of Chesapeake fall under Chesapeake Bay Preservation Act buffers and border protected wetlands, where clearing near tidal water and canals is restricted. We assess whether your property sits in a Resource Protection Area and help confirm what's allowed before any clearing begins.",
+  },
+  {
+    question: "Can you grind the stump after removing a tree in Chesapeake?",
+    answer: "Yes. We grind stumps several inches below grade so you can replant, re-sod, or build over the spot, and we can remove the grindings or leave them as mulch, whichever you prefer.",
+  },
+];
 
 const ChesapeakePage = () => {
   const localBusinessSchema = {
@@ -133,6 +150,12 @@ const ChesapeakePage = () => {
           </div>
         </section>
       </div>
+      <section className="container mx-auto px-4 max-w-4xl my-16">
+        <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mb-6 text-center">Serving All of Chesapeake</h2>
+        <GoogleMap query="Chesapeake, VA" title="Art-is-Tree LLC tree service area — Chesapeake, VA" />
+      </section>
+
+      <LocationFAQ city="Chesapeake" faqs={chesapeakeFaqs} />
       <ServiceLinks cityName="Chesapeake" />
       <RelatedCaseStudies currentPath="/service-areas/chesapeake" preferred={['/case-studies/chesapeake-bay-preservation-act', '/case-studies/property-value']} />
     </>
