@@ -3,6 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { Loader2, ShieldCheck, Award, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import LocalSEOMeta from '@/components/LocalSEOMeta';
+import Cite from '@/components/Cite';
+import { COMPANY_INFO } from '@/constants/seoMetadata';
 
 // Schemas
 import OrganizationSchema from '@/components/seo/OrganizationSchema';
@@ -129,7 +131,7 @@ const HomePage = () => {
 
             <div className="prose prose-lg text-gray-700 leading-relaxed font-light text-left mx-auto max-w-none space-y-6">
               <p>
-                <strong>Art-is-Tree LLC is a licensed and insured tree service company based in Virginia Beach, VA</strong>, serving homeowners and property managers across Virginia Beach, Norfolk, Chesapeake, Portsmouth, Suffolk, and the greater Hampton Roads region. We provide tree removal, tree trimming and pruning, stump grinding, crane-assisted removal, land clearing, and 24/7 emergency storm response &mdash; backed by a BBB A+ rating, TCIA membership, and a 5.0-star reputation across 134 reviews.
+                <strong>Art-is-Tree LLC is a licensed and insured tree service company based in Virginia Beach, VA</strong>, serving homeowners and property managers across Virginia Beach, Norfolk, Chesapeake, Portsmouth, Suffolk, and the greater Hampton Roads region. We provide tree removal, tree trimming and pruning, stump grinding, crane-assisted removal, land clearing, and 24/7 emergency storm response &mdash; backed by a BBB A+ rating<Cite href={COMPANY_INFO.socials.bbb} label="BBB" />, TCIA membership<Cite href="https://www.tcia.org/" label="TCIA" />, and a 5.0-star reputation across 134 reviews<Cite href={COMPANY_INFO.socials.googleMaps} label="Google" />.
               </p>
               <p>
                 There are a lot of tree companies in Virginia Beach, but Art-is-Tree LLC stands apart through dedication and deep local knowledge. Owner Mike Campbell started climbing trees professionally at 19 years old and has spent years mastering the coastal trees of Hampton Roads. Whether you are dealing with towering loblolly pines in Kempsville or delicate ornamental pruning, you get an experienced tree care specialist who handles the job safely and cleanly.

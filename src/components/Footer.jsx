@@ -91,22 +91,22 @@ const Footer = () => {
                 </a>
               </li>
               <li className="h-[24px]">
-                <a href="https://www.yelp.com/biz/art-is-tree-virginia-beach-5" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group citation-link h-full">
+                <a href="https://www.yelp.com/biz/art-is-tree-virginia-beach-3" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group citation-link h-full">
                   Yelp Reviews
                 </a>
               </li>
               <li className="h-[24px]">
-                <a href="https://www.angi.com/companylist/us/va/virginia-beach/art-is-tree-llc.htm" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group citation-link h-full">
+                <a href="https://www.angi.com/companylist/us/va/virginia-beach/art-is-tree-llc-reviews-10302177.htm" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group citation-link h-full">
                   Angi Reviews
                 </a>
               </li>
               <li className="h-[24px]">
-                <a href="https://www.homeadvisor.com/rated.ArtisTreeLLC.html" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group citation-link h-full">
+                <a href="https://www.homeadvisor.com/rated.ArtistreeOfVirginia.118108285.html" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group citation-link h-full">
                   HomeAdvisor Reviews
                 </a>
               </li>
               <li className="h-[24px]">
-                <a href="https://www.bbb.org/us/va/virginia-beach/profile/tree-service/art-is-tree-llc" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group citation-link h-full">
+                <a href="https://www.bbb.org/us/va/virginia-beach/profile/tree-service/art-is-tree-llc-0583-90336149" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group citation-link h-full">
                   BBB A+ Profile
                 </a>
               </li>
