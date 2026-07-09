@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef, memo, useCallback, useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Phone, Instagram, Menu, X, ShieldCheck, Terminal, Star } from 'lucide-react';
@@ -25,6 +26,7 @@ const NAV_LINKS = [
   { name: 'About', path: '/about' },
   { name: 'Gallery', path: '/gallery' },
   { name: 'Testimonials', path: '/testimonials' },
+  { name: 'FAQ', path: '/faq' },
   {
     name: 'Service Areas',
     path: '/service-areas',
