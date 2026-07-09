@@ -81,16 +81,6 @@ const OrganizationSchema = () => {
         "@type": "City", 
         "name": "Suffolk",
         "sameAs": "https://en.wikipedia.org/wiki/Suffolk,_Virginia"
-      },
-      { 
-        "@type": "City", 
-        "name": "Hampton",
-        "sameAs": "https://en.wikipedia.org/wiki/Hampton,_Virginia"
-      },
-      { 
-        "@type": "City", 
-        "name": "Newport News",
-        "sameAs": "https://en.wikipedia.org/wiki/Newport_News,_Virginia"
       }
     ],
     "sameAs": [
