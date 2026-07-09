@@ -52,9 +52,14 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', Georgia, serif;
     font-display: swap;
-    @apply tracking-tight text-white opacity-100 visible;
-    color: hsl(0 0% 100%) !important;
+    @apply tracking-tight opacity-100 visible;
     display: block !important;
+  }
+
+  /* Bare headings with no color utility default to dark brand green (readable on light content) */
+  h1:not([class*="text-"]), h2:not([class*="text-"]), h3:not([class*="text-"]),
+  h4:not([class*="text-"]), h5:not([class*="text-"]), h6:not([class*="text-"]) {
+    color: #1B4D3E;
   }
 
   h1 { @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6; }
