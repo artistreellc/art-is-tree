@@ -17,6 +17,13 @@ const LocalBusinessSchema = () => {
     "telephone": "(757) 319-5131",
     "email": "artistreeofvirginia@gmail.com",
     "priceRange": "$$",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "134",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "2597 Nestlebrook Trl",
