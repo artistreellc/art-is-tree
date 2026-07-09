@@ -77,7 +77,7 @@ const TreeTrimmingPage = () => {
             The same logic applies to climbing method. <Link to="/case-studies/unlicensed-contractors" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">ANSI A300</Link> standards prohibit the use of climbing spikes on any live tree that is not being removed. Art-is-Tree uses spikeless rope access techniques on all trimming and pruning work. It requires more technical skill and more time. It also doesn't damage the trees we're hired to maintain. Read our <Link to="/case-studies/spikeless-pruning" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">spikeless pruning case study</Link> for a real example.
           </p>
           <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-            All trimming quotes from Art-is-Tree are written, fixed, and include complete debris removal. We serve Virginia Beach, Norfolk, Chesapeake, Portsmouth, Suffolk, Hampton, and Newport News. For a free tree trimming estimate call (757) 319-5131.
+            All trimming quotes from Art-is-Tree are written, fixed, and include complete debris removal. We serve Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk. For a free tree trimming estimate call (757) 319-5131.
           </p>
         </div>
 
