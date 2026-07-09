@@ -1,6 +1,6 @@
 
 import React, { useMemo } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import { useLocation } from 'react-router-dom';
 import { generateCanonicalUrl, stripWww } from '@/utils/seoHelpers';
 
@@ -22,7 +22,7 @@ const LocalSEOMeta = ({
   const ogUrl = useMemo(() => canonicalUrl, [canonicalUrl]);
   
   const ogImageUrl = useMemo(() => {
-    const defaultOgImage = 'https://horizons-cdn.hostinger.com/1ec5599f-e2e5-4afa-b25c-06e1360f6589/d020f44d77156debf187e715175abef2.png';
+    const defaultOgImage = 'https://artistreevabeach.com/og-image.png';
     return stripWww(ogImage || defaultOgImage);
   }, [ogImage]);
 
@@ -35,7 +35,7 @@ const LocalSEOMeta = ({
   const finalKeywords = keywords ? `${keywords}, ${localKeywords}` : localKeywords;
 
   return (
-    <Helmet>
+    <Head>
       {pageTitle && <title>{pageTitle}</title>}
       {description && <meta name="description" content={description} />}
       <meta name="keywords" content={finalKeywords} />
@@ -48,8 +48,8 @@ const LocalSEOMeta = ({
       {description && <meta property="og:description" content={description} />}
       <meta property="og:url" content={ogUrl} />
       <meta property="og:image" content={ogImageUrl} />
-      <meta property="og:image:width" content="800" />
-      <meta property="og:image:height" content="600" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:type" content="website" />
       
       {pageTitle && <meta name="twitter:title" content={pageTitle} />}
@@ -61,7 +61,7 @@ const LocalSEOMeta = ({
           {structuredDataString}
         </script>
       )}
-    </Helmet>
+    </Head>
   );
 };
 

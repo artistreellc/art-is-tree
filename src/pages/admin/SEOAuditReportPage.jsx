@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import { 
   CheckCircle2, 
   XCircle, 
@@ -69,10 +69,10 @@ const SEOAuditReportPage = () => {
 
   return (
     <>
-      <Helmet>
+      <Head>
         <title>Comprehensive SEO Audit | Admin Dashboard</title>
         <meta name="robots" content="noindex, nofollow" />
-      </Helmet>
+      </Head>
 
       <div className="min-h-screen bg-gray-50 py-12">
         <div className="container mx-auto px-4 max-w-7xl">

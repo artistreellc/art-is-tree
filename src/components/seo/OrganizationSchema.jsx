@@ -1,7 +1,8 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import { useLocation } from 'react-router-dom';
 import { generateCanonicalUrl } from '@/utils/seoHelpers';
+import { COMPANY_INFO } from '@/constants/seoMetadata';
 
 const OrganizationSchema = () => {
   const location = useLocation();
@@ -17,7 +18,7 @@ const OrganizationSchema = () => {
     "@id": `${currentUrl}/#organization`,
     "telephone": "(757) 319-5131",
     "email": "artistreeofvirginia@gmail.com",
-    "logo": "https://artistreevabeach.com/logo.png",
+    "logo": COMPANY_INFO.logo,
     "foundingDate": "2021",
     "numberOfEmployees": {
       "@type": "QuantitativeValue",
@@ -83,11 +84,7 @@ const OrganizationSchema = () => {
         "sameAs": "https://en.wikipedia.org/wiki/Suffolk,_Virginia"
       }
     ],
-    "sameAs": [
-      "https://www.facebook.com/artistreeva",
-      "https://www.instagram.com/artistreeva",
-      "https://www.linkedin.com/company/artistreevabeach"
-    ],
+    "sameAs": COMPANY_INFO.sameAs,
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "(757) 319-5131",
@@ -98,11 +95,11 @@ const OrganizationSchema = () => {
   };
 
   return (
-    <Helmet>
+    <Head>
       <script type="application/ld+json">
         {JSON.stringify(schema)}
       </script>
-    </Helmet>
+    </Head>
   );
 };
 

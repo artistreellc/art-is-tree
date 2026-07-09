@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import { useLocation } from 'react-router-dom';
 import { generateCanonicalUrl } from '@/utils/seoHelpers';
 
@@ -44,11 +44,11 @@ const CaseStudySchema = ({
   };
 
   return (
-    <Helmet>
+    <Head>
       <script type="application/ld+json">
         {JSON.stringify(schema)}
       </script>
-    </Helmet>
+    </Head>
   );
 };
 

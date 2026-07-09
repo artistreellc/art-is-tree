@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import { Link } from 'react-router-dom';
 import { CheckCircle2, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -47,7 +47,7 @@ const SuffolkPage = () => {
         pageTitle="Tree Service Suffolk VA | Removal & Land Clearing"
         description="Tree removal, trimming and land clearing in Suffolk, VA. Licensed, insured, BBB A+ tree service for rural acreage and homes. 24/7 storm response. Free estimates."
       />
-      <Helmet>
+      <Head>
         <meta name="geo.region" content="US-VA" />
         <meta name="geo.placename" content="Suffolk, Virginia" />
         <meta name="geo.position" content="36.7282;-76.5836" />
@@ -55,7 +55,7 @@ const SuffolkPage = () => {
         <script type="application/ld+json">
           {JSON.stringify(localBusinessSchema)}
         </script>
-      </Helmet>
+      </Head>
 
       <div className="bg-gray-50 min-h-screen pb-16">
         <Breadcrumbs />

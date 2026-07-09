@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import { Link } from 'react-router-dom';
 import { CheckCircle2, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -14,12 +14,12 @@ const VirginiaBeachPage = () => {
         pageTitle="Tree Service Virginia Beach VA | Free Estimates"
         description="Local tree removal, trimming, stump grinding and 24/7 emergency service in Virginia Beach, VA. Licensed, insured, BBB A+. Free estimates from Art-is-Tree LLC."
       />
-      <Helmet>
+      <Head>
         <meta name="geo.region" content="US-VA" />
         <meta name="geo.placename" content="Virginia Beach, Virginia" />
         <meta name="geo.position" content="36.8529;-75.9780" />
         <meta name="ICBM" content="36.8529, -75.9780" />
-      </Helmet>
+      </Head>
 
       <div className="bg-gray-50 min-h-screen pb-16">
         <section className="bg-[#1B4D3E] text-white pt-24 pb-20 relative overflow-hidden">

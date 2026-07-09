@@ -1,8 +1,9 @@
 
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import { useLocation } from 'react-router-dom';
 import { generateCanonicalUrl } from '@/utils/seoHelpers';
+import { COMPANY_INFO } from '@/constants/seoMetadata';
 
 const LocalBusinessSchema = () => {
   const location = useLocation();
@@ -12,7 +13,7 @@ const LocalBusinessSchema = () => {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
     "name": "Art-is-Tree LLC",
-    "image": "https://artistreevabeach.com/logo.png",
+    "image": COMPANY_INFO.logo,
     "@id": `${currentUrl}/#localbusiness`,
     "url": currentUrl,
     "telephone": "(757) 319-5131",
@@ -20,10 +21,10 @@ const LocalBusinessSchema = () => {
     "priceRange": "$$",
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "134",
-      "bestRating": "5",
-      "worstRating": "1"
+      "ratingValue": COMPANY_INFO.rating.value,
+      "reviewCount": COMPANY_INFO.rating.reviewCount,
+      "bestRating": COMPANY_INFO.rating.best,
+      "worstRating": COMPANY_INFO.rating.worst
     },
     "address": {
       "@type": "PostalAddress",
@@ -35,8 +36,8 @@ const LocalBusinessSchema = () => {
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 36.7335,
-      "longitude": -76.0726
+      "latitude": COMPANY_INFO.geo.latitude,
+      "longitude": COMPANY_INFO.geo.longitude
     },
     "openingHoursSpecification": [
       {
@@ -61,13 +62,7 @@ const LocalBusinessSchema = () => {
       { "@type": "City", "name": "Portsmouth" },
       { "@type": "City", "name": "Suffolk" }
     ],
-    "sameAs": [
-      "https://www.yelp.com/biz/art-is-tree-virginia-beach-5",
-      "https://www.angi.com/companylist/us/va/virginia-beach/art-is-tree-llc.htm",
-      "https://www.homeadvisor.com/rated.ArtisTreeLLC.html",
-      "https://www.bbb.org/us/va/virginia-beach/profile/tree-service/art-is-tree-llc",
-      "https://www.facebook.com/artistreevabeach"
-    ],
+    "sameAs": COMPANY_INFO.sameAs,
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Tree Care Services",
@@ -87,11 +82,11 @@ const LocalBusinessSchema = () => {
   };
 
   return (
-    <Helmet>
+    <Head>
       <script type="application/ld+json">
         {JSON.stringify(schema)}
       </script>
-    </Helmet>
+    </Head>
   );
 };
 

@@ -8,7 +8,7 @@ const GOOGLE_LISTING_URL = "https://www.google.com/maps?cid=12599844776703525086
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const { setIsModalOpen } = useCookieConsent();
-  const logoUrl = "https://horizons-cdn.hostinger.com/1ec5599f-e2e5-4afa-b25c-06e1360f6589/d020f44d77156debf187e715175abef2.png";
+  const logoUrl = "/logo.png";
   
   return (
     <footer className="bg-[#1B4D3E] text-white pt-16 pb-8 border-t-[10px] border-[#D4AF37] relative overflow-hidden contain-content footer-contain" role="contentinfo" style={{ contain: 'layout style paint' }}>

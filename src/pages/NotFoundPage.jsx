@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Home, AlertTriangle } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 
 const NotFoundPage = () => {
   return (
     <>
-      <Helmet>
+      <Head>
         <title>Page Not Found | Tree Service Virginia Beach</title>
         <meta name="description" content="The page you're looking for doesn't exist. Return to our homepage to find the information you need." />
         <meta name="robots" content="noindex" />
-      </Helmet>
+      </Head>
       <main className="min-h-[70vh] flex items-center justify-center bg-gray-50 px-4 py-20">
         <div className="text-center max-w-md mx-auto">
           <div

@@ -1,18 +1,64 @@
 import { BASE_URL, stripWww } from '@/utils/seoHelpers';
 
+// ---------------------------------------------------------------------------
+// Single source of truth for business identity (NAP), geo, socials, and
+// ratings. Every JSON-LD schema component and the site chrome should read
+// from here so these facts never drift out of sync — which matters for local
+// SEO and for how answer engines identify the business.
+//
+// VERIFY these before launch (they were inconsistent across the old code):
+//   - socials.facebook: the site used two different URLs; confirm the real one.
+//   - geo: confirm the exact lat/long from your Google Business Profile pin.
+//   - rating/reviewCount: must match your real, visible Google rating.
+// ---------------------------------------------------------------------------
 const COMPANY_INFO = {
   name: 'Art-is-Tree LLC',
+  legalName: 'Art-is-Tree LLC',
   phone: '(757) 319-5131',
   phoneRaw: '7573195131',
+  phoneE164: '+1-757-319-5131',
   email: 'artistreeofvirginia@gmail.com',
+  foundingDate: '2021',
+  priceRange: '$$',
+  // Self-hosted brand logo (public/logo.png).
+  logo: 'https://artistreevabeach.com/logo.png',
   address: {
     street: '2597 Nestlebrook Trl',
     city: 'Virginia Beach',
     state: 'VA',
     zip: '23456',
     country: 'US'
+  },
+  // Consensus of the two schema components that agreed; index.html was the outlier.
+  geo: {
+    latitude: 36.7335,
+    longitude: -76.0726
+  },
+  // Open 24/7 (matches the 24/7 emergency-response claim).
+  hours: { opens: '00:00', closes: '23:59', allWeek: true },
+  rating: { value: '5.0', reviewCount: '134', best: '5', worst: '1' },
+  // Cities with dedicated service-area pages, in priority order.
+  areaServed: ['Virginia Beach', 'Norfolk', 'Chesapeake', 'Portsmouth', 'Suffolk'],
+  googleMapsCid: '12599844776703525086',
+  socials: {
+    facebook: 'https://www.facebook.com/artistreeva',
+    instagram: 'https://www.instagram.com/artistreeva',
+    linkedin: 'https://www.linkedin.com/company/artistreevabeach',
+    yelp: 'https://www.yelp.com/biz/art-is-tree-virginia-beach-5',
+    bbb: 'https://www.bbb.org/us/va/virginia-beach/profile/tree-service/art-is-tree-llc',
+    googleMaps: 'https://www.google.com/maps?cid=12599844776703525086'
   }
 };
+
+// Canonical sameAs list for JSON-LD entity graph (order-stable).
+COMPANY_INFO.sameAs = [
+  COMPANY_INFO.socials.facebook,
+  COMPANY_INFO.socials.instagram,
+  COMPANY_INFO.socials.linkedin,
+  COMPANY_INFO.socials.yelp,
+  COMPANY_INFO.socials.bbb,
+  COMPANY_INFO.socials.googleMaps
+];
 
 const SEO_METADATA = {
   home: {
