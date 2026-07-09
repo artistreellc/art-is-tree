@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { CheckCircle2, Trees, Scissors, Tractor, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -7,14 +7,6 @@ const ComprehensiveServicesOverview = ({
   title = "Comprehensive Tree Care Solutions", 
   description = "From residential pruning to large-scale commercial land clearing, we provide expert arboricultural services tailored to your needs." 
 }) => {
-  const [shouldRenderAnimations, setShouldRenderAnimations] = useState(false);
-
-  // Defer animation mounting to reduce TBT
-  useEffect(() => {
-    const timer = setTimeout(() => setShouldRenderAnimations(true), 150);
-    return () => clearTimeout(timer);
-  }, []);
-
   const categories = [
     {
       title: "Tree Removal & Trimming",
@@ -43,18 +35,9 @@ const ComprehensiveServicesOverview = ({
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 min-h-[350px]">
           {categories.map((category, index) => {
-            const ContentWrapper = shouldRenderAnimations ? div : 'div';
-            const animationProps = shouldRenderAnimations ? {
-              initial: { opacity: 0, y: 20 },
-              whileInView: { opacity: 1, y: 0 },
-              viewport: { once: true, margin: "100px" },
-              transition: { delay: index * 0.1, duration: 0.5 }
-            } : {};
-
             return (
-              <ContentWrapper 
+              <div 
                 key={index}
-                {...animationProps}
                 className="bg-gray-50 rounded-xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow contain-content"
               >
                 <div className="bg-[#1B4D3E]/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
@@ -69,7 +52,7 @@ const ComprehensiveServicesOverview = ({
                     </li>
                   ))}
                 </ul>
-              </ContentWrapper>
+              </div>
             );
           })}
         </div>
