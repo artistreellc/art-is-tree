@@ -7,6 +7,23 @@ import ServiceSchema from '@/components/seo/ServiceSchema';
 import BreadcrumbListSchema from '@/components/seo/BreadcrumbListSchema';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
 import ServiceAreaLinks from '@/components/ServiceAreaLinks';
+import FAQSection from '@/components/FAQSection';
+import FAQPageSchema from '@/components/seo/FAQPageSchema';
+
+const craneFaqs = [
+  {
+    question: "When is a crane needed to remove a tree?",
+    answer: "A crane is the right call for very large, dead, or unstable trees, and for trees in tight or hard-to-reach spots such as over a house, pool, or fence, or on a lot equipment cannot easily access. The crane lifts heavy sections straight up and away instead of dropping them.",
+  },
+  {
+    question: "Is crane removal safe for my property?",
+    answer: "Yes; it is often the safest option. Lifting wood out by crane removes the risks of climbing a compromised tree and of heavy limbs falling toward structures, giving us precise control over every piece we remove.",
+  },
+  {
+    question: "Does crane removal cost more than climbing?",
+    answer: "The crane adds equipment cost, but it frequently reduces labor hours and the risk to your property, which can make it comparable overall. We provide a free written estimate so you can compare before deciding.",
+  },
+];
 
 const CraneTreeRemovalPage = () => {
   const serviceAreas = ["Virginia Beach", "Norfolk", "Chesapeake", "Hampton Roads"];
@@ -150,6 +167,8 @@ const CraneTreeRemovalPage = () => {
           </div>
         </div>
       </main>
+      <FAQPageSchema items={craneFaqs} />
+      <FAQSection items={craneFaqs} title="Crane Tree Removal in Virginia Beach: FAQ" />
       <ServiceAreaLinks serviceName="Crane Tree Removal" />
       <RelatedCaseStudies currentPath="/services/tree-removal" preferred={['/case-studies/crane-safety', '/case-studies/osha-compliance', '/case-studies/spikeless-pruning']} />
     </div>

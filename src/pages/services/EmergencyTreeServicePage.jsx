@@ -7,6 +7,23 @@ import ServiceSchema from '@/components/seo/ServiceSchema';
 import BreadcrumbListSchema from '@/components/seo/BreadcrumbListSchema';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
 import ServiceAreaLinks from '@/components/ServiceAreaLinks';
+import FAQSection from '@/components/FAQSection';
+import FAQPageSchema from '@/components/seo/FAQPageSchema';
+
+const emergencyFaqs = [
+  {
+    question: "How fast can you respond to a tree emergency?",
+    answer: "We answer emergency calls 24/7 across Virginia Beach and Hampton Roads. Storm-damaged trees on homes, vehicles, and power lines get top priority. Call (757) 319-5131 and we will get a crew moving.",
+  },
+  {
+    question: "What should I do if a tree falls on my house?",
+    answer: "First make sure everyone is safe and out of the affected area. Stay well away from any downed power lines and report them to the utility. Then call us; we will stabilize the situation, remove the tree safely, and document the damage for your insurance claim.",
+  },
+  {
+    question: "Does homeowners insurance cover emergency tree removal?",
+    answer: "Usually yes, when a covered event such as a storm topples a tree and it damages a covered structure like your home, garage, or fence. Removing a healthy or leaning tree as a precaution is considered maintenance and typically is not covered. We provide written estimates and documentation to support your claim.",
+  },
+];
 
 const EmergencyTreeServicePage = () => {
   const serviceAreas = ["Virginia Beach", "Norfolk", "Chesapeake", "Hampton Roads"];
@@ -155,6 +172,8 @@ const EmergencyTreeServicePage = () => {
           </div>
         </div>
       </main>
+      <FAQPageSchema items={emergencyFaqs} />
+      <FAQSection items={emergencyFaqs} title="Emergency Tree Service in Virginia Beach: FAQ" />
       <ServiceAreaLinks serviceName="Emergency Tree Service" />
       <RelatedCaseStudies currentPath="/services/emergency-tree-service" preferred={['/case-studies/osha-compliance', '/case-studies/crane-safety', '/case-studies/property-value']} />
     </div>

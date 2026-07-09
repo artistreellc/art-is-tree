@@ -12,8 +12,7 @@ const GalleryPage = () => {
     <>
       <LocalSEOMeta 
         pageTitle="Tree Service Gallery | Art-is-Tree Virginia Beach" 
-        description="See before-and-after photos of tree removal, trimming and crane jobs by Art-is-Tree LLC across Virginia Beach and Hampton Roads. Licensed, insured crews." 
-        noindex={true}
+        description="See before-and-after photos of tree removal, trimming and crane jobs by Art-is-Tree LLC across Virginia Beach and Hampton Roads. Licensed, insured crews."
       />
 
       <div className="pt-0 bg-gray-50 min-h-screen">

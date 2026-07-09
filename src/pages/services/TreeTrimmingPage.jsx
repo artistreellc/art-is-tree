@@ -7,6 +7,23 @@ import ServiceSchema from '@/components/seo/ServiceSchema';
 import BreadcrumbListSchema from '@/components/seo/BreadcrumbListSchema';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
 import ServiceAreaLinks from '@/components/ServiceAreaLinks';
+import FAQSection from '@/components/FAQSection';
+import FAQPageSchema from '@/components/seo/FAQPageSchema';
+
+const treeTrimmingFaqs = [
+  {
+    question: "How often should I have my trees trimmed or pruned?",
+    answer: "As a general guide, young trees benefit from pruning every 2-3 years to build strong structure, and mature trees every 3-5 years for maintenance. The dormant season (late fall through early spring) is usually best, though dead or hazardous limbs can be removed any time. Oaks are the exception: to avoid oak wilt they should not be pruned during the active season, roughly April through October.",
+  },
+  {
+    question: "What's the difference between tree trimming and pruning?",
+    answer: "Trimming generally shapes the canopy and clears overgrowth away from your home, roof, and power lines, while pruning is the targeted removal of dead, diseased, or structurally weak limbs to improve the tree's health and safety. We do both, and we never top a tree.",
+  },
+  {
+    question: "Will trimming hurt my tree?",
+    answer: "Done correctly, no; proper pruning keeps trees healthier and safer. We follow arboriculture standards: clean cuts at the branch collar, removing no more than about a quarter of the canopy at once, and never topping, which stresses trees and invites decay.",
+  },
+];
 
 const TreeTrimmingPage = () => {
   const serviceAreas = ["Virginia Beach", "Norfolk", "Chesapeake", "Hampton Roads"];
@@ -153,6 +170,8 @@ const TreeTrimmingPage = () => {
           </div>
         </div>
       </main>
+      <FAQPageSchema items={treeTrimmingFaqs} />
+      <FAQSection items={treeTrimmingFaqs} title="Tree Trimming & Pruning in Virginia Beach: FAQ" />
       <ServiceAreaLinks serviceName="Tree Trimming & Pruning" />
       <RelatedCaseStudies currentPath="/services/tree-trimming" preferred={['/case-studies/spikeless-pruning', '/case-studies/disease-management', '/case-studies/property-value']} />
     </div>

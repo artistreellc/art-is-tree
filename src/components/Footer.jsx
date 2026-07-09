@@ -106,6 +106,16 @@ const Footer = () => {
                 </a>
               </li>
               <li className="h-[24px]">
+                <a href="https://www.bbb.org/us/va/virginia-beach/profile/tree-service/art-is-tree-llc" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group citation-link h-full">
+                  BBB A+ Profile
+                </a>
+              </li>
+              <li className="h-[24px]">
+                <a href="https://www.linkedin.com/company/artistreevabeach" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group citation-link h-full">
+                  LinkedIn
+                </a>
+              </li>
+              <li className="h-[24px]">
                 <Link to="/testimonials" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group h-full">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity inline-block"></span>
                   All Testimonials

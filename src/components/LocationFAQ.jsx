@@ -5,11 +5,14 @@ import FAQPageSchema from '@/components/seo/FAQPageSchema';
  * Localized FAQ block for a service-area page. Renders a visible, crawlable
  * accordion and emits matching FAQPage JSON-LD (good for rich results + AEO).
  *
- * @param {string} city  City name, e.g. "Norfolk"
+ * @param {string} [city]     City name, e.g. "Norfolk" (used for the default heading)
+ * @param {string} [heading]  Overrides the default heading (e.g. for service pages)
  * @param {{question: string, answer: string}[]} faqs
  */
-const LocationFAQ = ({ city, faqs = [] }) => {
+const LocationFAQ = ({ city, heading, faqs = [] }) => {
   if (!faqs.length) return null;
+
+  const title = heading || `Tree Service in ${city}: Frequently Asked Questions`;
 
   return (
     <section className="container mx-auto px-4 max-w-4xl my-16" aria-labelledby="location-faq-heading">
@@ -18,7 +21,7 @@ const LocationFAQ = ({ city, faqs = [] }) => {
         id="location-faq-heading"
         className="text-3xl font-playfair font-bold text-[#1B4D3E] mb-8 text-center"
       >
-        Tree Service in {city}: Frequently Asked Questions
+        {title}
       </h2>
       <div className="space-y-4">
         {faqs.map((faq, i) => (

@@ -7,6 +7,23 @@ import ServiceSchema from '@/components/seo/ServiceSchema';
 import BreadcrumbListSchema from '@/components/seo/BreadcrumbListSchema';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
 import ServiceAreaLinks from '@/components/ServiceAreaLinks';
+import FAQSection from '@/components/FAQSection';
+import FAQPageSchema from '@/components/seo/FAQPageSchema';
+
+const landClearingFaqs = [
+  {
+    question: "What does land clearing include?",
+    answer: "Land and lot clearing covers removing trees, brush, undergrowth, and stumps to prepare a site for building, fencing, pasture, or an expanded yard. We can haul everything off or chip it on site, and prep the area.",
+  },
+  {
+    question: "Do I need a permit for land clearing?",
+    answer: "It depends on your lot's size and location. Waterfront and near-water parcels can fall under Chesapeake Bay Preservation Act buffers that restrict clearing, and some jurisdictions require permits for larger clearing. We help you confirm the rules before any work begins.",
+  },
+  {
+    question: "Can you clear a lot for new construction?",
+    answer: "Yes. We clear and prep building sites of any size, remove trees and undergrowth, and grind stumps below grade so the lot is ready for the next phase.",
+  },
+];
 
 const LandClearingPage = () => {
   const serviceAreas = ["Virginia Beach", "Norfolk", "Chesapeake", "Hampton Roads"];
@@ -152,6 +169,8 @@ const LandClearingPage = () => {
           </div>
         </div>
       </main>
+      <FAQPageSchema items={landClearingFaqs} />
+      <FAQSection items={landClearingFaqs} title="Land Clearing in Virginia Beach: FAQ" />
       <ServiceAreaLinks serviceName="Land Clearing" />
       <RelatedCaseStudies currentPath="/services/land-clearing" preferred={['/case-studies/chesapeake-bay-preservation-act', '/case-studies/property-value']} />
     </div>

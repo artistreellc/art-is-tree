@@ -40,24 +40,44 @@ const COMPANY_INFO = {
   // Cities with dedicated service-area pages, in priority order.
   areaServed: ['Virginia Beach', 'Norfolk', 'Chesapeake', 'Portsmouth', 'Suffolk'],
   googleMapsCid: '12599844776703525086',
+  // Every listing/profile the business maintains. These are linked site-wide
+  // (footer + Find Us Online) and emitted as JSON-LD sameAs so search engines
+  // associate the whole entity graph the moment the site is indexed.
   socials: {
+    googleMaps: 'https://www.google.com/maps?cid=12599844776703525086',
     facebook: 'https://www.facebook.com/artistreeva',
     instagram: 'https://www.instagram.com/artistreeva',
     linkedin: 'https://www.linkedin.com/company/artistreevabeach',
     yelp: 'https://www.yelp.com/biz/art-is-tree-virginia-beach-5',
     bbb: 'https://www.bbb.org/us/va/virginia-beach/profile/tree-service/art-is-tree-llc',
-    googleMaps: 'https://www.google.com/maps?cid=12599844776703525086'
+    angi: 'https://www.angi.com/companylist/us/va/virginia-beach/art-is-tree-llc.htm',
+    homeadvisor: 'https://www.homeadvisor.com/rated.ArtisTreeLLC.html'
   }
 };
 
 // Canonical sameAs list for JSON-LD entity graph (order-stable).
 COMPANY_INFO.sameAs = [
+  COMPANY_INFO.socials.googleMaps,
   COMPANY_INFO.socials.facebook,
   COMPANY_INFO.socials.instagram,
   COMPANY_INFO.socials.linkedin,
   COMPANY_INFO.socials.yelp,
   COMPANY_INFO.socials.bbb,
-  COMPANY_INFO.socials.googleMaps
+  COMPANY_INFO.socials.angi,
+  COMPANY_INFO.socials.homeadvisor
+];
+
+// Directory/citation listings for the "Find Us Online" page and footer,
+// with the descriptive names search engines should see them linked under.
+COMPANY_INFO.listings = [
+  { name: 'Google Business Profile', url: COMPANY_INFO.socials.googleMaps, rating: '5.0', reviews: '134' },
+  { name: 'BBB (A+ Accredited)', url: COMPANY_INFO.socials.bbb },
+  { name: 'Yelp', url: COMPANY_INFO.socials.yelp },
+  { name: 'Angi', url: COMPANY_INFO.socials.angi },
+  { name: 'HomeAdvisor', url: COMPANY_INFO.socials.homeadvisor },
+  { name: 'Facebook', url: COMPANY_INFO.socials.facebook },
+  { name: 'Instagram', url: COMPANY_INFO.socials.instagram },
+  { name: 'LinkedIn', url: COMPANY_INFO.socials.linkedin }
 ];
 
 const SEO_METADATA = {
