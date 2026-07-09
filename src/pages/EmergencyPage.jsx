@@ -26,9 +26,7 @@ export default function EmergencyPage() {
           "Norfolk", 
           "Chesapeake", 
           "Portsmouth", 
-          "Suffolk", 
-          "Hampton", 
-          "Newport News"
+          "Suffolk"
         ]}
       />
       <SpeakableSchema pageUrl="https://artistreevabeach.com/emergency" />
@@ -139,7 +137,7 @@ export default function EmergencyPage() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-10 text-gray-900">Emergency Service Areas</h2>
           <div className="flex flex-wrap justify-center gap-4">
-            {["Virginia Beach", "Norfolk", "Chesapeake", "Portsmouth", "Suffolk", "Hampton", "Newport News"].map((city) => (
+            {["Virginia Beach", "Norfolk", "Chesapeake", "Portsmouth", "Suffolk"].map((city) => (
               <span key={city} className="bg-gray-100 text-gray-800 px-6 py-3 rounded-full text-lg font-semibold border border-gray-200 shadow-sm">
                 {city}
               </span>
