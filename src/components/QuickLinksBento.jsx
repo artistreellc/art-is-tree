@@ -34,9 +34,14 @@ const PhotoTile = ({ to, img, alt, eyebrow, title, sub, span = '', badge }) => (
 const SolidTile = ({ to, title, sub, Icon, bg, text = 'text-white', accent = 'text-[#D4AF37]', span = '' }) => (
   <Link
     to={to}
-    className={`group relative overflow-hidden rounded-3xl min-h-[220px] p-6 flex flex-col justify-between shadow-md transition-transform duration-300 hover:-translate-y-1 ${bg} ${span}`}
+    className={`group relative isolate overflow-hidden rounded-3xl min-h-[220px] p-6 flex flex-col justify-between shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${bg} ${span}`}
   >
-    <Icon className={`w-9 h-9 ${accent}`} />
+    {/* depth: soft light from top-left + oversized ghost icon */}
+    <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.14),transparent_55%)]" />
+    <Icon className={`absolute -bottom-5 -right-4 w-40 h-40 opacity-[0.08] ${accent}`} strokeWidth={1.25} />
+    <div className={`w-12 h-12 rounded-2xl flex items-center justify-center bg-white/10 backdrop-blur-sm ${accent}`}>
+      <Icon className="w-6 h-6" />
+    </div>
     <div>
       <h3 className={`font-playfair text-2xl md:text-3xl font-bold leading-tight ${text}`}>{title}</h3>
       {sub && <p className={`text-sm mt-2 opacity-90 ${text}`}>{sub}</p>}
