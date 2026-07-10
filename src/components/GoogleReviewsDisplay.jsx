@@ -6,6 +6,8 @@ import { cn } from '@/lib/utils';
 import SyncReviewsButton from '@/components/SyncReviewsButton';
 
 const GOOGLE_LISTING_URL = "https://www.google.com/maps?cid=12599844776703525086";
+// Direct "write a review" deep link — opens Google's review dialog immediately.
+const GOOGLE_REVIEW_URL = "https://g.page/r/Cd6AeUwRpNuuEBM/review";
 
 const GoogleReviewsDisplay = () => {
   const { reviews, loading, error, refresh } = useGoogleReviews();
@@ -92,7 +94,7 @@ const GoogleReviewsDisplay = () => {
           <p className="text-gray-500 mb-6">No reviews available to display.</p>
           <div className="flex justify-center gap-4">
             <Button asChild variant="default" className="bg-[#1B4D3E] min-h-[44px]">
-              <a href={GOOGLE_LISTING_URL} target="_blank" rel="noopener noreferrer">
+              <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer">
                   Leave a Review
               </a>
             </Button>
@@ -210,8 +212,13 @@ const GoogleReviewsDisplay = () => {
             ))}
           </div>
         </div>
-        <div className="text-center mt-4">
-           <Button asChild size="lg" className="rounded-full bg-[#1B4D3E] hover:bg-[#153e32] px-8 text-lg h-14 min-w-[200px] shadow-lg hover:shadow-xl transition-all hover:scale-105 text-white">
+        <div className="text-center mt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+           <Button asChild size="lg" className="rounded-full bg-[#D4AF37] hover:bg-[#c39f2f] px-8 text-lg h-14 min-w-[200px] shadow-lg hover:shadow-xl transition-all hover:scale-105 text-[#1B4D3E] font-bold">
+             <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer">
+               <Star className="mr-2 w-4 h-4 fill-current" /> Leave a Review
+             </a>
+           </Button>
+           <Button asChild size="lg" variant="outline" className="rounded-full border-[#1B4D3E] text-[#1B4D3E] hover:bg-[#1B4D3E] hover:text-white px-8 text-lg h-14 min-w-[200px] shadow-lg hover:shadow-xl transition-all hover:scale-105">
              <a href={GOOGLE_LISTING_URL} target="_blank" rel="noopener noreferrer">
                View Profile & Photos <ExternalLink className="ml-2 w-4 h-4" />
              </a>

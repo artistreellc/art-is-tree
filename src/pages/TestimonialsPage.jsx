@@ -5,6 +5,8 @@ import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema';
 import LocalSEOMeta from '@/components/LocalSEOMeta';
 
 const GOOGLE_LISTING_URL = 'https://www.google.com/maps?cid=12599844776703525086';
+// Direct "write a review" deep link — opens Google's review dialog immediately.
+const GOOGLE_REVIEW_URL = 'https://g.page/r/Cd6AeUwRpNuuEBM/review';
 
 // Real, published customer reviews (verbatim) pulled from the business's Google,
 // Yelp, Angi, and BBB profiles. Displayed as visible testimonials only — no
@@ -156,17 +158,28 @@ const TestimonialsPage = () => {
           {/* CTA */}
           <div className="text-center mt-12">
             <p className="text-gray-600 mb-4">
-              These are just a few — read all 134 five-star reviews on our Google Business Profile.
+              Worked with us? We'd love your feedback — or read all 134 five-star reviews on our Google Business Profile.
             </p>
-            <a
-              href={GOOGLE_LISTING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#1B4D3E] text-white px-6 py-3 rounded-lg hover:bg-[#143a2f] transition-colors font-medium"
-            >
-              <ExternalLink className="w-4 h-4" />
-              Read our 134 reviews on Google
-            </a>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href={GOOGLE_REVIEW_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#D4AF37] text-[#1B4D3E] font-bold px-6 py-3 rounded-lg hover:bg-[#c39f2f] transition-colors"
+              >
+                <Star className="w-4 h-4 fill-current" />
+                Leave a Review
+              </a>
+              <a
+                href={GOOGLE_LISTING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#1B4D3E] text-white px-6 py-3 rounded-lg hover:bg-[#143a2f] transition-colors font-medium"
+              >
+                <ExternalLink className="w-4 h-4" />
+                Read our 134 reviews on Google
+              </a>
+            </div>
           </div>
         </section>
       </main>
