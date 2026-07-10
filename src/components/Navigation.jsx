@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, memo, useCallback, useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Phone, Instagram, Menu, X, ShieldCheck, Terminal, Star } from 'lucide-react';
+import { Phone, Instagram, Facebook, Menu, X, ShieldCheck, Terminal, Star, MapPin, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/contexts/SupabaseAuthContext';
 import { useThrottle } from '@/hooks/useThrottle';
@@ -56,6 +56,8 @@ const NAV_LINKS = [
 ];
 
 const GOOGLE_LISTING_URL = "https://www.google.com/maps?cid=12599844776703525086";
+const FACEBOOK_URL = "https://www.facebook.com/artistreeva";
+const INSTAGRAM_URL = "https://www.instagram.com/artistreeva";
 
 const NavLink = memo(({ link, isActive }) => {
   const [open, setOpen] = useState(false);
@@ -259,6 +261,36 @@ const Navigation = memo(() => {
 
   return (
     <nav className="sticky top-0 z-50 w-full bg-[#1B4D3E] shadow-xl border-b border-white/10 transition-transform duration-300 ease-in-out" style={{ transform: navHidden ? 'translateY(-100%)' : 'translateY(0)' }} ref={menuRef} aria-label="Main Navigation">
+      {/* Utility bar: location, hours, credentials, socials */}
+      <div className="bg-[#153e32] border-b border-white/10">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-9 text-xs md:text-[13px]">
+            <div className="flex items-center gap-3 md:gap-5 text-gray-200 min-w-0">
+              <span className="flex items-center gap-1.5 truncate">
+                <MapPin className="w-3.5 h-3.5 text-[#D4AF37] shrink-0" />
+                <span className="truncate"><span className="hidden sm:inline">Serving </span>Virginia Beach &amp; Hampton Roads</span>
+              </span>
+              <span className="hidden md:flex items-center gap-1.5 shrink-0">
+                <Clock className="w-3.5 h-3.5 text-[#D4AF37]" /> 24/7 Emergency Service
+              </span>
+            </div>
+            <div className="flex items-center gap-0.5 shrink-0">
+              <span className="hidden lg:flex items-center gap-1.5 text-gray-200 mr-2">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#D4AF37]" /> Licensed &amp; Insured
+              </span>
+              <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer" aria-label="Art-is-Tree on Facebook" className="p-1.5 rounded text-gray-200 hover:text-white hover:bg-white/10 transition-colors">
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label="Art-is-Tree on Instagram" className="p-1.5 rounded text-gray-200 hover:text-white hover:bg-white/10 transition-colors">
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a href={GOOGLE_LISTING_URL} target="_blank" rel="noopener noreferrer" aria-label="Art-is-Tree 5-star reviews on Google" className="p-1.5 rounded text-[#D4AF37] hover:bg-white/10 transition-colors">
+                <Star className="w-4 h-4 fill-current" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="container mx-auto px-4 py-2 md:py-3">
         <div className="flex items-center justify-between min-h-[56px]">
           <Link to="/" className="flex-shrink-0 relative z-50 touch-target" aria-label="Go to Homepage">

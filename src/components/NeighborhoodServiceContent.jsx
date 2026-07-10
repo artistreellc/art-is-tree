@@ -15,7 +15,7 @@ const NeighborhoodServiceContent = () => {
             Serving Every Neighborhood in Virginia Beach & Hampton Roads
           </h2>
           <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            Art-is-Tree LLC provides premier, fully licensed tree care services across the entire Hampton Roads region. From emergency storm response to routine maintenance, our tree care professionals are dedicated to protecting your property and enhancing the natural beauty of Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk.
+            We work all over Hampton Roads &mdash; from emergency storm calls to scheduled pruning &mdash; for homeowners and businesses in Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk. Trees, soil, and setback rules change from one neighborhood to the next, and we know the difference.
           </p>
         </div>
 
@@ -36,7 +36,7 @@ const NeighborhoodServiceContent = () => {
               </div>
             </div>
             <p className="text-gray-600 mb-6 flex-grow text-base">
-              Specialized coastal wind damage and salt spray tree care.
+              Salt spray and steady wind are hard on trees near the beach. We prune and remove them to hold up in coastal conditions.
             </p>
             <Link 
               to="/service-areas" 
@@ -61,7 +61,7 @@ const NeighborhoodServiceContent = () => {
               </div>
             </div>
             <p className="text-gray-600 mb-6 flex-grow text-base">
-              Large mature oaks requiring professional pruning and canopy management.
+              Big mature oaks that need proper pruning and canopy work to stay healthy and safe over the house.
             </p>
             <Link 
               to="/service-areas" 
@@ -86,7 +86,7 @@ const NeighborhoodServiceContent = () => {
               </div>
             </div>
             <p className="text-gray-600 mb-6 flex-grow text-base">
-              Rapid response storm cleanup and hazardous emergency tree removal.
+              Fast storm cleanup and hazardous removals when a limb or a whole tree comes down on your property.
             </p>
             <Link 
               to="/service-areas" 
@@ -111,7 +111,7 @@ const NeighborhoodServiceContent = () => {
               </div>
             </div>
             <p className="text-gray-600 mb-6 flex-grow text-base">
-              Historic tree preservation, delicate maintenance, and health assessments.
+              An older neighborhood with heritage trees &mdash; careful pruning and honest health checks to keep them standing.
             </p>
             <Link 
               to="/service-areas" 
@@ -136,7 +136,7 @@ const NeighborhoodServiceContent = () => {
               </div>
             </div>
             <p className="text-gray-600 mb-6 flex-grow text-base">
-              Comprehensive waterfront property tree management and canopy lifting.
+              Waterfront lots where we lift canopies and clear trees crowding the house or blocking the view.
             </p>
             <Link 
               to="/service-areas" 
@@ -161,7 +161,7 @@ const NeighborhoodServiceContent = () => {
               </div>
             </div>
             <p className="text-gray-600 mb-6 flex-grow text-base">
-              Coastal erosion mitigation and wind-resistant tree pruning services.
+              Exposed coastal properties where storms hit hardest &mdash; we prune trees to take the wind.
             </p>
             <Link 
               to="/service-areas" 
@@ -186,7 +186,7 @@ const NeighborhoodServiceContent = () => {
               </div>
             </div>
             <p className="text-gray-600 mb-6 flex-grow text-base">
-              Commercial and urban tree care, street canopy maintenance, and landscape management.
+              Commercial and street trees kept trimmed, safe, and clear of buildings, parking, and signage.
             </p>
             <Link 
               to="/service-areas" 
@@ -211,7 +211,7 @@ const NeighborhoodServiceContent = () => {
               </div>
             </div>
             <p className="text-gray-600 mb-6 flex-grow text-base">
-              Detail-oriented residential tree trimming, lot clearing, and complete stump grinding.
+              Residential trimming, lot clearing, and stump grinding done clean in an established neighborhood.
             </p>
             <Link 
               to="/service-areas" 
@@ -236,7 +236,7 @@ const NeighborhoodServiceContent = () => {
               </div>
             </div>
             <p className="text-gray-600 mb-6 flex-grow text-base">
-              Heavy-duty rural land clearing, acreage management, and hazardous deadwood removal.
+              Rural acreage &mdash; land clearing, brush work, and taking down dead or hazardous trees on bigger lots.
             </p>
             <Link 
               to="/service-areas" 
@@ -261,7 +261,7 @@ const NeighborhoodServiceContent = () => {
               </div>
             </div>
             <p className="text-gray-600 mb-6 flex-grow text-base">
-              Proactive waterfront tree services, structural thinning, and hurricane storm preparation.
+              Waterfront thinning and storm prep so your trees are ready before hurricane season, not after.
             </p>
             <Link 
               to="/service-areas" 
@@ -286,7 +286,7 @@ const NeighborhoodServiceContent = () => {
               </div>
             </div>
             <p className="text-gray-600 mb-6 flex-grow text-base">
-              Precision urban tree removal in tight spaces, crane-assisted extraction, and 24/7 emergency response.
+              Tight urban lots where removals take crane work and careful rigging, plus 24/7 storm response.
             </p>
             <Link 
               to="/service-areas" 
@@ -311,7 +311,7 @@ const NeighborhoodServiceContent = () => {
               </div>
             </div>
             <p className="text-gray-600 mb-6 flex-grow text-base">
-              Large property tree care, extensive canopy maintenance, and professional land clearing services.
+              Larger properties with a lot of canopy to manage, plus land clearing when you need space opened up.
             </p>
             <Link 
               to="/service-areas" 
