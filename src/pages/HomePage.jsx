@@ -13,6 +13,7 @@ import SpeakableSchema from '@/components/seo/SpeakableSchema';
 import FAQPageSchema from '@/components/seo/FAQPageSchema';
 import GoogleReviewsDisplay from '@/components/GoogleReviewsDisplay';
 import YouTubeFacade from '@/components/YouTubeFacade';
+import QuickLinksBento from '@/components/QuickLinksBento';
 
 // Lazy Loaded Components
 const AboutSection = lazy(() => import('@/components/AboutSection'));
@@ -91,8 +92,9 @@ const HomePage = () => {
       <SpeakableSchema pageUrl="https://artistreevabeach.com/" />
 
       <div className="flex flex-col w-full overflow-x-hidden">
-        <header className="relative bg-[#1B4D3E] text-white py-24 md:py-32 overflow-hidden flex items-center justify-center text-center">
-          <div className="absolute inset-0 bg-[url('/images/virginia-beach-crane-removal-over-house.webp')] opacity-25 bg-cover bg-center mix-blend-overlay"></div>
+        <header className="relative isolate text-white py-28 md:py-40 overflow-hidden flex items-center justify-center text-center">
+          <img src="/images/virginia-beach-winter-storm-cleanup.webp" alt="Art-is-Tree LLC crew clearing a storm-downed tree in Virginia Beach" className="absolute inset-0 -z-10 w-full h-full object-cover" fetchPriority="high" />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0A2F24]/90 via-[#0A2F24]/78 to-[#08251C]/94"></div>
           <div className="container relative z-10 px-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-playfair mb-6 drop-shadow-md mt-0 text-white speakable">
               Tree Service in Virginia Beach, VA
@@ -113,6 +115,8 @@ const HomePage = () => {
             </div>
           </div>
         </header>
+
+        <QuickLinksBento />
 
         <section className="py-16 bg-white border-b border-gray-100">
           <div className="container mx-auto px-4 max-w-5xl">
@@ -152,10 +156,10 @@ const HomePage = () => {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
               {[
-                ['virginia-beach-crane-removal-over-house', 'Crane hoisting a tree section over a house in Virginia Beach, VA'],
-                ['virginia-beach-crane-oak-limb-rigging', 'Climber rigging an oak limb for crane removal in Virginia Beach, VA'],
-                ['virginia-beach-arborist-hardwood-removal', 'Arborist sectioning a large hardwood in Virginia Beach, VA'],
-                ['virginia-beach-tree-debris-grapple-truck', 'Grapple truck loading tree debris in Virginia Beach, VA'],
+                ['virginia-beach-crane-rigging-storm', 'Climber rigging a storm-damaged trunk to a crane in Virginia Beach, VA'],
+                ['virginia-beach-tall-tree-climb', 'Arborist climbing a tall tree beside a home in Virginia Beach, VA'],
+                ['virginia-beach-oak-crane-climb', 'Climber and crane removing a large oak in Virginia Beach, VA'],
+                ['virginia-beach-crane-operation-oak', 'Crane crew removing a large oak by a Virginia Beach home'],
               ].map(([file, alt]) => (
                 <Link key={file} to="/gallery" className="relative aspect-[4/5] overflow-hidden rounded-xl shadow-md border border-gray-200 bg-gray-100 group">
                   <img src={`/images/${file}.webp`} alt={alt} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
