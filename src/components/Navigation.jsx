@@ -238,7 +238,7 @@ const Navigation = memo(() => {
         <Link to="/admin/reviews" onClick={closeMobileMenu} className="block px-5 py-4 rounded-lg text-lg font-bold uppercase tracking-wider transition-all duration-200 min-h-[56px] flex items-center text-red-400 hover:bg-white/5">
           <ShieldCheck className="w-5 h-5 mr-2" /> Manage Reviews
         </Link>
-        <Link to="/admin/debug-google-places" onClick={closeMobileMenu} className="block px-5 py-4 rounded-lg text-lg font-bold uppercase tracking-wider transition-all duration-200 min-h-[56px] flex items-center text-blue-400 hover:bg-white/5">
+        <Link to="/admin/debug-places" onClick={closeMobileMenu} className="block px-5 py-4 rounded-lg text-lg font-bold uppercase tracking-wider transition-all duration-200 min-h-[56px] flex items-center text-blue-400 hover:bg-white/5">
           <Terminal className="w-5 h-5 mr-2" /> Debug Google API
         </Link>
       </>
@@ -324,7 +324,7 @@ const Navigation = memo(() => {
                    <Button className="w-full bg-yellow-400 hover:bg-yellow-500 text-[#1B4D3E] font-bold h-12 text-lg" asChild>
                      <a href="tel:7573195131" onClick={() => { if (window.gtag_report_phone_click) window.gtag_report_phone_click(); }}>Call Now: (757) 319-5131</a>
                    </Button>
-                  <a href="https://instagram.com/artistreeva" target="_blank" rel="noopener noreferrer" className="flex items-center text-yellow-400 font-bold uppercase text-sm tracking-wider min-h-[44px]">
+                  <a href="https://www.instagram.com/artistreeva" target="_blank" rel="noopener noreferrer" className="flex items-center text-yellow-400 font-bold uppercase text-sm tracking-wider min-h-[44px]">
                     <Instagram className="w-6 h-6 mr-2" /> Follow on Instagram
                   </a>
                 </div>

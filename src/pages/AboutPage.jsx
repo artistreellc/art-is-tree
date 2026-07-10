@@ -7,7 +7,7 @@ import GoogleMap from '@/components/GoogleMap';
 import { Phone, MapPin, Award, ShieldCheck, TreePine, BadgeCheck, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import LocalSEOMeta from '@/components/LocalSEOMeta';
-import AggregateRatingSchema from '@/components/seo/AggregateRatingSchema';
+import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema';
 import Cite from '@/components/Cite';
 import { COMPANY_INFO } from '@/constants/seoMetadata';
 
@@ -21,7 +21,7 @@ const AboutPage = () => {
         description="Family-owned tree service in Virginia Beach with 15+ years experience. Licensed, insured, BBB A+ and TCIA member, serving all of Hampton Roads, VA." 
       />
 
-      <AggregateRatingSchema />
+      <LocalBusinessSchema />
 
       <main className="pt-0 bg-gray-50">
         <header className="bg-gradient-to-r from-[#1B4D3E] to-[#2A7A5E] py-20 md:py-24 relative overflow-hidden text-center">

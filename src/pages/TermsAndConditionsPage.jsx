@@ -12,7 +12,7 @@ const TermsAndConditionsPage = () => {
         </header>
         
         <main className="prose prose-lg text-gray-700 bg-white p-8 md:p-12 rounded-xl shadow-sm border border-gray-100">
-          <p><strong>Last Updated: {new Date().toLocaleDateString()}</strong></p>
+          <p><strong>Last Updated: July 10, 2026</strong></p>
           
           <p>
             Welcome to Art-is-Tree LLC. By accessing our website, requesting a quote, or engaging our professional tree care services, you agree to be bound by the following Terms and Conditions. Please read these terms carefully before proceeding with any service agreements.

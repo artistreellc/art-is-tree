@@ -37,7 +37,7 @@ const GalleryPage = () => {
                 Photos are syncing from our Google Business Profile. Check back shortly — or visit us on Google to see our latest work.
               </p>
               <a 
-                href="https://maps.app.goo.gl/hqVc7BmQzXtm36tA6" 
+                href="https://www.google.com/maps?cid=12599844776703525086"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#1B4D3E] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#14392e] transition-colors"

@@ -9,7 +9,6 @@ import { COMPANY_INFO } from '@/constants/seoMetadata';
 // Schemas
 import OrganizationSchema from '@/components/seo/OrganizationSchema';
 import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema';
-import AggregateRatingSchema from '@/components/seo/AggregateRatingSchema';
 import SpeakableSchema from '@/components/seo/SpeakableSchema';
 import FAQPageSchema from '@/components/seo/FAQPageSchema';
 import GoogleReviewsDisplay from '@/components/GoogleReviewsDisplay';
@@ -88,7 +87,6 @@ const HomePage = () => {
 
       <OrganizationSchema />
       <LocalBusinessSchema />
-      <AggregateRatingSchema />
       <FAQPageSchema items={homeFaqData} />
       <SpeakableSchema pageUrl="https://artistreevabeach.com/" />
 

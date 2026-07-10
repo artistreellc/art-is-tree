@@ -8,7 +8,6 @@ import LocalSEOMeta from '@/components/LocalSEOMeta';
 import SpeakableSchema from '@/components/seo/SpeakableSchema';
 import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema';
 import ContactPointSchema from '@/components/seo/ContactPointSchema';
-import AggregateRatingSchema from '@/components/seo/AggregateRatingSchema';
 
 const ContactPage = () => {
   return (
@@ -20,7 +19,6 @@ const ContactPage = () => {
 
       <LocalBusinessSchema />
       <ContactPointSchema />
-      <AggregateRatingSchema />
       <SpeakableSchema pageUrl="https://artistreevabeach.com/contact" />
       
       <div className="contact-page pt-0 bg-gray-50 min-h-screen pb-20">

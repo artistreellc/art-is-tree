@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { ShieldCheck, Award, ThumbsUp, ExternalLink } from 'lucide-react';
-import AggregateRatingSchema from '@/components/seo/AggregateRatingSchema';
+import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema';
 import LocalSEOMeta from '@/components/LocalSEOMeta';
 
 const GOOGLE_LISTING_URL = "https://www.google.com/maps?cid=12599844776703525086";
@@ -18,7 +18,7 @@ const TestimonialsPage = () => {
         description="Read customer reviews of Art-is-Tree LLC, the BBB A+, licensed and insured tree service trusted across Virginia Beach and Hampton Roads, VA. 5-star rated."
       />
       
-      <AggregateRatingSchema />
+      <LocalBusinessSchema />
 
       <main className="min-h-screen bg-gray-50 pb-24">
         <header className="relative py-24 bg-[#1B4D3E] text-white overflow-hidden">

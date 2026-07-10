@@ -1,7 +1,7 @@
 import React from 'react';
 import { Head } from 'vite-react-ssg';
 import { useLocation } from 'react-router-dom';
-import { generateCanonicalUrl } from '@/utils/seoHelpers';
+import { generateCanonicalUrl, BASE_URL } from '@/utils/seoHelpers';
 import { COMPANY_INFO } from '@/constants/seoMetadata';
 
 const OrganizationSchema = () => {
@@ -15,7 +15,7 @@ const OrganizationSchema = () => {
     "description": "Professional, fully licensed, and insured tree care experts serving Virginia Beach, Norfolk, and Chesapeake. We bring safety, precision, and artistry to every job.",
     "slogan": "Safety, precision, and artistry in every tree job.",
     "url": currentUrl,
-    "@id": `${currentUrl}/#organization`,
+    "@id": `${BASE_URL}/#organization`,
     "telephone": "(757) 319-5131",
     "email": "artistreeofvirginia@gmail.com",
     "logo": COMPANY_INFO.logo,

@@ -37,16 +37,26 @@ export default async function handler(req, res) {
   }
   body = body || {};
 
-  const name = (body.name || '').trim();
-  const phone = (body.phone || '').trim();
-  const email = (body.email || '').trim();
-  const address = (body.address || '').trim();
-  const serviceNeeded = (body.serviceNeeded || '').trim();
-  const urgency = (body.urgency || '').trim();
-  const message = (body.message || '').trim();
+  // Honeypot: bots fill hidden fields. If present, pretend success and drop it.
+  if ((body.company || '').trim() !== '') {
+    return res.status(200).json({ success: true });
+  }
+
+  const cap = (v, n) => (v || '').toString().trim().slice(0, n);
+  const name = cap(body.name, 100);
+  const phone = cap(body.phone, 30);
+  const email = cap(body.email, 200);
+  const address = cap(body.address, 200);
+  const serviceNeeded = cap(body.serviceNeeded, 80);
+  const urgency = cap(body.urgency, 80);
+  const message = cap(body.message, 5000);
 
   if (!name || !phone || !email || !message) {
     return res.status(400).json({ success: false, error: 'Please complete all required fields.' });
+  }
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return res.status(400).json({ success: false, error: 'Please enter a valid email address.' });
   }
 
   const rows = [

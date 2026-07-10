@@ -2,7 +2,7 @@
 import React from 'react';
 import { Head } from 'vite-react-ssg';
 import { useLocation } from 'react-router-dom';
-import { generateCanonicalUrl } from '@/utils/seoHelpers';
+import { generateCanonicalUrl, BASE_URL } from '@/utils/seoHelpers';
 import { COMPANY_INFO } from '@/constants/seoMetadata';
 
 const LocalBusinessSchema = () => {
@@ -14,7 +14,7 @@ const LocalBusinessSchema = () => {
     "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
     "name": "Art-is-Tree LLC",
     "image": COMPANY_INFO.logo,
-    "@id": `${currentUrl}/#localbusiness`,
+    "@id": `${BASE_URL}/#localbusiness`,
     "url": currentUrl,
     "telephone": "(757) 319-5131",
     "email": "artistreeofvirginia@gmail.com",

@@ -11,7 +11,7 @@ const PrivacyPolicyPage = () => {
       </header>
       
       <main className="prose prose-lg text-gray-700">
-        <p><strong>Last Updated: {new Date().toLocaleDateString()}</strong></p>
+        <p><strong>Last Updated: July 10, 2026</strong></p>
         
         <h2 className="mt-8 mb-4">1. Information Collection and Use</h2>
         <p>
