@@ -3,6 +3,7 @@ import React from 'react';
 import { ChevronRight, Home, MapPin, ShieldCheck, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ServiceAreasMap from '@/components/ServiceAreasMap';
+import NeighborhoodServiceContent from '@/components/NeighborhoodServiceContent';
 import LocalSEOMeta from '@/components/LocalSEOMeta';
 
 const ServiceAreasPage = () => {
@@ -96,6 +97,8 @@ const ServiceAreasPage = () => {
             </div>
           </div>
         </main>
+
+        <NeighborhoodServiceContent />
       </div>
     </>
   );

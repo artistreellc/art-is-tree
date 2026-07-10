@@ -1,6 +1,7 @@
 
 import React from 'react';
 import LocalSEOMeta from '@/components/LocalSEOMeta';
+import YouTubeFacade from '@/components/YouTubeFacade';
 import { ExternalLink } from 'lucide-react';
 
 // Real job-site photos, self-hosted and optimized (WebP). Descriptive alt
@@ -36,8 +37,20 @@ const GalleryPage = () => {
           <div className="container mx-auto px-4 max-w-4xl mb-12">
             <div className="prose prose-lg text-gray-700 leading-relaxed mx-auto text-center">
               <p>
-                Our work speaks for itself. Browse real photos from Art-is-Tree LLC job sites across Virginia Beach and Hampton Roads — complex crane removals, technical climbing, precision trimming, and clean debris hauling. Every job is performed by our licensed, insured crew.
+                Our work speaks for itself. Browse real photos and video from Art-is-Tree LLC job sites across Virginia Beach and Hampton Roads — complex crane removals, technical climbing, precision trimming, and clean debris hauling. Every job is performed by our licensed, insured crew.
               </p>
+            </div>
+          </div>
+
+          <div className="container mx-auto px-4 max-w-5xl mb-16">
+            <h2 className="text-2xl md:text-3xl font-playfair font-bold text-[#1B4D3E] text-center mb-8">Watch Our Crew in Action</h2>
+            <div className="flex flex-col md:flex-row gap-6 justify-center items-start">
+              <div className="w-full md:flex-1">
+                <YouTubeFacade id="7KWf4dSRr_k" title="Art-is-Tree LLC crane tree removal in Virginia Beach, VA" />
+              </div>
+              <div className="w-full max-w-[280px] mx-auto md:mx-0">
+                <YouTubeFacade id="ChAb_pRVwBA" aspectClass="aspect-[9/16]" title="Art-is-Tree tree service short — Virginia Beach, VA" />
+              </div>
             </div>
           </div>
 
