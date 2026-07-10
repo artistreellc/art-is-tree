@@ -9,6 +9,7 @@ import ServiceLinks from '@/components/ServiceLinks';
 import GoogleMap from '@/components/GoogleMap';
 import LocationFAQ from '@/components/LocationFAQ';
 import { Eyebrow, SectionHeading, Figure } from '@/components/design/Primitives';
+import { COMPANY_INFO } from '@/constants/seoMetadata';
 
 const ICONS = { removal: Axe, crane: Truck, trim: Scissors, stump: CircleOff, emergency: Zap, land: Trees };
 
@@ -34,6 +35,13 @@ const CityServiceLayout = ({ data }) => {
     geo: { '@type': 'GeoCoordinates', latitude: geo.lat, longitude: geo.lng },
     areaServed: { '@type': 'City', name: city }, priceRange: '$$',
     image: 'https://artistreevabeach.com/logo.png',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: COMPANY_INFO.rating.value,
+      reviewCount: COMPANY_INFO.rating.reviewCount,
+      bestRating: COMPANY_INFO.rating.best,
+      worstRating: COMPANY_INFO.rating.worst,
+    },
   };
 
   return (

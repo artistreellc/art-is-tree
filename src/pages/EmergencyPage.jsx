@@ -4,6 +4,7 @@ import { Phone, Clock, ShieldCheck, AlertTriangle, Wind, Zap, Home, Car, AlertCi
 import LocalSEOMeta from '@/components/LocalSEOMeta.jsx';
 import ServiceSchema from '@/components/seo/ServiceSchema.jsx';
 import SpeakableSchema from '@/components/seo/SpeakableSchema';
+import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema';
 import StormSeasonChart from '@/components/StormSeasonChart';
 
 const EMERGENCY_STEPS = [
@@ -40,6 +41,7 @@ export default function EmergencyPage() {
         serviceAreas={["Virginia Beach", "Norfolk", "Chesapeake", "Portsmouth", "Suffolk"]}
       />
       <SpeakableSchema pageUrl="https://artistreevabeach.com/emergency" />
+      <LocalBusinessSchema />
 
       {/* ─── HERO ─────────────────────────────────────────────── */}
       <section className="relative isolate overflow-hidden pt-28 pb-20 md:pt-36 md:pb-28 px-4">
@@ -61,10 +63,10 @@ export default function EmergencyPage() {
           </div>
 
           <h1 className="text-4xl md:text-6xl font-playfair font-bold mb-6 text-white leading-tight speakable">
-            Tree Down in Virginia Beach?<br className="hidden md:block" /> We Answer Day or Night.
+            24/7 Emergency Tree Service in Virginia Beach
           </h1>
           <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto speakable">
-            When a nor’easter drops a loblolly pine on your roof or the saturated coastal soil lets a water oak go over, our crew is standing by around the clock to make your property safe — fast.
+            Tree down on your house? We answer day or night. When a nor’easter drops a loblolly pine on your roof or the saturated coastal soil lets a water oak go over, our emergency tree service crew is standing by around the clock across Virginia Beach and Hampton Roads to make your property safe — fast.
           </p>
 
           <a
