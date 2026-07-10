@@ -69,10 +69,19 @@ const REVIEWS = [
 ];
 
 const SOURCE_STYLES = {
-  Google: 'bg-blue-50 text-blue-700 border-blue-200',
-  Yelp: 'bg-red-50 text-red-700 border-red-200',
-  Angi: 'bg-orange-50 text-orange-700 border-orange-200',
-  BBB: 'bg-sky-50 text-sky-800 border-sky-200',
+  Google: 'bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100',
+  Yelp: 'bg-red-50 text-red-700 border-red-200 hover:bg-red-100',
+  Angi: 'bg-orange-50 text-orange-700 border-orange-200 hover:bg-orange-100',
+  BBB: 'bg-sky-50 text-sky-800 border-sky-200 hover:bg-sky-100',
+};
+
+// Each review links back to the platform it's published on, so any visitor can
+// verify it's real and read the rest of the reviews there.
+const SOURCE_URLS = {
+  Google: GOOGLE_LISTING_URL,
+  Yelp: 'https://www.yelp.com/biz/art-is-tree-virginia-beach-3',
+  Angi: 'https://www.angi.com/companylist/us/va/virginia-beach/art-is-tree-llc-reviews-10302177.htm',
+  BBB: 'https://www.bbb.org/us/va/virginia-beach/profile/tree-service/art-is-tree-llc-0583-90336149',
 };
 
 const Stars = () => (
@@ -109,16 +118,26 @@ const TestimonialsPage = () => {
           {/* Trust summary */}
           <div className="bg-white rounded-2xl shadow-md border border-gray-100 p-6 md:p-8 mb-10">
             <div className="flex flex-wrap justify-center gap-8 md:gap-14">
-              <div className="flex flex-col items-center text-[#1B4D3E]">
+              <a
+                href={GOOGLE_LISTING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center text-[#1B4D3E] group"
+              >
                 <ThumbsUp className="w-7 h-7 text-[#D4AF37] mb-2" />
-                <strong className="text-lg">5.0 Rated</strong>
+                <strong className="text-lg group-hover:underline">5.0 Rated</strong>
                 <span className="text-sm text-gray-500">134 Google Reviews</span>
-              </div>
-              <div className="flex flex-col items-center text-[#1B4D3E]">
+              </a>
+              <a
+                href={SOURCE_URLS.BBB}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center text-[#1B4D3E] group"
+              >
                 <ShieldCheck className="w-7 h-7 text-[#D4AF37] mb-2" />
-                <strong className="text-lg">Licensed &amp; Insured</strong>
+                <strong className="text-lg group-hover:underline">Licensed &amp; Insured</strong>
                 <span className="text-sm text-gray-500">BBB A+ Accredited</span>
-              </div>
+              </a>
               <div className="flex flex-col items-center text-[#1B4D3E]">
                 <Award className="w-7 h-7 text-[#D4AF37] mb-2" />
                 <strong className="text-lg">TCIA Members</strong>
@@ -136,18 +155,30 @@ const TestimonialsPage = () => {
               >
                 <div className="flex items-center justify-between mb-3">
                   <Stars />
-                  <span
-                    className={`text-xs font-semibold px-2.5 py-1 rounded-full border ${SOURCE_STYLES[r.source] || 'bg-gray-50 text-gray-600 border-gray-200'}`}
+                  <a
+                    href={SOURCE_URLS[r.source] || GOOGLE_LISTING_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Verify this review on ${r.source}`}
+                    className={`inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full border transition-colors ${SOURCE_STYLES[r.source] || 'bg-gray-50 text-gray-600 border-gray-200'}`}
                   >
                     {r.source}
-                  </span>
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
                 </div>
                 <blockquote className="text-gray-700 leading-relaxed text-[15px]">
                   {r.text}
                 </blockquote>
                 <figcaption className="mt-4 flex items-center justify-between border-t border-gray-100 pt-3">
                   <span className="font-semibold text-[#1B4D3E]">{r.name}</span>
-                  <span className="text-xs text-gray-400">{r.date}</span>
+                  <a
+                    href={SOURCE_URLS[r.source] || GOOGLE_LISTING_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-gray-400 hover:text-[#1B4D3E] transition-colors"
+                  >
+                    {r.date} · Verified
+                  </a>
                 </figcaption>
               </figure>
             ))}
