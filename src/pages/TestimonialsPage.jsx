@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ShieldCheck, Award, ThumbsUp, ExternalLink, Star } from 'lucide-react';
+import { ShieldCheck, Award, ThumbsUp, ExternalLink, Star, Facebook, Instagram } from 'lucide-react';
 import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema';
 import LocalSEOMeta from '@/components/LocalSEOMeta';
 
@@ -91,6 +91,39 @@ const Stars = () => (
     ))}
   </div>
 );
+
+// Real brand marks for the "reviewed & trusted on" badge bar.
+const GoogleG = () => (
+  <svg viewBox="0 0 48 48" className="w-6 h-6" aria-hidden="true">
+    <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z" />
+    <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z" />
+    <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z" />
+    <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z" />
+  </svg>
+);
+const CircleStar = ({ color }) => (
+  <span
+    className="flex items-center justify-center w-7 h-7 rounded-full"
+    style={{ backgroundColor: color }}
+  >
+    <Star className="w-4 h-4 text-white fill-white" />
+  </span>
+);
+const BBBMark = () => (
+  <span className="flex items-center justify-center w-7 h-7 rounded bg-[#00457c] text-white text-[11px] font-extrabold leading-none">
+    A+
+  </span>
+);
+
+// Every badge deep-links to the real, public profile so visitors can verify.
+const PLATFORMS = [
+  { name: 'Google', url: GOOGLE_LISTING_URL, icon: <GoogleG /> },
+  { name: 'Facebook', url: 'https://www.facebook.com/artistreeva', icon: <Facebook className="w-6 h-6 text-[#1877F2]" fill="#1877F2" strokeWidth={0} /> },
+  { name: 'Instagram', url: 'https://www.instagram.com/artistreeva', icon: <Instagram className="w-6 h-6 text-[#E4405F]" /> },
+  { name: 'Yelp', url: 'https://www.yelp.com/biz/art-is-tree-virginia-beach-3', icon: <CircleStar color="#FF1A1A" /> },
+  { name: 'Angi', url: 'https://www.angi.com/companylist/us/va/virginia-beach/art-is-tree-llc-reviews-10302177.htm', icon: <CircleStar color="#F5822A" /> },
+  { name: 'BBB A+', url: 'https://www.bbb.org/us/va/virginia-beach/profile/tree-service/art-is-tree-llc-0583-90336149', icon: <BBBMark /> },
+];
 
 const TestimonialsPage = () => {
   return (
@@ -184,8 +217,33 @@ const TestimonialsPage = () => {
             ))}
           </div>
 
-          {/* CTA */}
-          <div className="text-center mt-12">
+          {/* Reviewed & trusted across the web */}
+          <div className="mt-12 bg-white rounded-2xl shadow-sm border border-gray-100 p-8 text-center">
+            <h2 className="font-playfair text-2xl md:text-3xl font-bold text-[#1B4D3E] mb-1">
+              Reviewed &amp; Trusted Across the Web
+            </h2>
+            <p className="text-gray-500 text-sm mb-6 max-w-xl mx-auto">
+              Every one of these is a real, public profile — tap any badge to verify our reviews and follow along.
+            </p>
+
+            <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 mb-8">
+              {PLATFORMS.map((p) => (
+                <a
+                  key={p.name}
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Art-is-Tree on ${p.name}`}
+                  className="group flex items-center gap-2 bg-white border border-gray-200 rounded-full pl-2 pr-4 py-2 hover:shadow-md hover:border-gray-300 transition-all"
+                >
+                  <span className="w-7 h-7 flex items-center justify-center">{p.icon}</span>
+                  <span className="text-sm font-semibold text-gray-700 group-hover:text-[#1B4D3E]">
+                    {p.name}
+                  </span>
+                </a>
+              ))}
+            </div>
+
             <p className="text-gray-600 mb-4">
               These are just a few — read all 134 five-star reviews on our Google Business Profile.
             </p>
