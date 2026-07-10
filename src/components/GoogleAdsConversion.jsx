@@ -20,6 +20,22 @@ const GoogleAdsConversion = () => {
     window.gtag_report_phone_click = window.gtag_report_phone_click || function () {};
   }, []);
 
+  // Track EVERY phone-number click site-wide via event delegation, so any
+  // tel: link on any page fires the conversion even if it has no inline
+  // handler. Capture phase runs before navigation; gtag_report_phone_click is
+  // debounced so links that also have an inline handler count only once.
+  useEffect(() => {
+    if (typeof document === 'undefined') return undefined;
+    const onDocClick = (e) => {
+      const link = e.target?.closest?.('a[href^="tel:"]');
+      if (link && typeof window.gtag_report_phone_click === 'function') {
+        window.gtag_report_phone_click();
+      }
+    };
+    document.addEventListener('click', onDocClick, true);
+    return () => document.removeEventListener('click', onDocClick, true);
+  }, []);
+
   useEffect(() => {
     if (initAttempted.current || !preferences?.marketing) return;
     initAttempted.current = true;
@@ -59,7 +75,13 @@ const GoogleAdsConversion = () => {
         };
         // Phone clicks tracked as a GA4 event (valid). Add a dedicated Ads
         // phone-conversion label here if you create one in Google Ads.
+        // Debounced so a link with both an inline handler and the global
+        // delegated listener records only one conversion per click.
+        let lastPhoneClick = 0;
         window.gtag_report_phone_click = function () {
+          const now = Date.now();
+          if (now - lastPhoneClick < 1000) return;
+          lastPhoneClick = now;
           if (typeof window.gtag === 'function') {
             window.gtag('event', 'phone_call_click', { event_category: 'engagement', event_label: 'phone_number' });
           }
