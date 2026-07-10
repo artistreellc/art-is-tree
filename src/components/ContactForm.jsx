@@ -10,6 +10,13 @@ import { useToast } from '@/components/ui/use-toast';
 import { useDebounce } from '@/hooks/useDebounce';
 // import { supabase } from '@/lib/customSupabaseClient';
 
+// Contact form delivery via FormSubmit (https://formsubmit.co). No API key or
+// server-side environment variable is required — submissions are emailed
+// straight to the address below. The FIRST submission triggers a one-time
+// activation email to that inbox; clicking "Activate Form" once enables all
+// future deliveries automatically.
+const CONTACT_ENDPOINT = 'https://formsubmit.co/ajax/artistreeofvirginia@gmail.com';
+
 const formReducer = (state, action) => {
   switch (action.type) {
     case 'UPDATE_FIELD':
@@ -181,19 +188,27 @@ const ContactForm = () => {
         address: formState.address.trim(),
         serviceNeeded: formState.serviceNeeded,
         urgency: formState.urgency,
-        message: formState.message.trim()
+        message: formState.message.trim(),
+        _subject: `New estimate request from ${formState.name.trim()}${formState.serviceNeeded ? ` — ${formState.serviceNeeded}` : ''}`,
+        _template: 'table',
+        _captcha: 'false',
       };
-      
-      const response = await fetch('/api/contact', {
+
+      const response = await fetch(CONTACT_ENDPOINT, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
         body: JSON.stringify(payload),
       });
 
       const data = await response.json().catch(() => ({}));
 
-      if (!response.ok || data.success !== true) {
-        throw new Error(data.error || 'Failed to send message. Please try again.');
+      // FormSubmit returns { success: "true" } (string) on success.
+      const ok = response.ok && (data.success === true || data.success === 'true');
+      if (!ok) {
+        throw new Error(data.message || data.error || 'Failed to send message. Please try again.');
       }
 
       // Legacy support for older conversion tracking scripts if present
