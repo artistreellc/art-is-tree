@@ -47,14 +47,14 @@ const AdminPanel = () => {
       title: 'Google Places Debug',
       description: 'Test and debug Google Places API connection',
       icon: Database,
-      link: '/admin/debug-google-places',
+      link: '/admin/debug-places',
       color: 'text-purple-600'
     },
     {
       title: 'Neighborhoods Debug',
       description: 'Debug and verify neighborhood data',
       icon: Database,
-      link: '/debug-neighborhoods',
+      link: '/admin/debug-neighborhoods',
       color: 'text-orange-600'
     }
   ];

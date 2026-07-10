@@ -26,7 +26,6 @@ import CookieConsentBanner from '@/components/CookieConsentBanner.jsx';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 
 // SEO Components (Lazy loaded)
-const LocationPagesSchema = lazy(() => import('@/components/seo/LocationPagesSchema.jsx'));
 const SocialMediaPostingSchema = lazy(() => import('@/components/seo/SocialMediaPostingSchema.jsx'));
 const SEOValidation = lazy(() => import('@/components/seo/SEOValidation.jsx'));
 const BreadcrumbListSchema = lazy(() => import('@/components/seo/BreadcrumbListSchema.jsx'));
@@ -52,7 +51,6 @@ function Layout() {
           <ErrorBoundary>
             <Suspense fallback={null}>
               <BreadcrumbListSchema />
-              <LocationPagesSchema />
               <SocialMediaPostingSchema />
               <SEOValidation />
             </Suspense>

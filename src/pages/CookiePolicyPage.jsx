@@ -11,7 +11,7 @@ const CookiePolicyPage = () => {
       </header>
       
       <main className="prose prose-lg text-gray-700">
-        <p><strong>Last Updated: {new Date().toLocaleDateString()}</strong></p>
+        <p><strong>Last Updated: July 10, 2026</strong></p>
         
         <h2 className="mt-8 mb-4">1. What Cookies Are</h2>
         <p>

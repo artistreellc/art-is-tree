@@ -10,7 +10,7 @@ const CaseStudySchema = ({
   imageUrl, 
   url,
   datePublished = "2023-01-01",
-  dateModified = new Date().toISOString().split('T')[0]
+  dateModified = '2026-07-10'
 }) => {
   const location = useLocation();
   const currentUrl = url ? `https://artistreevabeach.com${url}` : generateCanonicalUrl(location.pathname);

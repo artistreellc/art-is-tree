@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Trees, Settings, ShieldAlert, Tractor, Zap, Building2, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ServiceSchema from '@/components/seo/ServiceSchema';
-import AggregateRatingSchema from '@/components/seo/AggregateRatingSchema';
+import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema';
 import LocalSEOMeta from '@/components/LocalSEOMeta';
 import SpeakableSchema from '@/components/seo/SpeakableSchema';
 
@@ -18,7 +18,7 @@ const ServicesPage = () => {
         description="Full-service tree care in Hampton Roads: removal, trimming, stump grinding, crane work, land clearing and 24/7 emergency service. Licensed, insured. Free quotes." 
       />
 
-      <AggregateRatingSchema />
+      <LocalBusinessSchema />
       <SpeakableSchema pageUrl="https://artistreevabeach.com/services" />
 
       {/* Multiple Service Schemas based on task requirements */}

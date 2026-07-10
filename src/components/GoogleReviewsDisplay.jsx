@@ -182,7 +182,7 @@ const GoogleReviewsDisplay = () => {
                               {review.review_image_url ? (
                                 <img src={review.review_image_url} alt={review.reviewer_name} className="w-full h-full object-cover" loading="lazy" />
                               ) : (
-                                review.reviewer_name.charAt(0)
+                                (review.reviewer_name || '?').charAt(0)
                               )}
                             </div>
                             <div>

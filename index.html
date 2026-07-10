@@ -65,34 +65,12 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" />
     </noscript>
 
-    <!-- LocalBusiness JSON-LD Schema for Googlebot -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Art-is-Tree LLC",
-      "description": "Professional tree service in Virginia Beach, VA. Licensed, insured, BBB A+ rated. Tree removal, trimming, stump grinding, crane services, and 24/7 emergency response.",
-      "url": "https://artistreevabeach.com",
-      "telephone": "(757) 319-5131",
-      "email": "artistreeofvirginia@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "2597 Nestlebrook Trl",
-        "addressLocality": "Virginia Beach",
-        "addressRegion": "VA",
-        "postalCode": "23456",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 36.7335,
-        "longitude": -76.0726
-      },
-      "openingHours": "Mo-Su 00:00-23:59",
-      "priceRange": "$$",
-      "areaServed": ["Virginia Beach", "Norfolk", "Chesapeake", "Portsmouth", "Suffolk", "Hampton", "Newport News"]
-    }
-    </script>
+    <!--
+      LocalBusiness / Organization JSON-LD is emitted per-route by the React
+      SEO components (LocalBusinessSchema, OrganizationSchema) with a stable
+      @id, aggregateRating, and sameAs. A static node here would duplicate and
+      compete with those, so it is intentionally omitted.
+    -->
   </head>
   <body>
     <div id="root"></div>
