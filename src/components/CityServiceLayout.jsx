@@ -108,7 +108,7 @@ const CityServiceLayout = ({ data }) => {
               {services.map(({ iconKey, kw, text }) => {
                 const Icon = ICONS[iconKey] || Axe;
                 return (
-                  <div key={kw} className="reveal card-3d group flex gap-5 bg-white border border-gray-200/90 rounded-2xl p-6 hover:border-[#1B4D3E]/25">
+                  <div key={kw} className="reveal card-3d group flex gap-5 bg-white border border-gray-200/90 border-t-[3px] border-t-[#D4AF37]/80 rounded-2xl p-6 hover:border-[#1B4D3E]/25">
                     <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#245c49] to-[#123a2d] flex items-center justify-center flex-shrink-0 shadow-md ring-1 ring-black/10 group-hover:scale-105 transition-transform">
                       <Icon className="w-6 h-6 text-[#D4AF37]" />
                     </div>

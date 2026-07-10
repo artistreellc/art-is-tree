@@ -7,13 +7,16 @@ export const Eyebrow = ({ children, className = '' }) => (
   </span>
 );
 
-/** Standard section heading block: eyebrow → title → optional deck. */
-export const SectionHeading = ({ eyebrow, title, deck, align = 'left', light = false, className = '' }) => (
+/** Standard section heading block: eyebrow → title → gold rule → optional deck. */
+export const SectionHeading = ({ eyebrow, title, deck, align = 'left', light = false, rule = true, className = '' }) => (
   <div className={`${align === 'center' ? 'text-center mx-auto max-w-2xl' : 'text-left'} ${className}`}>
     {eyebrow && <Eyebrow className="mb-3">{eyebrow}</Eyebrow>}
-    <h2 className={`font-playfair font-bold leading-tight text-3xl md:text-4xl ${light ? 'text-white' : 'text-[#1B4D3E]'} mt-0 mb-4`}>
+    <h2 className={`font-playfair font-bold leading-tight text-3xl md:text-4xl ${light ? 'text-white' : 'text-[#1B4D3E]'} mt-0 mb-3`}>
       {title}
     </h2>
+    {rule && (
+      <span className={`block h-[3px] w-14 rounded-full bg-[#D4AF37] ${align === 'center' ? 'mx-auto' : ''} ${deck ? 'mb-4' : ''}`} aria-hidden="true" />
+    )}
     {deck && (
       <p className={`text-lg leading-relaxed ${light ? 'text-gray-200' : 'text-gray-600'} m-0`}>{deck}</p>
     )}
@@ -46,7 +49,7 @@ export const Figure = ({ src, alt, caption, aspect = 'aspect-[16/10]', className
 
 /** "Project spec" sidebar card used on case studies (like an architecture feature). */
 export const ProjectSpec = ({ rows, className = '' }) => (
-  <div className={`bg-[#0A2F24] text-white rounded-2xl p-6 md:p-7 shadow-lg ${className}`}>
+  <div className={`bg-[#0A2F24] text-white rounded-2xl p-6 md:p-7 shadow-lg border-t-4 border-[#D4AF37] ${className}`}>
     <div className="text-[#D4AF37] font-bold tracking-[0.18em] uppercase text-xs mb-5">Project Detail</div>
     <dl className="space-y-4">
       {rows.map(([label, value]) => (

@@ -164,7 +164,7 @@ const EmeraldAshBorerCaseStudy = () => {
               [CheckCircle2, 'Nothing damaged', 'Altar, fence, and landscaping all came through untouched.'],
               [TreePine, 'Ground restored', 'Stump ground out, soil spread, and the area re-seeded the next morning.'],
             ].map(([Icon, h, t]) => (
-              <div key={h} className="card-3d bg-white border border-gray-200 rounded-2xl p-6 text-center">
+              <div key={h} className="card-3d bg-white border border-gray-200 border-t-4 border-t-[#D4AF37] rounded-2xl p-6 text-center">
                 <Icon className="w-9 h-9 text-[#D4AF37] mx-auto mb-3" />
                 <h3 className="font-playfair text-lg font-bold text-[#1B4D3E] mb-1.5">{h}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{t}</p>

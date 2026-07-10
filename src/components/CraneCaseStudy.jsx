@@ -143,7 +143,7 @@ const CraneCaseStudy = () => {
                 [Waves, 'Buffer protected', 'No equipment or debris ever entered the shoreline buffer.'],
                 [Anchor, 'Hazard gone', 'What could have failed in the next storm was removed safely.'],
               ].map(([Icon, h, t]) => (
-                <div key={h} className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
+                <div key={h} className="bg-white/5 border border-white/10 border-t-4 border-t-[#D4AF37] rounded-2xl p-6 text-center">
                   <Icon className="w-9 h-9 text-[#D4AF37] mx-auto mb-4" />
                   <h3 className="font-playfair text-xl font-bold text-white mb-2">{h}</h3>
                   <p className="text-gray-300 text-sm leading-relaxed">{t}</p>
