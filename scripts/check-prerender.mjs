@@ -10,6 +10,7 @@ const ERROR_MARKERS = [
   'Unexpected Application Error',
   'is not valid JSON',
   'Minified React error',
+  'data-error-fallback', // RootErrorBoundary rendered during prerender = a page failed to build
 ];
 
 function walk(dir) {

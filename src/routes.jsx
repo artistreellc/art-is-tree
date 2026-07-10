@@ -2,6 +2,7 @@ import React, { lazy } from 'react';
 import { Navigate } from 'react-router-dom';
 import Layout from '@/Layout';
 import ProtectedRoute from '@/components/ProtectedRoute';
+import RootErrorBoundary from '@/components/RootErrorBoundary';
 import { withRouteCSS } from '@/utils/routeBasedCSSLoader';
 
 // Public pages: react-router `lazy` so vite-react-ssg can await + prerender them.
@@ -42,6 +43,7 @@ export const routes = [
     path: '/',
     element: <Layout />,
     entry: 'src/Layout.jsx',
+    errorElement: <RootErrorBoundary />,
     children: [
       { index: true, ...wrappedPage(() => import('@/pages/HomePage.jsx'), 'HomePage') },
       { path: 'about', ...wrappedPage(() => import('@/pages/AboutPage.jsx'), 'AboutPage') },
