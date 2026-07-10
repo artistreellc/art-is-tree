@@ -53,7 +53,9 @@ const COMPANY_INFO = {
     angi: 'https://www.angi.com/companylist/us/va/virginia-beach/art-is-tree-llc-reviews-10302177.htm',
     homeadvisor: 'https://www.homeadvisor.com/rated.ArtistreeOfVirginia.118108285.html',
     birdeye: 'https://reviews.birdeye.com/art-is-tree-llc-176429595636461',
-    nextdoor: 'https://nextdoor.com/pages/art-is-tree-virginia-beach-va/'
+    nextdoor: 'https://nextdoor.com/pages/art-is-tree-virginia-beach-va/',
+    yahoo: 'https://local.yahoo.com/info-231667614-artistree-virginia-beach/',
+    alignable: 'https://www.alignable.com/virginia-beach-va/art-is-tree-llc/emergency-tree-service'
   }
 };
 
@@ -68,7 +70,9 @@ COMPANY_INFO.sameAs = [
   COMPANY_INFO.socials.angi,
   COMPANY_INFO.socials.homeadvisor,
   COMPANY_INFO.socials.birdeye,
-  COMPANY_INFO.socials.nextdoor
+  COMPANY_INFO.socials.nextdoor,
+  COMPANY_INFO.socials.yahoo,
+  COMPANY_INFO.socials.alignable
 ];
 
 // Directory/citation listings for the "Find Us Online" page and footer,
@@ -81,6 +85,8 @@ COMPANY_INFO.listings = [
   { name: 'HomeAdvisor', url: COMPANY_INFO.socials.homeadvisor },
   { name: 'Birdeye', url: COMPANY_INFO.socials.birdeye },
   { name: 'Nextdoor', url: COMPANY_INFO.socials.nextdoor },
+  { name: 'Yahoo Local', url: COMPANY_INFO.socials.yahoo },
+  { name: 'Alignable', url: COMPANY_INFO.socials.alignable },
   { name: 'Facebook', url: COMPANY_INFO.socials.facebook },
   { name: 'Instagram', url: COMPANY_INFO.socials.instagram },
   { name: 'LinkedIn', url: COMPANY_INFO.socials.linkedin }
