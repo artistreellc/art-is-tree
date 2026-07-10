@@ -34,7 +34,7 @@ export const StatBand = ({ stats, className = '' }) => (
 
 /** Photo with a caption chip, consistent framing. */
 export const Figure = ({ src, alt, caption, aspect = 'aspect-[16/10]', className = '' }) => (
-  <figure className={`relative rounded-2xl overflow-hidden shadow-md border border-gray-200 ${aspect} ${className}`}>
+  <figure className={`relative rounded-2xl overflow-hidden border border-black/5 ring-1 ring-black/5 shadow-[0_20px_45px_-18px_rgba(10,47,36,0.55)] ${aspect} ${className}`}>
     <img src={src} alt={alt} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
     {caption && (
       <figcaption className="absolute bottom-3 left-3 bg-black/60 text-white text-xs font-medium px-3 py-1.5 rounded-full backdrop-blur-sm">

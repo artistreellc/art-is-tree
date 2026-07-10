@@ -1,177 +1,48 @@
 import React from 'react';
-import { Head } from 'vite-react-ssg';
-import { Link } from 'react-router-dom';
-import { CheckCircle2, Phone } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import LocalSEOMeta from '@/components/LocalSEOMeta';
-import Breadcrumbs from '@/components/Breadcrumbs';
-import RelatedCaseStudies from '@/components/RelatedCaseStudies';
-import ServiceLinks from '@/components/ServiceLinks';
-import GoogleMap from '@/components/GoogleMap';
-import LocationFAQ from '@/components/LocationFAQ';
+import CityServiceLayout from '@/components/CityServiceLayout';
 
-const suffolkFaqs = [
-  {
-    question: "Do you clear land and lots on larger Suffolk properties?",
-    answer: "Yes. Suffolk is Virginia's largest city by land area, with plenty of rural acreage. We clear trees, brush, and undergrowth for building sites, fields, food plots, driveways, and fence lines, and we can grind stumps or chip the debris on site.",
-  },
-  {
-    question: "Can you safely remove tall pines near a Suffolk home?",
-    answer: "Yes. Loblolly pines dominate Suffolk and are prone to snapping or uprooting in storms. We climb or crane them down in controlled sections, keeping heavy timber well away from your house, outbuildings, and power lines.",
-  },
-  {
-    question: "How much does tree work cost in Suffolk?",
-    answer: "Price depends on the tree's size, equipment access, proximity to structures, and cleanup. Rural lots with open access are often more affordable than tight ones. We provide a free written estimate with no hidden fees before any work begins.",
-  },
-];
-
-const SuffolkPage = () => {
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Art-is-Tree LLC",
-    "url": "https://artistreevabeach.com/service-areas/suffolk",
-    "telephone": "+17573195131",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Suffolk",
-      "addressRegion": "VA",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 36.7282,
-      "longitude": -76.5836
-    },
-    "areaServed": {
-      "@type": "City",
-      "name": "Suffolk"
-    },
-    "priceRange": "$$",
-    "image": "https://artistreevabeach.com/logo.png"
-  };
-
-
-  return (
-    <>
-      <LocalSEOMeta 
-        pageTitle="Tree Service Suffolk VA | Removal & Land Clearing"
-        description="Tree removal, trimming and land clearing in Suffolk, VA. Licensed, insured, BBB A+ tree service for rural acreage and homes. 24/7 storm response. Free estimates."
-      />
-      <Head>
-        <meta name="geo.region" content="US-VA" />
-        <meta name="geo.placename" content="Suffolk, Virginia" />
-        <meta name="geo.position" content="36.7282;-76.5836" />
-        <meta name="ICBM" content="36.7282, -76.5836" />
-        <script type="application/ld+json">
-          {JSON.stringify(localBusinessSchema)}
-        </script>
-      </Head>
-
-      <div className="bg-gray-50 min-h-screen pb-16">
-        <Breadcrumbs />
-
-        <section className="bg-[#1B4D3E] text-white pt-24 pb-20 relative overflow-hidden">
-          <div className="absolute inset-0 bg-black/20 z-0"></div>
-          <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
-            <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-6 mt-0">
-                Tree Service Suffolk, VA | Art-is-Tree LLC
-              </h1>
-              <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
-                Tree removal and land clearing built for Suffolk's rural acreage and big properties.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-[#D4AF37] text-black hover:bg-[#c19b2e] font-bold py-6 px-8 text-lg" asChild>
-                  <a href="tel:7573195131">
-                    <Phone className="mr-2 w-5 h-5" /> Call (757) 319-5131
-                  </a>
-                </Button>
-                <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white/10 font-bold py-6 px-8 text-lg" asChild>
-                  <Link to="/contact">Request a Free Estimate</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <main className="container mx-auto px-4 py-16 max-w-4xl">
-          <div 
-            className="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 prose prose-lg max-w-none text-gray-700 leading-relaxed"
-           
-          >
-            <p>Suffolk is the largest city in Virginia by land area, and most of it is rural. Out here you've got large acreage, working farmland, and stands of pine timber &mdash; a different kind of job than the packed suburban lots closer to the coast.</p>
-
-            <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mt-12 mb-6">Tree Removal in Suffolk, VA</h2>
-            <p>Taking down trees on rural Suffolk property often takes heavy equipment and a careful plan. We bring down failing oaks, old pines, and dead hardwoods in sections, rigging them so nothing comes down on your outbuildings or fence lines.</p>
-
-            <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mt-12 mb-6">Rural Land Clearing & Site Preparation</h2>
-            <p>Transforming raw, densely wooded acreage into prime real estate is our specialty. We provide comprehensive land clearing for new residential developments, equestrian properties, and agricultural expansions. Utilizing industrial forestry mulchers and high-capacity machinery, we rapidly process thick underbrush and heavy timber.</p>
-
-            <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mt-12 mb-6">Storm Damage & Emergency Tree Service Suffolk</h2>
-            <p>When isolated severe weather compromises towering trees across vast properties, fast stabilization is critical. Our responsive emergency crews cover the entirety of Suffolk, quickly deploying heavy-duty equipment to safely extract fallen timber, unblock long rural driveways, and secure your agricultural or residential property.</p>
-
-            <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mt-12 mb-6">Stump Grinding in Suffolk</h2>
-            <p>Clearing rural acreage requires effectively dealing with the aftermath. We utilize commercial-grade, track-driven stump grinders capable of processing multiple massive stumps across large fields with incredible speed.</p>
-          </div>
-        </main>
-
-        <section className="container mx-auto px-4 max-w-4xl mb-16">
-          <div 
-            className="bg-[#1B4D3E]/5 p-8 rounded-2xl border border-[#1B4D3E]/10"
-           
-          >
-            <h3 className="text-2xl font-playfair font-bold text-[#1B4D3E] mb-6">Our Core Suffolk Services:</h3>
-            <ul className="grid sm:grid-cols-2 gap-4">
-              {[
-                "Tree Removal",
-                "Land Clearing",
-                "Stump Grinding",
-                "Tree Trimming & Pruning",
-                "Emergency Tree Service",
-                "Storm Damage Cleanup"
-              ].map((service, index) => (
-                <li key={index} className="flex items-center text-gray-800 font-medium text-lg">
-                  <CheckCircle2 className="w-5 h-5 text-[#D4AF37] mr-3 flex-shrink-0" />
-                  {service}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        <section className="container mx-auto px-4 max-w-4xl text-center">
-          <div 
-            className="bg-[#1B4D3E] text-white p-10 rounded-2xl shadow-xl"
-           
-          >
-            <h3 className="text-3xl font-playfair font-bold mb-4">Ready to manage your Suffolk property?</h3>
-            <p className="text-lg mb-8 text-gray-200">
-              Contact Art-is-Tree LLC today for a free estimate in Suffolk. Whether you are dealing with a complex hazard assessment or need immediate site preparation, we provide detailed written estimates with absolutely no hidden fees.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-[#D4AF37] text-black hover:bg-[#c19b2e] font-bold py-6 px-10 text-lg" asChild>
-                <a href="tel:7573195131">
-                  <Phone className="mr-2 w-5 h-5" /> Call (757) 319-5131
-                </a>
-              </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white/10 font-bold py-6 px-10 text-lg" asChild>
-                <Link to="/contact">Get Free Estimate Online</Link>
-              </Button>
-            </div>
-          </div>
-        </section>
-      </div>
-      <section className="container mx-auto px-4 max-w-4xl my-16">
-        <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mb-6 text-center">Serving All of Suffolk</h2>
-        <GoogleMap query="Suffolk, VA" title="Art-is-Tree LLC tree service area — Suffolk, VA" />
-      </section>
-
-      <LocationFAQ city="Suffolk" faqs={suffolkFaqs} />
-      <ServiceLinks cityName="Suffolk" />
-      <RelatedCaseStudies currentPath="/service-areas/suffolk" preferred={['/case-studies/property-value', '/case-studies/unlicensed-contractors']} />
-    </>
-  );
+const data = {
+  city: 'Suffolk',
+  path: '/service-areas/suffolk',
+  geo: { lat: 36.7282, lng: -76.5836 },
+  metaTitle: 'Tree Service Suffolk VA | Removal & Land Clearing',
+  metaDesc: 'Tree removal, land clearing, stump grinding and 24/7 emergency tree service in Suffolk, VA. Licensed, insured, BBB A+. Free estimates from Art-is-Tree LLC.',
+  heroImg: '/images/virginia-beach-winter-storm-cleanup.webp',
+  heroAlt: 'Art-is-Tree crew clearing a downed tree on a Suffolk property',
+  heroSub: 'Tree removal, land clearing, and 24/7 storm response built for Suffolk’s rural acreage and big-tree country.',
+  introTitle: 'Tree service and land clearing for rural Suffolk',
+  introParagraphs: [
+    'Suffolk is the largest city in Virginia by land area, and most of it is rural — large-acreage properties, working farmland, and stands of pine timber that make for a very different kind of tree work than the packed lots closer to the coast. Our licensed and insured crew is built for it: heavy-duty tree removal, land clearing, stump grinding, and storm cleanup.',
+    'From Harbour View and North Suffolk over to Chuckatuck, Holland, and Whaleyville, we bring the equipment to take down big timber and open up overgrown ground. When people search for a <strong>tree service Suffolk VA</strong> that can handle acreage, we’re the crew that shows up ready.',
+  ],
+  neighborhoods: ['Harbour View', 'North Suffolk', 'Driver', 'Chuckatuck', 'Holland', 'Whaleyville', 'Nansemond', 'Eclipse', 'Bennetts Creek', 'Wilroy'],
+  services: [
+    { iconKey: 'removal', kw: 'Tree Removal in Suffolk', text: 'Taking down big timber on rural Suffolk property often needs heavy equipment and a careful plan. We bring down failing oaks, old pines, and dead hardwoods in sections so nothing lands on your outbuildings or fence lines.' },
+    { iconKey: 'land', kw: 'Land & Lot Clearing', text: 'This is core Suffolk work — clearing acreage, brush, and pine stands for building, farming, or opening up a view. We drop, process, and haul so the ground is ready to use.' },
+    { iconKey: 'crane', kw: 'Crane-Assisted Removal', text: 'For the biggest trees or ones tight to a farmhouse or barn, our crane tree removal lifts the weight out in controlled sections instead of gambling on where it falls.' },
+    { iconKey: 'trim', kw: 'Tree Trimming & Pruning', text: 'We prune to keep your trees healthy and clear of the house, the driveway, and the power lines that run along Suffolk’s rural roads.' },
+    { iconKey: 'stump', kw: 'Stump Grinding', text: 'We grind stumps below grade so you can mow, plant, or farm right over the spot — part of a Suffolk removal or on its own.' },
+    { iconKey: 'emergency', kw: '24/7 Emergency Tree Service', text: 'When a storm brings a big tree down across a rural driveway or onto a farm building, our emergency tree service answers 24/7 to clear it and make the property safe.' },
+  ],
+  localTitle: 'Big-tree country needs the right equipment',
+  localParagraphs: [
+    'A tree job on a Suffolk farm or wooded acreage is a different animal from a suburban backyard. Bigger trees, softer and wetter rural ground, and access down long drives or through fields all change the plan — and the equipment. We come out, walk the property, and bring what the job actually needs.',
+    'Whether it’s a single hazardous oak leaning on a barn or several cleared acres for a new build, we handle the scale and haul everything off, leaving the ground ready for whatever’s next.',
+  ],
+  localImg: '/images/virginia-beach-crane-tree-removal.webp',
+  localAlt: 'Crane removing a large tree on a rural property near Suffolk',
+  localCaption: 'Crane removal of a large tree on an open property',
+  localBadges: [['shield', 'Licensed & Insured'], ['waves', 'Acreage & land clearing']],
+  ctaTitle: 'Get a free estimate in Suffolk',
+  ctaText: 'A detailed written quote with no hidden fees, whether it’s one big tree or several acres to clear. Book online and take 5% off.',
+  mapQuery: 'Suffolk, VA',
+  faqs: [
+    { question: 'Do you clear land and acreage in Suffolk?', answer: 'Yes — land clearing is one of our main services in Suffolk. We clear wooded acreage, brush, and pine stands for building lots, farmland, and open space, then process and haul everything off so the ground is ready to use.' },
+    { question: 'Can you remove very large trees on a rural Suffolk property?', answer: 'Yes. Big rural trees often need heavy equipment or a crane. We rig and remove failing oaks, pines, and dead hardwoods in sections so nothing lands on outbuildings, fences, or crops.' },
+    { question: 'Do you offer 24/7 storm response in Suffolk?', answer: 'Yes. Our emergency crew is on call around the clock across Suffolk to clear trees down across rural drives, roads, and farm structures, and to make the property safe fast.' },
+  ],
+  relatedPreferred: ['/case-studies/property-value', '/case-studies/crane-safety'],
 };
 
+const SuffolkPage = () => <CityServiceLayout data={data} />;
 export default SuffolkPage;
