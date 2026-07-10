@@ -19,6 +19,9 @@ export const useGoogleReviews = () => {
     try {
       const res = await fetch('/api/reviews');
       if (!res.ok) throw new Error('Failed to load reviews');
+      // Guard against an HTML fallback (e.g. missing endpoint) being parsed as JSON.
+      const contentType = res.headers.get('content-type') || '';
+      if (!contentType.includes('application/json')) throw new Error('Reviews unavailable');
       const data = await res.json();
       setReviews(Array.isArray(data.reviews) ? data.reviews : []);
     } catch (e) {
