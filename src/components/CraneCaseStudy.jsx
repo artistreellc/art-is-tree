@@ -67,14 +67,31 @@ const CraneCaseStudy = () => {
         </header>
 
         {/* ── THE CHALLENGE ── */}
+        {/* ── INTRO ── */}
+        <section className="container mx-auto px-4 max-w-4xl pt-12 md:pt-16 pb-4">
+          <SectionHeading eyebrow="In my own words" title="Some trees you don’t get to just drop" />
+          <div className="mt-6 space-y-5 text-gray-700 text-lg leading-relaxed">
+            <p className="first-letter:text-5xl first-letter:font-playfair first-letter:font-bold first-letter:text-[#1B4D3E] first-letter:mr-2 first-letter:float-left first-letter:leading-[0.8]">
+              I’m Mike, and I own Art-is-Tree. People see a crane roll up to a tree job and assume it’s overkill — a way to pad the bill. It’s usually the opposite. A crane is what we reach for when dropping a tree the normal way would mean gambling with a roof, a fence, the power lines, or a protected shoreline. On the right job it isn’t the expensive option; it’s the only safe one. This waterfront removal in Virginia Beach is a good example of why.
+            </p>
+            <p>
+              I’ve been climbing and running removals around Hampton Roads for years, and the crane jobs are the ones people remember — usually because the tree was the kind that scared them. Big, dead, leaning the wrong way, hanging over the one thing they care most about. Here’s how one of those goes when it’s done right, start to finish.
+            </p>
+          </div>
+        </section>
+
+        {/* ── THE CHALLENGE ── */}
         <section className="container mx-auto px-4 max-w-4xl pb-16 md:pb-20">
           <SectionHeading eyebrow="The Challenge" title="No safe direction to drop them" />
           <div className="mt-6 space-y-5 text-gray-700 text-lg leading-relaxed">
-            <p className="first-letter:text-5xl first-letter:font-playfair first-letter:font-bold first-letter:text-[#1B4D3E] first-letter:mr-2 first-letter:float-left first-letter:leading-[0.8]">
-              On a tight waterfront lot in Virginia Beach, several tall loblolly pines had declined to the point that they were leaning toward the house. Years of coastal storms had opened cracks in the trunks and killed off sections of the canopy — the kind of damage that turns a tree into a liability the next time the wind picks up.
+            <p>
+              The lot was tight and right on the water. Several tall loblolly pines had declined to where they were leaning toward the house — years of coastal storms had opened cracks in the trunks and killed off whole sections of canopy. That’s the kind of damage that turns a tree into a liability the next time the wind really picks up, and these were well past saving.
             </p>
             <p>
-              The problem was that there was nowhere safe to put them. The house sat on one side. On the other was the water and its protected shoreline buffer, where heavy equipment and debris aren't allowed. Mature landscaping filled the space in between. Felling these pines the conventional way — cutting them at the base and dropping them — would have meant gambling the roof, the fence, or the shoreline on where an 80-foot tree decided to fall. That was off the table.
+              The problem was that there was nowhere safe to put them. The house sat on one side. On the other was the water and its protected shoreline buffer, where heavy equipment and debris aren’t allowed. Mature landscaping filled the gaps in between. Felling these pines the old-fashioned way — cutting them at the base and dropping them — would have meant betting the roof, the fence, or the shoreline on where an 80-foot tree decided to land. I wasn’t willing to make that bet, and you shouldn’t let anyone make it with your property either.
+            </p>
+            <p>
+              Loblolly pines are the tallest thing in most Hampton Roads yards, and that height is exactly what makes a declining one so dangerous — a lot of weight, a long way up, standing in sandy coastal soil that loosens its grip on the roots every time the ground floods. A compromised pine like that doesn’t give much warning before it goes, and when it goes, it goes all at once.
             </p>
           </div>
         </section>
@@ -101,6 +118,9 @@ const CraneCaseStudy = () => {
                     </li>
                   ))}
                 </ul>
+                <p className="mt-6 text-gray-700 text-lg leading-relaxed">
+                  What makes it work is the coordination between the climber and the operator. The climber sets the sling exactly where the section will balance, calls the pick, and only makes the cut once the operator has taken the tension. Everybody on the ground stays out from under the load. From the street it looks slow and deliberate — and that’s the point. Slow and deliberate is what keeps two tons of pine from going anywhere it isn’t supposed to.
+                </p>
               </div>
               <div className="lg:pt-4">
                 <Figure
@@ -112,6 +132,22 @@ const CraneCaseStudy = () => {
                 />
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* ── SAFETY ── */}
+        <section className="container mx-auto px-4 max-w-4xl py-16 md:py-20">
+          <SectionHeading eyebrow="Why the process matters" title="On a crane job, safety isn’t a preference — it’s a standard" />
+          <div className="mt-6 space-y-5 text-gray-700 text-lg leading-relaxed">
+            <p>
+              There’s a national safety standard for exactly this kind of work — <strong>ANSI Z133</strong>, the American National Standard for Arboricultural Operations. It’s written by arborists for arborists, and it’s the benchmark a legitimate tree company holds itself to.<sup><a href="#s1" className="text-[#1B4D3E] hover:text-[#D4AF37]">1</a></sup> A crane removal has hard rules under it: the operator stays at the controls the entire time a load is suspended, every section is rigged to keep it from shifting, and loads are lowered under control — no shock-loading, no free fall, ever.<sup><a href="#s1" className="text-[#1B4D3E] hover:text-[#D4AF37]">1</a></sup>
+            </p>
+            <p>
+              That last part is the whole point. When we make the cut, the section is already hanging on the crane — the wood never gets a chance to fall. We weigh our picks against the crane’s load chart so we’re never asking the machine to lift more than it safely can, and the climber and operator run on a fixed set of hand signals so there’s zero confusion sixty feet up. None of that shows up on the invoice, but it’s the entire difference between a controlled removal and an accident waiting to happen. When you hire a crew for a crane job, that discipline is what you’re actually paying for.
+            </p>
+            <p>
+              It’s also why insurance matters so much on this kind of work. A crane pick gone wrong doesn’t scratch a fender — it puts a two-ton log somewhere it shouldn’t be. We carry full liability and workers’ comp coverage precisely because the stakes are high, and that means if anything ever did go wrong, it’s on us, not on the homeowner. Before you let any crew put a crane over your house, ask them for proof of insurance. A legitimate outfit hands it over without blinking.
+            </p>
           </div>
         </section>
 
@@ -129,6 +165,9 @@ const CraneCaseStudy = () => {
               <p className="mt-6 text-gray-700 text-lg leading-relaxed">
                 Waterfront lots in Virginia Beach often fall under the <Link to="/case-studies/chesapeake-bay-preservation-act" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">Chesapeake Bay Preservation Act</Link>, which restricts clearing and heavy equipment inside the shoreline buffer. Lifting the tree out by crane meant we never had to bring machinery near the water or drag debris through it.
               </p>
+              <p className="mt-4 text-gray-700 text-lg leading-relaxed">
+                So we set the crane up on the street side, dropped the outriggers well back from the bank, and flew every piece out over the house to a staging area on the driveway. Nothing ever touched the buffer. On a normal lot that’s just good practice; on a Chesapeake Bay Preservation Act lot, it’s the line between a clean job and a code violation with a per-day fine attached.
+              </p>
               <blockquote className="mt-8 border-l-4 border-[#D4AF37] pl-5 py-1">
                 <p className="font-playfair text-xl md:text-2xl text-[#1B4D3E] italic leading-snug">
                   “A crane turns a gamble into a controlled lift. You decide exactly where every piece goes.”
@@ -138,10 +177,28 @@ const CraneCaseStudy = () => {
           </div>
         </section>
 
+        {/* ── WHEN YOU NEED ONE ── */}
+        <section className="bg-white border-y border-gray-100 py-16 md:py-20">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <SectionHeading eyebrow="Straight talk" title="When you actually need a crane — and when you don’t" />
+            <div className="mt-6 space-y-5 text-gray-700 text-lg leading-relaxed">
+              <p>
+                I’ll be the first to tell you a lot of trees don’t need a crane. If there’s a safe direction to drop it and room to work, climbing and rigging it down by rope is faster and cheaper, and that’s exactly what we’ll quote you. I’m not going to roll a crane out to a backyard pine in the middle of an open lot just to make the job look bigger — that’s not how I do business.
+              </p>
+              <p>
+                Where a crane earns its keep is a job like this one: a big, heavy, compromised tree with no safe fell path and something valuable underneath it — a roof, a pool, power lines, a shoreline you’re not allowed to touch. A dead or storm-cracked tree is also unpredictable; the wood is brittle and doesn’t rig or hinge the way a healthy tree does. Taking the weight with a crane before we ever cut removes the guesswork. When I recommend a crane, it’s because the alternative is a gamble I wouldn’t take on my own house — and I’ll walk you through exactly why on your specific tree.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* ── OUTCOME ── */}
         <section className="bg-[#0A2F24] py-16 md:py-20">
           <div className="container mx-auto px-4 max-w-5xl">
             <SectionHeading eyebrow="The Outcome" title="A clean, controlled removal — in one visit" light align="center" />
+            <p className="text-gray-100 text-lg leading-relaxed text-center max-w-2xl mx-auto mt-6">
+              We took the whole stand of pines down in a single day. Every section came off the same way — rigged, lifted, flown out, processed — and by the time we pulled the crane off the street, you couldn’t tell we’d run a major removal on a waterfront lot. The client went from lying awake through every storm to never having to think about those trees again.
+            </p>
             <div className="grid sm:grid-cols-3 gap-6 mt-10">
               {[
                 [Shield, 'No damage', 'The roof, fence, and landscaping came through untouched.'],
@@ -155,6 +212,14 @@ const CraneCaseStudy = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ── SOURCES ── */}
+        <section className="container mx-auto px-4 max-w-4xl pt-12">
+          <div className="pt-6 border-t border-gray-200 text-sm text-gray-500">
+            <p className="font-semibold text-gray-700 m-0 mb-2">Sources</p>
+            <p id="s1" className="m-0">1. ANSI Z133, American National Standard for Arboricultural Operations, published by the <a href="https://treecareindustryassociation.org/products/ansi-z133-arboricultural-safety-standards/" target="_blank" rel="noopener noreferrer" className="text-[#1B4D3E] underline hover:text-[#D4AF37]">Tree Care Industry Association.</a></p>
           </div>
         </section>
 
