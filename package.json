@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host :: --port 3000",
-    "build": "vite-react-ssg build",
+    "build": "vite-react-ssg build && node scripts/check-prerender.mjs",
     "preview": "vite preview --host :: --port 3000 --outDir dist",
     "eslint": "eslint .",
     "lint": "eslint . --quiet"
