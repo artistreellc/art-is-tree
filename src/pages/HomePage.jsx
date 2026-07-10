@@ -12,11 +12,11 @@ import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema';
 import SpeakableSchema from '@/components/seo/SpeakableSchema';
 import FAQPageSchema from '@/components/seo/FAQPageSchema';
 import GoogleReviewsDisplay from '@/components/GoogleReviewsDisplay';
+import YouTubeFacade from '@/components/YouTubeFacade';
 
 // Lazy Loaded Components
 const AboutSection = lazy(() => import('@/components/AboutSection'));
 const ServicesSection = lazy(() => import('@/components/ServicesSection'));
-const NeighborhoodServiceContent = lazy(() => import('@/components/NeighborhoodServiceContent'));
 const ComprehensiveServicesOverview = lazy(() => import('@/components/ComprehensiveServicesOverview'));
 const TrustAndCredentialsSection = lazy(() => import('@/components/TrustAndCredentialsSection'));
 const FAQSection = lazy(() => import('@/components/FAQSection'));
@@ -92,7 +92,7 @@ const HomePage = () => {
 
       <div className="flex flex-col w-full overflow-x-hidden">
         <header className="relative bg-[#1B4D3E] text-white py-24 md:py-32 overflow-hidden flex items-center justify-center text-center">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1587541884826-b43073ad974c?auto=format&fit=crop&q=65&w=1024')] opacity-20 bg-cover bg-center mix-blend-overlay"></div>
+          <div className="absolute inset-0 bg-[url('/images/virginia-beach-crane-removal-over-house.webp')] opacity-25 bg-cover bg-center mix-blend-overlay"></div>
           <div className="container relative z-10 px-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-playfair mb-6 drop-shadow-md mt-0 text-white speakable">
               Tree Service in Virginia Beach, VA
@@ -144,10 +144,44 @@ const HomePage = () => {
           </div>
         </section>
 
+        <section className="py-16 bg-gray-50 border-b border-gray-100">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="text-center mb-10">
+              <h2 className="font-playfair text-3xl md:text-4xl font-bold text-[#1B4D3E] mb-3 mt-0">Recent Work in Hampton Roads</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">Real crane removals, technical climbing, and cleanups from Art-is-Tree LLC job sites across Virginia Beach.</p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+              {[
+                ['virginia-beach-crane-removal-over-house', 'Crane hoisting a tree section over a house in Virginia Beach, VA'],
+                ['virginia-beach-crane-oak-limb-rigging', 'Climber rigging an oak limb for crane removal in Virginia Beach, VA'],
+                ['virginia-beach-arborist-hardwood-removal', 'Arborist sectioning a large hardwood in Virginia Beach, VA'],
+                ['virginia-beach-tree-debris-grapple-truck', 'Grapple truck loading tree debris in Virginia Beach, VA'],
+              ].map(([file, alt]) => (
+                <Link key={file} to="/gallery" className="relative aspect-[4/5] overflow-hidden rounded-xl shadow-md border border-gray-200 bg-gray-100 group">
+                  <img src={`/images/${file}.webp`} alt={alt} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                </Link>
+              ))}
+            </div>
+            <div className="text-center mt-8">
+              <Button asChild className="bg-[#1B4D3E] text-white hover:bg-[#14392e] font-semibold py-6 px-8">
+                <Link to="/gallery">See More of Our Work</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
         <Suspense fallback={<SectionFallback />}>
           <ServicesSection />
           <CertificationsSection />
-          <NeighborhoodServiceContent />
+
+          <section className="py-16 md:py-20 bg-[#1B4D3E]">
+            <div className="container mx-auto px-4 max-w-4xl">
+              <h2 className="text-3xl md:text-4xl font-playfair font-bold text-white text-center mb-3 mt-0">See Our Team at Work</h2>
+              <p className="text-gray-200 text-center mb-8 max-w-2xl mx-auto">Watch how Art-is-Tree LLC safely handles complex tree removals across Virginia Beach and Hampton Roads.</p>
+              <YouTubeFacade id="9xS3CGC3fjo" title="Art-is-Tree LLC tree service in Virginia Beach, VA" />
+            </div>
+          </section>
+
           <WhyChooseSection title="Why Choose Art-is-Tree LLC?" />
           <ComprehensiveServicesOverview />
           <TrustAndCredentialsSection />

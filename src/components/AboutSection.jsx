@@ -26,14 +26,10 @@ const AboutSection = () => {
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#1B4D3E]/20 rounded-full blur-2xl"></div>
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
               <img
-                src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format,compress&q=75&fit=crop&w=1200"
-                srcSet="
-                  https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format,compress&q=75&fit=crop&w=600 600w,
-                  https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format,compress&q=75&fit=crop&w=900 900w,
-                  https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format,compress&q=75&fit=crop&w=1200 1200w
-                "
-                sizes="(max-width: 640px) 600px, (max-width: 1024px) 900px, 1200px"
-                alt="Professional tree care crew assessing and performing comprehensive tree services"
+                src="/images/virginia-beach-arborist-hardwood-removal.webp"
+                width="1200"
+                height="1600"
+                alt="Art-is-Tree LLC arborist safely sectioning a large hardwood tree in Virginia Beach"
                 loading="lazy"
                 decoding="async"
                 className="w-full h-[400px] md:h-[550px] object-cover transform hover:scale-105 transition-transform duration-700"
