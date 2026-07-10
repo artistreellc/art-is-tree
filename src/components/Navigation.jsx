@@ -265,7 +265,7 @@ const Navigation = memo(() => {
             <div className="bg-white p-1.5 md:p-2 rounded-lg shadow-md flex items-center gap-2">
               <picture>
                 <source srcSet={`${logoUrl}?format=webp&w=42 1x, ${logoUrl}?format=webp&w=84 2x`} type="image/webp" />
-                <img src={`${logoUrl}?format=jpeg&w=42`} srcSet={`${logoUrl}?format=jpeg&w=42 1x, ${logoUrl}?format=jpeg&w=84 2x`} alt="Art-is-Tree LLC Logo" className="w-auto" width="42" height="36" style={{ height: '36px', width: 'auto' }} fetchPriority="high" loading="eager" decoding="sync" />
+                <img src={`${logoUrl}?format=jpeg&w=42`} srcSet={`${logoUrl}?format=jpeg&w=42 1x, ${logoUrl}?format=jpeg&w=84 2x`} alt="Art-is-Tree LLC Logo" className="w-auto" width="42" height="36" style={{ height: '36px', width: 'auto' }} fetchpriority="high" loading="eager" decoding="sync" />
               </picture>
               <span className="font-playfair text-xl font-bold text-[#1B4D3E] tracking-tight hidden sm:block">
                 Art-is-Tree <span className="text-[#D4AF37]">LLC</span>

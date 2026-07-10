@@ -26,6 +26,12 @@ export default [
 			...reactHooks.configs.recommended.rules,
 			...importPlugin.flatConfigs.recommended.rules,
 
+			// React 18.3's DOM renderer only emits the resource-hint attribute
+			// when written lowercase (`fetchpriority`); the camelCase form the
+			// rule prefers is dropped with a runtime warning. Allow the lowercase
+			// spelling so the attribute actually ships.
+			'react/no-unknown-property': ['error', { ignore: ['fetchpriority'] }],
+
 			// Non-critical rules - disabled since code works fine without them
 			'react/prop-types': 'off',
 			'react/no-unescaped-entities': 'off',
