@@ -44,7 +44,7 @@ const NAV_LINKS = [
       { name: 'All Case Studies', path: '/case-studies' },
       { name: 'Crane Safety', path: '/case-studies/crane-safety' },
       { name: 'Chesapeake Bay', path: '/case-studies/chesapeake-bay-preservation-act' },
-      { name: 'Disease Management', path: '/case-studies/disease-management' },
+      { name: 'Emerald Ash Borer', path: '/case-studies/emerald-ash-borer' },
       { name: 'OSHA Compliance', path: '/case-studies/osha-compliance' },
       { name: 'Property Value', path: '/case-studies/property-value' },
       { name: 'Unlicensed Contractors', path: '/case-studies/unlicensed-contractors' },

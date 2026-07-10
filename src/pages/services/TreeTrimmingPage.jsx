@@ -173,7 +173,7 @@ const TreeTrimmingPage = () => {
       <FAQPageSchema items={treeTrimmingFaqs} />
       <FAQSection items={treeTrimmingFaqs} title="Tree Trimming & Pruning in Virginia Beach: FAQ" />
       <ServiceAreaLinks serviceName="Tree Trimming & Pruning" />
-      <RelatedCaseStudies currentPath="/services/tree-trimming" preferred={['/case-studies/spikeless-pruning', '/case-studies/disease-management', '/case-studies/property-value']} />
+      <RelatedCaseStudies currentPath="/services/tree-trimming" preferred={['/case-studies/spikeless-pruning', '/case-studies/emerald-ash-borer', '/case-studies/property-value']} />
     </div>
   );
 };

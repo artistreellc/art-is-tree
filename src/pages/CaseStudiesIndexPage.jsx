@@ -10,9 +10,9 @@ const caseStudiesData = [
     link: "/case-studies/spikeless-pruning",
   },
   {
-    title: "Big Leaf Maple Wilt Case Study",
-    description: "Explore how proper tree care and early intervention can prevent devastating fungal diseases like Big Leaf Maple Wilt, protecting your valuable landscape investments.",
-    link: "/case-studies/disease-management",
+    title: "Emerald Ash Borer: The 200-Year-Old Church Ash",
+    description: "A first-person account of removing a massive, emerald ash borer–killed ash tree over a church altar and day-school play area in Kempsville — a rotten, cabled union that needed a crane.",
+    link: "/case-studies/emerald-ash-borer",
   },
   {
     title: "OSHA Case Study",

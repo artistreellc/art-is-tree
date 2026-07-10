@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 const CASE_STUDIES = [
-  { title: "Crane Nesting Site Protection", path: "/case-studies/crane-safety", category: "Hazard Mitigation" },
+  { title: "Crane-Assisted Removal", path: "/case-studies/crane-safety", category: "Hazard Mitigation" },
   { title: "Waterfront Property Management", path: "/case-studies/chesapeake-bay-preservation-act", category: "Environmental Care" },
-  { title: "Disease Management & Restoration", path: "/case-studies/disease-management", category: "Tree Health" },
+  { title: "Emerald Ash Borer Removal", path: "/case-studies/emerald-ash-borer", category: "Tree Health" },
   { title: "OSHA Compliance & Safety Standards", path: "/case-studies/osha-compliance", category: "Safety" },
   { title: "Property Value Enhancement", path: "/case-studies/property-value", category: "Real Estate" },
   { title: "Unlicensed Contractors Risks", path: "/case-studies/unlicensed-contractors", category: "Consumer Protection" },
