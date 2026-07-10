@@ -3,9 +3,9 @@ import { CheckCircle2, Trees, Scissors, Tractor, ArrowRight } from 'lucide-react
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
-const ComprehensiveServicesOverview = ({ 
-  title = "Comprehensive Tree Care Solutions", 
-  description = "From residential pruning to large-scale commercial land clearing, we provide expert arboricultural services tailored to your needs." 
+const ComprehensiveServicesOverview = ({
+  title = "Full-Service Tree Care in Virginia Beach",
+  description = "From residential tree pruning to large-scale commercial land clearing, we handle the full range of tree work across Hampton Roads."
 }) => {
   const categories = [
     {

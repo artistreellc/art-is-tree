@@ -10,23 +10,23 @@ const WhyChooseSection = ({ title = "Why Choose Art-is-Tree LLC?" }) => {
   const reasons = [
     {
       icon: ThumbsUp,
-      title: "Expert Knowledge",
-      description: "Our team consists of professionals who understand tree biology and proper pruning techniques."
+      title: "Trained Climbers",
+      description: "Every removal is run by an experienced climber who knows how to rig a tree and take it down safely, not a day-labor crew."
     },
     {
       icon: Zap,
-      title: "Fast Response",
-      description: "We offer 24/7 emergency services and guarantee rapid response times for hazardous situations."
+      title: "24/7 Storm Response",
+      description: "Tree on your house or blocking the drive? We answer the phone around the clock and get out fast to make it safe."
     },
     {
       icon: PiggyBank,
-      title: "Transparent Pricing",
-      description: "No hidden fees. We provide free, detailed written estimates before any work begins."
+      title: "Free Written Estimates",
+      description: "You get a clear, itemized quote up front. No hidden fees, and no work starts until you approve the price."
     },
     {
       icon: HeartHandshake,
-      title: "Customer First",
-      description: "We treat your property like our own, ensuring a meticulous cleanup after every single job."
+      title: "Clean Site, Every Time",
+      description: "We rake up, haul off the debris, and leave your yard cleaner than we found it. Cleanup is part of the job, not an add-on."
     }
   ];
 

@@ -13,6 +13,7 @@ import SpeakableSchema from '@/components/seo/SpeakableSchema';
 import FAQPageSchema from '@/components/seo/FAQPageSchema';
 import GoogleReviewsDisplay from '@/components/GoogleReviewsDisplay';
 import YouTubeFacade from '@/components/YouTubeFacade';
+import QuickLinksBento from '@/components/QuickLinksBento';
 
 // Lazy Loaded Components
 const AboutSection = lazy(() => import('@/components/AboutSection'));
@@ -91,14 +92,15 @@ const HomePage = () => {
       <SpeakableSchema pageUrl="https://artistreevabeach.com/" />
 
       <div className="flex flex-col w-full overflow-x-hidden">
-        <header className="relative bg-[#1B4D3E] text-white py-24 md:py-32 overflow-hidden flex items-center justify-center text-center">
-          <div className="absolute inset-0 bg-[url('/images/virginia-beach-crane-removal-over-house.webp')] opacity-25 bg-cover bg-center mix-blend-overlay"></div>
+        <header className="relative isolate text-white py-28 md:py-40 overflow-hidden flex items-center justify-center text-center">
+          <img src="/images/virginia-beach-winter-storm-cleanup.webp" alt="Art-is-Tree LLC crew clearing a storm-downed tree in Virginia Beach" className="absolute inset-0 -z-10 w-full h-full object-cover" fetchPriority="high" />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0A2F24]/90 via-[#0A2F24]/78 to-[#08251C]/94"></div>
           <div className="container relative z-10 px-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-playfair mb-6 drop-shadow-md mt-0 text-white speakable">
               Tree Service in Virginia Beach, VA
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto font-light mb-6 drop-shadow speakable">
-              Art-is-Tree LLC is a licensed and insured, BBB A+ tree service serving Virginia Beach and all of Hampton Roads. Tree removal, trimming, stump grinding, crane work, and 24/7 emergency storm response.
+              Tree removal, trimming, stump grinding, and 24/7 storm cleanup across Virginia Beach and Hampton Roads. Licensed, insured, BBB A+, and rated 5.0 across 134 reviews &mdash; with the crane and the experience to take on the jobs other companies turn down.
             </p>
             <p className="text-lg text-[#D4AF37] font-semibold max-w-2xl mx-auto mb-10">
               Get 5% off any service when you request your free estimate through our website.
@@ -114,11 +116,13 @@ const HomePage = () => {
           </div>
         </header>
 
+        <QuickLinksBento />
+
         <section className="py-16 bg-white border-b border-gray-100">
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="text-center mb-10">
               <h2 className="font-playfair text-3xl md:text-4xl font-bold text-[#1B4D3E] mb-6 mt-0">
-                Your Trusted Hampton Roads Tree Service
+                Experienced Climbers. Serious Equipment. Clean Job Sites.
               </h2>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-[#1B4D3E] font-medium">
                 <span className="flex items-center gap-2"><Award className="w-5 h-5 text-[#D4AF37]" /> BBB A+ &amp; TCIA Member</span>
@@ -129,16 +133,16 @@ const HomePage = () => {
 
             <div className="prose prose-lg text-gray-700 leading-relaxed font-light text-left mx-auto max-w-none space-y-6">
               <p>
-                <strong>Art-is-Tree LLC is a licensed and insured tree service company based in Virginia Beach, VA</strong>, serving homeowners and property managers across Virginia Beach, Norfolk, Chesapeake, Portsmouth, Suffolk, and the greater Hampton Roads region. We provide tree removal, tree trimming and pruning, stump grinding, crane-assisted removal, land clearing, and 24/7 emergency storm response &mdash; backed by a BBB A+ rating<Cite href={COMPANY_INFO.socials.bbb} label="BBB" />, TCIA membership<Cite href="https://www.tcia.org/" label="TCIA" />, and a 5.0-star reputation across 134 reviews<Cite href={COMPANY_INFO.socials.googleMaps} label="Google" />.
+                <strong>Art-is-Tree LLC is a licensed and insured tree service in Virginia Beach, VA</strong> &mdash; and we've earned a 5.0 rating across 134 Google reviews<Cite href={COMPANY_INFO.socials.googleMaps} label="Google" /> doing the work a lot of companies would rather hand off. Removals, trimming and pruning, stump grinding, crane jobs, land clearing, and storm cleanup, all in-house and all over Hampton Roads: Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk. We're BBB A+ rated<Cite href={COMPANY_INFO.socials.bbb} label="BBB" /> and members of the TCIA<Cite href="https://www.tcia.org/" label="TCIA" />.
               </p>
               <p>
-                There are a lot of tree companies in Virginia Beach, but Art-is-Tree LLC stands apart through dedication and deep local knowledge. Owner Mike Campbell started climbing trees professionally at 19 years old and has spent years mastering the coastal trees of Hampton Roads. Whether you are dealing with towering loblolly pines in Kempsville or delicate ornamental pruning, you get an experienced tree care specialist who handles the job safely and cleanly.
+                Virginia Beach has no shortage of tree companies. What sets us apart is experience on the ropes. Owner Mike Campbell has climbed professionally since he was 19 and has spent years working the coastal trees of Hampton Roads &mdash; the loblolly pines that fail in a nor'easter, the mature water oaks overhanging homes in Kempsville, and the sandy soil that changes how a tree has to come down. Every job is run by someone who has done it thousands of times, not a crew learning on your property.
               </p>
               <p>
-                We are equipped for the most demanding situations, including complex crane-assisted tree removal when a standard drop is unsafe near homes, fences, or power lines. When extreme weather hits our coastal area, our emergency tree service crew deploys rapidly to secure your property and eliminate immediate <Link to="/case-studies/unlicensed-contractors" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">property damage</Link> hazards. And on waterfront lots, we help you navigate <Link to="/case-studies/chesapeake-bay-preservation-act" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">Chesapeake Bay Preservation Act</Link> requirements before any cutting begins.
+                We are equipped for the work other crews turn down. When a tree stands too close to a house, fence, or power line to fell conventionally, we rig it to a crane and remove it in controlled sections. When a storm drives a limb through a roof, we respond around the clock to secure the property before it causes more <Link to="/case-studies/virginia-tree-law" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">damage</Link>. And on waterfront lots, we help you work through <Link to="/case-studies/chesapeake-bay-preservation-act" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">Chesapeake Bay Preservation Act</Link> requirements before the first cut, so a removal doesn't turn into a violation.
               </p>
               <p>
-                From meticulous <Link to="/services/tree-trimming" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">tree trimming</Link> to complete <Link to="/services/stump-grinding" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">stump grinding</Link>, we deliver quality at every stage. If you need routine maintenance, a high-risk <Link to="/services/tree-removal" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">tree removal</Link>, 24/7 <Link to="/services/emergency-tree-service" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">emergency tree service</Link>, or thorough stump grinding, we have you covered. For a free estimate, call <a href="tel:7573195131" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">(757) 319-5131</a> &mdash; we answer every call.
+                The standard is the same whether the job is large or small. From routine <Link to="/services/tree-trimming" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">tree trimming</Link> to a high-risk <Link to="/services/tree-removal" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">tree removal</Link>, <Link to="/services/stump-grinding" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">stump grinding</Link> taken below grade, or <Link to="/services/emergency-tree-service" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">emergency service</Link> after a storm, the work is done right and the site is left clean. Call <a href="tel:7573195131" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">(757) 319-5131</a> for a free estimate &mdash; every call reaches a person, not a machine.
               </p>
             </div>
           </div>
@@ -152,10 +156,10 @@ const HomePage = () => {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
               {[
-                ['virginia-beach-crane-removal-over-house', 'Crane hoisting a tree section over a house in Virginia Beach, VA'],
-                ['virginia-beach-crane-oak-limb-rigging', 'Climber rigging an oak limb for crane removal in Virginia Beach, VA'],
-                ['virginia-beach-arborist-hardwood-removal', 'Arborist sectioning a large hardwood in Virginia Beach, VA'],
-                ['virginia-beach-tree-debris-grapple-truck', 'Grapple truck loading tree debris in Virginia Beach, VA'],
+                ['virginia-beach-crane-rigging-storm', 'Climber rigging a storm-damaged trunk to a crane in Virginia Beach, VA'],
+                ['virginia-beach-tall-tree-climb', 'Arborist climbing a tall tree beside a home in Virginia Beach, VA'],
+                ['virginia-beach-oak-crane-climb', 'Climber and crane removing a large oak in Virginia Beach, VA'],
+                ['virginia-beach-crane-operation-oak', 'Crane crew removing a large oak by a Virginia Beach home'],
               ].map(([file, alt]) => (
                 <Link key={file} to="/gallery" className="relative aspect-[4/5] overflow-hidden rounded-xl shadow-md border border-gray-200 bg-gray-100 group">
                   <img src={`/images/${file}.webp`} alt={alt} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />

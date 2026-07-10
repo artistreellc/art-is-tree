@@ -36,22 +36,22 @@ const ServiceAreasPage = () => {
           <div className="container mx-auto px-4 max-w-4xl mb-16">
              <div className="prose prose-lg text-gray-700 leading-relaxed mx-auto space-y-6">
                <p className="text-xl text-[#1B4D3E] font-medium text-center mb-10 border-b border-gray-200 pb-8">
-                 As a locally owned and operated company, <strong>Art-is-Tree LLC</strong> proudly provides exceptional tree care across the expansive <strong>Hampton Roads tree service</strong> region.
+                 <strong>Art-is-Tree LLC</strong> is a locally owned <strong>Hampton Roads tree service</strong>, working across Virginia Beach and the surrounding cities.
                </p>
                <p>
-                 Our owner has 15+ years of advanced climbing experience working within these exact communities. That deep local knowledge means we understand the unique environmental challenges, soil conditions, and municipal regulations governing our coastal landscape. We deliver premier residential and commercial tree services to homeowners, HOAs, and businesses throughout the area.
+                 Our owner has 15+ years climbing in these exact communities, so we know how the coast treats trees here &mdash; the wind, the sandy and clay soils, and which removals fall under local and waterfront rules. We work for homeowners, HOAs, and businesses throughout the region.
                </p>
                <h2 className="text-2xl font-bold text-[#1B4D3E] font-playfair mt-8 mb-4">Virginia Beach Coverage</h2>
                <p>
-                 Our primary service area encompasses the entirety of Virginia Beach. When searching for a <strong>tree service Virginia Beach</strong> homeowners trust, Art-is-Tree LLC delivers. Whether you live near the Oceanfront, in Great Neck, Kempsville, or the Pungo area, our crews are readily available.
+                 Virginia Beach is home base. When people search for a <strong>tree service Virginia Beach</strong> homeowners actually trust, that's us. Oceanfront, Great Neck, Kempsville, Pungo &mdash; wherever you are in the city, we can get a crew out to you.
                </p>
                <h2 className="text-2xl font-bold text-[#1B4D3E] font-playfair mt-8 mb-4">Norfolk and Chesapeake</h2>
                <p>
-                 We also extend our professional reach into neighboring cities, offering top-tier <strong>tree service Chesapeake</strong> and <strong>tree service Norfolk</strong> options. Older, historic neighborhoods in Norfolk often feature massive, mature trees that require delicate handling. Our team is fully equipped for hazardous tree removal in these densely populated areas.
+                 We also cover the neighboring cities, including <strong>tree service Chesapeake</strong> and <strong>tree service Norfolk</strong>. Norfolk's older neighborhoods have big, mature trees packed into tight lots, which takes careful rigging and often a crane to remove safely. We're set up for exactly that kind of work.
                </p>
-               <h2 className="text-2xl font-bold text-[#1B4D3E] font-playfair mt-8 mb-4">Our Service Promise</h2>
+               <h2 className="text-2xl font-bold text-[#1B4D3E] font-playfair mt-8 mb-4">Same Standard Everywhere</h2>
                <p>
-                 No matter where you are located within our service radius, you are guaranteed the exact same level of excellence. Our protocols mandate that we uphold the strictest safety protocols. Because we are a licensed and insured tree service, property owners in every municipality can rest easy knowing they are fully protected from liability.
+                 Wherever you are in our service area, the job is done the same way: careful, to code, and cleaned up after. And because we're licensed and insured, any liability during the work is on us, not you.
                </p>
              </div>
           </div>

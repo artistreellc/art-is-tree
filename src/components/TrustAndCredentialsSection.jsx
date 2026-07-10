@@ -10,7 +10,7 @@ const TrustAndCredentialsSection = () => {
           <div className="flex flex-col items-center">
             <ShieldCheck className="w-12 h-12 text-[#1B4D3E] mb-4" />
             <h3 className="font-bold text-xl text-[#1B4D3E] mb-2">Licensed & Insured</h3>
-            <p className="text-gray-600">Fully covered for your peace of mind</p>
+            <p className="text-gray-600">Fully covered, so any damage is on us, not you</p>
           </div>
           <div className="flex flex-col items-center">
             <Award className="w-12 h-12 text-[#1B4D3E] mb-4" />

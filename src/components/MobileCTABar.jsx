@@ -31,7 +31,7 @@ export default function MobileCTABar() {
           className="flex-[1.2] flex flex-col items-center justify-center gap-1 bg-[#D4AF37] text-black transition-transform active:scale-95 shadow-inner"
           aria-label="Call Now: (757) 319-5131"
         >
-          <Phone className="w-6 h-6 animate-pulse" />
+          <Phone className="w-6 h-6" />
           <span className="text-[11px] font-extrabold uppercase tracking-wider">Call Now</span>
         </a>
 

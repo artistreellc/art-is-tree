@@ -7,37 +7,37 @@ const certifications = [
   {
     id: 'bbb',
     name: 'BBB A+ Rating',
-    description: 'Committed to the highest standard of trust, transparency, and business practices.',
+    description: 'A+ accredited with the Better Business Bureau for straight dealing and a clean complaint record.',
     Icon: ShieldCheck,
   },
   {
     id: 'tcia',
     name: 'TCIA Member',
-    description: 'Tree Care Industry Association member dedicated to safety and ethical tree care.',
+    description: 'Member of the Tree Care Industry Association, which sets the safety standards for professional tree work.',
     Icon: TreePine,
   },
   {
     id: 'angi',
     name: 'Angi Certified Pro',
-    description: 'Consistently highly rated by verified customers for exceptional service.',
+    description: 'Highly rated on Angi by verified customers who hired us for real jobs.',
     Icon: BadgeCheck,
   },
   {
     id: 'yelp',
     name: 'Top-Rated on Yelp',
-    description: 'Trusted local service provider with strong, verified customer reviews.',
+    description: 'Strong, verified Yelp reviews from homeowners across Hampton Roads.',
     Icon: Star,
   },
   {
     id: 'google',
     name: 'Google Verified',
-    description: 'Verified local business with outstanding community feedback and reviews.',
+    description: 'Verified Google Business Profile with a 5.0 rating across 134 reviews.',
     Icon: CheckCircle,
   },
   {
     id: 'hr-top',
-    name: 'Hampton Roads Top 10',
-    description: 'Voted among the top tree service providers in the Hampton Roads area.',
+    name: 'Hampton Roads Favorite',
+    description: 'One of the most-recommended tree services in the Virginia Beach and Hampton Roads area.',
     Icon: Award,
     custom: true,
   },
@@ -55,7 +55,7 @@ const CertificationsSection = () => {
             </h2>
           </div>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Our commitment to excellence is backed by industry-leading recognition and community trust. We hold ourselves to the highest standards of safety, quality, and customer satisfaction.
+            We back up our work with real credentials and consistent 5-star reviews across the platforms homeowners actually check before they hire a tree service.
           </p>
         </div>
 

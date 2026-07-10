@@ -1,177 +1,48 @@
 import React from 'react';
-import { Head } from 'vite-react-ssg';
-import { Link } from 'react-router-dom';
-import { CheckCircle2, Phone } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import LocalSEOMeta from '@/components/LocalSEOMeta';
-import Breadcrumbs from '@/components/Breadcrumbs';
-import RelatedCaseStudies from '@/components/RelatedCaseStudies';
-import ServiceLinks from '@/components/ServiceLinks';
-import GoogleMap from '@/components/GoogleMap';
-import LocationFAQ from '@/components/LocationFAQ';
+import CityServiceLayout from '@/components/CityServiceLayout';
 
-const portsmouthFaqs = [
-  {
-    question: "Can you remove heritage trees in Portsmouth's historic districts?",
-    answer: "Yes. Olde Towne, Cradock, and Port Norfolk hold some of Hampton Roads' oldest trees, and they often overhang historic homes. We use precise rigging and crane-assisted removal to take down massive oaks and pines section by section, lowering the timber safely without touching the surrounding architecture.",
-  },
-  {
-    question: "How do I know if an old tree on my Portsmouth property is dangerous?",
-    answer: "Internal decay is rarely visible from the ground. We provide a hazard assessment that checks for hidden rot, weak branch unions, cavities, and compromised roots that threaten foundations and rooflines, then recommend pruning, cabling, or removal based on what we find.",
-  },
-  {
-    question: "Do you offer 24/7 emergency tree service in Portsmouth?",
-    answer: "Yes. When a storm drops a heavy limb on a Portsmouth home, our emergency crew responds around the clock to remove hazardous debris, stabilize the property against further damage, and complete full cleanup.",
-  },
-];
-
-const PortsmouthPage = () => {
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Art-is-Tree LLC",
-    "url": "https://artistreevabeach.com/service-areas/portsmouth",
-    "telephone": "+17573195131",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Portsmouth",
-      "addressRegion": "VA",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 36.8354,
-      "longitude": -76.2983
-    },
-    "areaServed": {
-      "@type": "City",
-      "name": "Portsmouth"
-    },
-    "priceRange": "$$",
-    "image": "https://artistreevabeach.com/logo.png"
-  };
-
-
-  return (
-    <>
-      <LocalSEOMeta 
-        pageTitle="Tree Service Portsmouth VA | Free Estimates"
-        description="Tree removal, trimming and stump grinding in Portsmouth, VA. Licensed, insured, BBB A+ tree service with 24/7 emergency storm response. Free estimates."
-      />
-      <Head>
-        <meta name="geo.region" content="US-VA" />
-        <meta name="geo.placename" content="Portsmouth, Virginia" />
-        <meta name="geo.position" content="36.8354;-76.2983" />
-        <meta name="ICBM" content="36.8354, -76.2983" />
-        <script type="application/ld+json">
-          {JSON.stringify(localBusinessSchema)}
-        </script>
-      </Head>
-
-      <div className="bg-gray-50 min-h-screen pb-16">
-        <Breadcrumbs />
-
-        <section className="bg-[#1B4D3E] text-white pt-24 pb-20 relative overflow-hidden">
-          <div className="absolute inset-0 bg-black/20 z-0"></div>
-          <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
-            <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-6 mt-0">
-                Tree Service Portsmouth, VA | Art-is-Tree LLC
-              </h1>
-              <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
-                Expert hazardous tree assessment and precise extraction for Portsmouth's oldest neighborhoods and historical properties.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-[#D4AF37] text-black hover:bg-[#c19b2e] font-bold py-6 px-8 text-lg" asChild>
-                  <a href="tel:7573195131">
-                    <Phone className="mr-2 w-5 h-5" /> Call (757) 319-5131
-                  </a>
-                </Button>
-                <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white/10 font-bold py-6 px-8 text-lg" asChild>
-                  <Link to="/contact">Request a Free Estimate</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <main className="container mx-auto px-4 py-16 max-w-4xl">
-          <div 
-            className="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 prose prose-lg max-w-none text-gray-700 leading-relaxed"
-           
-          >
-            <p>Portsmouth represents one of the most historically significant residential housing stocks in the entire Hampton Roads region. Neighborhoods such as Olde Towne, Cradock, and Port Norfolk feature stunning architecture nestled alongside massive, deeply rooted heritage trees. In many cases, these incredibly mature trees actually predate the historic structures they tightly overhang.</p>
-
-            <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mt-12 mb-6">Hazardous Tree Removal in Portsmouth, VA</h2>
-            <p>Removing massive, structurally compromised trees in Portsmouth's densely packed historic districts requires exact calculations and surgical execution. We dismantle hazardous oaks, pines, and maples piece by piece, safely lowering heavy timber to the ground without ever impacting the surrounding architecture.</p>
-
-            <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mt-12 mb-6">Tree Risk Assessment for Older Properties</h2>
-            <p>Because structural decay is rarely visible from the ground, our expert tree care team provides meticulous risk assessments for heritage trees. We identify hidden internal rot, unstable unions, and compromised root systems that threaten foundations and rooflines.</p>
-
-            <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mt-12 mb-6">Tree Trimming & Pruning in Portsmouth</h2>
-            <p>Maintaining the structural integrity of mature canopies requires strategic weight reduction and precise deadwooding. Our specialized tree trimming safely removes limbs that have grown too close to historic homes and overhead powerlines.</p>
-
-            <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mt-12 mb-6">Emergency Tree Service Portsmouth</h2>
-            <p>When a storm shatters a heavy limb over your property, immediate stabilization is essential. Our dedicated emergency response team is available around the clock to swiftly remove hazardous debris, secure your home against further damage, and restore safety to your historically significant Portsmouth property.</p>
-          </div>
-        </main>
-
-        <section className="container mx-auto px-4 max-w-4xl mb-16">
-          <div 
-            className="bg-[#1B4D3E]/5 p-8 rounded-2xl border border-[#1B4D3E]/10"
-           
-          >
-            <h3 className="text-2xl font-playfair font-bold text-[#1B4D3E] mb-6">Our Core Portsmouth Services:</h3>
-            <ul className="grid sm:grid-cols-2 gap-4">
-              {[
-                "Tree Removal",
-                "Hazardous Tree Assessment",
-                "Crane-Assisted Removal",
-                "Tree Trimming & Pruning",
-                "Stump Grinding",
-                "Emergency Tree Service"
-              ].map((service, index) => (
-                <li key={index} className="flex items-center text-gray-800 font-medium text-lg">
-                  <CheckCircle2 className="w-5 h-5 text-[#D4AF37] mr-3 flex-shrink-0" />
-                  {service}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        <section className="container mx-auto px-4 max-w-4xl text-center">
-          <div 
-            className="bg-[#1B4D3E] text-white p-10 rounded-2xl shadow-xl"
-           
-          >
-            <h3 className="text-3xl font-playfair font-bold mb-4">Ready to secure your Portsmouth property?</h3>
-            <p className="text-lg mb-8 text-gray-200">
-              Contact Art-is-Tree LLC today for a free estimate in Portsmouth. Whether you are dealing with a complex hazard assessment or need an immediate emergency extraction, we provide detailed written estimates with absolutely no hidden fees.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-[#D4AF37] text-black hover:bg-[#c19b2e] font-bold py-6 px-10 text-lg" asChild>
-                <a href="tel:7573195131">
-                  <Phone className="mr-2 w-5 h-5" /> Call (757) 319-5131
-                </a>
-              </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white/10 font-bold py-6 px-10 text-lg" asChild>
-                <Link to="/contact">Get Free Estimate Online</Link>
-              </Button>
-            </div>
-          </div>
-        </section>
-        <section className="container mx-auto px-4 max-w-4xl mt-4">
-          <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mb-6 text-center">Serving Portsmouth &amp; Surrounding Neighborhoods</h2>
-          <GoogleMap query="Portsmouth, VA" title="Art-is-Tree LLC tree service area — Portsmouth, VA" />
-        </section>
-      </div>
-
-      <LocationFAQ city="Portsmouth" faqs={portsmouthFaqs} />
-      <ServiceLinks cityName="Portsmouth" />
-      <RelatedCaseStudies currentPath="/service-areas/portsmouth" preferred={['/case-studies/unlicensed-contractors', '/case-studies/property-value']} />
-    </>
-  );
+const data = {
+  city: 'Portsmouth',
+  path: '/service-areas/portsmouth',
+  geo: { lat: 36.8354, lng: -76.2983 },
+  metaTitle: 'Tree Service Portsmouth VA | Removal & Trimming',
+  metaDesc: 'Tree removal, trimming, stump grinding and 24/7 emergency tree service in Portsmouth, VA. Licensed, insured, BBB A+. Free estimates from Art-is-Tree LLC.',
+  heroImg: '/images/virginia-beach-crane-rigging-storm.webp',
+  heroAlt: 'Art-is-Tree climber rigging a large trunk to a crane in Portsmouth',
+  heroSub: 'Careful tree removal, pruning, and crane work for Portsmouth’s historic districts and heritage trees.',
+  introTitle: 'Careful tree work for historic Portsmouth',
+  introParagraphs: [
+    'Portsmouth has some of the oldest housing stock in Hampton Roads, and the trees match it. Neighborhoods like Olde Towne, Cradock, and Port Norfolk sit under big heritage oaks and elms — many older than the homes they hang over. Our licensed and insured tree service knows how to work around historic architecture without doing damage.',
+    'Tight lots, mature trees, and homes worth protecting mean there’s no room for a careless drop. When people search for a <strong>tree service Portsmouth VA</strong> that respects an old property, we bring precise rigging, crane capability, and a clean job site.',
+  ],
+  neighborhoods: ['Olde Towne', 'Cradock', 'Port Norfolk', 'Churchland', 'Park View', 'West Park View', 'Cavalier Manor', 'Simonsdale'],
+  services: [
+    { iconKey: 'removal', kw: 'Tree Removal in Portsmouth', text: 'Removing a big, failing tree in Portsmouth’s packed historic districts leaves no margin. We bring hazardous oaks, pines, and maples down in sections, lowering the heavy wood a piece at a time so nothing hits the house next door.' },
+    { iconKey: 'crane', kw: 'Crane-Assisted Removal', text: 'On tight Olde Towne and Cradock lots there’s often no safe fell path. Our crane tree removal lifts each section up and over the rooftops to a clear staging area.' },
+    { iconKey: 'trim', kw: 'Tree Trimming & Pruning', text: 'Keeping a mature canopy sound comes down to smart weight reduction and clearing deadwood. We trim back limbs that have grown too close to historic homes and power lines before they become a problem.' },
+    { iconKey: 'stump', kw: 'Stump Grinding', text: 'We grind stumps below grade so you can restore the yard — part of a Portsmouth removal or on its own.' },
+    { iconKey: 'emergency', kw: '24/7 Emergency Tree Service', text: 'When a storm drops a heritage limb across your roof or driveway, our emergency tree service answers 24/7 to secure the hazard and clear the damage.' },
+    { iconKey: 'land', kw: 'Tree Risk Assessment', text: 'Most structural decay doesn’t show from the ground. We check heritage trees for internal rot, weak unions, and failing roots — the problems that put a limb through a roof or crack a foundation.' },
+  ],
+  localTitle: 'Heritage trees over historic homes',
+  localParagraphs: [
+    'The trees that make Olde Towne, Cradock, and Port Norfolk beautiful are also the ones most likely to hide trouble. Decades of growth over historic rooflines, combined with hidden internal decay and shallow, disturbed roots, mean a tree can look healthy and still be a real risk.',
+    'That’s why we assess before we quote. We identify what’s actually going on inside a heritage tree and give you a straight answer — prune it, cable it, or take it down — so you can protect both the home and the tree when it makes sense.',
+  ],
+  localImg: '/images/virginia-beach-pine-log-cross-section.webp',
+  localAlt: 'Fresh cross-section of a large tree trunk showing the rings',
+  localCaption: 'Reading a trunk’s cross-section tells the tree’s real condition',
+  localBadges: [['shield', 'Licensed & Insured']],
+  ctaTitle: 'Get a free estimate in Portsmouth',
+  ctaText: 'A detailed written quote with no hidden fees, from a crew that treats an old property with the care it deserves. Book online and take 5% off.',
+  mapQuery: 'Portsmouth, VA',
+  faqs: [
+    { question: 'Can you work around historic homes in Olde Towne?', answer: 'Yes — that’s much of what we do in Portsmouth. On tight historic lots we rig and lower each section by rope or crane instead of dropping the tree, so the house, porch, fence, and gardens stay protected throughout the job.' },
+    { question: 'How do I know if my heritage tree is dangerous?', answer: 'Most structural decay isn’t visible from the ground. We assess heritage trees for internal rot, weak branch unions, and compromised roots, then give you an honest recommendation — prune, cable, or remove — before any work begins.' },
+    { question: 'Do you offer 24/7 storm response in Portsmouth?', answer: 'Yes. Our emergency crew is on call around the clock across Portsmouth to clear fallen and hanging limbs, secure the property, and haul away debris after a storm.' },
+  ],
+  relatedPreferred: ['/case-studies/virginia-tree-law', '/case-studies/spikeless-pruning'],
 };
 
+const PortsmouthPage = () => <CityServiceLayout data={data} />;
 export default PortsmouthPage;

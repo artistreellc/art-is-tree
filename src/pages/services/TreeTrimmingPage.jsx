@@ -82,7 +82,7 @@ const TreeTrimmingPage = () => {
             Most homeowners in Virginia Beach don't think about tree trimming until something forces them to. A branch comes through the screened porch in a July storm. A limb that's been growing toward the roofline for three seasons gets heavy enough in an ice event to make contact. Properly timed tree trimming is not cosmetic maintenance — it's structural management, and it follows documented science.
           </p>
           <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-            Art-is-Tree LLC prunes according to <Link to="/case-studies/unlicensed-contractors" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">ANSI A300 Part 1 standards</Link> — the American National Standards Institute's benchmark for tree care practices. <Link to="/case-studies/unlicensed-contractors" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">ANSI A300</Link> defines pruning cut types, acceptable removal limits, and correct techniques for each species category. It prohibits topping, prohibits flush cuts that remove the branch collar, and requires that no more than 25 percent of a tree's live crown be removed in a single pruning cycle.
+            Art-is-Tree LLC prunes according to <Link to="/case-studies/virginia-tree-law" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">ANSI A300 Part 1 standards</Link> — the American National Standards Institute's benchmark for tree care practices. <Link to="/case-studies/virginia-tree-law" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">ANSI A300</Link> defines pruning cut types, acceptable removal limits, and correct techniques for each species category. It prohibits topping, prohibits flush cuts that remove the branch collar, and requires that no more than 25 percent of a tree's live crown be removed in a single pruning cycle.
           </p>
           <p className="text-lg text-gray-700 mb-6 leading-relaxed">
             Virginia Beach grows a specific mix of trees that each behave differently and respond differently to pruning. Loblolly pines — the dominant species across Hampton Roads — develop both a central taproot in deep sandy soil and wide lateral root systems that make them vulnerable to windthrow when the soil is saturated. As loblolly pines mature, lower limb removal improves structural stability by reducing the surface area that catches wind load during storms.
@@ -91,7 +91,10 @@ const TreeTrimmingPage = () => {
             Live oaks require a completely different approach. A live oak's structural strength comes from its distributed crown, and the correct management is selective crown thinning. Topping a live oak is one of the most destructive things that can be done to the tree.
           </p>
           <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-            The same logic applies to climbing method. <Link to="/case-studies/unlicensed-contractors" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">ANSI A300</Link> standards prohibit the use of climbing spikes on any live tree that is not being removed. Art-is-Tree uses spikeless rope access techniques on all trimming and pruning work. It requires more technical skill and more time. It also doesn't damage the trees we're hired to maintain. Read our <Link to="/case-studies/spikeless-pruning" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">spikeless pruning case study</Link> for a real example.
+            The same logic applies to climbing method. <Link to="/case-studies/virginia-tree-law" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">ANSI A300</Link> standards prohibit the use of climbing spikes on any live tree that is not being removed. Art-is-Tree uses spikeless rope access techniques on all trimming and pruning work. It requires more technical skill and more time. It also doesn't damage the trees we're hired to maintain. Read our <Link to="/case-studies/spikeless-pruning" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">spikeless pruning case study</Link> for a real example.
+          </p>
+          <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+            We don't only work on shade trees. We also handle <strong>fruit tree pruning in Virginia Beach</strong> — apples, figs, cherries, and ornamentals pruned in the right season for structure and fruit, not hacked back. And it isn't only residential: we run <strong>commercial tree service</strong> for HOAs, property managers, and businesses across Hampton Roads, keeping street trees, parking-lot canopies, and common areas safe and clean. Same crew, same ANSI A300 standard, whether you searched "tree pruning near me" for one backyard fig or need a full commercial pruning contract.
           </p>
           <p className="text-lg text-gray-700 mb-6 leading-relaxed">
             All trimming quotes from Art-is-Tree are written, fixed, and include complete debris removal. We serve Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk. For a free tree trimming estimate call (757) 319-5131.
@@ -173,7 +176,7 @@ const TreeTrimmingPage = () => {
       <FAQPageSchema items={treeTrimmingFaqs} />
       <FAQSection items={treeTrimmingFaqs} title="Tree Trimming & Pruning in Virginia Beach: FAQ" />
       <ServiceAreaLinks serviceName="Tree Trimming & Pruning" />
-      <RelatedCaseStudies currentPath="/services/tree-trimming" preferred={['/case-studies/spikeless-pruning', '/case-studies/disease-management', '/case-studies/property-value']} />
+      <RelatedCaseStudies currentPath="/services/tree-trimming" preferred={['/case-studies/spikeless-pruning', '/case-studies/emerald-ash-borer', '/case-studies/property-value']} />
     </div>
   );
 };

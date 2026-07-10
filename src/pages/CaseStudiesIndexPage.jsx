@@ -10,9 +10,9 @@ const caseStudiesData = [
     link: "/case-studies/spikeless-pruning",
   },
   {
-    title: "Big Leaf Maple Wilt Case Study",
-    description: "Explore how proper tree care and early intervention can prevent devastating fungal diseases like Big Leaf Maple Wilt, protecting your valuable landscape investments.",
-    link: "/case-studies/disease-management",
+    title: "Emerald Ash Borer: The 200-Year-Old Church Ash",
+    description: "A first-person account of removing a massive, emerald ash borer–killed ash tree over a church altar and day-school play area in Kempsville — a rotten, cabled union that needed a crane.",
+    link: "/case-studies/emerald-ash-borer",
   },
   {
     title: "OSHA Case Study",
@@ -25,9 +25,9 @@ const caseStudiesData = [
     link: "/case-studies/property-value",
   },
   {
-    title: "Unlicensed Contractors Case Study",
-    description: "Understand the risks of hiring unlicensed contractors and why licensed, professional tree care is essential for your property.",
-    link: "/case-studies/unlicensed-contractors",
+    title: "Virginia Tree Law: The Tree on the Property Line",
+    description: "A first-person case study on Virginia tree and timber law — the self-help rule from Fancher v. Fagella, treble-damages liability for cutting a tree that isn't yours, and how to handle a neighbor dispute the right way.",
+    link: "/case-studies/virginia-tree-law",
   },
   {
     title: "Chesapeake Bay Case Study",

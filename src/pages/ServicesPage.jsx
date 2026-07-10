@@ -74,11 +74,11 @@ const ServicesPage = () => {
         <div className="prose prose-lg max-w-5xl mx-auto text-gray-700 leading-relaxed space-y-8 bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100">
           
           <p className="text-xl text-[#1B4D3E] font-medium text-center mb-10">
-            <strong>Art-is-Tree LLC</strong> provides elite residential and commercial tree services. As a locally owned and operated, licensed and insured tree service, we guarantee that every job meets the highest safety and quality standards in the industry. 
+            <strong>Art-is-Tree LLC</strong> handles residential and commercial tree work across Virginia Beach and Hampton Roads. We're locally owned, licensed, and insured, and every job is run to the same safety standard &mdash; whether it's one tree in a backyard or a full lot to clear.
           </p>
 
           <p>
-            Our dedicated team specializes in total landscape care. Whether it involves complex <strong>tree removal Virginia Beach</strong> residents need after a major storm, or meticulous <strong>tree pruning</strong> to enhance the curb appeal of your estate, our approach is heavily rooted in arboricultural science. We treat your property with the utmost respect, utilizing modern techniques that ensure minimal disruption to your daily life while maximizing the health of your trees.
+            We do the whole range of tree work. That covers the <strong>tree removal Virginia Beach</strong> homeowners need after a storm takes down a limb, the careful <strong>tree pruning</strong> that keeps a canopy healthy and off the roof, and everything in between. The work is done right &mdash; sound cuts, proper rigging, and a clean site &mdash; without tearing up the rest of your yard to get it done.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
@@ -88,7 +88,7 @@ const ServicesPage = () => {
               </div>
               <h2 className="text-2xl font-bold text-[#1B4D3E] mb-4 font-playfair mt-0">Expert Tree Pruning & Trimming</h2>
               <p className="text-gray-700 mb-4 flex-grow">
-                Routine <strong>tree pruning</strong> and precision tree trimming are essential components of comprehensive <strong>tree maintenance</strong>. Our approach goes beyond aesthetics; we prune to improve the structural integrity of your canopy, removing deadwood, crossing branches, and diseased limbs.
+                Good <strong>tree pruning</strong> is more than making a tree look neat. We trim to keep the canopy strong &mdash; taking out deadwood, crossing branches, and diseased limbs so the tree holds up in a storm and stays healthy for years.
               </p>
               <Button asChild variant="outline" className="border-[#1B4D3E] text-[#1B4D3E] hover:bg-[#1B4D3E] hover:text-white mt-4 w-fit">
                 <Link to="/services/tree-trimming">Learn More →</Link>
@@ -101,7 +101,7 @@ const ServicesPage = () => {
               </div>
               <h2 className="text-2xl font-bold text-[#1B4D3E] mb-4 font-playfair mt-0">Hazardous Tree Removal</h2>
               <p className="text-gray-700 mb-4 flex-grow">
-                When a tree becomes diseased, dies, or suffers severe structural damage, it poses a significant threat to your home, family, and property. Our hazardous tree removal service is designed to safely dismantle and extract dangerous trees under the most challenging conditions.
+                When a tree dies, gets diseased, or cracks in a storm, it becomes a real risk to your house and everyone around it. We take those trees down safely &mdash; even in tight spots and rough conditions &mdash; and haul them off your property.
               </p>
               <Button asChild variant="outline" className="border-[#1B4D3E] text-[#1B4D3E] hover:bg-[#1B4D3E] hover:text-white mt-4 w-fit">
                 <Link to="/services/tree-removal">Learn More →</Link>
@@ -153,7 +153,7 @@ const ServicesPage = () => {
               </div>
               <h2 className="text-2xl font-bold text-[#1B4D3E] mb-4 font-playfair mt-0">Commercial & Land Clearing</h2>
               <p className="text-gray-700 mb-4 flex-grow">
-                We proudly provide top-tier residential and commercial land clearing services. Property managers, HOAs, and developers rely on us for our capacity to handle large-scale clearing operations.
+                We handle residential and commercial land clearing, from a single overgrown lot to acreage. Property managers, HOAs, and developers call us when there's real volume to clear and it has to be done right.
               </p>
               <Button asChild variant="outline" className="border-[#1B4D3E] text-[#1B4D3E] hover:bg-[#1B4D3E] hover:text-white mt-4 w-fit">
                 <Link to="/services/land-clearing">Learn More →</Link>
@@ -164,7 +164,7 @@ const ServicesPage = () => {
           <div className="mt-16 pt-10 border-t border-gray-200 text-center">
              <h3 className="text-3xl font-playfair font-bold text-[#1B4D3E] mb-6 mt-0">Ready to Schedule Your Project?</h3>
              <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-               Experience the dedication and expertise of the Art-is-Tree LLC team. We pride ourselves on quick scheduling, superior attention to detail, and offering the best pricing tailored to the specific needs of your property.
+               Scheduling is quick, the work is detailed, and the price is fair for what your property actually needs. Get a free estimate and we'll take it from there.
              </p>
              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                <Button asChild size="lg" className="bg-[#D4AF37] text-black hover:bg-[#c19b2e] font-bold py-6 px-10 text-lg w-full sm:w-auto shadow-lg">

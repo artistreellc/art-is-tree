@@ -57,13 +57,13 @@ const AboutSection = () => {
               <span className="text-[#1B4D3E] font-semibold text-sm uppercase tracking-wider">About Our Company</span>
             </div>
             <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-              More than just tree cutters - Your Trusted Tree Care Team in Virginia Beach
+              A family-owned Virginia Beach tree service, run by a working climber
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed">
-              At <strong className="text-[#1B4D3E]">Art-is-Tree LLC</strong>, we are passionate about arboriculture and dedicated to the health of our local urban canopy. When you need expert tree services in Virginia Beach, we don't just remove trees; we provide comprehensive care that enhances the safety, beauty, and value of your property.
+              <strong className="text-[#1B4D3E]">Art-is-Tree LLC</strong> is a family-owned company, and the owner still climbs every job. We do this work because we are skilled at it &mdash; reading a tree, setting the right rigging, and bringing it down without damaging the landscape beneath it. That is the difference between a professional tree service and an unlicensed crew with a chainsaw.
             </p>
             <p className="text-gray-600 text-lg leading-relaxed">
-              Our team of licensed professionals brings years of specialized experience to every project. Whether you need a delicate crown reduction, complex crane-assisted hazardous removal, or emergency storm cleanup, we execute with precision and a deep respect for your landscape.
+              Our crew is trained and the company is fully licensed and insured. Crown reductions, crane-assisted removals over structures, and emergency storm cleanup are routine work for us. We treat every property as if it were our own: deliberate rigging, clean cuts, and a site raked and cleared before we leave.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">

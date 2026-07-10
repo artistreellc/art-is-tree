@@ -174,7 +174,7 @@ const StumpGrindingPage = () => {
       <FAQPageSchema items={stumpGrindingFaqs} />
       <FAQSection items={stumpGrindingFaqs} title="Stump Grinding in Virginia Beach: FAQ" />
       <ServiceAreaLinks serviceName="Stump Grinding" />
-      <RelatedCaseStudies currentPath="/services/stump-grinding" preferred={['/case-studies/property-value', '/case-studies/unlicensed-contractors']} />
+      <RelatedCaseStudies currentPath="/services/stump-grinding" preferred={['/case-studies/property-value', '/case-studies/virginia-tree-law']} />
     </div>
   );
 };
