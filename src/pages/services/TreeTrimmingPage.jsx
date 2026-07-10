@@ -94,6 +94,9 @@ const TreeTrimmingPage = () => {
             The same logic applies to climbing method. <Link to="/case-studies/virginia-tree-law" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">ANSI A300</Link> standards prohibit the use of climbing spikes on any live tree that is not being removed. Art-is-Tree uses spikeless rope access techniques on all trimming and pruning work. It requires more technical skill and more time. It also doesn't damage the trees we're hired to maintain. Read our <Link to="/case-studies/spikeless-pruning" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">spikeless pruning case study</Link> for a real example.
           </p>
           <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+            We don't only work on shade trees. We also handle <strong>fruit tree pruning in Virginia Beach</strong> — apples, figs, cherries, and ornamentals pruned in the right season for structure and fruit, not hacked back. And it isn't only residential: we run <strong>commercial tree service</strong> for HOAs, property managers, and businesses across Hampton Roads, keeping street trees, parking-lot canopies, and common areas safe and clean. Same crew, same ANSI A300 standard, whether you searched "tree pruning near me" for one backyard fig or need a full commercial pruning contract.
+          </p>
+          <p className="text-lg text-gray-700 mb-6 leading-relaxed">
             All trimming quotes from Art-is-Tree are written, fixed, and include complete debris removal. We serve Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk. For a free tree trimming estimate call (757) 319-5131.
           </p>
         </div>
