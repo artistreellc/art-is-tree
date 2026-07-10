@@ -213,7 +213,9 @@ const Navigation = memo(() => {
   }, [handleResize]);
 
   useEffect(() => {
-    const onScroll = () => {
+    let ticking = false;
+    const update = () => {
+      ticking = false;
       const y = window.scrollY;
       if (isMobileMenuOpen || y < 120) {
         setNavHidden(false);
@@ -223,6 +225,14 @@ const Navigation = memo(() => {
         setNavHidden(false);  // scrolling up -> show
       }
       lastScrollY.current = y;
+    };
+    // Coalesce scroll events to one state update per animation frame so
+    // scrolling stays smooth and doesn't inflate INP.
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(update);
+      }
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
