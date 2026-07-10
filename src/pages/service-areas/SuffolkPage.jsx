@@ -79,7 +79,7 @@ const SuffolkPage = () => {
                 Tree Service Suffolk, VA | Art-is-Tree LLC
               </h1>
               <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
-                Expert tree removal and land clearing tailored for Suffolk's rural acreage and expansive properties.
+                Tree removal and land clearing built for Suffolk's rural acreage and big properties.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" className="bg-[#D4AF37] text-black hover:bg-[#c19b2e] font-bold py-6 px-8 text-lg" asChild>
@@ -100,10 +100,10 @@ const SuffolkPage = () => {
             className="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 prose prose-lg max-w-none text-gray-700 leading-relaxed"
            
           >
-            <p>Suffolk is Virginia's largest city by land area, presenting an incredibly vast and diverse working environment that contrasts sharply with the densely packed suburban grids found in neighboring coastal cities. Much of it is rural with large acreage properties common, and expansive active farmland and pine timber stands are common sights across the landscape.</p>
+            <p>Suffolk is the largest city in Virginia by land area, and most of it is rural. Out here you've got large acreage, working farmland, and stands of pine timber &mdash; a different kind of job than the packed suburban lots closer to the coast.</p>
 
             <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mt-12 mb-6">Tree Removal in Suffolk, VA</h2>
-            <p>Expert tree extraction in rural Suffolk requires specialized heavy machinery and meticulous hazard assessments. We safely dismantle structurally compromised oaks, aging pines, and dead hardwoods piece by piece, utilizing advanced rigging systems to ensure no impact on your rural property's outbuildings or delicate fencing lines.</p>
+            <p>Taking down trees on rural Suffolk property often takes heavy equipment and a careful plan. We bring down failing oaks, old pines, and dead hardwoods in sections, rigging them so nothing comes down on your outbuildings or fence lines.</p>
 
             <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mt-12 mb-6">Rural Land Clearing & Site Preparation</h2>
             <p>Transforming raw, densely wooded acreage into prime real estate is our specialty. We provide comprehensive land clearing for new residential developments, equestrian properties, and agricultural expansions. Utilizing industrial forestry mulchers and high-capacity machinery, we rapidly process thick underbrush and heavy timber.</p>

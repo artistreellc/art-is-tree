@@ -88,7 +88,7 @@ const AboutPage = () => {
                  Where We Operate
                </h2>
                <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-                 Providing elite tree care across Virginia Beach, Norfolk, Chesapeake, and the greater Hampton Roads region.
+                 Serving Virginia Beach, Norfolk, Chesapeake, and the rest of Hampton Roads.
                </p>
             </div>
             <GoogleMap />

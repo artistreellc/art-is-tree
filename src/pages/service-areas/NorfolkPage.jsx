@@ -94,8 +94,8 @@ const NorfolkPage = () => {
 
         <main className="container mx-auto px-4 py-16 max-w-4xl">
           <div className="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 prose prose-lg max-w-none text-gray-700 leading-relaxed">
-            <p>Norfolk is home to some of the most stunning, historic urban canopies in the entire Hampton Roads region. From the sprawling, deeply rooted street trees of Ghent and Larchmont to the densely packed waterfront lots of Ocean View and the established blocks of Wards Corner, the trees here require an elevated level of professional care.</p>
-            <p>Operating in these environments presents profound urban challenges that out-of-town contractors rarely understand. In Norfolk, mature trees frequently overhang historic structures, newly renovated roofs, shared driveways, and critical overhead powerlines. Additionally, working on exceptionally tight urban lots means there is virtually zero margin for error.</p>
+            <p>Norfolk has some of the oldest urban tree cover in Hampton Roads. The big street trees in Ghent and Larchmont, the tight waterfront lots in Ocean View, and the established blocks around Wards Corner all take experienced hands to work on safely.</p>
+            <p>This is not the kind of work an out-of-town crew handles well. Norfolk's mature trees hang over historic homes, new roofs, shared driveways, and overhead power lines, and the lots are tight enough that there's no room for a mistake. That's exactly the work we're set up for.</p>
             
             <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mt-12 mb-6">Tree Removal in Norfolk, VA</h2>
             <p>When a mature tree fails or becomes a hazard in an urban environment, safe and calculated <Link to="/services/tree-removal" className="text-[#1B4D3E] font-bold underline hover:text-[#D4AF37]">tree removal</Link> is essential. We assess every variable—from subterranean utility lines to structural leans and internal decay—before making a single cut.</p>
@@ -136,7 +136,7 @@ const NorfolkPage = () => {
           <div className="bg-[#1B4D3E] text-white p-10 rounded-2xl shadow-xl">
             <h3 className="text-3xl font-playfair font-bold mb-4">Ready for Expert Tree Care in Norfolk?</h3>
             <p className="text-lg mb-8 text-gray-200">
-              Contact Art-is-Tree LLC today for a free estimate in Norfolk. We provide transparent, written estimates with absolutely no hidden fees. You get the exact same highly trained crew and dedication to excellence that serves Virginia Beach and the rest of Hampton Roads. Your property’s safety and beauty are our top priorities.
+              Call Art-is-Tree LLC for a free estimate in Norfolk. You get a clear written quote with no hidden fees, from the same trained crew that works Virginia Beach and the rest of Hampton Roads.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-[#D4AF37] text-black hover:bg-[#c19b2e] font-bold py-6 px-10 text-lg" asChild>

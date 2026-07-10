@@ -68,7 +68,7 @@ const VirginiaBeachPage = () => {
             <p>Similarly, the region's majestic hardwoods present their own unique challenges. Massive live oaks and water oaks, with structural root plates extending 40 feet in diameter or more, can conceal advanced decay underground long after a severe storm passes. Root decay continues to progress silently beneath the surface, posing a hidden, unpredictable danger to nearby homes, driveways, and underground utilities.</p>
 
             <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mt-12 mb-6">Tree Removal in Virginia Beach, VA</h2>
-            <p>Safe and efficient <Link to="/services/tree-removal" className="text-[#1B4D3E] font-bold underline hover:text-[#D4AF37]">tree removal</Link> in Virginia Beach demands absolute precision and careful planning. The tight residential lots and massive, mature trees typical of our area require meticulous structural assessment before a single cut is made.</p>
+            <p><Link to="/services/tree-removal" className="text-[#1B4D3E] font-bold underline hover:text-[#D4AF37]">Tree removal</Link> in Virginia Beach takes planning, not just a chainsaw. On tight lots with big mature trees, we read the tree and the space around it before the first cut, so it comes down where we want it and nothing else gets touched.</p>
 
             <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mt-12 mb-6">Crane-Assisted Removal for Coastal Properties</h2>
             <p>For waterfront homes and extremely tight spaces, our specialized <Link to="/services/crane-removal" className="text-[#1B4D3E] font-bold underline hover:text-[#D4AF37]">crane-assisted removal</Link> ensures that massive, compromised trees are lifted cleanly over delicate structures without causing collateral damage.</p>
@@ -107,7 +107,7 @@ const VirginiaBeachPage = () => {
           <div className="bg-[#1B4D3E] text-white p-10 rounded-2xl shadow-xl">
             <h3 className="text-3xl font-playfair font-bold mb-4">Ready for Expert Tree Care in Virginia Beach?</h3>
             <p className="text-lg mb-8 text-gray-200">
-              Contact Art-is-Tree LLC today for a free, comprehensive estimate in Virginia Beach. We pride ourselves on providing detailed written estimates with absolutely no hidden fees. As a locally owned and operated business, your satisfaction and safety are our top priorities.
+              Call Art-is-Tree LLC for a free estimate in Virginia Beach. You get a detailed written quote with no hidden fees, from a local crew that does the work itself.
             </p>
             <Button size="lg" className="bg-[#D4AF37] text-black hover:bg-[#c19b2e] font-bold py-6 px-10 text-lg" asChild>
               <Link to="/contact">Get Your Free Estimate</Link>

@@ -100,16 +100,16 @@ const PortsmouthPage = () => {
             className="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 prose prose-lg max-w-none text-gray-700 leading-relaxed"
            
           >
-            <p>Portsmouth represents one of the most historically significant residential housing stocks in the entire Hampton Roads region. Neighborhoods such as Olde Towne, Cradock, and Port Norfolk feature stunning architecture nestled alongside massive, deeply rooted heritage trees. In many cases, these incredibly mature trees actually predate the historic structures they tightly overhang.</p>
+            <p>Portsmouth has some of the oldest housing in Hampton Roads. Neighborhoods like Olde Towne, Cradock, and Port Norfolk sit under big heritage trees &mdash; a lot of them older than the homes they hang over.</p>
 
             <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mt-12 mb-6">Hazardous Tree Removal in Portsmouth, VA</h2>
-            <p>Removing massive, structurally compromised trees in Portsmouth's densely packed historic districts requires exact calculations and surgical execution. We dismantle hazardous oaks, pines, and maples piece by piece, safely lowering heavy timber to the ground without ever impacting the surrounding architecture.</p>
+            <p>Taking down a big, failing tree in Portsmouth's tight historic districts leaves no room for error. We bring hazardous oaks, pines, and maples down in sections, lowering the heavy wood to the ground a piece at a time so nothing lands on the house next to it.</p>
 
             <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mt-12 mb-6">Tree Risk Assessment for Older Properties</h2>
-            <p>Because structural decay is rarely visible from the ground, our expert tree care team provides meticulous risk assessments for heritage trees. We identify hidden internal rot, unstable unions, and compromised root systems that threaten foundations and rooflines.</p>
+            <p>Most structural decay doesn't show from the ground. We check heritage trees for what actually matters &mdash; internal rot, weak branch unions, and failing roots &mdash; the problems that put a limb through a roof or crack a foundation.</p>
 
             <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mt-12 mb-6">Tree Trimming & Pruning in Portsmouth</h2>
-            <p>Maintaining the structural integrity of mature canopies requires strategic weight reduction and precise deadwooding. Our specialized tree trimming safely removes limbs that have grown too close to historic homes and overhead powerlines.</p>
+            <p>Keeping a mature canopy sound comes down to smart weight reduction and clearing out deadwood. We trim back the limbs that have grown too close to historic homes and overhead power lines before they become a problem.</p>
 
             <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mt-12 mb-6">Emergency Tree Service Portsmouth</h2>
             <p>When a storm shatters a heavy limb over your property, immediate stabilization is essential. Our dedicated emergency response team is available around the clock to swiftly remove hazardous debris, secure your home against further damage, and restore safety to your historically significant Portsmouth property.</p>

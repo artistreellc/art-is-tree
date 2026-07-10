@@ -77,7 +77,7 @@ const ChesapeakePage = () => {
               Tree Service Chesapeake, VA | Art-is-Tree LLC
             </h1>
             <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
-              Expert tree care tailored for Chesapeake's diverse geography, from dense suburban neighborhoods to expansive rural acreage.
+              Tree care for every part of Chesapeake, from tight suburban lots to big rural acreage.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-[#D4AF37] text-black hover:bg-[#c19b2e] font-bold py-6 px-8 text-lg" asChild>
