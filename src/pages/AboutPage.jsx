@@ -68,7 +68,7 @@ const AboutPage = () => {
                
                <h2 className="text-3xl font-bold text-[#1B4D3E] font-playfair mt-12 mb-6">Uncompromising Professionalism & Credentials</h2>
                <p>
-                 We founded this company to provide a truly <Link to="/case-studies/unlicensed-contractors" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">professional standards</Link> tree care service. Our commitment is to the health of your trees and the safety of your property. We never compromise on safety protocols, ensuring that every job is executed flawlessly while protecting our crew and your home.
+                 We founded this company to provide a truly <Link to="/case-studies/virginia-tree-law" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">professional standards</Link> tree care service. Our commitment is to the health of your trees and the safety of your property. We never compromise on safety protocols, ensuring that every job is executed flawlessly while protecting our crew and your home.
                </p>
 
                <h2 className="text-3xl font-bold text-[#1B4D3E] font-playfair mt-12 mb-6">Comprehensive Residential and Commercial Services</h2>

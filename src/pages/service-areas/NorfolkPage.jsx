@@ -41,7 +41,7 @@ const data = {
     { question: 'Who is responsible for a tree in the Norfolk right-of-way?', answer: "Street trees between the sidewalk and curb are typically the city's responsibility, and removing or heavily pruning them usually needs Norfolk's approval. Trees on your side of the property line are yours. We help you tell the difference and coordinate the right approvals before any work starts." },
     { question: 'Do you handle storm and flood-damaged trees in Norfolk?', answer: "Absolutely. Norfolk's low elevation and frequent tidal flooding stress root systems and topple weakened trees during storms. Our 24/7 emergency team clears fallen and hanging limbs, secures the site, and hauls away debris." },
   ],
-  relatedPreferred: ['/case-studies/property-value', '/case-studies/unlicensed-contractors'],
+  relatedPreferred: ['/case-studies/property-value', '/case-studies/virginia-tree-law'],
 };
 
 const NorfolkPage = () => <CityServiceLayout data={data} />;

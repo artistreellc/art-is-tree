@@ -7,7 +7,7 @@ const CASE_STUDIES = [
   { title: "Emerald Ash Borer Removal", path: "/case-studies/emerald-ash-borer", category: "Tree Health" },
   { title: "OSHA Compliance & Safety Standards", path: "/case-studies/osha-compliance", category: "Safety" },
   { title: "Property Value Enhancement", path: "/case-studies/property-value", category: "Real Estate" },
-  { title: "Unlicensed Contractors Risks", path: "/case-studies/unlicensed-contractors", category: "Consumer Protection" },
+  { title: "Virginia Tree Law", path: "/case-studies/virginia-tree-law", category: "Consumer Protection" },
   { title: "Advanced Spikeless Pruning", path: "/case-studies/spikeless-pruning", category: "Technique" }
 ];
 

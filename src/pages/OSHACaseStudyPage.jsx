@@ -125,7 +125,7 @@ const OSHACaseStudyPage = () => {
                     <AlertTriangle className="w-10 h-10 text-red-600 mb-4" />
                     <h3 className="font-bold text-xl text-red-900 mb-3 mt-0">The "Fly-by-Night" Scenario</h3>
                     <p className="text-red-800/80 leading-relaxed">
-                      Imagine a crew showing up in a pickup truck with no helmets, using old ropes, and lacking insurance. If a worker gets injured on your property, <strong>you</strong> could be <Link to="/case-studies/unlicensed-contractors" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">held liable</Link>. If a tree falls the wrong way due to poor judgment, your home pays the price.
+                      Imagine a crew showing up in a pickup truck with no helmets, using old ropes, and lacking insurance. If a worker gets injured on your property, <strong>you</strong> could be <Link to="/case-studies/virginia-tree-law" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">held liable</Link>. If a tree falls the wrong way due to poor judgment, your home pays the price.
                     </p>
                   </div>
                   <div className="space-y-6">
@@ -134,7 +134,7 @@ const OSHACaseStudyPage = () => {
                         <Scale className="w-6 h-6 text-gray-600" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-gray-900 mt-0 mb-1"><Link to="/case-studies/unlicensed-contractors" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">Legal Liability</Link></h4>
+                        <h4 className="font-bold text-gray-900 mt-0 mb-1"><Link to="/case-studies/virginia-tree-law" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">Legal Liability</Link></h4>
                         <p className="text-sm text-gray-600">Homeowners can be sued if an uninsured worker is injured on their land.</p>
                       </div>
                     </div>
@@ -143,7 +143,7 @@ const OSHACaseStudyPage = () => {
                         <Home className="w-6 h-6 text-gray-600" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-gray-900 mt-0 mb-1"><Link to="/case-studies/unlicensed-contractors" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">Property Damage</Link></h4>
+                        <h4 className="font-bold text-gray-900 mt-0 mb-1"><Link to="/case-studies/virginia-tree-law" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">Property Damage</Link></h4>
                         <p className="text-sm text-gray-600">Lack of rigging knowledge often results in fences, roofs, and landscapes being crushed.</p>
                       </div>
                     </div>
@@ -188,7 +188,7 @@ const OSHACaseStudyPage = () => {
           </section>
         </main>
       </div>
-      <RelatedCaseStudies currentPath="/case-studies/osha-compliance" preferred={['/case-studies/crane-safety', '/case-studies/unlicensed-contractors', '/case-studies/property-value']} />
+      <RelatedCaseStudies currentPath="/case-studies/osha-compliance" preferred={['/case-studies/crane-safety', '/case-studies/virginia-tree-law', '/case-studies/property-value']} />
     </>
   );
 };

@@ -182,7 +182,7 @@ const TreeRemovalPage = () => {
       </main>
       <FAQSection items={faqData} title="Tree Removal in Virginia Beach: FAQ" />
       <ServiceAreaLinks serviceName="Tree Removal" />
-      <RelatedCaseStudies currentPath="/services/tree-removal" preferred={['/case-studies/crane-safety', '/case-studies/unlicensed-contractors', '/case-studies/property-value']} />
+      <RelatedCaseStudies currentPath="/services/tree-removal" preferred={['/case-studies/crane-safety', '/case-studies/virginia-tree-law', '/case-studies/property-value']} />
     </div>
   );
 };

@@ -60,7 +60,7 @@ const ContactPage = () => {
                 <div className="prose prose-lg text-gray-700 bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
                   <h2 className="text-2xl font-bold text-[#1B4D3E] font-playfair mb-4 mt-0">Why Contact Us?</h2>
                   <p>
-                    Bringing 15+ years of elite climbing experience to every job, <strong>Art-is-Tree LLC</strong> is your premier choice when you need to <strong>contact tree service Virginia Beach</strong> professionals. We are a locally owned and operated, <Link to="/case-studies/unlicensed-contractors" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">fully licensed and insured tree service</Link> provider dedicated to absolute excellence in arboriculture. 
+                    Bringing 15+ years of elite climbing experience to every job, <strong>Art-is-Tree LLC</strong> is your premier choice when you need to <strong>contact tree service Virginia Beach</strong> professionals. We are a locally owned and operated, <Link to="/case-studies/virginia-tree-law" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">fully licensed and insured tree service</Link> provider dedicated to absolute excellence in arboriculture. 
                   </p>
                   <p>
                     Getting a <strong>free tree estimate</strong> has never been easier. Whether you need routine tree pruning and trimming, or complex hazardous tree removal and crane assisted projects, our commitment ensures you are working with dedicated tree care professionals focused on safety. Whenever you need <strong>tree service experts in Virginia Beach</strong>, our line is always open.

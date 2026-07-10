@@ -41,7 +41,7 @@ const data = {
     { question: 'How do I know if my heritage tree is dangerous?', answer: 'Most structural decay isn’t visible from the ground. We assess heritage trees for internal rot, weak branch unions, and compromised roots, then give you an honest recommendation — prune, cable, or remove — before any work begins.' },
     { question: 'Do you offer 24/7 storm response in Portsmouth?', answer: 'Yes. Our emergency crew is on call around the clock across Portsmouth to clear fallen and hanging limbs, secure the property, and haul away debris after a storm.' },
   ],
-  relatedPreferred: ['/case-studies/unlicensed-contractors', '/case-studies/spikeless-pruning'],
+  relatedPreferred: ['/case-studies/virginia-tree-law', '/case-studies/spikeless-pruning'],
 };
 
 const PortsmouthPage = () => <CityServiceLayout data={data} />;

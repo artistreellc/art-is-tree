@@ -25,9 +25,9 @@ const caseStudiesData = [
     link: "/case-studies/property-value",
   },
   {
-    title: "Unlicensed Contractors Case Study",
-    description: "Understand the risks of hiring unlicensed contractors and why licensed, professional tree care is essential for your property.",
-    link: "/case-studies/unlicensed-contractors",
+    title: "Virginia Tree Law: The Tree on the Property Line",
+    description: "A first-person case study on Virginia tree and timber law — the self-help rule from Fancher v. Fagella, treble-damages liability for cutting a tree that isn't yours, and how to handle a neighbor dispute the right way.",
+    link: "/case-studies/virginia-tree-law",
   },
   {
     title: "Chesapeake Bay Case Study",

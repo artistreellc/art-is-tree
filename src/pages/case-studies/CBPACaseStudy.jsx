@@ -177,7 +177,7 @@ const CBPACaseStudy = () => {
         <section className="bg-[#0A2F24] text-white py-14 md:py-20">
           <div className="container mx-auto px-4 max-w-4xl">
             <SectionHeading eyebrow="Why it’s worth protecting" title="Those buffer trees are doing real work" light />
-            <div className="mt-6 space-y-5 text-gray-200 text-lg leading-relaxed">
+            <div className="mt-6 space-y-5 text-lg leading-relaxed [&_p]:text-gray-100">
               <p>
                 It’s easy to see the buffer as red tape until you look at what those trees actually do. In its natural state, that 100-foot strip filters stormwater before it reaches the water, traps sediment and pollutants, and holds the bank together. Pull the trees out and you lose all of it — the runoff, the erosion, the nutrients all go straight into the Bay.
               </p>

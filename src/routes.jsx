@@ -70,7 +70,8 @@ export const routes = [
       { path: 'case-studies/disease-management', element: <Navigate to="/case-studies/emerald-ash-borer" replace /> },
       { path: 'case-studies/osha-compliance', ...page(() => import('@/pages/OSHACaseStudyPage.jsx')) },
       { path: 'case-studies/property-value', ...page(() => import('@/pages/PropertyValueCaseStudyPage.jsx')) },
-      { path: 'case-studies/unlicensed-contractors', ...page(() => import('@/pages/UnlicensedContractorsCaseStudyPage.jsx')) },
+      { path: 'case-studies/virginia-tree-law', ...page(() => import('@/pages/case-studies/VirginiaTreeLawCaseStudy.jsx')) },
+      { path: 'case-studies/unlicensed-contractors', element: <Navigate to="/case-studies/virginia-tree-law" replace /> },
       { path: 'case-studies/spikeless-pruning', ...page(() => import('@/pages/SpikelessPruningCaseStudy.jsx')) },
 
       { path: 'terms-and-conditions', ...page(() => import('@/pages/TermsAndConditionsPage.jsx')) },

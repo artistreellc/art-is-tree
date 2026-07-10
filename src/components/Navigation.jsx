@@ -47,7 +47,7 @@ const NAV_LINKS = [
       { name: 'Emerald Ash Borer', path: '/case-studies/emerald-ash-borer' },
       { name: 'OSHA Compliance', path: '/case-studies/osha-compliance' },
       { name: 'Property Value', path: '/case-studies/property-value' },
-      { name: 'Unlicensed Contractors', path: '/case-studies/unlicensed-contractors' },
+      { name: 'Virginia Tree Law', path: '/case-studies/virginia-tree-law' },
       { name: 'Spikeless Pruning', path: '/case-studies/spikeless-pruning' },
     ]
   },

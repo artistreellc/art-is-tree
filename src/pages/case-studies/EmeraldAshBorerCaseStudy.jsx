@@ -121,7 +121,7 @@ const EmeraldAshBorerCaseStudy = () => {
         <section className="bg-[#0A2F24] text-white py-14 md:py-20">
           <div className="container mx-auto px-4 max-w-4xl">
             <SectionHeading eyebrow="The plan" title="Why this one had to be a crane job" light />
-            <div className="mt-6 space-y-5 text-gray-200 text-lg leading-relaxed">
+            <div className="mt-6 space-y-5 text-lg leading-relaxed [&_p]:text-gray-100">
               <p>
                 Here’s the problem the cable created. That steel cable was the only thing keeping the rotten lead up — but I couldn’t take the lead down without dealing with the cable, and the second you cut a cable that’s under load, whatever it was holding <em>goes</em>. If I’d cut that cable with the lead still attached to the tree, the whole thing would have dropped straight down onto the altar and the fence underneath it. That’s not a risk you take with a congregation’s altar and a children’s play area sitting right there.
               </p>

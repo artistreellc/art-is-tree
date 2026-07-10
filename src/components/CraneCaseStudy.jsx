@@ -4,7 +4,6 @@ import { Shield, TreePine, MapPin, ArrowRight, Anchor, Waves, CheckCircle2 } fro
 import Breadcrumbs from '@/components/Breadcrumbs';
 import CaseStudySchema from '@/components/seo/CaseStudySchema';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
-import CraneRiggingDiagram from '@/components/diagrams/CraneRiggingDiagram';
 import { Eyebrow, SectionHeading, Figure, ProjectSpec } from '@/components/design/Primitives';
 import { Button } from '@/components/ui/button';
 
@@ -104,7 +103,13 @@ const CraneCaseStudy = () => {
                 </ul>
               </div>
               <div className="lg:pt-4">
-                <CraneRiggingDiagram />
+                <Figure
+                  src="/images/virginia-beach-crane-lift-over-house.webp"
+                  alt="Crane lifting a rigged tree section up and over a house in Virginia Beach"
+                  caption="Each section lifted up and over the house to a clear drop zone"
+                  aspect="aspect-[3/4]"
+                  className="reveal"
+                />
               </div>
             </div>
           </div>
