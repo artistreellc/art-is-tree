@@ -2,7 +2,7 @@
 import React from 'react';
 import { Head } from 'vite-react-ssg';
 import { useLocation } from 'react-router-dom';
-import { generateCanonicalUrl } from '@/utils/seoHelpers';
+import { generateCanonicalUrl, BASE_URL } from '@/utils/seoHelpers';
 
 const ServiceSchema = ({ name, description, serviceAreas = [] }) => {
   const location = useLocation();
@@ -17,6 +17,7 @@ const ServiceSchema = ({ name, description, serviceAreas = [] }) => {
     "@id": `${currentUrl}/#service`,
     "provider": {
       "@type": "LocalBusiness",
+      "@id": `${BASE_URL}/#localbusiness`,
       "name": "Art-is-Tree LLC"
     },
     "areaServed": serviceAreas.map(area => ({
