@@ -319,7 +319,21 @@ export default defineConfig({
 				'@babel/traverse',
 				'@babel/generator',
 				'@babel/types'
-			]
+			],
+			output: {
+				// Consolidate the high-fan-out vendor deps so the critical request
+				// chain isn't fragmented into dozens of tiny per-icon chunks
+				// (PageSpeed: "Avoid chaining critical requests"). Deliberately NO
+				// catch-all 'vendor' bucket — that would drag lazy/admin-only deps
+				// (e.g. Supabase, 151KB) onto every public page. Everything not
+				// matched here keeps Rollup's default, lazy-aware splitting.
+				manualChunks(id) {
+					if (!id.includes('node_modules')) return;
+					if (id.includes('lucide-react')) return 'icons';
+					if (/[\\/]node_modules[\\/](react|react-dom|react-router|react-router-dom|scheduler)[\\/]/.test(id)) return 'react-vendor';
+					if (id.includes('framer-motion')) return 'motion';
+				},
+			}
 		}
 	}
 });
