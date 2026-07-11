@@ -16,7 +16,7 @@ const ServiceAreasPage = () => {
 
       <div className="pt-0 min-h-screen bg-gray-50">
         <header className="bg-[#1B4D3E] text-white pt-20 pb-20 text-center relative border-b border-[#12362b] overflow-hidden">
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=50&w=1200')] opacity-10 bg-cover bg-center"></div>
+            <div className="absolute inset-0 bg-[url('/images/virginia-beach-winter-storm-cleanup.webp')] opacity-10 bg-cover bg-center"></div>
             <div className="container mx-auto px-4 relative z-10">
               <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold mb-4 mt-0">Service Areas</h1>
               <p className="text-xl text-gray-200 max-w-2xl mx-auto mb-6 font-light">Dedicated Hampton Roads tree professionals serving your neighborhood.</p>

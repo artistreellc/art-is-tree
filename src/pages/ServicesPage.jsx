@@ -59,7 +59,7 @@ const ServicesPage = () => {
       />
       
       <header className="bg-[#1B4D3E] py-20 text-center text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=50&w=1200')] opacity-10 bg-cover bg-center"></div>
+        <div className="absolute inset-0 bg-[url('/images/virginia-beach-winter-storm-cleanup.webp')] opacity-10 bg-cover bg-center"></div>
         <div className="container mx-auto px-4 relative z-10">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-playfair mt-0 text-white speakable">
             Our Tree Services

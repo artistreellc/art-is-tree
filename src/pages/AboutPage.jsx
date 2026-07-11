@@ -25,7 +25,7 @@ const AboutPage = () => {
 
       <main className="pt-0 bg-gray-50">
         <header className="bg-gradient-to-r from-[#1B4D3E] to-[#2A7A5E] py-20 md:py-24 relative overflow-hidden text-center">
-          <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=50&w=1200')] bg-cover bg-center mix-blend-overlay"></div>
+          <div className="absolute inset-0 opacity-10 bg-[url('/images/virginia-beach-winter-storm-cleanup.webp')] bg-cover bg-center mix-blend-overlay"></div>
           <div className="container mx-auto px-4 relative z-10">
             <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-md">
               About Art-is-Tree LLC

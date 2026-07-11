@@ -96,7 +96,7 @@ const PartnersPage = () => {
       />
 
       <section className="bg-[#1B4D3E] text-white pt-24 pb-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=50&w=1200')] opacity-10 bg-cover bg-center mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-[url('/images/virginia-beach-winter-storm-cleanup.webp')] opacity-10 bg-cover bg-center mix-blend-overlay"></div>
         <div className="container mx-auto px-4 relative z-10">
           <Breadcrumbs />
           <div className="max-w-4xl mt-12 mb-8">
@@ -174,7 +174,7 @@ const PartnersPage = () => {
       </section>
 
       <section className="py-24 relative overflow-hidden bg-gradient-to-br from-[#1B4D3E] to-[#12362b]">
-        <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=50&w=1200')] bg-cover bg-center"></div>
+        <div className="absolute inset-0 opacity-10 bg-[url('/images/virginia-beach-winter-storm-cleanup.webp')] bg-cover bg-center"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center bg-white/5 backdrop-blur-sm border border-white/10 p-10 md:p-16 rounded-3xl shadow-2xl">
             <Award className="w-16 h-16 text-[#D4AF37] mx-auto mb-6" />
