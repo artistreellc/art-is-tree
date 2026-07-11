@@ -1,0 +1,29 @@
+name: IndexNow submit
+
+# After code lands on main (and Vercel redeploys), tell IndexNow-participating
+# search engines (Bing, Yandex, DuckDuckGo, Seznam, …) that our URLs changed so
+# they re-crawl sooner. Google ignores IndexNow — use Search Console for Google.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+# Avoid overlapping submissions if several pushes land quickly.
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # Give Vercel a head start so the changed pages are live before crawlers
+      # follow the ping.
+      - name: Wait for deploy to settle
+        run: sleep 120
+      - name: Submit sitemap URLs to IndexNow
+        run: node scripts/indexnow-submit.mjs
