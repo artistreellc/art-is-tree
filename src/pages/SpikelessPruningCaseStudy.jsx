@@ -4,6 +4,7 @@ import { MapPin, Leaf, ArrowRight, Shield, Heart, Activity, AlertTriangle } from
 import { Button } from '@/components/ui/button';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import CaseStudySchema from '@/components/seo/CaseStudySchema';
+import LocalSEOMeta from '@/components/LocalSEOMeta';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
 import { Eyebrow, SectionHeading, Figure, ProjectSpec } from '@/components/design/Primitives';
 
@@ -15,6 +16,7 @@ const SpikelessPruningCaseStudy = () => {
 
   return (
     <>
+      <LocalSEOMeta pageTitle="Spikeless Tree Pruning in Virginia Beach | Art-is-Tree" description={description} />
       <CaseStudySchema
         title={title}
         description={description}

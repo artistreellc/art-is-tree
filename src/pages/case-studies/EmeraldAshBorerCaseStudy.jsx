@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { MapPin, TreePine, ArrowRight, Bug, ShieldAlert, CheckCircle2, ExternalLink } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import CaseStudySchema from '@/components/seo/CaseStudySchema';
+import LocalSEOMeta from '@/components/LocalSEOMeta';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
 import { Eyebrow, SectionHeading, Figure, ProjectSpec } from '@/components/design/Primitives';
 import { Button } from '@/components/ui/button';
@@ -17,6 +18,7 @@ const EmeraldAshBorerCaseStudy = () => {
 
   return (
     <>
+      <LocalSEOMeta pageTitle="Emerald Ash Borer Tree Removal in Virginia Beach | Art-is-Tree" description={description} />
       <CaseStudySchema
         title={title}
         description={description}
