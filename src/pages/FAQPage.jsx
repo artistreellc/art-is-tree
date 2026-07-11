@@ -61,7 +61,7 @@ const FAQPage = () => {
 
       <div className="bg-gray-50 min-h-screen">
         <header className="bg-[#1B4D3E] py-20 md:py-24 text-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=50&w=1200')] opacity-10 bg-cover bg-center"></div>
+          <div className="absolute inset-0 bg-[url('/images/virginia-beach-winter-storm-cleanup.webp')] opacity-10 bg-cover bg-center"></div>
           <div className="relative z-10 container mx-auto px-4">
             <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 mt-0 speakable">
               Tree Service Questions, Answered Straight
