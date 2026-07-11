@@ -46,9 +46,6 @@ const OrganizationSchema = () => {
         "name": "Tree Care Industry Association Member"
       }
     ],
-    "priceRange": "$$",
-    "paymentAccepted": "Cash, Check, Credit Card",
-    "currenciesAccepted": "USD",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "2597 Nestlebrook Trl",

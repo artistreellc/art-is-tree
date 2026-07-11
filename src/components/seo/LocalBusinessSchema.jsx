@@ -19,6 +19,8 @@ const LocalBusinessSchema = () => {
     "telephone": "(757) 319-5131",
     "email": "artistreeofvirginia@gmail.com",
     "priceRange": "$$",
+    "paymentAccepted": "Cash, Check, Credit Card",
+    "currenciesAccepted": "USD",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": COMPANY_INFO.rating.value,
