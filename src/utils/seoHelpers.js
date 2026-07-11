@@ -28,14 +28,15 @@ export const normalizeUrl = (url) => {
  * Always returns non-www URL referencing the exact current page.
  */
 export const generateCanonicalUrl = (pathname) => {
-  if (!pathname) return BASE_URL;
-  
+  if (!pathname) return `${BASE_URL}/`;
+
   // Ensure pathname starts with /
   const safePathname = pathname.startsWith('/') ? pathname : `/${pathname}`;
-  
-  // Remove trailing slash unless it's just the root '/'
-  const cleanPath = safePathname === '/' ? '' : safePathname.replace(/\/$/, '');
-  
+
+  // Root keeps its trailing slash (matches sitemap: https://.../ );
+  // every other path drops any trailing slash.
+  const cleanPath = safePathname === '/' ? '/' : safePathname.replace(/\/$/, '');
+
   const canonical = `${BASE_URL}${cleanPath}`;
   
   return stripWww(canonical);
