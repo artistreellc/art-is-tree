@@ -123,7 +123,7 @@
       <body>
         <h1>XML Sitemap</h1>
         <p class="desc">
-          This is the XML Sitemap for <a href="https://www.artistreevabeach.com">Art is Tree LLC</a>. 
+          This is the XML Sitemap for <a href="https://artistreevabeach.com">Art is Tree LLC</a>.
           It helps search engines like Google and Bing discover and index our pages, ensuring customers can find our tree removal and crane services in Virginia Beach.
         </p>
         <div class="card">
