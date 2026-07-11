@@ -7,7 +7,6 @@ import Cite from '@/components/Cite';
 import { COMPANY_INFO } from '@/constants/seoMetadata';
 
 // Schemas
-import OrganizationSchema from '@/components/seo/OrganizationSchema';
 import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema';
 import SpeakableSchema from '@/components/seo/SpeakableSchema';
 import FAQPageSchema from '@/components/seo/FAQPageSchema';
@@ -86,7 +85,6 @@ const HomePage = () => {
         description="Licensed, insured tree service in Virginia Beach and Hampton Roads. Tree removal, trimming, stump grinding and 24/7 storm response. Free estimates. Call today."
       />
 
-      <OrganizationSchema />
       <LocalBusinessSchema />
       <FAQPageSchema items={homeFaqData} />
       <SpeakableSchema pageUrl="https://artistreevabeach.com/" />
