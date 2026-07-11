@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { MapPin, HardHat, ArrowRight, ShieldAlert, CheckCircle2, Zap, ExternalLink } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import CaseStudySchema from '@/components/seo/CaseStudySchema';
+import LocalSEOMeta from '@/components/LocalSEOMeta';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
 import { Eyebrow, SectionHeading, Figure, ProjectSpec } from '@/components/design/Primitives';
 import { Button } from '@/components/ui/button';
@@ -15,6 +16,7 @@ const OSHACaseStudyPage = () => {
 
   return (
     <>
+      <LocalSEOMeta pageTitle="Tree Service Safety: OSHA &amp; ANSI Z133 | Art-is-Tree Virginia Beach" description={description} />
       <CaseStudySchema
         title={title}
         description={description}
