@@ -11,13 +11,7 @@ import ContactPointSchema from '@/components/seo/ContactPointSchema';
 
 const ContactPage = () => {
   return (
-   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-K9JBRQBJ');</script>
-<!-- End Google Tag Manager -->
+   
     <>
       <LocalSEOMeta 
         pageTitle="Contact Art-is-Tree LLC | Free Tree Service Quote" 
@@ -73,10 +67,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     Getting a <strong>free tree estimate</strong> has never been easier. Whether you need routine tree pruning and trimming, or complex hazardous tree removal and crane assisted projects, our commitment ensures you are working with dedicated tree care professionals focused on safety. Whenever you need <strong>tree service experts in Virginia Beach</strong>, our line is always open.
                   </p>
                 </div>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K9JBRQBJ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+
                 <div className="bg-[#1B4D3E] text-white p-8 rounded-2xl shadow-md">
                   <h3 className="text-xl font-bold mb-6 font-playfair text-[#D4AF37] mt-0">Direct Contact Info</h3>
                   <ul className="space-y-6">
