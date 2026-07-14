@@ -11,10 +11,9 @@ import WwwRedirect from '@/components/WwwRedirect';
 import ErrorBoundary from '@/components/ErrorBoundary';
 import ScrollToTop from '@/components/ScrollToTop';
 
-// Disabled/Mocked Trackers
-import GoogleAdsConversion from '@/components/GoogleAdsConversion.jsx';
+// Tag management (GA4 + Google Ads run through GTM container GTM-K9JBRQBJ)
+import GoogleTagManager from '@/components/GoogleTagManager.jsx';
 import MobileCTABar from '@/components/MobileCTABar.jsx';
-import GoogleAnalyticsInitializer from '@/components/GoogleAnalyticsInitializer.jsx';
 
 // Providers
 import { AuthProvider } from '@/contexts/SupabaseAuthContext';
@@ -42,8 +41,7 @@ function Layout() {
 
       <AuthProvider>
         <CookieConsentProvider>
-          <GoogleAnalyticsInitializer />
-          <GoogleAdsConversion />
+          <GoogleTagManager />
 
           <ScrollToTop />
           <GeoSchema />
