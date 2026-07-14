@@ -54,10 +54,13 @@ function Layout() {
             </Suspense>
 
             <div className="min-h-screen flex flex-col relative pb-16 lg:pb-0">
+              <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-white focus:text-[#1B4D3E] focus:px-4 focus:py-2 focus:rounded-md focus:shadow-lg focus:ring-2 focus:ring-[#D4AF37]">
+                Skip to main content
+              </a>
               <Navigation />
               <SubNavigation />
 
-              <main className="flex-grow contain-content bg-gray-50">
+              <main id="main" tabIndex={-1} className="flex-grow contain-content bg-gray-50 focus:outline-none">
                 <Suspense fallback={<LoadingFallback />}>
                   <Outlet />
                 </Suspense>

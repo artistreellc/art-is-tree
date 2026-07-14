@@ -105,7 +105,7 @@ const TreeRemovalPage = () => {
         </div>
       </section>
 
-      <main className="container mx-auto max-w-5xl px-4 py-16">
+      <div className="container mx-auto max-w-5xl px-4 py-16">
         <div className="grid md:grid-cols-2 gap-12">
           <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
             <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mb-6">What's Included</h2>
@@ -179,7 +179,7 @@ const TreeRemovalPage = () => {
             </div>
           </div>
         </div>
-      </main>
+      </div>
       <FAQSection items={faqData} title="Tree Removal in Virginia Beach: FAQ" />
       <ServiceAreaLinks serviceName="Tree Removal" />
       <RelatedCaseStudies currentPath="/services/tree-removal" preferred={['/case-studies/crane-safety', '/case-studies/virginia-tree-law', '/case-studies/property-value']} />

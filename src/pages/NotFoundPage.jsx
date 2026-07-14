@@ -11,13 +11,13 @@ const NotFoundPage = () => {
         <meta name="description" content="The page you're looking for doesn't exist. Return to our homepage to find the information you need." />
         <meta name="robots" content="noindex" />
       </Head>
-      <main className="min-h-[70vh] flex items-center justify-center bg-gray-50 px-4 py-20">
+      <div className="min-h-[70vh] flex items-center justify-center bg-gray-50 px-4 py-20">
         <div className="text-center max-w-md mx-auto">
           <div
            
           >
             <AlertTriangle className="w-24 h-24 text-[#D4AF37] mx-auto mb-6" />
-            <h2 className="text-6xl font-bold text-[#1B4D3E] mb-4 mt-0">404</h2>
+            <p className="text-6xl font-bold text-[#1B4D3E] mb-4 mt-0">404</p>
             <h1 className="text-3xl font-bold text-gray-800 mb-4 mt-0">Page Not Found</h1>
             <p className="text-gray-600 mb-8 text-lg">
               The page you are looking for doesn't exist or has been moved. 
@@ -32,7 +32,7 @@ const NotFoundPage = () => {
             </Link>
           </div>
         </div>
-      </main>
+      </div>
     </>
   );
 };

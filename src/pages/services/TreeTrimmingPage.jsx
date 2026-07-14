@@ -76,7 +76,7 @@ const TreeTrimmingPage = () => {
         </div>
       </section>
 
-      <main className="container mx-auto max-w-5xl px-4 py-16">
+      <div className="container mx-auto max-w-5xl px-4 py-16">
         <div className="mb-16 bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
           <p className="text-lg text-gray-700 mb-6 leading-relaxed">
             Most homeowners in Virginia Beach don't think about tree trimming until something forces them to. A branch comes through the screened porch in a July storm. A limb that's been growing toward the roofline for three seasons gets heavy enough in an ice event to make contact. Properly timed tree trimming is not cosmetic maintenance — it's structural management, and it follows documented science.
@@ -172,7 +172,7 @@ const TreeTrimmingPage = () => {
             </div>
           </div>
         </div>
-      </main>
+      </div>
       <FAQPageSchema items={treeTrimmingFaqs} />
       <FAQSection items={treeTrimmingFaqs} title="Tree Trimming & Pruning in Virginia Beach: FAQ" />
       <ServiceAreaLinks serviceName="Tree Trimming & Pruning" />

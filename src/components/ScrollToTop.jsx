@@ -8,9 +8,10 @@ const ScrollToTop = () => {
   useLayoutEffect(() => {
     const prev = prevPathname.current;
     prevPathname.current = pathname;
-    const prevTop = prev.split('/')[1];
-    const newTop = pathname.split('/')[1];
-    if (prevTop !== newTop) {
+    // Scroll to top on ANY route change (not just top-segment changes) so
+    // e.g. /services/tree-removal -> /services/tree-trimming doesn't land the
+    // new page scrolled halfway down. No scroll on initial mount (prev === pathname).
+    if (prev !== pathname) {
       window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     }
   }, [pathname]);

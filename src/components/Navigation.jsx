@@ -94,7 +94,9 @@ const NavLink = memo(({ link, isActive }) => {
     <div ref={ref} className="relative py-2 px-1" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
       <button
         onClick={() => setOpen(prev => !prev)}
-        className={`flex items-center gap-1 text-sm font-bold uppercase tracking-wider transition-colors duration-200 ${
+        aria-expanded={open}
+        aria-haspopup="true"
+        className={`flex items-center gap-1 text-sm font-bold uppercase tracking-wider transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1B4D3E] rounded ${
           isActive ? 'text-yellow-200' : 'text-yellow-400 hover:text-yellow-200'
         }`}
       >
@@ -328,7 +330,7 @@ const Navigation = memo(() => {
               </a>
             </Button>
             
-            <button onClick={toggleMobileMenu} className="text-white p-2 focus:outline-none hover:bg-white/10 rounded-md transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label={isMobileMenuOpen ? "Close Menu" : "Open Menu"} aria-expanded={isMobileMenuOpen}>
+            <button onClick={toggleMobileMenu} className="text-white p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 hover:bg-white/10 rounded-md transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label={isMobileMenuOpen ? "Close Menu" : "Open Menu"} aria-expanded={isMobileMenuOpen}>
                {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
             </button>
           </div>

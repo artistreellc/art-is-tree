@@ -194,7 +194,7 @@ const VirginiaTreeLawCaseStudy = () => {
               <p id="s1" className="m-0">1. <em>Fancher v. Fagella</em>, 274 Va. 549, 650 S.E.2d 519 (2007), <a href="https://caselaw.findlaw.com/court/va-supreme-court/1153823.html" target="_blank" rel="noopener noreferrer" className="text-[#1B4D3E] underline hover:text-[#D4AF37]">Supreme Court of Virginia.</a></p>
               <p id="s2" className="m-0">2. Code of Virginia, <a href="https://law.lis.virginia.gov/vacode/title55.1/chapter28/section55.1-2836/" target="_blank" rel="noopener noreferrer" className="text-[#1B4D3E] underline hover:text-[#D4AF37]">§ 55.1-2836, damages for unlawful timber cutting.</a></p>
               <p id="s3" className="m-0">3. Tingen &amp; Williams, PLLC, <a href="https://tingenwilliams.com/2018/brief-overview-virginia-tree-law/27389/" target="_blank" rel="noopener noreferrer" className="text-[#1B4D3E] underline hover:text-[#D4AF37]">“A Brief Overview of Virginia Tree Law.”</a></p>
-              <p className="italic text-gray-400 pt-2 m-0">This is a general overview from a tree service, not legal advice. Every property line and dispute is different — for your specific situation, consult a licensed Virginia attorney.</p>
+              <p className="italic text-gray-600 pt-2 m-0">This is a general overview from a tree service, not legal advice. Every property line and dispute is different — for your specific situation, consult a licensed Virginia attorney.</p>
             </div>
           </div>
         </section>

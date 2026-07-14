@@ -72,7 +72,7 @@ const FAQPage = () => {
           </div>
         </header>
 
-        <main className="py-16 bg-white">
+        <div className="py-16 bg-white">
           <article className="container mx-auto px-4 max-w-3xl prose prose-lg prose-headings:font-playfair prose-headings:text-[#1B4D3E] text-gray-700 leading-relaxed">
 
             <p className="text-xl text-gray-800 font-medium">
@@ -176,7 +176,7 @@ const FAQPage = () => {
             </div>
 
           </article>
-        </main>
+        </div>
       </div>
     </>
   );
