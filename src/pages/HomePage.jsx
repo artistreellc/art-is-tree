@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, Suspense, lazy } from 'react';
+import { Head } from 'vite-react-ssg';
 import { Link, useLocation } from 'react-router-dom';
 import { Loader2, ShieldCheck, Award, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -80,6 +81,18 @@ const HomePage = () => {
   }];
 
   return <>
+      {/* Preload the LCP hero (responsive) so it starts before the CSS/JS. */}
+      <Head>
+        <link
+          rel="preload"
+          as="image"
+          href="/images/virginia-beach-winter-storm-cleanup-960.webp"
+          imageSrcSet="/images/virginia-beach-winter-storm-cleanup-640.webp 640w, /images/virginia-beach-winter-storm-cleanup-960.webp 960w, /images/virginia-beach-winter-storm-cleanup.webp 1280w"
+          imageSizes="100vw"
+          fetchPriority="high"
+        />
+      </Head>
+
       <LocalSEOMeta
         pageTitle="Tree Service Virginia Beach VA | Art-is-Tree LLC"
         description="Licensed, insured tree service in Virginia Beach and Hampton Roads. Tree removal, trimming, stump grinding and 24/7 storm response. Free estimates. Call today."
@@ -91,7 +104,16 @@ const HomePage = () => {
 
       <div className="flex flex-col w-full overflow-x-hidden">
         <header className="relative isolate text-white py-28 md:py-40 overflow-hidden flex items-center justify-center text-center">
-          <img src="/images/virginia-beach-winter-storm-cleanup.webp" alt="Art-is-Tree LLC crew clearing a storm-downed tree in Virginia Beach" className="absolute inset-0 -z-10 w-full h-full object-cover" fetchPriority="high" />
+          <img
+            src="/images/virginia-beach-winter-storm-cleanup-960.webp"
+            srcSet="/images/virginia-beach-winter-storm-cleanup-640.webp 640w, /images/virginia-beach-winter-storm-cleanup-960.webp 960w, /images/virginia-beach-winter-storm-cleanup.webp 1280w"
+            sizes="100vw"
+            width="1280"
+            height="960"
+            alt="Art-is-Tree LLC crew clearing a storm-downed tree in Virginia Beach"
+            className="absolute inset-0 -z-10 w-full h-full object-cover"
+            fetchPriority="high"
+          />
           <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0A2F24]/90 via-[#0A2F24]/78 to-[#08251C]/94"></div>
           <div className="container relative z-10 px-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-playfair mb-6 drop-shadow-md mt-0 text-white speakable">
