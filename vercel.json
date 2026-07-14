@@ -2,6 +2,7 @@
   "framework": "vite",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+  "trailingSlash": false,
   "redirects": [
     {
       "source": "/(.*)",
@@ -12,6 +13,11 @@
     {
       "source": "/case-studies/chesapeake-bay-waterfront",
       "destination": "/case-studies/chesapeake-bay-preservation-act",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study",
+      "destination": "/case-studies",
       "statusCode": 301
     }
   ],
