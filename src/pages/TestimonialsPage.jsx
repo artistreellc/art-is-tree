@@ -135,7 +135,7 @@ const TestimonialsPage = () => {
 
       <LocalBusinessSchema />
 
-      <main className="min-h-screen bg-gray-50 pb-24">
+      <div className="min-h-screen bg-gray-50 pb-24">
         <header className="relative py-20 md:py-24 bg-[#1B4D3E] text-white overflow-hidden">
           <div className="container mx-auto px-4 text-center relative z-10">
             <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold mb-5 mt-0">
@@ -208,7 +208,7 @@ const TestimonialsPage = () => {
                     href={SOURCE_URLS[r.source] || GOOGLE_LISTING_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-gray-400 hover:text-[#1B4D3E] transition-colors"
+                    className="text-xs text-gray-600 hover:text-[#1B4D3E] transition-colors"
                   >
                     {r.date} · Verified
                   </a>
@@ -258,7 +258,7 @@ const TestimonialsPage = () => {
             </a>
           </div>
         </section>
-      </main>
+      </div>
     </>
   );
 };

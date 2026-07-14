@@ -11,7 +11,7 @@ const TermsAndConditionsPage = () => {
           <h1 className="text-4xl md:text-5xl font-playfair font-bold text-[#1B4D3E] mb-8 mt-0 text-center">Terms and Conditions</h1>
         </header>
         
-        <main className="prose prose-lg text-gray-700 bg-white p-8 md:p-12 rounded-xl shadow-sm border border-gray-100">
+        <div className="prose prose-lg text-gray-700 bg-white p-8 md:p-12 rounded-xl shadow-sm border border-gray-100">
           <p><strong>Last Updated: July 10, 2026</strong></p>
           
           <p>
@@ -57,7 +57,7 @@ const TermsAndConditionsPage = () => {
           <p className="text-sm text-gray-500 text-center">
             © {new Date().getFullYear()} Art-is-Tree LLC. All rights reserved. Virginia Beach, VA.
           </p>
-        </main>
+        </div>
       </div>
     </div>
   );

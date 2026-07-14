@@ -10,7 +10,7 @@ const PrivacyPolicyPage = () => {
         <h1 className="text-4xl md:text-5xl font-playfair font-bold text-[#1B4D3E] mb-8 mt-0">Privacy Policy</h1>
       </header>
       
-      <main className="prose prose-lg text-gray-700">
+      <div className="prose prose-lg text-gray-700">
         <p><strong>Last Updated: July 10, 2026</strong></p>
         
         <h2 className="mt-8 mb-4">1. Information Collection and Use</h2>
@@ -47,7 +47,7 @@ const PrivacyPolicyPage = () => {
         <p className="text-sm text-gray-500 text-center">
           © {new Date().getFullYear()} Art-is-Tree LLC. All rights reserved. Virginia Beach, VA.
         </p>
-      </main>
+      </div>
     </div>
   );
 };

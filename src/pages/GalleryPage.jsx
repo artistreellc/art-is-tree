@@ -47,7 +47,7 @@ const GalleryPage = () => {
           </p>
         </header>
 
-        <main className="py-16 md:py-20">
+        <div className="py-16 md:py-20">
           {/* VIDEOS */}
           <div className="container mx-auto px-4 max-w-5xl mb-16">
             <h2 className="text-2xl md:text-3xl font-playfair font-bold text-[#1B4D3E] text-center mb-8">Watch Our Crew in Action</h2>
@@ -93,7 +93,7 @@ const GalleryPage = () => {
               </a>
             </div>
           </div>
-        </main>
+        </div>
       </div>
     </>
   );

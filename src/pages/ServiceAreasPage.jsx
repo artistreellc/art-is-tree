@@ -32,7 +32,7 @@ const ServiceAreasPage = () => {
             </div>
         </header>
 
-        <main className="py-16 md:py-24 bg-white border-b border-gray-100">
+        <div className="py-16 md:py-24 bg-white border-b border-gray-100">
           <div className="container mx-auto px-4 max-w-4xl mb-16">
              <div className="prose prose-lg text-gray-700 leading-relaxed mx-auto space-y-6">
                <p className="text-xl text-[#1B4D3E] font-medium text-center mb-10 border-b border-gray-200 pb-8">
@@ -96,7 +96,7 @@ const ServiceAreasPage = () => {
               </div>
             </div>
           </div>
-        </main>
+        </div>
 
         <NeighborhoodServiceContent />
       </div>

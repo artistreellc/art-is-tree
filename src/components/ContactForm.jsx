@@ -112,15 +112,17 @@ const ContactForm = () => {
   useEffect(() => {
     const newErrors = {};
     
-    if (formState.name !== '') newErrors.name = validateField('name', debouncedName);
-    if (formState.phone !== '') newErrors.phone = validateField('phone', debouncedPhone);
-    if (formState.email !== '') newErrors.email = validateField('email', debouncedEmail);
-    if (formState.address !== '') newErrors.address = validateField('address', debouncedAddress);
+    // Validate against the DEBOUNCED values only (and guard on them too) so an
+    // error never renders for a value the user has already typed past.
+    if (debouncedName !== '') newErrors.name = validateField('name', debouncedName);
+    if (debouncedPhone !== '') newErrors.phone = validateField('phone', debouncedPhone);
+    if (debouncedEmail !== '') newErrors.email = validateField('email', debouncedEmail);
+    if (debouncedAddress !== '') newErrors.address = validateField('address', debouncedAddress);
     if (formState.serviceNeeded !== '') newErrors.serviceNeeded = validateField('serviceNeeded', formState.serviceNeeded);
-    if (formState.message !== '') newErrors.message = validateField('message', debouncedMessage);
+    if (debouncedMessage !== '') newErrors.message = validateField('message', debouncedMessage);
 
     dispatch({ type: 'UPDATE_ERRORS', errors: newErrors });
-  }, [debouncedName, debouncedEmail, debouncedPhone, debouncedAddress, debouncedMessage, validateField, formState.name, formState.email, formState.phone, formState.address, formState.serviceNeeded, formState.message]);
+  }, [debouncedName, debouncedEmail, debouncedPhone, debouncedAddress, debouncedMessage, validateField, formState.serviceNeeded]);
 
   const handleChange = useCallback((e) => {
     const { name, value } = e.target;
@@ -402,10 +404,12 @@ const ContactForm = () => {
               onValueChange={(value) => handleSelectChange('serviceNeeded', value)}
               disabled={isSubmitting}
             >
-              <SelectTrigger 
+              <SelectTrigger
                 id="serviceNeeded"
                 className={`w-full absolute inset-0 ${formState.errors.serviceNeeded ? 'border-red-500 focus:ring-red-500' : ''}`}
                 aria-invalid={!!formState.errors.serviceNeeded}
+                aria-required="true"
+                aria-describedby={formState.errors.serviceNeeded ? 'serviceNeeded-error' : undefined}
               >
                 <SelectValue placeholder="Select a service" />
               </SelectTrigger>
@@ -431,7 +435,7 @@ const ContactForm = () => {
 
         <div className="form-field">
           <Label htmlFor="urgency" className="text-gray-700 font-medium mb-2 block">
-            How soon do you need service? <span className="text-gray-400 text-sm font-normal">(Optional)</span>
+            How soon do you need service? <span className="text-gray-600 text-sm font-normal">(Optional)</span>
           </Label>
           <div className="relative min-h-[44px]">
             <Select 

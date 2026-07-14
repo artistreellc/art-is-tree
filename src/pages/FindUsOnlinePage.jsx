@@ -15,7 +15,7 @@ const FindUsOnlinePage = () => {
       
       <DirectoryLinksSchema />
 
-      <main className="flex flex-col w-full min-h-screen bg-gray-50 pt-8 pb-16">
+      <div className="flex flex-col w-full min-h-screen bg-gray-50 pt-8 pb-16">
         <div className="container mx-auto px-4 max-w-4xl text-center mb-12">
           <h1 className="font-playfair text-4xl md:text-5xl font-bold text-[#1B4D3E] mb-4">
             Verified Local Listings & Citations
@@ -30,7 +30,7 @@ const FindUsOnlinePage = () => {
         <div className="my-8"></div>
 
         <GoogleBusinessProfileIntegration />
-      </main>
+      </div>
     </>
   );
 };

@@ -70,7 +70,7 @@ const ServicesPage = () => {
         </div>
       </header>
       
-      <main className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-16">
         <div className="prose prose-lg max-w-5xl mx-auto text-gray-700 leading-relaxed space-y-8 bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100">
           
           <p className="text-xl text-[#1B4D3E] font-medium text-center mb-10">
@@ -176,7 +176,7 @@ const ServicesPage = () => {
              </div>
           </div>
         </div>
-      </main>
+      </div>
     </div>
   );
 };

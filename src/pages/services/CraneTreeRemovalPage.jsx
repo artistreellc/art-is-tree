@@ -94,7 +94,7 @@ const CraneTreeRemovalPage = () => {
         </div>
       </section>
 
-      <main className="container mx-auto max-w-5xl px-4 py-16">
+      <div className="container mx-auto max-w-5xl px-4 py-16">
         <div className="grid md:grid-cols-2 gap-12">
           <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
             <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mb-6">What's Included</h2>
@@ -166,7 +166,7 @@ const CraneTreeRemovalPage = () => {
             </div>
           </div>
         </div>
-      </main>
+      </div>
       <FAQPageSchema items={craneFaqs} />
       <FAQSection items={craneFaqs} title="Crane Tree Removal in Virginia Beach: FAQ" />
       <ServiceAreaLinks serviceName="Crane Tree Removal" />
