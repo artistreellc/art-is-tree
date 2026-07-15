@@ -81,6 +81,7 @@ const Footer = () => {
               <li className="h-[24px]"><Link to="/case-studies/property-value" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group h-full"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity inline-block"></span>Property Value</Link></li>
               <li className="h-[24px]"><Link to="/case-studies/virginia-tree-law" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group h-full"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity inline-block"></span>Virginia Tree Law</Link></li>
               <li className="h-[24px]"><Link to="/case-studies/spikeless-pruning" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group h-full"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity inline-block"></span>Spikeless Pruning</Link></li>
+              <li className="h-[24px]"><Link to="/case-studies/storm-damage-mitigation" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group h-full"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity inline-block"></span>Storm &amp; Hurricane Damage</Link></li>
             </ul>
           </div>
 
