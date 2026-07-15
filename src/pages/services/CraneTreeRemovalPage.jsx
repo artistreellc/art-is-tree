@@ -132,7 +132,7 @@ const CraneTreeRemovalPage = () => {
                   <Shield className="w-8 h-8 text-[#1B4D3E]" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-xl text-gray-900 mb-1">TCIA Member Expertise</h3>
+                  <h3 className="font-bold text-xl text-gray-900 mb-1">ANSI-Standard Rigging</h3>
                   <p className="text-gray-600">Advanced rigging expertise to ensure loads are calculated flawlessly.</p>
                 </div>
               </li>

@@ -39,11 +39,6 @@ const OrganizationSchema = () => {
         "@type": "EducationalOccupationalCredential",
         "credentialCategory": "BBB Accredited Business A+ Rating",
         "name": "Better Business Bureau Accreditation"
-      },
-      {
-        "@type": "EducationalOccupationalCredential",
-        "credentialCategory": "TCIA Member",
-        "name": "Tree Care Industry Association Member"
       }
     ],
     "address": {

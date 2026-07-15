@@ -20,7 +20,7 @@ const AboutPage = () => {
     <>
       <LocalSEOMeta 
         pageTitle="About Art-is-Tree LLC | Tree Service Virginia Beach" 
-        description="Family-owned tree service in Virginia Beach with 15+ years experience. Licensed, insured, BBB A+ and TCIA member, serving all of Hampton Roads, VA." 
+        description="Family-owned tree service in Virginia Beach with 15+ years experience. Licensed, insured, BBB A+, and working to ANSI A300 &amp; Z133 standards, serving all of Hampton Roads, VA." 
       />
 
       <LocalBusinessSchema />
@@ -60,7 +60,7 @@ const AboutPage = () => {
                  <div className="flex items-center gap-2 font-semibold text-[#1B4D3E]"><Award className="text-[#D4AF37]"/> 15+ Years Experience</div>
                  <div className="flex items-center gap-2 font-semibold text-[#1B4D3E]"><ShieldCheck className="text-[#D4AF37]"/> Licensed & Insured</div>
                  <div className="flex items-center gap-2 font-semibold text-[#1B4D3E]"><BadgeCheck className="text-[#D4AF37]"/> BBB A+ Accredited<Cite href={COMPANY_INFO.socials.bbb} label="BBB" /></div>
-                 <div className="flex items-center gap-2 font-semibold text-[#1B4D3E]"><TreePine className="text-[#D4AF37]"/> TCIA Member<Cite href="https://www.tcia.org/" label="TCIA" /></div>
+                 <div className="flex items-center gap-2 font-semibold text-[#1B4D3E]"><TreePine className="text-[#D4AF37]"/> ANSI A300 &amp; Z133 Standards<Cite href="https://www.tcia.org/" label="TCIA" /></div>
                </div>
 
                <h2 className="text-3xl font-bold text-[#1B4D3E] font-playfair mb-6">Our History and Foundation</h2>

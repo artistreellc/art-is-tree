@@ -175,8 +175,8 @@ const TestimonialsPage = () => {
               </a>
               <div className="flex flex-col items-center text-[#1B4D3E]">
                 <Award className="w-7 h-7 text-[#D4AF37] mb-2" />
-                <strong className="text-lg">TCIA Members</strong>
-                <span className="text-sm text-gray-500">Professional Arborists</span>
+                <strong className="text-lg">ANSI-Standard Work</strong>
+                <span className="text-sm text-gray-500">A300 &amp; Z133 Standards</span>
               </div>
             </div>
           </div>
