@@ -244,7 +244,7 @@ const StormDamageMitigationCaseStudy = () => {
             <Eyebrow className="mb-3">Tree down, or one you’re worried about?</Eyebrow>
             <h2 className="font-playfair text-2xl md:text-3xl font-bold mb-4 mt-0">Storm-damaged, leaning, or on your house — we’ll handle it.</h2>
             <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-              We cover storm and hurricane tree damage across Virginia Beach and all of Hampton Roads — licensed, insured, and set up to rig the trees other crews won’t touch. If it’s an active emergency, call us. If it’s a tree you want checked <em>before</em> the next storm, the estimate is free.
+              We cover storm and hurricane tree damage across <Link to="/service-areas/virginia-beach" className="underline decoration-white/40 hover:decoration-white">Virginia Beach</Link> and all of <Link to="/service-areas" className="underline decoration-white/40 hover:decoration-white">Hampton Roads</Link> — licensed, insured, and set up to rig the trees other crews won’t touch. If it’s an active emergency, call us. If it’s a tree you want checked <em>before</em> the next storm, the estimate is free.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button asChild size="lg" className="bg-[#D4AF37] text-black hover:bg-[#c19b2e] text-lg px-8 py-6 rounded-xl font-bold">

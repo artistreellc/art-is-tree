@@ -93,7 +93,7 @@ const CraneCaseStudy = () => {
               The problem was that there was nowhere safe to put them. The house sat on one side. On the other was the water and its protected shoreline buffer, where heavy equipment and debris aren’t allowed. Mature landscaping filled the gaps in between. Felling these pines the old-fashioned way — cutting them at the base and dropping them — would have meant betting the roof, the fence, or the shoreline on where an 80-foot tree decided to land. I wasn’t willing to make that bet, and you shouldn’t let anyone make it with your property either.
             </p>
             <p>
-              Loblolly pines are the tallest thing in most Hampton Roads yards, and that height is exactly what makes a declining one so dangerous — a lot of weight, a long way up, standing in sandy coastal soil that loosens its grip on the roots every time the ground floods. A compromised pine like that doesn’t give much warning before it goes, and when it goes, it goes all at once.
+              Loblolly pines are the tallest thing in most <Link to="/service-areas" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">Hampton Roads</Link> yards, and that height is exactly what makes a declining one so dangerous — a lot of weight, a long way up, standing in sandy coastal soil that loosens its grip on the roots every time the ground floods. A compromised pine like that doesn’t give much warning before it goes, and when it goes, it goes all at once.
             </p>
           </div>
         </section>
@@ -233,7 +233,7 @@ const CraneCaseStudy = () => {
               A big tree over the house doesn’t have to be a gamble.
             </h2>
             <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
-              If you’ve got a large or leaning tree near your home, fence, or the water, we’ll come look at it and tell you honestly whether it needs a crane. The estimate is free.
+              If you’ve got a large or leaning tree near your home, fence, or the water, we’ll come look at it and tell you honestly whether it needs <Link to="/services/crane-removal" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">crane tree removal</Link> in <Link to="/service-areas/virginia-beach" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">Virginia Beach</Link>. The estimate is free.
             </p>
             <Button asChild size="lg" className="bg-[#1B4D3E] text-white hover:bg-[#143a2f] text-lg px-8 py-6 rounded-xl font-bold">
               <Link to="/contact">Get a Free Estimate <ArrowRight className="ml-2 w-5 h-5" /></Link>

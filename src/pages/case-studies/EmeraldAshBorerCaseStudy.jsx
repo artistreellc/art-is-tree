@@ -205,7 +205,7 @@ const EmeraldAshBorerCaseStudy = () => {
             <Eyebrow className="mb-3">Worried about an ash tree?</Eyebrow>
             <h2 className="font-playfair text-2xl md:text-3xl font-bold mb-4 mt-0">Get it looked at before it becomes an emergency.</h2>
             <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-              If you have an ash showing dieback, blonding, or D-shaped holes in Virginia Beach or Hampton Roads, we’ll come assess it and give you a straight answer. The estimate is free.
+              If you have an ash showing dieback, blonding, or D-shaped holes in <Link to="/service-areas/virginia-beach" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">Virginia Beach</Link> or <Link to="/service-areas" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">Hampton Roads</Link>, we’ll come assess it and give you a straight answer on <Link to="/services/tree-removal" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">tree removal</Link>. The estimate is free.
             </p>
             <Button asChild size="lg" className="bg-[#D4AF37] text-black hover:bg-[#c19b2e] text-lg px-8 py-6 rounded-xl font-bold">
               <Link to="/contact">Get a Free Estimate <ArrowRight className="ml-2 w-5 h-5" /></Link>
