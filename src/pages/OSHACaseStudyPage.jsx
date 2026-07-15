@@ -205,7 +205,7 @@ const OSHACaseStudyPage = () => {
             <Eyebrow className="mb-3">Hire the crew that does the invisible part right</Eyebrow>
             <h2 className="font-playfair text-2xl md:text-3xl font-bold mb-4 mt-0">Licensed, insured, and done to standard.</h2>
             <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-              If you’ve got a tricky tree — near a line, over the house, or storm-damaged — in Virginia Beach or anywhere in Hampton Roads, we’ll come assess it and give you a straight, safe plan. The estimate is free.
+              If you’ve got a tricky tree — near a line, over the house, or storm-damaged — in <Link to="/service-areas/virginia-beach" className="underline decoration-white/40 hover:decoration-white">Virginia Beach</Link> or anywhere in <Link to="/service-areas" className="underline decoration-white/40 hover:decoration-white">Hampton Roads</Link>, we’ll come assess it and give you a straight, safe plan. The estimate is free.
             </p>
             <Button asChild size="lg" className="bg-[#D4AF37] text-black hover:bg-[#c19b2e] text-lg px-8 py-6 rounded-xl font-bold">
               <Link to="/contact">Get a Free Estimate <ArrowRight className="ml-2 w-5 h-5" /></Link>

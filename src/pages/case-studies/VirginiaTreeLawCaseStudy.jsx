@@ -207,7 +207,7 @@ const VirginiaTreeLawCaseStudy = () => {
             <Eyebrow className="mb-3">Tree dispute with a neighbor?</Eyebrow>
             <h2 className="font-playfair text-2xl md:text-3xl font-bold mb-4 mt-0">Let’s do it the way that keeps you out of court.</h2>
             <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-              We’ll tell you honestly what Virginia law allows on your specific situation before any cutting begins — across Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk. The assessment is free.
+              We’ll tell you honestly what Virginia law allows on your specific situation before any cutting begins — across <Link to="/service-areas/virginia-beach" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">Virginia Beach</Link>, <Link to="/service-areas/norfolk" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">Norfolk</Link>, <Link to="/service-areas/chesapeake" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">Chesapeake</Link>, <Link to="/service-areas/portsmouth" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">Portsmouth</Link>, and <Link to="/service-areas/suffolk" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">Suffolk</Link>. The assessment is free.
             </p>
             <Button asChild size="lg" className="bg-[#D4AF37] text-black hover:bg-[#c19b2e] text-lg px-8 py-6 rounded-xl font-bold">
               <Link to="/contact">Get a Free Assessment <ArrowRight className="ml-2 w-5 h-5" /></Link>
