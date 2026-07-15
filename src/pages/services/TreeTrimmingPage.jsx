@@ -130,7 +130,7 @@ const TreeTrimmingPage = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-xl text-gray-900 mb-1">Skilled Tree Climbers</h3>
-                  <p className="text-gray-600">TCIA member with arboricultural expertise on staff.</p>
+                  <p className="text-gray-600">Arboricultural expertise and ANSI A300 pruning standards on every job.</p>
                 </div>
               </li>
               <li className="flex items-start">

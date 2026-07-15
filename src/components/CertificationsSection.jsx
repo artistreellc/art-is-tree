@@ -12,9 +12,9 @@ const certifications = [
     Icon: ShieldCheck,
   },
   {
-    id: 'tcia',
-    name: 'TCIA Member',
-    description: 'Member of the Tree Care Industry Association, which sets the safety standards for professional tree work.',
+    id: 'ansi',
+    name: 'ANSI A300 & Z133',
+    description: 'Every job performed to the ANSI A300 tree-care and Z133 safety standards — the national standards for professional arboriculture.',
     Icon: TreePine,
   },
   {

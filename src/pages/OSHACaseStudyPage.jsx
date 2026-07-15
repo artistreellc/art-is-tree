@@ -112,7 +112,7 @@ const OSHACaseStudyPage = () => {
               The detailed, tree-specific playbook is <strong>ANSI Z133</strong> — the American National Standard for arboricultural operations, published through the Tree Care Industry Association. Z133 is the consensus safety standard our whole industry is measured against. It spells out the minimum approach distances to power lines, the personal protective equipment required, how climbing and rigging systems have to be set up and inspected, and how the work zone gets controlled.<sup><a href="#src3" className="text-[#1B4D3E] hover:text-[#D4AF37]">3</a></sup> When I tell you we work to Z133, I’m telling you we hold ourselves to the same written standard a court or an insurer would use to judge whether a job was done responsibly.
             </p>
             <p>
-              We’re a <Link to="/about" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">TCIA member</Link>, we’re licensed, and we carry real liability and workers’ compensation insurance. That last part matters more than most homeowners think, and I’ll come back to why.
+              We work to that <Link to="/about" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">Z133 standard</Link>, we’re licensed, and we carry real liability and workers’ compensation insurance. That last part matters more than most homeowners think, and I’ll come back to why.
             </p>
           </div>
         </section>
