@@ -2,18 +2,25 @@
 import React from 'react';
 import { Head } from 'vite-react-ssg';
 import { useLocation } from 'react-router-dom';
-import { generateCanonicalUrl } from '@/utils/seoHelpers';
+import { generateCanonicalUrl, BASE_URL } from '@/utils/seoHelpers';
 
-const CaseStudySchema = ({ 
-  title, 
-  description, 
-  imageUrl, 
+// Reuse the Organization node emitted globally by OrganizationSchema instead of
+// re-declaring the whole block. Both @ids must match this string exactly.
+const ORG_ID = `${BASE_URL}/#organization`;
+
+const CaseStudySchema = ({
+  title,
+  description,
+  imageUrl,
   url,
-  datePublished = "2023-01-01",
-  dateModified = '2026-07-10'
+  // The current repo history only goes back to the 2026-07-07 bulk migration,
+  // so honest per-study dates are passed in by each page. These are safe
+  // fallbacks, not the wrong "2023-01-01" placeholder they replaced.
+  datePublished = "2026-07-07",
+  dateModified = "2026-07-15"
 }) => {
   const location = useLocation();
-  const currentUrl = url ? `https://artistreevabeach.com${url}` : generateCanonicalUrl(location.pathname);
+  const currentUrl = url ? `${BASE_URL}${url}` : generateCanonicalUrl(location.pathname);
 
   const schema = {
     "@context": "https://schema.org",
@@ -29,17 +36,17 @@ const CaseStudySchema = ({
     "dateModified": dateModified,
     "url": currentUrl,
     "author": {
-      "@type": "Organization",
-      "name": "Art-is-Tree LLC",
-      "url": "https://artistreevabeach.com"
+      "@type": "Person",
+      "name": "Mike Campbell",
+      "jobTitle": "Owner & Lead Climber",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Art-is-Tree LLC",
+        "@id": ORG_ID
+      }
     },
     "publisher": {
-      "@type": "Organization",
-      "name": "Art-is-Tree LLC",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://artistreevabeach.com/logo.png"
-      }
+      "@id": ORG_ID
     }
   };
 

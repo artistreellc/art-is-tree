@@ -5,7 +5,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import CaseStudySchema from '@/components/seo/CaseStudySchema';
 import LocalSEOMeta from '@/components/LocalSEOMeta';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
-import { Eyebrow, SectionHeading, Figure, ProjectSpec } from '@/components/design/Primitives';
+import { Eyebrow, SectionHeading, Figure, ProjectSpec, Byline } from '@/components/design/Primitives';
 import { Button } from '@/components/ui/button';
 
 const OSHACaseStudyPage = () => {
@@ -22,6 +22,7 @@ const OSHACaseStudyPage = () => {
         description={description}
         imageUrl="https://artistreevabeach.com/images/virginia-beach-tall-tree-climb.webp"
         url="/case-studies/osha-compliance"
+        datePublished="2026-07-07"
       />
 
       <article className="bg-[#FAF9F6]">
@@ -44,6 +45,7 @@ const OSHACaseStudyPage = () => {
                 <h1 className="font-playfair text-2xl md:text-4xl lg:text-[2.7rem] font-bold text-white leading-tight max-w-2xl">
                   Why Safety Isn’t Optional
                 </h1>
+                <Byline date="2026-07-07" light className="mt-4" />
                 <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-white/85 text-sm font-medium mt-4">
                   <span className="flex items-center gap-1.5"><MapPin className="w-4 h-4 text-[#D4AF37]" /> Virginia Beach · Hampton Roads</span>
                   <span className="flex items-center gap-1.5"><HardHat className="w-4 h-4 text-[#D4AF37]" /> OSHA · ANSI Z133</span>

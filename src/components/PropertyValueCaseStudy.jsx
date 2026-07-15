@@ -4,7 +4,7 @@ import { MapPin, TrendingUp, ArrowRight, DollarSign, Sun, Home, Scissors } from 
 import Breadcrumbs from '@/components/Breadcrumbs';
 import CaseStudySchema from '@/components/seo/CaseStudySchema';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
-import { Eyebrow, SectionHeading, Figure, ProjectSpec } from '@/components/design/Primitives';
+import { Eyebrow, SectionHeading, Figure, ProjectSpec, Byline } from '@/components/design/Primitives';
 import { Button } from '@/components/ui/button';
 
 const PropertyValueCaseStudy = () => {
@@ -20,6 +20,7 @@ const PropertyValueCaseStudy = () => {
         description={description}
         imageUrl="https://artistreevabeach.com/images/virginia-beach-large-tree-over-house.webp"
         url="/case-studies/property-value"
+        datePublished="2026-07-07"
       />
 
       <article className="bg-[#FAF9F6]">
@@ -42,6 +43,7 @@ const PropertyValueCaseStudy = () => {
                 <h1 className="font-playfair text-2xl md:text-4xl lg:text-[2.7rem] font-bold text-white leading-tight max-w-2xl">
                   The Listing That Sold in a Week
                 </h1>
+                <Byline date="2026-07-07" light className="mt-4" />
                 <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-white/85 text-sm font-medium mt-4">
                   <span className="flex items-center gap-1.5"><MapPin className="w-4 h-4 text-[#D4AF37]" /> Virginia Beach · Hampton Roads</span>
                   <span className="flex items-center gap-1.5"><TrendingUp className="w-4 h-4 text-[#D4AF37]" /> Curb appeal & ROI</span>

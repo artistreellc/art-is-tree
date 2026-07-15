@@ -1,5 +1,57 @@
 import React from 'react';
 
+/**
+ * Turn a heading string into a stable, URL-safe anchor id (for deep links).
+ * normalize('NFKD') + stripping curly/straight quotes matters because these
+ * headings use apostrophes ("We’re", "won’t") that would otherwise become
+ * ugly encoded ids like "we-re".
+ */
+const slugify = (value) =>
+  String(value)
+    .toLowerCase()
+    .normalize('NFKD')
+    .replace(/[‘’“”']/g, '') // curly + straight quotes → gone (We’re → were)
+    .replace(/&/g, ' and ')
+    .replace(/[^\w]+/g, '-') // any non-word run → single hyphen
+    .replace(/^-+|-+$/g, '');
+
+const MONTHS = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December',
+];
+
+/** Format an ISO "YYYY-MM-DD" date deterministically (no locale/timezone drift). */
+const formatDate = (iso) => {
+  const [y, m, d] = String(iso).split('-').map(Number);
+  if (!y || !m || !d) return '';
+  return `${MONTHS[m - 1]} ${d}, ${y}`;
+};
+
+/**
+ * Visible author byline. MUST stay in sync with the Person author emitted by
+ * CaseStudySchema — Google's E-E-A-T guidance wants the schema author name to
+ * match a real, visible byline on the page. The itemScope/itemProp microdata
+ * reinforces that the on-page name is the same person entity.
+ */
+export const Byline = ({ date, light = false, className = '' }) => (
+  <p
+    className={`flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-medium m-0 ${light ? 'text-white/85' : 'text-gray-600'} ${className}`}
+    itemScope
+    itemType="https://schema.org/Person"
+  >
+    <span>
+      By <span className="font-bold" itemProp="name">Mike Campbell</span>,{' '}
+      <span itemProp="jobTitle">Owner &amp; Lead Climber</span>
+    </span>
+    {date && (
+      <>
+        <span aria-hidden="true" className={light ? 'text-white/50' : 'text-gray-400'}>·</span>
+        <span>Published <time dateTime={date}>{formatDate(date)}</time></span>
+      </>
+    )}
+  </p>
+);
+
 /** Gold uppercase eyebrow label that sits above section headings. */
 export const Eyebrow = ({ children, className = '' }) => (
   <span className={`inline-block text-[#D4AF37] font-bold tracking-[0.18em] uppercase text-xs md:text-sm ${className}`}>
@@ -8,10 +60,13 @@ export const Eyebrow = ({ children, className = '' }) => (
 );
 
 /** Standard section heading block: eyebrow → title → gold rule → optional deck. */
-export const SectionHeading = ({ eyebrow, title, deck, align = 'left', light = false, rule = true, className = '' }) => (
+export const SectionHeading = ({ eyebrow, title, deck, align = 'left', light = false, rule = true, className = '', id }) => (
   <div className={`${align === 'center' ? 'text-center mx-auto max-w-2xl' : 'text-left'} ${className}`}>
     {eyebrow && <Eyebrow className="mb-3">{eyebrow}</Eyebrow>}
-    <h2 className={`font-playfair font-bold leading-tight text-3xl md:text-4xl ${light ? 'text-white' : 'text-[#1B4D3E]'} mt-0 mb-3`}>
+    <h2
+      id={id || (typeof title === 'string' ? slugify(title) : undefined)}
+      className={`font-playfair font-bold leading-tight text-3xl md:text-4xl scroll-mt-24 ${light ? 'text-white' : 'text-[#1B4D3E]'} mt-0 mb-3`}
+    >
       {title}
     </h2>
     {rule && (
