@@ -31,7 +31,7 @@ const TreeRemovalPage = () => {
     answer: "Yes. We offer 24/7 emergency tree removal across Hampton Roads. Coastal storms and high winds regularly drop trees onto homes, cars, and driveways in Virginia Beach, and our crew responds quickly to remove leaning or fallen trees and make your property safe."
   }, {
     question: "Are you licensed and insured to remove trees?",
-    answer: "Yes. Art-is-Tree LLC is fully licensed and insured, BBB A+ accredited, and works to the ANSI A300 and Z133 industry standards. Tree removal is high-risk work; hiring a licensed and insured company means you are not held liable if damage or injury happens on your property during the job."
+    answer: "Yes. Art-is-Tree LLC is fully licensed and insured, BBB A+ accredited, a member of the International Society of Arboriculture (ISA), and works to the ANSI A300 and Z133 industry standards. Tree removal is high-risk work; hiring a licensed and insured company means you are not held liable if damage or injury happens on your property during the job."
   }, {
     question: "What areas do you serve for tree removal?",
     answer: "We provide tree removal in Virginia Beach, Norfolk, Chesapeake, Portsmouth, Suffolk, and the surrounding Hampton Roads region, roughly a 30-mile radius from Virginia Beach."
