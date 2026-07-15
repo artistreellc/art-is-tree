@@ -8,7 +8,8 @@ const CASE_STUDIES = [
   { title: "OSHA Compliance & Safety Standards", path: "/case-studies/osha-compliance", category: "Safety" },
   { title: "Property Value Enhancement", path: "/case-studies/property-value", category: "Real Estate" },
   { title: "Virginia Tree Law", path: "/case-studies/virginia-tree-law", category: "Consumer Protection" },
-  { title: "Advanced Spikeless Pruning", path: "/case-studies/spikeless-pruning", category: "Technique" }
+  { title: "Advanced Spikeless Pruning", path: "/case-studies/spikeless-pruning", category: "Technique" },
+  { title: "Storm & Hurricane Damage", path: "/case-studies/storm-damage-mitigation", category: "Storm Response" }
 ];
 
 /**
