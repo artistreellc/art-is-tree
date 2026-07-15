@@ -96,7 +96,7 @@ const OSHACaseStudyPage = () => {
                   </p>
                 </div>
               </div>
-              <Figure src="/images/virginia-beach-tree-climber-portrait.webp" alt="An Art-is-Tree climber in helmet and safety gear during a Virginia Beach removal" caption="Helmet, eye and hearing protection, saw-rated leg protection — before the first cut" aspect="aspect-[3/4]" className="reveal max-w-md mx-auto lg:mx-0" />
+              <Figure src="/images/virginia-beach-tree-climber-portrait.webp" alt="An Art-is-Tree climber in helmet and safety gear during a Virginia Beach removal" caption="Helmet, eye and hearing protection, saw-rated leg protection — before the first cut" aspect="aspect-[3/4]" position="top" className="reveal max-w-md mx-auto lg:mx-0" />
             </div>
           </div>
         </section>
