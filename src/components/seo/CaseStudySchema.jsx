@@ -9,8 +9,8 @@ const CaseStudySchema = ({
   description, 
   imageUrl, 
   url,
-  datePublished = "2023-01-01",
-  dateModified = '2026-07-10'
+  datePublished = "2024-01-01",
+  dateModified = '2026-07-15'
 }) => {
   const location = useLocation();
   const currentUrl = url ? `https://artistreevabeach.com${url}` : generateCanonicalUrl(location.pathname);
@@ -29,9 +29,14 @@ const CaseStudySchema = ({
     "dateModified": dateModified,
     "url": currentUrl,
     "author": {
-      "@type": "Organization",
-      "name": "Art-is-Tree LLC",
-      "url": "https://artistreevabeach.com"
+      "@type": "Person",
+      "name": "Mike Campbell",
+      "jobTitle": "Owner & Lead Climber",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Art-is-Tree LLC",
+        "url": "https://artistreevabeach.com"
+      }
     },
     "publisher": {
       "@type": "Organization",

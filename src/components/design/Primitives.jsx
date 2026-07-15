@@ -1,5 +1,13 @@
 import React from 'react';
 
+/** Turn a heading string into a stable, URL-safe anchor id (for deep links). */
+const slugify = (value) =>
+  String(value)
+    .toLowerCase()
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+
 /** Gold uppercase eyebrow label that sits above section headings. */
 export const Eyebrow = ({ children, className = '' }) => (
   <span className={`inline-block text-[#D4AF37] font-bold tracking-[0.18em] uppercase text-xs md:text-sm ${className}`}>
@@ -8,10 +16,13 @@ export const Eyebrow = ({ children, className = '' }) => (
 );
 
 /** Standard section heading block: eyebrow → title → gold rule → optional deck. */
-export const SectionHeading = ({ eyebrow, title, deck, align = 'left', light = false, rule = true, className = '' }) => (
+export const SectionHeading = ({ eyebrow, title, deck, align = 'left', light = false, rule = true, className = '', id }) => (
   <div className={`${align === 'center' ? 'text-center mx-auto max-w-2xl' : 'text-left'} ${className}`}>
     {eyebrow && <Eyebrow className="mb-3">{eyebrow}</Eyebrow>}
-    <h2 className={`font-playfair font-bold leading-tight text-3xl md:text-4xl ${light ? 'text-white' : 'text-[#1B4D3E]'} mt-0 mb-3`}>
+    <h2
+      id={id || (typeof title === 'string' ? slugify(title) : undefined)}
+      className={`font-playfair font-bold leading-tight text-3xl md:text-4xl scroll-mt-24 ${light ? 'text-white' : 'text-[#1B4D3E]'} mt-0 mb-3`}
+    >
       {title}
     </h2>
     {rule && (
