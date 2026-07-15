@@ -3,6 +3,7 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "trailingSlash": false,
+  "cleanUrls": true,
   "redirects": [
     {
       "source": "/(.*)",
@@ -22,7 +23,9 @@
     }
   ],
   "rewrites": [
-    { "source": "/((?!api/|.*\\.).*)", "destination": "/index.html" }
+    { "source": "/admin", "destination": "/index.html" },
+    { "source": "/admin/:path*", "destination": "/index.html" },
+    { "source": "/login", "destination": "/index.html" }
   ],
   "headers": [
     {
