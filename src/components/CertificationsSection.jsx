@@ -12,9 +12,9 @@ const certifications = [
     Icon: ShieldCheck,
   },
   {
-    id: 'ansi',
-    name: 'ANSI A300 & Z133',
-    description: 'Every job performed to the ANSI A300 tree-care and Z133 safety standards — the national standards for professional arboriculture.',
+    id: 'isa',
+    name: 'ISA Member',
+    description: 'Professional member of the International Society of Arboriculture (ISA) and its Atlantic Chapter — the leading global authority on tree care.',
     Icon: TreePine,
   },
   {

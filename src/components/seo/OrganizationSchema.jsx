@@ -41,6 +41,21 @@ const OrganizationSchema = () => {
         "name": "Better Business Bureau Accreditation"
       }
     ],
+    "memberOf": [
+      {
+        "@type": "Organization",
+        "name": "International Society of Arboriculture",
+        "url": "https://www.isa-arbor.com/"
+      },
+      {
+        "@type": "Organization",
+        "name": "ISA Atlantic Chapter"
+      },
+      {
+        "@type": "Organization",
+        "name": "Society of Commercial Arboriculture"
+      }
+    ],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "2597 Nestlebrook Trl",
