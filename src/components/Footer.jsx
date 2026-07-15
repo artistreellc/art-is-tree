@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Instagram, Clock, ShieldCheck, TreePine, Star } from 'lucide-react';
 import { useCookieConsent } from '@/hooks/useCookieConsent';
+import { useReviewStats } from '@/hooks/useReviewStats';
 
 const GOOGLE_LISTING_URL = "https://www.google.com/maps?cid=12599844776703525086";
 
 const Footer = () => {
+  const { count: reviewCount } = useReviewStats();
   const currentYear = new Date().getFullYear();
   const { setIsModalOpen } = useCookieConsent();
   const logoUrl = "/logo.png";
@@ -88,7 +90,7 @@ const Footer = () => {
               <li className="h-[24px]">
                 <a href={GOOGLE_LISTING_URL} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group citation-link h-full">
                   <Star className="text-yellow-400" size={16} width={16} height={16} />
-                  Google 5.0 (134)
+                  Google 5.0 ({reviewCount})
                 </a>
               </li>
               <li className="h-[24px]">

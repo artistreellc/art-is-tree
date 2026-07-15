@@ -2,6 +2,7 @@ import React from 'react';
 import { Star, Quote, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { useReviewStats } from '@/hooks/useReviewStats';
 
 const GOOGLE_LISTING_URL = "https://www.google.com/maps?cid=12599844776703525086";
 
@@ -27,6 +28,8 @@ const FEATURED_REVIEWS = [
 ];
 
 const GoogleReviewsDisplay = () => {
+  const { count, rating } = useReviewStats();
+  const ratingText = rating.toFixed(1);
   return (
     <section className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50 contain-content" aria-labelledby="reviews-heading">
       <div className="container mx-auto px-4">
@@ -39,7 +42,7 @@ const GoogleReviewsDisplay = () => {
                 ))}
               </div>
               <span className="text-gray-600 font-medium">
-                5.0 out of 5 <span className="text-sm text-gray-400">(134 reviews)</span>
+                {ratingText} out of 5 <span className="text-sm text-gray-400">({count} reviews)</span>
               </span>
             </div>
           </a>
@@ -47,7 +50,7 @@ const GoogleReviewsDisplay = () => {
             What Your Neighbors Say
           </h2>
           <p className="font-sans text-gray-600 max-w-2xl mx-auto text-lg">
-            A few of the 134 five-star reviews from homeowners across Virginia Beach and Hampton Roads.
+            A few of the {count} five-star reviews from homeowners across Virginia Beach and Hampton Roads.
           </p>
         </div>
 
@@ -82,7 +85,7 @@ const GoogleReviewsDisplay = () => {
         <div className="text-center flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button asChild size="lg" className="rounded-full bg-[#1B4D3E] hover:bg-[#153e32] px-8 text-lg h-14 min-w-[200px] shadow-md text-white">
             <a href={GOOGLE_LISTING_URL} target="_blank" rel="noopener noreferrer">
-              Read All 134 on Google <ExternalLink className="ml-2 w-4 h-4" />
+              Read All {count} on Google <ExternalLink className="ml-2 w-4 h-4" />
             </a>
           </Button>
           <Button asChild size="lg" variant="outline" className="rounded-full border-[#1B4D3E] text-[#1B4D3E] hover:bg-[#1B4D3E] hover:text-white px-8 text-lg h-14 min-w-[200px]">

@@ -4,6 +4,7 @@ import { Phone, Instagram, Facebook, Menu, X, ShieldCheck, Terminal, Star, MapPi
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/contexts/SupabaseAuthContext';
 import { useThrottle } from '@/hooks/useThrottle';
+import { useReviewStats } from '@/hooks/useReviewStats';
 
 const NAV_LINKS = [
   { name: 'Home', path: '/' },
@@ -176,6 +177,7 @@ const MobileMenuItem = memo(({ link, isActive, onClick }) => {
 MobileMenuItem.displayName = 'MobileMenuItem';
 
 const Navigation = memo(() => {
+  const { count: reviewCount, rating: reviewRating } = useReviewStats();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const menuRef = useRef(null);
@@ -310,7 +312,7 @@ const Navigation = memo(() => {
               target="_blank" 
               rel="noopener noreferrer"
               className="hidden md:flex items-center gap-1.5 px-3 py-2 rounded-md hover:bg-white/10 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-              aria-label="Read our 134 5-star reviews on Google"
+              aria-label={`Read our ${reviewCount} 5-star reviews on Google`}
             >
               <div className="flex text-[#D4AF37]">
                 <Star className="w-4 h-4 md:w-5 md:h-5 fill-current" />
@@ -319,7 +321,7 @@ const Navigation = memo(() => {
                 <Star className="w-4 h-4 md:w-5 md:h-5 fill-current" />
                 <Star className="w-4 h-4 md:w-5 md:h-5 fill-current" />
               </div>
-              <span className="text-white font-bold text-sm md:text-base tracking-wide">5.0 stars, 134 reviews</span>
+              <span className="text-white font-bold text-sm md:text-base tracking-wide">{reviewRating.toFixed(1)} stars, {reviewCount} reviews</span>
             </a>
 
             <Button className="bg-yellow-400 text-[#1B4D3E] hover:bg-yellow-300 font-bold border-none px-3 md:px-5 shadow-md text-sm md:text-base h-10 md:h-11" size="default" asChild>
@@ -359,7 +361,7 @@ const Navigation = memo(() => {
                        <Star className="w-5 h-5 fill-current" />
                        <Star className="w-5 h-5 fill-current" />
                      </div>
-                     <span className="tracking-wide">5.0 stars, 134 reviews</span>
+                     <span className="tracking-wide">{reviewRating.toFixed(1)} stars, {reviewCount} reviews</span>
                    </a>
 
                    <Button className="w-full bg-yellow-400 hover:bg-yellow-500 text-[#1B4D3E] font-bold h-12 text-lg" asChild>

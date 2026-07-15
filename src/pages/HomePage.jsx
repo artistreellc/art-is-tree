@@ -120,7 +120,7 @@ const HomePage = () => {
               Tree Service in Virginia Beach, VA
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto font-light mb-6 drop-shadow speakable">
-              Tree removal, trimming, stump grinding, and 24/7 storm cleanup across Virginia Beach and Hampton Roads. Licensed, insured, BBB A+, and rated 5.0 across 134 reviews &mdash; with the crane and the experience to take on the jobs other companies turn down.
+              Tree removal, trimming, stump grinding, and 24/7 storm cleanup across Virginia Beach and Hampton Roads. Licensed, insured, BBB A+, and rated 5.0 across {COMPANY_INFO.rating.reviewCount} reviews &mdash; with the crane and the experience to take on the jobs other companies turn down.
             </p>
             <p className="text-lg text-[#D4AF37] font-semibold max-w-2xl mx-auto mb-10">
               Get 5% off any service when you request your free estimate through our website.
@@ -153,7 +153,7 @@ const HomePage = () => {
 
             <div className="prose prose-lg text-gray-700 leading-relaxed font-light text-left mx-auto max-w-none space-y-6">
               <p>
-                <strong>Art-is-Tree LLC is a licensed and insured tree service in Virginia Beach, VA</strong> &mdash; and we've earned a 5.0 rating across 134 Google reviews<Cite href={COMPANY_INFO.socials.googleMaps} label="Google" /> doing the work a lot of companies would rather hand off. Removals, trimming and pruning, stump grinding, crane jobs, land clearing, and storm cleanup, all in-house and all over Hampton Roads: Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk. We're BBB A+ rated<Cite href={COMPANY_INFO.socials.bbb} label="BBB" /> and members of the TCIA<Cite href="https://www.tcia.org/" label="TCIA" />.
+                <strong>Art-is-Tree LLC is a licensed and insured tree service in Virginia Beach, VA</strong> &mdash; and we've earned a 5.0 rating across {COMPANY_INFO.rating.reviewCount} Google reviews<Cite href={COMPANY_INFO.socials.googleMaps} label="Google" /> doing the work a lot of companies would rather hand off. Removals, trimming and pruning, stump grinding, crane jobs, land clearing, and storm cleanup, all in-house and all over Hampton Roads: Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk. We're BBB A+ rated<Cite href={COMPANY_INFO.socials.bbb} label="BBB" /> and members of the TCIA<Cite href="https://www.tcia.org/" label="TCIA" />.
               </p>
               <p>
                 Virginia Beach has no shortage of tree companies. What sets us apart is experience on the ropes. Owner Mike Campbell has climbed professionally since he was 19 and has spent years working the coastal trees of Hampton Roads &mdash; the loblolly pines that fail in a nor'easter, the mature water oaks overhanging homes in Kempsville, and the sandy soil that changes how a tree has to come down. Every job is run by someone who has done it thousands of times, not a crew learning on your property.

@@ -1,8 +1,10 @@
 
 import React from 'react';
 import { Award, ShieldCheck, ThumbsUp } from 'lucide-react';
+import { useReviewStats } from '@/hooks/useReviewStats';
 
 const TrustAndCredentialsSection = () => {
+  const { count: reviewCount } = useReviewStats();
   return (
     <section className="py-12 bg-gray-50 border-y border-gray-200">
       <div className="container mx-auto px-4">
@@ -20,7 +22,7 @@ const TrustAndCredentialsSection = () => {
           <div className="flex flex-col items-center">
             <ThumbsUp className="w-12 h-12 text-[#1B4D3E] mb-4" />
             <h3 className="font-bold text-xl text-[#1B4D3E] mb-2">5.0 Star Rating</h3>
-            <p className="text-gray-600">Based on 134 verified customer reviews</p>
+            <p className="text-gray-600">Based on {reviewCount} verified customer reviews</p>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Award, CheckCircle, ShieldCheck, BadgeCheck, Star, TreePine } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { COMPANY_INFO } from '@/constants/seoMetadata';
 
 // Icon-based, fully self-hosted recognition badges (no external image dependency).
 const certifications = [
@@ -31,7 +32,7 @@ const certifications = [
   {
     id: 'google',
     name: 'Google Verified',
-    description: 'Verified Google Business Profile with a 5.0 rating across 134 reviews.',
+    description: `Verified Google Business Profile with a 5.0 rating across ${COMPANY_INFO.rating.reviewCount} reviews.`,
     Icon: CheckCircle,
   },
   {
