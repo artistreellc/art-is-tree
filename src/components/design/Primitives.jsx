@@ -1,12 +1,48 @@
 import React from 'react';
 
-/** Turn a heading string into a stable, URL-safe anchor id (for deep links). */
+/**
+ * Turn a heading string into a stable, URL-safe anchor id (for deep links).
+ * normalize('NFKD') + stripping curly/straight quotes matters because these
+ * headings use apostrophes ("We’re", "won’t") that would otherwise become
+ * ugly encoded ids like "we-re".
+ */
 const slugify = (value) =>
   String(value)
     .toLowerCase()
+    .normalize('NFKD')
+    .replace(/[‘’“”']/g, '') // curly + straight quotes → gone (We’re → were)
     .replace(/&/g, ' and ')
-    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/[^\w]+/g, '-') // any non-word run → single hyphen
     .replace(/^-+|-+$/g, '');
+
+const MONTHS = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December',
+];
+
+/** Format an ISO "YYYY-MM-DD" date deterministically (no locale/timezone drift). */
+const formatDate = (iso) => {
+  const [y, m, d] = String(iso).split('-').map(Number);
+  if (!y || !m || !d) return '';
+  return `${MONTHS[m - 1]} ${d}, ${y}`;
+};
+
+/**
+ * Visible author byline. MUST stay in sync with the Person author emitted by
+ * CaseStudySchema — Google's E-E-A-T guidance wants the schema author to match
+ * a real, visible byline on the page.
+ */
+export const Byline = ({ date, light = false, className = '' }) => (
+  <p className={`flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-medium m-0 ${light ? 'text-white/85' : 'text-gray-600'} ${className}`}>
+    <span>By <span className="font-bold">Mike Campbell</span>, Owner</span>
+    {date && (
+      <>
+        <span aria-hidden="true" className={light ? 'text-white/50' : 'text-gray-400'}>·</span>
+        <time dateTime={date}>{formatDate(date)}</time>
+      </>
+    )}
+  </p>
+);
 
 /** Gold uppercase eyebrow label that sits above section headings. */
 export const Eyebrow = ({ children, className = '' }) => (

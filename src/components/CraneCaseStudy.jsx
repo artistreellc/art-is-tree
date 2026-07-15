@@ -4,7 +4,7 @@ import { Shield, TreePine, MapPin, ArrowRight, Anchor, Waves, CheckCircle2 } fro
 import Breadcrumbs from '@/components/Breadcrumbs';
 import CaseStudySchema from '@/components/seo/CaseStudySchema';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
-import { Eyebrow, SectionHeading, Figure, ProjectSpec } from '@/components/design/Primitives';
+import { Eyebrow, SectionHeading, Figure, ProjectSpec, Byline } from '@/components/design/Primitives';
 import { Button } from '@/components/ui/button';
 
 const CraneCaseStudy = () => {
@@ -20,6 +20,7 @@ const CraneCaseStudy = () => {
         description={description}
         imageUrl="https://artistreevabeach.com/images/virginia-beach-crane-removal-over-house.webp"
         url="/case-studies/crane-safety"
+        datePublished="2026-07-07"
       />
 
       <article className="bg-[#FAF9F6]">
@@ -47,6 +48,7 @@ const CraneCaseStudy = () => {
                 <h1 className="font-playfair text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight max-w-2xl">
                   {title}
                 </h1>
+                <Byline date="2026-07-07" light className="mt-4" />
                 <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-white/85 text-sm font-medium mt-4">
                   <span className="flex items-center gap-1.5"><MapPin className="w-4 h-4 text-[#D4AF37]" /> Waterfront · Virginia Beach</span>
                   <span className="flex items-center gap-1.5"><TreePine className="w-4 h-4 text-[#D4AF37]" /> Loblolly pines</span>

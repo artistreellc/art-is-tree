@@ -4,8 +4,9 @@ import { MapPin, Waves, ArrowRight, ShieldCheck, Scale, ExternalLink } from 'luc
 import LocalSEOMeta from '@/components/LocalSEOMeta.jsx';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import BreadcrumbListSchema from '@/components/seo/BreadcrumbListSchema.jsx';
+import CaseStudySchema from '@/components/seo/CaseStudySchema';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
-import { Eyebrow, SectionHeading, Figure, ProjectSpec } from '@/components/design/Primitives';
+import { Eyebrow, SectionHeading, Figure, ProjectSpec, Byline } from '@/components/design/Primitives';
 import { Button } from '@/components/ui/button';
 
 const CBPACaseStudy = () => {
@@ -24,6 +25,13 @@ const CBPACaseStudy = () => {
         { name: 'Case Studies', url: '/case-studies' },
         { name: 'Chesapeake Bay Preservation Act', url: '/case-studies/chesapeake-bay-preservation-act' },
       ]} />
+      <CaseStudySchema
+        title={title}
+        description="A first-person case study on navigating CBPA permits, RPA buffer zones, and waterfront tree work on private property in Virginia Beach, Norfolk and Hampton Roads — cited to Virginia DEQ."
+        imageUrl="https://artistreevabeach.com/images/virginia-beach-large-tree-over-house.webp"
+        url="/case-studies/chesapeake-bay-preservation-act"
+        datePublished="2026-07-07"
+      />
 
       <article className="bg-[#FAF9F6]">
         <div className="container mx-auto px-4 pt-4 pb-2">
@@ -45,6 +53,7 @@ const CBPACaseStudy = () => {
                 <h1 className="font-playfair text-2xl md:text-4xl lg:text-[2.6rem] font-bold text-white leading-tight max-w-2xl">
                   The Law Under the Grass at the Water’s Edge
                 </h1>
+                <Byline date="2026-07-07" light className="mt-4" />
                 <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-white/85 text-sm font-medium mt-4">
                   <span className="flex items-center gap-1.5"><MapPin className="w-4 h-4 text-[#D4AF37]" /> Waterfront · Hampton Roads</span>
                   <span className="flex items-center gap-1.5"><Waves className="w-4 h-4 text-[#D4AF37]" /> CBPA / RPA buffer</span>
