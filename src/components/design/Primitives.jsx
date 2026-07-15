@@ -29,16 +29,24 @@ const formatDate = (iso) => {
 
 /**
  * Visible author byline. MUST stay in sync with the Person author emitted by
- * CaseStudySchema — Google's E-E-A-T guidance wants the schema author to match
- * a real, visible byline on the page.
+ * CaseStudySchema — Google's E-E-A-T guidance wants the schema author name to
+ * match a real, visible byline on the page. The itemScope/itemProp microdata
+ * reinforces that the on-page name is the same person entity.
  */
 export const Byline = ({ date, light = false, className = '' }) => (
-  <p className={`flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-medium m-0 ${light ? 'text-white/85' : 'text-gray-600'} ${className}`}>
-    <span>By <span className="font-bold">Mike Campbell</span>, Owner</span>
+  <p
+    className={`flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-medium m-0 ${light ? 'text-white/85' : 'text-gray-600'} ${className}`}
+    itemScope
+    itemType="https://schema.org/Person"
+  >
+    <span>
+      By <span className="font-bold" itemProp="name">Mike Campbell</span>,{' '}
+      <span itemProp="jobTitle">Owner &amp; Lead Climber</span>
+    </span>
     {date && (
       <>
         <span aria-hidden="true" className={light ? 'text-white/50' : 'text-gray-400'}>·</span>
-        <time dateTime={date}>{formatDate(date)}</time>
+        <span>Published <time dateTime={date}>{formatDate(date)}</time></span>
       </>
     )}
   </p>
