@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { AlertTriangle, Axe, Truck, Images, Star, ClipboardCheck, ArrowUpRight } from 'lucide-react';
+import { useReviewStats } from '@/hooks/useReviewStats';
 
 /**
  * Bold "link bubble" bento grid — attention-grabbing linked tiles with big
@@ -53,6 +54,7 @@ const SolidTile = ({ to, title, sub, Icon, bg, text = 'text-white', accent = 'te
 );
 
 const QuickLinksBento = () => {
+  const { count: reviewCount, rating: reviewRating } = useReviewStats();
   return (
     <section className="py-16 md:py-20 bg-[#FAF9F6]">
       <div className="container mx-auto px-4 max-w-7xl">
@@ -106,7 +108,7 @@ const QuickLinksBento = () => {
           />
           <SolidTile
             to="/testimonials"
-            title="5.0★ · 134 Reviews"
+            title={`${reviewRating.toFixed(1)}★ · ${reviewCount} Reviews`}
             sub="What your neighbors say."
             Icon={Star}
             bg="bg-[#D4AF37]"

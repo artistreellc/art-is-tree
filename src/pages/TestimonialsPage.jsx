@@ -3,6 +3,7 @@ import React from 'react';
 import { ShieldCheck, Award, ThumbsUp, ExternalLink, Star, Facebook, Instagram } from 'lucide-react';
 import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema';
 import LocalSEOMeta from '@/components/LocalSEOMeta';
+import { useReviewStats } from '@/hooks/useReviewStats';
 
 const GOOGLE_LISTING_URL = 'https://www.google.com/maps?cid=12599844776703525086';
 
@@ -126,6 +127,7 @@ const PLATFORMS = [
 ];
 
 const TestimonialsPage = () => {
+  const { count, rating } = useReviewStats();
   return (
     <>
       <LocalSEOMeta
@@ -158,8 +160,8 @@ const TestimonialsPage = () => {
                 className="flex flex-col items-center text-[#1B4D3E] group"
               >
                 <ThumbsUp className="w-7 h-7 text-[#D4AF37] mb-2" />
-                <strong className="text-lg group-hover:underline">5.0 Rated</strong>
-                <span className="text-sm text-gray-500">134 Google Reviews</span>
+                <strong className="text-lg group-hover:underline">{rating.toFixed(1)} Rated</strong>
+                <span className="text-sm text-gray-500">{count} Google Reviews</span>
               </a>
               <a
                 href={SOURCE_URLS.BBB}
@@ -245,7 +247,7 @@ const TestimonialsPage = () => {
             </div>
 
             <p className="text-gray-600 mb-4">
-              These are just a few — read all 134 five-star reviews on our Google Business Profile.
+              These are just a few — read all {count} five-star reviews on our Google Business Profile.
             </p>
             <a
               href={GOOGLE_LISTING_URL}
@@ -254,7 +256,7 @@ const TestimonialsPage = () => {
               className="inline-flex items-center gap-2 bg-[#1B4D3E] text-white px-6 py-3 rounded-lg hover:bg-[#143a2f] transition-colors font-medium"
             >
               <ExternalLink className="w-4 h-4" />
-              Read our 134 reviews on Google
+              Read our {count} reviews on Google
             </a>
           </div>
         </section>

@@ -6,6 +6,7 @@ import ServiceSchema from '@/components/seo/ServiceSchema.jsx';
 import SpeakableSchema from '@/components/seo/SpeakableSchema';
 import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema';
 import StormSeasonChart from '@/components/StormSeasonChart';
+import { useReviewStats } from '@/hooks/useReviewStats';
 
 const EMERGENCY_STEPS = [
   { icon: Users, title: 'Get everyone clear', text: 'Move people and pets well away from the tree and anything it is leaning on. Stay clear of wires — treat every downed line as live.' },
@@ -25,6 +26,7 @@ const WHAT_WE_HANDLE = [
 ];
 
 export default function EmergencyPage() {
+  const { count: reviewCount, rating: reviewRating } = useReviewStats();
   const handlePhoneClick = () => {
     if (window.gtag_report_phone_click) window.gtag_report_phone_click();
   };
@@ -180,7 +182,7 @@ export default function EmergencyPage() {
           {[
             ['24/7', 'Every day of the year'],
             ['15+ yrs', 'Climbing Hampton Roads'],
-            ['5.0 ★', '134 Google reviews'],
+            [`${reviewRating.toFixed(1)} ★`, `${reviewCount} Google reviews`],
             ['BBB A+', 'Licensed & insured'],
           ].map(([big, small]) => (
             <div key={big}>

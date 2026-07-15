@@ -10,10 +10,12 @@ import LocalSEOMeta from '@/components/LocalSEOMeta';
 import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema';
 import Cite from '@/components/Cite';
 import { COMPANY_INFO } from '@/constants/seoMetadata';
+import { useReviewStats } from '@/hooks/useReviewStats';
 
 const GOOGLE_LISTING_URL = "https://www.google.com/maps?cid=12599844776703525086";
 
 const AboutPage = () => {
+  const { count: reviewCount, rating: reviewRating } = useReviewStats();
   return (
     <>
       <LocalSEOMeta 
@@ -43,7 +45,7 @@ const AboutPage = () => {
                </Button>
                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-[#1B4D3E] font-bold py-6 px-8 text-lg bg-transparent shadow-lg" asChild>
                  <a href={GOOGLE_LISTING_URL} target="_blank" rel="noopener noreferrer">
-                   5.0 ★ 134 reviews <ExternalLink className="ml-2 w-4 h-4" />
+                   {reviewRating.toFixed(1)} ★ {reviewCount} reviews <ExternalLink className="ml-2 w-4 h-4" />
                  </a>
                </Button>
             </div>
