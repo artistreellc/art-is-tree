@@ -213,16 +213,13 @@ const ContactForm = () => {
         throw new Error(data.message || data.error || 'Failed to send message. Please try again.');
       }
 
-      // Legacy support for older conversion tracking scripts if present
+      // Signal a successful "Request quote" submission to GTM via the dataLayer.
+      // GTM owns the actual Google Ads conversion tag (AW-10806457837/
+      // i_SkCOqBhMQbEO3r9aAo) and fires it from a Custom Event trigger on
+      // `contact_form_submit`. This is the single source of truth — no direct
+      // gtag() conversion call, so there is no double-count.
       if (typeof window !== 'undefined' && window.gtag_report_contact_form) {
         window.gtag_report_contact_form();
-      }
-
-      // Request quote tracking for Google Ads remarketing
-      if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-        window.gtag('event', 'conversion', {
-          'send_to': 'AW-10806457837/i_SkCOqBhMQbEO3r9aAo'
-        });
       }
 
       setIsSuccess(true);
