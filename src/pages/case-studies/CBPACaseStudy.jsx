@@ -17,7 +17,7 @@ const CBPACaseStudy = () => {
   return (
     <>
       <LocalSEOMeta
-        pageTitle="Chesapeake Bay Preservation Act & Tree Removal Permits in Virginia Beach | Art-is-Tree LLC"
+        pageTitle="Chesapeake Bay Act Tree Permits | Virginia Beach"
         description="A first-person case study on navigating CBPA permits, RPA buffer zones, and waterfront tree work on private property in Virginia Beach, Norfolk and Hampton Roads — cited to Virginia DEQ."
       />
       <BreadcrumbListSchema items={[
@@ -209,7 +209,7 @@ const CBPACaseStudy = () => {
           <div className="mt-10 pt-6 border-t border-gray-200 text-sm text-gray-500 space-y-2">
             <p className="font-semibold text-gray-700 m-0">Sources</p>
             <p id="s1" className="m-0">1. Virginia Department of Environmental Quality, <a href="https://www.deq.virginia.gov/water/chesapeake-bay/chesapeake-bay-preservation-act" target="_blank" rel="noopener noreferrer" className="text-[#1B4D3E] underline hover:text-[#D4AF37]">“Chesapeake Bay Preservation Act.”</a></p>
-            <p id="s2" className="m-0">2. Chesapeake Bay Program partnership, <a href="https://www.chesapeakeprogress.com/clean-water/water-quality" target="_blank" rel="noopener noreferrer" className="text-[#1B4D3E] underline hover:text-[#D4AF37]">water-quality progress data.</a> City penalty and board details per the Virginia Beach City Code (Appendix F) and Norfolk City Code.</p>
+            <p id="s2" className="m-0">2. Chesapeake Bay Program partnership, <a href="https://www.chesapeakebay.net/what/data" target="_blank" rel="noopener noreferrer" className="text-[#1B4D3E] underline hover:text-[#D4AF37]">water-quality monitoring data.</a> City penalty and board details per the Virginia Beach City Code (Appendix F) and Norfolk City Code.</p>
           </div>
         </section>
 

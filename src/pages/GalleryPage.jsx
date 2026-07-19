@@ -61,6 +61,14 @@ const GalleryPage = () => {
             </div>
           </div>
 
+          {/* INTRO COPY */}
+          <div className="container mx-auto px-4 max-w-3xl mb-14 text-center">
+            <h2 className="text-2xl md:text-3xl font-playfair font-bold text-[#1B4D3E] mb-4">Real tree work across Virginia Beach &amp; Hampton Roads</h2>
+            <p className="text-gray-600 leading-relaxed">
+              Every photo below is an actual Art-is-Tree job — no stock images. You’ll see crane-assisted tree removals lifting heavy sections clean over rooftops, technical climbing and spikeless pruning high in the canopy, storm and hurricane cleanup after coastal weather, stump grinding, and full debris hauling. These are the big, hazardous, and tight-access jobs other crews turn down, done across Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk — licensed, insured, and to ANSI A300 and Z133 standards. Browse the work, then watch the crew in action in the videos above.
+            </p>
+          </div>
+
           {/* MASONRY PHOTO GRID */}
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="columns-2 md:columns-3 lg:columns-4 gap-3 md:gap-4 [column-fill:_balance]">
