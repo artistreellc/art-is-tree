@@ -91,7 +91,7 @@ const ServicesPage = () => {
                 Good <strong>tree pruning</strong> is more than making a tree look neat. We trim to keep the canopy strong &mdash; taking out deadwood, crossing branches, and diseased limbs so the tree holds up in a storm and stays healthy for years.
               </p>
               <Button asChild variant="outline" className="border-[#1B4D3E] text-[#1B4D3E] hover:bg-[#1B4D3E] hover:text-white mt-4 w-fit">
-                <Link to="/services/tree-trimming">Learn More →</Link>
+                <Link to="/services/tree-trimming">Tree Trimming &amp; Pruning →</Link>
               </Button>
             </div>
 
@@ -104,7 +104,7 @@ const ServicesPage = () => {
                 When a tree dies, gets diseased, or cracks in a storm, it becomes a real risk to your house and everyone around it. We take those trees down safely &mdash; even in tight spots and rough conditions &mdash; and haul them off your property.
               </p>
               <Button asChild variant="outline" className="border-[#1B4D3E] text-[#1B4D3E] hover:bg-[#1B4D3E] hover:text-white mt-4 w-fit">
-                <Link to="/services/tree-removal">Learn More →</Link>
+                <Link to="/services/tree-removal">Tree Removal →</Link>
               </Button>
             </div>
 
@@ -117,7 +117,7 @@ const ServicesPage = () => {
                 Some trees are simply too massive, too compromised, or located in areas too confined for traditional climbing and rigging. For these situations, we specialize in crane assisted tree projects.
               </p>
               <Button asChild variant="outline" className="border-[#1B4D3E] text-[#1B4D3E] hover:bg-[#1B4D3E] hover:text-white mt-4 w-fit">
-                <Link to="/services/crane-removal">Learn More →</Link>
+                <Link to="/services/crane-removal">Crane Tree Removal →</Link>
               </Button>
             </div>
 
@@ -130,7 +130,7 @@ const ServicesPage = () => {
                 Cutting down a tree is only part of the process. Left behind, stumps are unsightly, pose tripping hazards, and can become breeding grounds for termites, ants, and fungal diseases. Our complete <strong>stump grinding</strong> services resolve this issue efficiently.
               </p>
               <Button asChild variant="outline" className="border-[#1B4D3E] text-[#1B4D3E] hover:bg-[#1B4D3E] hover:text-white mt-4 w-fit">
-                <Link to="/services/stump-grinding">Learn More →</Link>
+                <Link to="/services/stump-grinding">Stump Grinding →</Link>
               </Button>
             </div>
 
@@ -143,7 +143,7 @@ const ServicesPage = () => {
                 Severe thunderstorms, hurricanes, and heavy winds can cause unexpected and devastating damage to your canopy. Our <strong>emergency tree service</strong> team is on call 24/7 to respond to urgent situations.
               </p>
               <Button asChild variant="outline" className="border-[#1B4D3E] text-[#1B4D3E] hover:bg-[#1B4D3E] hover:text-white mt-4 w-fit">
-                <Link to="/services/emergency-tree-service">Learn More →</Link>
+                <Link to="/services/emergency-tree-service">Emergency Tree Service →</Link>
               </Button>
             </div>
 
@@ -156,7 +156,7 @@ const ServicesPage = () => {
                 We handle residential and commercial land clearing, from a single overgrown lot to acreage. Property managers, HOAs, and developers call us when there's real volume to clear and it has to be done right.
               </p>
               <Button asChild variant="outline" className="border-[#1B4D3E] text-[#1B4D3E] hover:bg-[#1B4D3E] hover:text-white mt-4 w-fit">
-                <Link to="/services/land-clearing">Learn More →</Link>
+                <Link to="/services/land-clearing">Land Clearing →</Link>
               </Button>
             </div>
           </div>
