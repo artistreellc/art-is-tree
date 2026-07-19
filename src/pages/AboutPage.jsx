@@ -66,7 +66,7 @@ const AboutPage = () => {
 
                <h2 className="text-3xl font-bold text-[#1B4D3E] font-playfair mb-6">Our History and Foundation</h2>
                <p>
-                 Mike Campbell grew up in Virginia Beach and has always felt a strong connection to the local environment. For 15 years he climbed trees across Hampton Roads, tackling increasingly complex challenges and refining his technique. He knows firsthand that safely removing 25-foot sections from a 60-foot oak requires not just strength, but calculated precision and deep expertise.
+                 Mike Campbell grew up in Virginia Beach and has always felt a strong connection to the local environment. He has more than 15 years of professional tree-climbing experience across Hampton Roads, and he founded Art-is-Tree LLC in 2021 after years of climbing for other companies — tackling increasingly complex challenges and refining his technique along the way. He knows firsthand that safely removing 25-foot sections from a 60-foot oak requires not just strength, but calculated precision and deep expertise.
                </p>
                
                <h2 className="text-3xl font-bold text-[#1B4D3E] font-playfair mt-12 mb-6">Uncompromising Professionalism & Credentials</h2>
