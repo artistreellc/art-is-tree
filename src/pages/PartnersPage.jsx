@@ -187,7 +187,7 @@ const PartnersPage = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button asChild size="lg" className="bg-[#D4AF37] text-[#1B4D3E] hover:bg-[#c19b2e] font-bold py-6 px-8 text-lg shadow-lg w-full sm:w-auto transition-transform hover:-translate-y-1">
                 <Link to="/about">
-                  Learn More <ArrowRight className="ml-2 w-5 h-5" />
+                  About Art-is-Tree <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#1B4D3E] font-bold py-6 px-8 text-lg w-full sm:w-auto bg-transparent transition-all">

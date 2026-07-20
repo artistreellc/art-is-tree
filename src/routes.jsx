@@ -100,6 +100,10 @@ export const routes = [
       { path: 'admin/debug-neighborhoods', element: protectedEl(DebugNeighborhoodsPage) },
       { path: 'admin/debug-places', element: protectedEl(DebugGooglePlacesPage) },
 
+      // Explicit '404' route so the SSG emits dist/404.html — Vercel serves it
+      // (with a real 404 status) for any URL that matches no file, keeping the
+      // branded not-found page now that the SPA catch-all rewrite is gone.
+      { path: '404', ...page(() => import('@/pages/NotFoundPage.jsx')) },
       { path: '*', ...page(() => import('@/pages/NotFoundPage.jsx')) },
     ],
   },

@@ -56,102 +56,11 @@ export const generateOgImageUrl = (imagePath) => {
   return `${BASE_URL}${imagePath.startsWith('/') ? imagePath : `/${imagePath}`}`;
 };
 
-/**
- * Check if current URL is www and should redirect
- */
-export const shouldRedirectFromWww = () => {
-  if (typeof window === 'undefined') return false;
-  const hostname = window.location.hostname.toLowerCase();
-  return hostname.startsWith('www.');
-};
-
-/**
- * Get redirect URL from www to non-www
- */
-export const getNonWwwRedirectUrl = () => {
-  if (typeof window === 'undefined') return null;
-  const url = new URL(window.location.href);
-  url.hostname = url.hostname.replace(/^www\./, '');
-  return url.toString();
-};
-
-export const generateFAQSchema = (faqItems) => {
-  if (!faqItems || !Array.isArray(faqItems) || faqItems.length === 0) {
-    return null;
-  }
-
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqItems.map(item => ({
-      "@type": "Question",
-      "name": item.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": item.answer
-      }
-    }))
-  };
-};
-
-export const generateServiceSchema = (serviceData) => {
-  const { name, description, serviceType, url } = serviceData;
-
-  return {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": name,
-    "description": description,
-    "serviceType": serviceType,
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Art-is-Tree LLC",
-      "url": BASE_URL,
-      "telephone": "+17573195131",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "2597 Nestlebrook Trl",
-        "addressLocality": "Virginia Beach",
-        "addressRegion": "VA",
-        "postalCode": "23456",
-        "addressCountry": "US"
-      }
-    },
-    "url": url ? generateCanonicalUrl(url) : BASE_URL,
-    "areaServed": {
-      "@type": "State",
-      "name": "Virginia"
-    }
-  };
-};
-
-export const generateBreadcrumbSchema = (breadcrumbs) => {
-  if (!breadcrumbs || !Array.isArray(breadcrumbs) || breadcrumbs.length === 0) {
-    return null;
-  }
-
-  return {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": breadcrumbs.map((crumb, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "name": crumb.name,
-      "item": crumb.url ? generateCanonicalUrl(crumb.url) : BASE_URL
-    }))
-  };
-};
-
 export default {
   BASE_URL,
   BASE_DOMAIN,
   stripWww,
   normalizeUrl,
   generateCanonicalUrl,
-  generateOgImageUrl,
-  shouldRedirectFromWww,
-  getNonWwwRedirectUrl,
-  generateFAQSchema,
-  generateServiceSchema,
-  generateBreadcrumbSchema
+  generateOgImageUrl
 };
