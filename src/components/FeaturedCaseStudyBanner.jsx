@@ -24,8 +24,9 @@ const FeaturedCaseStudyBanner = () => {
 
   return (
     <section aria-label="Featured case study" className="relative overflow-hidden bg-gradient-to-r from-[#0A2F24] via-[#11402F] to-[#0A2F24] border-y-2 border-[#D4AF37]/50">
-      {/* subtle diagonal sheen so the strip reads as a feature, not a bar */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-1/4 w-1/3 -skew-x-12 bg-gradient-to-r from-transparent via-[#D4AF37]/[0.07] to-transparent" />
+      {/* gold sheen: sweeps across every ~6s (motion-safe); sits as a static
+          highlight for users with reduced motion enabled */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-1/4 w-1/3 -skew-x-12 bg-gradient-to-r from-transparent via-[#D4AF37]/[0.14] to-transparent motion-safe:animate-sheen" />
       <Link
         to={featured.path}
         className="group relative container mx-auto px-4 py-3.5 md:py-4 flex items-center justify-center gap-x-3.5 gap-y-1 flex-wrap text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#D4AF37]"
@@ -34,7 +35,7 @@ const FeaturedCaseStudyBanner = () => {
           <BookOpen className="w-3.5 h-3.5" aria-hidden="true" /> This Week’s Case Study
         </span>
         {isNew && (
-          <span className="bg-white/15 text-[#D4AF37] border border-[#D4AF37]/60 font-extrabold tracking-[0.12em] uppercase text-[10px] px-2 py-0.5 rounded-full whitespace-nowrap">
+          <span className="bg-white/15 text-[#D4AF37] border border-[#D4AF37]/60 font-extrabold tracking-[0.12em] uppercase text-[10px] px-2 py-0.5 rounded-full whitespace-nowrap motion-safe:animate-pulse">
             New
           </span>
         )}
