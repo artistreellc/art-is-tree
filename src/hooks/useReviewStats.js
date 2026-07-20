@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { COMPANY_INFO } from '@/constants/seoMetadata';
 
-const FALLBACK_COUNT = Number(COMPANY_INFO.rating.reviewCount) || 136;
+const FALLBACK_COUNT = Number(COMPANY_INFO.rating.reviewCount) || 137;
 const FALLBACK_RATING = Number(COMPANY_INFO.rating.value) || 5.0;
 
 // Module-level singleton so that many components using this hook on one page
