@@ -14,6 +14,7 @@ import ScrollToTop from '@/components/ScrollToTop';
 // Tag management (GA4 + Google Ads run through GTM container GTM-K9JBRQBJ)
 import GoogleTagManager from '@/components/GoogleTagManager.jsx';
 import MobileCTABar from '@/components/MobileCTABar.jsx';
+import ChatWidget from '@/components/ChatWidget.jsx';
 
 // Providers
 import { AuthProvider } from '@/contexts/SupabaseAuthContext';
@@ -69,6 +70,7 @@ function Layout() {
               <Footer />
               <Toaster />
               <MobileCTABar />
+              <ChatWidget />
               <CookieConsentBanner />
               <SpeedInsights />
             </div>
