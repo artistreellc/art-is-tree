@@ -12,6 +12,7 @@ import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema';
 import SpeakableSchema from '@/components/seo/SpeakableSchema';
 import FAQPageSchema from '@/components/seo/FAQPageSchema';
 import GoogleReviewsDisplay from '@/components/GoogleReviewsDisplay';
+import FeaturedCaseStudyBanner from '@/components/FeaturedCaseStudyBanner';
 import YouTubeFacade from '@/components/YouTubeFacade';
 import QuickLinksBento from '@/components/QuickLinksBento';
 
@@ -135,6 +136,8 @@ const HomePage = () => {
             </div>
           </div>
         </header>
+
+        <FeaturedCaseStudyBanner />
 
         <QuickLinksBento />
 
