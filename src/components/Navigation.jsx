@@ -51,6 +51,7 @@ const NAV_LINKS = [
       { name: 'Virginia Tree Law', path: '/case-studies/virginia-tree-law' },
       { name: 'Spikeless Pruning', path: '/case-studies/spikeless-pruning' },
       { name: 'Storm & Hurricane Damage', path: '/case-studies/storm-damage-mitigation' },
+      { name: 'Affordable Tree Work', path: '/case-studies/affordable-tree-work' },
     ]
   },
   { name: 'Directories', path: '/find-us-online' },

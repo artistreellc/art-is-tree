@@ -9,7 +9,8 @@ const CASE_STUDIES = [
   { title: "Property Value Enhancement", path: "/case-studies/property-value", category: "Real Estate" },
   { title: "Virginia Tree Law", path: "/case-studies/virginia-tree-law", category: "Consumer Protection" },
   { title: "Advanced Spikeless Pruning", path: "/case-studies/spikeless-pruning", category: "Technique" },
-  { title: "Storm & Hurricane Damage", path: "/case-studies/storm-damage-mitigation", category: "Storm Response" }
+  { title: "Storm & Hurricane Damage", path: "/case-studies/storm-damage-mitigation", category: "Storm Response" },
+  { title: "Affordable Tree Work Guide", path: "/case-studies/affordable-tree-work", category: "Cost & Value" }
 ];
 
 /**

@@ -43,6 +43,11 @@ const caseStudiesData = [
     title: "After the Storm: Hurricane & Tornado Damage",
     description: "A first-person account of storm-damaged tree work in Virginia Beach — what to look for before a hurricane, why storm cleanup is so dangerous, and two real jobs: a root-failed tree rigged by hand with no crane access, and tornado-snapped pines at Broad Bay Island.",
     link: "/case-studies/storm-damage-mitigation",
+  },
+  {
+    title: "The Hampton Roads Guide to Affordable Tree Work",
+    description: "Straight talk from the owner on making tree work affordable — not cheap: phasing projects, keeping chips and wood on site, skipping the stump, military/first responder/senior discounts, what a bid really pays for, and why a 3–5 year pruning cycle is the cheapest tree care there is.",
+    link: "/case-studies/affordable-tree-work",
   }
 ];
 
