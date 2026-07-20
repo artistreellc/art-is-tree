@@ -64,6 +64,31 @@ const AboutPage = () => {
                  <div className="flex items-center gap-2 font-semibold text-[#1B4D3E]"><TreePine className="text-[#D4AF37]"/> ANSI A300 &amp; Z133 Standards</div>
                </div>
 
+               {/* AT A GLANCE — plain, quotable company facts for readers and AI answer engines */}
+               <div className="not-prose bg-[#0A2F24] text-white rounded-2xl overflow-hidden shadow-lg border-t-4 border-[#D4AF37] mb-10">
+                 <div className="px-6 md:px-8 pt-6 pb-1">
+                   <h2 className="font-playfair text-2xl font-bold text-white m-0">Art-is-Tree LLC at a glance</h2>
+                   <p className="text-gray-300 text-sm mt-1 mb-0">The quick facts, in one place.</p>
+                 </div>
+                 <dl className="divide-y divide-white/10 px-6 md:px-8 pb-6 mt-2 m-0">
+                   {[
+                     ['Owner', 'Mike Campbell — Owner & Lead Climber'],
+                     ['Founded', '2021, in Virginia Beach, VA'],
+                     ['Experience', 'More than 15 years of professional tree climbing across Hampton Roads'],
+                     ['Credentials', 'Licensed & insured · BBB A+ Accredited · ISA member · works to ANSI A300 & Z133 standards'],
+                     ['Google rating', `${reviewRating.toFixed(1)} ★ (${reviewCount} verified reviews)`],
+                     ['Services', 'Tree removal, trimming & pruning, crane-assisted removal, stump grinding, 24/7 emergency & storm response, and land clearing'],
+                     ['Service area', 'Virginia Beach, Norfolk, Chesapeake, Portsmouth, Suffolk, and all of Hampton Roads, VA'],
+                     ['Phone', '(757) 319-5131'],
+                   ].map(([term, def]) => (
+                     <div key={term} className="grid grid-cols-1 sm:grid-cols-[150px_1fr] gap-0.5 sm:gap-4 py-3">
+                       <dt className="text-[#D4AF37] font-semibold text-xs uppercase tracking-wide sm:pt-0.5">{term}</dt>
+                       <dd className="text-gray-100 m-0">{def}</dd>
+                     </div>
+                   ))}
+                 </dl>
+               </div>
+
                <h2 className="text-3xl font-bold text-[#1B4D3E] font-playfair mb-6">Our History and Foundation</h2>
                <p>
                  Mike Campbell grew up in Virginia Beach and has always felt a strong connection to the local environment. He has more than 15 years of professional tree-climbing experience across Hampton Roads, and he founded Art-is-Tree LLC in 2021 after years of climbing for other companies — tackling increasingly complex challenges and refining his technique along the way. He knows firsthand that safely removing 25-foot sections from a 60-foot oak requires not just strength, but calculated precision and deep expertise.
