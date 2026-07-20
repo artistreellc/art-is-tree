@@ -72,17 +72,18 @@ const Footer = () => {
 
           <div className="flex flex-col">
             <h3 className="font-playfair text-xl font-bold mb-6 text-[#D4AF37] h-[28px]">Case Studies</h3>
+            {/* Kept tight on purpose: the full list lives in the header dropdown
+                and on /case-studies — the footer features the evergreen four. */}
             <ul className="space-y-4">
-              <li className="h-[24px]"><Link to="/case-studies" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group h-full"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity inline-block"></span>All Case Studies</Link></li>
-              <li className="h-[24px]"><Link to="/case-studies/crane-safety" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group h-full"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity inline-block"></span>Crane Safety</Link></li>
-              <li className="h-[24px]"><Link to="/case-studies/chesapeake-bay-preservation-act" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group h-full"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity inline-block"></span>Chesapeake Bay</Link></li>
-              <li className="h-[24px]"><Link to="/case-studies/emerald-ash-borer" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group h-full"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity inline-block"></span>Emerald Ash Borer</Link></li>
-              <li className="h-[24px]"><Link to="/case-studies/osha-compliance" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group h-full"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity inline-block"></span>OSHA Compliance</Link></li>
-              <li className="h-[24px]"><Link to="/case-studies/property-value" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group h-full"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity inline-block"></span>Property Value</Link></li>
-              <li className="h-[24px]"><Link to="/case-studies/virginia-tree-law" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group h-full"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity inline-block"></span>Virginia Tree Law</Link></li>
-              <li className="h-[24px]"><Link to="/case-studies/spikeless-pruning" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group h-full"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity inline-block"></span>Spikeless Pruning</Link></li>
-              <li className="h-[24px]"><Link to="/case-studies/storm-damage-mitigation" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group h-full"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity inline-block"></span>Storm &amp; Hurricane Damage</Link></li>
-              <li className="h-[24px]"><Link to="/case-studies/affordable-tree-work" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group h-full"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity inline-block"></span>Affordable Tree Work</Link></li>
+              {[
+                ['/case-studies', 'All Case Studies'],
+                ['/case-studies/affordable-tree-work', 'Affordable Tree Work'],
+                ['/case-studies/storm-damage-mitigation', 'Storm Damage'],
+                ['/case-studies/virginia-tree-law', 'Virginia Tree Law'],
+                ['/case-studies/osha-compliance', 'OSHA Safety'],
+              ].map(([to, label]) => (
+                <li key={to} className="leading-snug"><Link to={to} className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity inline-block flex-shrink-0"></span>{label}</Link></li>
+              ))}
             </ul>
           </div>
 

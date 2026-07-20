@@ -20,6 +20,16 @@
       "source": "/case-study",
       "destination": "/case-studies",
       "statusCode": 301
+    },
+    {
+      "source": "/case-studies/disease-management",
+      "destination": "/case-studies/emerald-ash-borer",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-studies/unlicensed-contractors",
+      "destination": "/case-studies/virginia-tree-law",
+      "statusCode": 301
     }
   ],
   "rewrites": [
