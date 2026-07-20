@@ -67,10 +67,17 @@ module.exports = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: 0 },
         },
+        // Gold sheen sweep for the featured case-study banner: glides across
+        // in ~1.8s, then rests for the remainder of the cycle.
+        sheen: {
+          '0%': { transform: 'translateX(-250%) skewX(-12deg)' },
+          '30%, 100%': { transform: 'translateX(350%) skewX(-12deg)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        sheen: 'sheen 6s ease-in-out infinite',
       },
     },
   },
