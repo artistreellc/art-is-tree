@@ -70,7 +70,7 @@ const VirginiaTreeLawCaseStudy = () => {
           <SectionHeading eyebrow="In my own words" title="The call that starts at the fence line" />
           <div className="mt-6 space-y-5 text-gray-700 text-lg leading-relaxed">
             <p className="first-letter:text-5xl first-letter:font-playfair first-letter:font-bold first-letter:text-[#1B4D3E] first-letter:mr-2 first-letter:float-left first-letter:leading-[0.8]">
-              I’m Mike, and I own Art-is-Tree. Every few months I get a call that starts the same way: “My neighbor’s tree is over my house and I want it cut.” It sounds simple, and most homeowners expect me to just show up and cut. But this is the one area of tree work where the biggest risk isn’t the tree — it’s the law. Virginia has specific, well-developed rules for trees between neighbors, and the price of getting it wrong is a lot steeper than most homeowners, and a lot of tree companies, realize.
+              Every few months I get a call that starts the same way: “My neighbor’s tree is over my house and I want it cut.” It sounds simple, and most homeowners expect me to just show up and cut. But this is the one area of tree work where the biggest risk isn’t the tree — it’s the law. Virginia has specific, well-developed rules for trees between neighbors, and the price of getting it wrong is a lot steeper than most homeowners, and a lot of tree companies, realize.
             </p>
             <p>
               I’d rather explain it up front than have you find out the hard way. Here’s a real one from Kempsville — what the situation was, what Virginia law actually says, and why we did it the way we did.
