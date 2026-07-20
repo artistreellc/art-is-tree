@@ -9,8 +9,11 @@
 // Note: the Google Places API returns up to ~5 reviews (Google's limit), reflecting
 // the current state of the listing, which is what makes this auto-update.
 
-const API_KEY = process.env.GOOGLE_PLACES_API_KEY;
-const PLACE_ID = process.env.GOOGLE_PLACE_ID;
+// Accept both the plain and VITE_-prefixed names — the keys were originally
+// added to Vercel with the VITE_ prefix (Jul 8), which serverless functions
+// still receive via process.env; this makes either spelling work.
+const API_KEY = process.env.GOOGLE_PLACES_API_KEY || process.env.VITE_GOOGLE_PLACES_API_KEY;
+const PLACE_ID = process.env.GOOGLE_PLACE_ID || process.env.VITE_GOOGLE_PLACE_ID;
 const LOOKUP_QUERY = 'Art-is-Tree LLC, 2597 Nestlebrook Trl, Virginia Beach, VA 23456';
 
 async function resolvePlaceId() {
