@@ -74,7 +74,7 @@ const CraneCaseStudy = () => {
           <SectionHeading eyebrow="In my own words" title="Some trees you don’t get to just drop" />
           <div className="mt-6 space-y-5 text-gray-700 text-lg leading-relaxed">
             <p className="first-letter:text-5xl first-letter:font-playfair first-letter:font-bold first-letter:text-[#1B4D3E] first-letter:mr-2 first-letter:float-left first-letter:leading-[0.8]">
-              I’m Mike, and I own Art-is-Tree. People see a crane roll up to a tree job and assume it’s overkill — a way to pad the bill. It’s usually the opposite. A crane is what we reach for when dropping a tree the normal way would mean gambling with a roof, a fence, the power lines, or a protected shoreline. On the right job it isn’t the expensive option; it’s the only safe one. This waterfront removal in Virginia Beach is a good example of why.
+              People see a crane roll up to a tree job and assume it’s overkill — a way to pad the bill. It’s usually the opposite. A crane is what we reach for when dropping a tree the normal way would mean gambling with a roof, a fence, the power lines, or a protected shoreline. On the right job it isn’t the expensive option; it’s the only safe one. This waterfront removal in Virginia Beach is a good example of why.
             </p>
             <p>
               I’ve been climbing and running removals around Hampton Roads for years, and the crane jobs are the ones people remember — usually because the tree was the kind that scared them. Big, dead, leaning the wrong way, hanging over the one thing they care most about. Here’s how one of those goes when it’s done right, start to finish.
