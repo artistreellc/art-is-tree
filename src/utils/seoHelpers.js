@@ -43,6 +43,19 @@ export const generateCanonicalUrl = (pathname) => {
 };
 
 /**
+ * Serialize a JSON-LD object for embedding in a <script type="application/ld+json">.
+ *
+ * The SSG (vite-react-ssg) injects the rendered app into the HTML template with
+ * String.prototype.replace(placeholder, appHtml). In that call appHtml is the
+ * *replacement* argument, so any "$$" (and "$&", "$`", "$'") inside it is
+ * interpreted as a replacement pattern and collapsed — e.g. priceRange "$$"
+ * silently became "$". Escaping every "$" as its JSON unicode escape ($)
+ * removes all literal "$" from the emitted string while JSON.parse still yields
+ * the exact original value, so answer engines and crawlers read it correctly.
+ */
+export const ldJson = (obj) => JSON.stringify(obj).replace(/\$/g, '\\u0024');
+
+/**
  * Generate Open Graph image URL
  * Always returns non-www URL
  */
@@ -62,5 +75,6 @@ export default {
   stripWww,
   normalizeUrl,
   generateCanonicalUrl,
-  generateOgImageUrl
+  generateOgImageUrl,
+  ldJson
 };

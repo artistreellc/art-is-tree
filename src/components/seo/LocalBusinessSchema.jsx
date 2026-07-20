@@ -2,7 +2,7 @@
 import React from 'react';
 import { Head } from 'vite-react-ssg';
 import { useLocation } from 'react-router-dom';
-import { generateCanonicalUrl, BASE_URL } from '@/utils/seoHelpers';
+import { generateCanonicalUrl, BASE_URL, ldJson } from '@/utils/seoHelpers';
 import { COMPANY_INFO } from '@/constants/seoMetadata';
 
 const LocalBusinessSchema = () => {
@@ -86,7 +86,7 @@ const LocalBusinessSchema = () => {
   return (
     <Head>
       <script type="application/ld+json">
-        {JSON.stringify(schema)}
+        {ldJson(schema)}
       </script>
     </Head>
   );
