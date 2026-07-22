@@ -153,14 +153,14 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400 text-sm min-h-[40px]">
+        <div className="border-t border-white/10 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-300 text-sm min-h-[40px]">
           <p className="h-[20px]">&copy; {currentYear} Art-is-Tree LLC. All rights reserved.</p>
           <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6 min-h-[24px]">
             <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="/cookies" className="hover:text-white transition-colors">Cookie Policy</Link>
             <Link to="/terms-and-conditions" className="hover:text-white transition-colors">Terms of Service</Link>
             <Link to="/service-areas" className="hover:text-white transition-colors">Service Areas</Link>
-            <button onClick={() => setIsModalOpen(true)} className="text-gray-400 hover:text-white transition-colors underline bg-transparent border-none cursor-pointer p-0 m-0 h-auto">
+            <button onClick={() => setIsModalOpen(true)} className="text-gray-300 hover:text-white transition-colors underline bg-transparent border-none cursor-pointer p-0 m-0 h-auto">
               Manage Cookie Preferences
             </button>
           </div>

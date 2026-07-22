@@ -10,6 +10,7 @@ import GoogleMap from '@/components/GoogleMap';
 import LocationFAQ from '@/components/LocationFAQ';
 import { Eyebrow, SectionHeading, Figure } from '@/components/design/Primitives';
 import { COMPANY_INFO } from '@/constants/seoMetadata';
+import { ldJson } from '@/utils/seoHelpers';
 
 const ICONS = { removal: Axe, crane: Truck, trim: Scissors, stump: CircleOff, emergency: Zap, land: Trees };
 
@@ -52,7 +53,7 @@ const CityServiceLayout = ({ data }) => {
         <meta name="geo.placename" content={`${city}, Virginia`} />
         <meta name="geo.position" content={`${geo.lat};${geo.lng}`} />
         <meta name="ICBM" content={`${geo.lat}, ${geo.lng}`} />
-        <script type="application/ld+json">{JSON.stringify(schema)}</script>
+        <script type="application/ld+json">{ldJson(schema)}</script>
       </Head>
 
       <div className="bg-[#FAF9F6]">

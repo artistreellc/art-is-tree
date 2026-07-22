@@ -204,8 +204,15 @@ const AffordableTreeWorkGuide = () => {
                   <p className="text-gray-600 text-[15px] m-0 mt-0.5">{desc}</p>
                   <p className="text-xs text-[#A8801A] font-semibold m-0 mt-1 uppercase tracking-wide">{note}</p>
                 </div>
-                <div className="font-playfair font-bold text-xl text-[#1B4D3E] tracking-tight" aria-label={`relative cost ${price.length} of 4`}>
-                  <span className="text-[#D4AF37]">{price}</span><span className="text-gray-300">{'$'.repeat(4 - price.length)}</span>
+                {/* Render each "$" as its own single-character span. A run of
+                    literal "$$" in one text node gets mangled by the SSG's
+                    template injection (String.replace treats "$$" in the
+                    replacement as a literal "$"), which broke hydration here;
+                    isolated single "$" text nodes are safe. */}
+                <div className="font-playfair font-bold text-xl tracking-tight whitespace-nowrap" aria-label={`relative cost ${price.length} of 4`}>
+                  {Array.from({ length: 4 }, (_, k) => (
+                    <span key={k} aria-hidden="true" className={k < price.length ? 'text-[#D4AF37]' : 'text-gray-300'}>$</span>
+                  ))}
                 </div>
               </div>
             ))}
