@@ -2,7 +2,7 @@
 import React, { useMemo } from 'react';
 import { Head } from 'vite-react-ssg';
 import { useLocation } from 'react-router-dom';
-import { generateCanonicalUrl, stripWww } from '@/utils/seoHelpers';
+import { ldJson, generateCanonicalUrl, stripWww } from '@/utils/seoHelpers';
 
 const LocalSEOMeta = ({ 
   pageTitle,
@@ -27,7 +27,7 @@ const LocalSEOMeta = ({
   }, [ogImage]);
 
   const structuredDataString = useMemo(() => {
-    return structuredData ? JSON.stringify(structuredData) : null;
+    return structuredData ? ldJson(structuredData) : null;
   }, [structuredData]);
 
   // Combine default local SEO keywords with explicit ones

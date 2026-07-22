@@ -2,7 +2,7 @@
 import React from 'react';
 import { Head } from 'vite-react-ssg';
 import { useLocation } from 'react-router-dom';
-import { generateCanonicalUrl } from '@/utils/seoHelpers';
+import { ldJson, generateCanonicalUrl } from '@/utils/seoHelpers';
 
 const BreadcrumbListSchema = () => {
   const location = useLocation();
@@ -41,7 +41,7 @@ const BreadcrumbListSchema = () => {
   return (
     <Head>
       <script type="application/ld+json">
-        {JSON.stringify(schema)}
+        {ldJson(schema)}
       </script>
     </Head>
   );

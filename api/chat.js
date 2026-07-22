@@ -78,8 +78,17 @@ export default async function handler(req, res) {
     return res.status(200).json({ configured: false });
   }
 
+  // Prefer x-real-ip (set by Vercel's edge, not client-spoofable). Fall back to
+  // the LAST x-forwarded-for hop (appended by the trusted proxy) rather than the
+  // leftmost entry, which the client controls and could rotate to dodge the
+  // throttle. The console-level spend cap remains the real backstop.
+  const xff = (req.headers['x-forwarded-for'] || '')
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean);
   const ip =
-    (req.headers['x-forwarded-for'] || '').split(',')[0].trim() ||
+    req.headers['x-real-ip'] ||
+    xff[xff.length - 1] ||
     req.socket?.remoteAddress ||
     'unknown';
   if (throttled(ip)) {
