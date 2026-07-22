@@ -27,17 +27,23 @@ async function resolvePlaceId() {
 }
 
 export default async function handler(req, res) {
-  // Always cache-friendly; reviews refresh at most every 6 hours.
-  res.setHeader('Cache-Control', 'public, s-maxage=21600, stale-while-revalidate=86400');
+  // Only a SUCCESSFUL live result gets the long 6h edge cache. Error/unconfigured
+  // states get a short cache so a transient Google outage or a brief env-var
+  // misconfiguration can't freeze the site on the fallback state for hours.
+  const cacheOk = () =>
+    res.setHeader('Cache-Control', 'public, s-maxage=21600, stale-while-revalidate=86400');
+  const cacheShort = () => res.setHeader('Cache-Control', 'public, s-maxage=60');
 
   if (!API_KEY) {
     // Not configured yet — respond gracefully so the site shows the "Leave a Review" state.
+    cacheShort();
     return res.status(200).json({ reviews: [], rating: null, total: null, configured: false });
   }
 
   try {
     const placeId = await resolvePlaceId();
     if (!placeId) {
+      cacheShort();
       return res.status(200).json({ reviews: [], rating: null, total: null, configured: true });
     }
 
@@ -55,6 +61,7 @@ export default async function handler(req, res) {
       author_url: r.author_url || '',
     }));
 
+    cacheOk();
     return res.status(200).json({
       reviews,
       rating: result.rating ?? null,
@@ -63,6 +70,7 @@ export default async function handler(req, res) {
     });
   } catch (err) {
     console.error('[api/reviews] error', err);
+    cacheShort();
     return res.status(200).json({ reviews: [], rating: null, total: null, error: true });
   }
 }

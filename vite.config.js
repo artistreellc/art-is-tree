@@ -287,7 +287,12 @@ export default defineConfig({
 				const p = raw.replace(/^\/+/, '');
 				if (p.startsWith('admin')) return false;
 				if (p === 'login') return false;
+				// Pure client-side <Navigate> redirect routes — excluded so they
+				// don't prerender to stray empty HTML files. Their vercel.json 301s
+				// serve the real target before the filesystem is ever hit.
 				if (p === 'case-studies/chesapeake-bay-waterfront') return false;
+				if (p === 'case-studies/disease-management') return false;
+				if (p === 'case-studies/unlicensed-contractors') return false;
 				return true;
 			});
 		},

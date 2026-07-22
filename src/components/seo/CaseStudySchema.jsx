@@ -2,7 +2,7 @@
 import React from 'react';
 import { Head } from 'vite-react-ssg';
 import { useLocation } from 'react-router-dom';
-import { generateCanonicalUrl, BASE_URL } from '@/utils/seoHelpers';
+import { ldJson, generateCanonicalUrl, BASE_URL } from '@/utils/seoHelpers';
 
 // Reuse the Organization node emitted globally by OrganizationSchema instead of
 // re-declaring the whole block. Both @ids must match this string exactly.
@@ -53,7 +53,7 @@ const CaseStudySchema = ({
   return (
     <Head>
       <script type="application/ld+json">
-        {JSON.stringify(schema)}
+        {ldJson(schema)}
       </script>
     </Head>
   );

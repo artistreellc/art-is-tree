@@ -5,51 +5,62 @@ import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
 import { CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
 
+// SECURITY: this page must never read the Google Places API key on the client.
+// A `VITE_`-prefixed var referenced via import.meta.env gets inlined into the
+// public JS bundle at build time, which would leak the key. Instead we probe
+// the server endpoint (/api/reviews), which holds the key server-side and only
+// ever returns a { configured, total, rating, error } status — no secret.
 export default function DebugGooglePlacesPage() {
   const [isTesting, setIsTesting] = useState(false);
   const [testResult, setTestResult] = useState(null);
-
-  const apiKey = import.meta.env.VITE_GOOGLE_PLACES_API_KEY;
-  const isKeyConfigured = Boolean(apiKey);
+  const [status, setStatus] = useState(null); // { configured, live }
 
   const testConnection = async () => {
-    if (!isKeyConfigured) {
-      setTestResult({
-        success: false,
-        message: 'Cannot test: VITE_GOOGLE_PLACES_API_KEY is missing from environment variables.'
-      });
-      return;
-    }
-
     setIsTesting(true);
     setTestResult(null);
-
     try {
-      // Simple Places Text Search API call to verify API key validity
-      // Using a proxy or directly assuming CORS isn't strictly blocking this simple text fetch,
-      // or relying on the browser to at least return a 403/200 code
-      const url = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=Virginia+Beach&key=${apiKey}`;
-      const response = await fetch(url);
-      const data = await response.json();
+      const res = await fetch('/api/reviews');
+      const contentType = res.headers.get('content-type') || '';
+      if (!res.ok || !contentType.includes('application/json')) {
+        setStatus({ configured: false, live: false });
+        setTestResult({
+          success: false,
+          message: `The /api/reviews endpoint did not return JSON (HTTP ${res.status}). The serverless function may not be deployed.`,
+        });
+        return;
+      }
+      const data = await res.json();
+      const configured = data.configured !== false;
+      const live = typeof data.total === 'number' && data.total > 0;
+      setStatus({ configured, live });
 
-      if (data.status === 'OK' || data.status === 'ZERO_RESULTS') {
+      if (data.error) {
+        setTestResult({
+          success: false,
+          message: 'The endpoint responded, but Google Places returned an error server-side. Check the API key, billing, and Places API enablement in Google Cloud.',
+        });
+      } else if (!configured) {
+        setTestResult({
+          success: false,
+          message: 'The API key is NOT configured on the server. Add GOOGLE_PLACES_API_KEY (server-side, no VITE_ prefix) in Vercel and redeploy.',
+        });
+      } else if (live) {
         setTestResult({
           success: true,
-          message: 'Connection successful! The API key is valid and Places API is reachable.',
-          data: data
+          message: `Connection successful. Live Google data is flowing: ${data.total} reviews, ${data.rating}-star average.`,
         });
       } else {
         setTestResult({
-          success: false,
-          message: `API returned an error status: ${data.status}`,
-          details: data.error_message || 'No additional details provided by the API.'
+          success: true,
+          message: 'The key is configured and the endpoint is healthy, but no live review total came back yet (Place ID lookup or fresh cache). The site is using its accurate fallback values.',
         });
       }
     } catch (error) {
+      setStatus({ configured: false, live: false });
       setTestResult({
         success: false,
-        message: 'Network error occurred while reaching out to Google Places API. Note: This might be due to CORS policies on the client side.',
-        details: error.message
+        message: 'Network error reaching /api/reviews.',
+        details: error.message,
       });
     } finally {
       setIsTesting(false);
@@ -61,7 +72,8 @@ export default function DebugGooglePlacesPage() {
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight text-foreground">Google Places Debug</h1>
         <p className="text-muted-foreground mt-2">
-          Verify your Google Places API configuration and test external connectivity.
+          Verify the server-side Google Places configuration by probing the /api/reviews endpoint.
+          The API key stays on the server and is never exposed here.
         </p>
       </div>
 
@@ -70,25 +82,32 @@ export default function DebugGooglePlacesPage() {
           <CardHeader className="bg-card text-card-foreground">
             <CardTitle className="flex items-center gap-2">
               Configuration Status
-              {isKeyConfigured ? (
+              {status == null ? (
+                <Badge variant="secondary">Unknown — run the test</Badge>
+              ) : status.configured ? (
                 <Badge variant="default" className="bg-green-600 hover:bg-green-700">Configured</Badge>
               ) : (
                 <Badge variant="destructive">Missing</Badge>
               )}
             </CardTitle>
-            <CardDescription>Environment variable check for VITE_GOOGLE_PLACES_API_KEY</CardDescription>
+            <CardDescription>Server-side check via /api/reviews (key never leaves the server)</CardDescription>
           </CardHeader>
           <CardContent className="pt-6 text-card-foreground">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
               <div className="space-y-1">
-                <p className="font-mono text-sm bg-muted p-2 rounded-md truncate max-w-sm">
-                  {isKeyConfigured ? `${apiKey.substring(0, 8)}...${apiKey.substring(apiKey.length - 4)}` : 'Key not found'}
+                <p className="text-sm text-muted-foreground">
+                  {status == null
+                    ? 'Click “Test Connectivity” to ask the server whether the Places key is configured and live.'
+                    : status.live
+                      ? 'Live Google review data is flowing through the endpoint.'
+                      : status.configured
+                        ? 'Key configured; endpoint healthy.'
+                        : 'Key not configured on the server.'}
                 </p>
-                <p className="text-xs text-muted-foreground">Make sure this matches your Google Cloud Console.</p>
               </div>
-              <Button 
-                onClick={testConnection} 
-                disabled={isTesting || !isKeyConfigured}
+              <Button
+                onClick={testConnection}
+                disabled={isTesting}
                 className="w-full md:w-auto"
               >
                 {isTesting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
