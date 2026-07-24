@@ -40,6 +40,26 @@ const FAQPage = () => {
     {
       question: "Do you handle cleanup, hauling, and stump grinding?",
       answer: "Yes. Cleanup and hauling are included with every tree removal. We chip the brush, haul the wood or cut it into firewood lengths if you want it, and rake the area so you can barely tell we were there. Stump grinding is a separate add-on because it uses a different machine and is priced by the stump. We grind below grade so you can sod, replant, or build over the spot, and we call 811 before grinding to protect underground utilities."
+    },
+    {
+      question: "How fast can you respond to a tree emergency in Virginia Beach?",
+      answer: "Art-is-Tree LLC runs emergency tree service 24/7 across Virginia Beach and all of Hampton Roads. If a tree is on your house or blocking your driveway, call (757) 319-5131 and we'll move. If there is any risk to life or a downed power line is involved, call 911 first."
+    },
+    {
+      question: "Do you offer free tree service estimates?",
+      answer: "Yes. Estimates are always free with no obligation, and for many jobs we can quote from clear photos and a few details by text to save time. Request your estimate through our website and you'll get 5% off your service. The written price we give you is the price you pay."
+    },
+    {
+      question: "Do you offer financing or payment plans for tree work?",
+      answer: "Yes. Art-is-Tree LLC offers tree service financing through Acorn Finance so you can get the work done now and pay over time in affordable monthly payments. You can check your rate with no impact to your credit score, with financing from $1,000 to $100,000 and terms up to 20 years. Just ask when you request your free estimate."
+    },
+    {
+      question: "Will you protect my fence, lawn, pool, and A/C unit during tree work?",
+      answer: "Yes. When a tree is over something that matters, we don't drop pieces and hope. We lower every section under control by rope, protect the drop zone, and treat your property like it's our own. Our controlled rigging is why customers tell us their pool, shed, fence, and landscaping came through the job untouched."
+    },
+    {
+      question: "What areas does Art-is-Tree LLC serve?",
+      answer: "We serve Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk — all of the greater Hampton Roads region of coastal Virginia."
     }
   ];
 
@@ -205,10 +225,13 @@ const FAQPage = () => {
               <strong>Do you offer free estimates, and can I just text you photos?</strong> Yes to both. Estimates are always free with no obligation, and for a lot of jobs we can get you a quote from clear photos and a few details by text, which saves everybody time. Submit your request through our website and you'll get 5% off your service.
             </p>
             <p>
-              <strong>How fast can you come out for a storm emergency?</strong> We run emergency service 24/7 across Hampton Roads. If a tree is on your house or blocking your driveway, call and we'll move.
+              <strong>How fast can you respond to a tree emergency in Virginia Beach?</strong> We run emergency tree service 24/7 across Virginia Beach and all of Hampton Roads. If a tree is on your house or blocking your driveway, call <a href="tel:7573195131" className="font-semibold no-underline text-[#1B4D3E]">(757) 319-5131</a> and we'll move. If there's any risk to life or a downed power line is involved, call 911 first.
             </p>
             <p>
-              <strong>What areas do you serve?</strong> We cover Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk.
+              <strong>Do you offer financing or payment plans for tree work?</strong> Yes. Through <Link to="/financing">Acorn Finance</Link> you can get the work done now and pay over time in affordable monthly payments — check your rate with no impact to your credit score, borrow from $1,000 to $100,000, and choose terms up to 20 years. Just ask when you request your free estimate.
+            </p>
+            <p>
+              <strong>What areas do you serve?</strong> We cover Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk — all of the greater Hampton Roads region.
             </p>
 
             <div className="not-prose mt-14 bg-[#1B4D3E] rounded-3xl p-10 md:p-12 text-center text-white shadow-2xl">
