@@ -13,6 +13,7 @@ import SpeakableSchema from '@/components/seo/SpeakableSchema';
 import FAQPageSchema from '@/components/seo/FAQPageSchema';
 import GoogleReviewsDisplay from '@/components/GoogleReviewsDisplay';
 import FeaturedCaseStudyBanner from '@/components/FeaturedCaseStudyBanner';
+import { FinancingBanner } from '@/components/Financing';
 import YouTubeFacade from '@/components/YouTubeFacade';
 import QuickLinksBento from '@/components/QuickLinksBento';
 
@@ -133,6 +134,9 @@ const HomePage = () => {
               <Button variant="outline" className="border-white text-white hover:bg-white hover:text-[#1B4D3E] font-bold py-6 px-8 text-lg bg-transparent shadow-lg" asChild>
                 <Link to="/services">Explore Services</Link>
               </Button>
+            </div>
+            <div className="max-w-3xl mx-auto mt-12 text-left">
+              <FinancingBanner />
             </div>
           </div>
         </header>
