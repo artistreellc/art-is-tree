@@ -41,6 +41,7 @@ const data = {
     { question: 'Can you remove very large trees on a rural Suffolk property?', answer: 'Yes. Big rural trees often need heavy equipment or a crane. We rig and remove failing oaks, pines, and dead hardwoods in sections so nothing lands on outbuildings, fences, or crops.' },
     { question: 'Do you offer 24/7 storm response in Suffolk?', answer: 'Yes. Our emergency crew is on call around the clock across Suffolk to clear trees down across rural drives, roads, and farm structures, and to make the property safe fast.' },
   ],
+  financingText: "Art-is-Tree LLC now offers tree service financing throughout Suffolk, so large rural and residential tree jobs never have to wait for the right time. From tree removal and trimming to stump grinding and land clearing, our local financing lets Suffolk property owners spread the cost into affordable monthly payments instead of one upfront bill. Whether it's hazardous trees close to the home, wooded acreage to clear, or storm cleanup after a coastal blow, you can get professional, licensed, and insured tree care today and pay over time. Ask about our Suffolk tree service financing and flexible payment plans when you request your free written estimate — quick to apply.",
   relatedPreferred: ['/case-studies/property-value', '/case-studies/crane-safety'],
 };
 

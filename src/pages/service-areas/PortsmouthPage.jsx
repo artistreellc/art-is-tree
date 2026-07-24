@@ -42,6 +42,7 @@ const data = {
     { question: 'Do you offer 24/7 storm response in Portsmouth?', answer: 'Yes. Our emergency crew is on call around the clock across Portsmouth to clear fallen and hanging limbs, secure the property, and haul away debris after a storm.' },
     { question: 'How much does tree removal in Portsmouth cost?', answer: 'There’s no flat rate — tree removal in Portsmouth depends on the tree’s size, how close it is to the house or power lines, equipment access, and whether you add stump grinding. A small backyard tree is far cheaper than a heritage oak over an Olde Towne rooftop that needs a crane. Every estimate from Art-is-Tree LLC is free and written, and the price we quote is the price you pay.' },
   ],
+  financingText: "Art-is-Tree LLC now offers tree service financing across Portsmouth, so protecting your historic property never has to wait on your budget. Our local financing lets Portsmouth homeowners split the cost of professional tree work into affordable monthly payments instead of one lump sum. Whether it's a heritage oak over an Olde Towne rooftop, a careful crane removal in Cradock, or storm cleanup in Port Norfolk, you can get licensed, insured tree care today and pay over time. Ask about our Portsmouth tree service financing and flexible payment plans when you request your free written estimate — quick to apply.",
   relatedPreferred: ['/case-studies/virginia-tree-law', '/case-studies/spikeless-pruning'],
 };
 

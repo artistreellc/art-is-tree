@@ -8,6 +8,7 @@ import BreadcrumbListSchema from '@/components/seo/BreadcrumbListSchema';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
 import ServiceAreaLinks from '@/components/ServiceAreaLinks';
 import FAQSection from '@/components/FAQSection';
+import { FinancingSection } from '@/components/Financing';
 import FAQPageSchema from '@/components/seo/FAQPageSchema';
 
 const treeTrimmingFaqs = [
@@ -175,6 +176,10 @@ const TreeTrimmingPage = () => {
       </div>
       <FAQPageSchema items={treeTrimmingFaqs} />
       <FAQSection items={treeTrimmingFaqs} title="Tree Trimming & Pruning in Virginia Beach: FAQ" />
+      <FinancingSection
+        heading="Tree Trimming &amp; Pruning Financing"
+        description="Keeping your canopy healthy shouldn't strain your wallet, so Art-is-Tree LLC now offers tree trimming and pruning financing throughout Virginia Beach and Hampton Roads. Whether you need routine crown thinning, deadwood removal, or full storm-prep pruning before hurricane season, our flexible payment plans spread the cost into manageable monthly payments. Homeowners across Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk can book professional, spikeless, ANSI A300 tree trimming today and pay over time. Ask about our tree trimming financing and affordable payment options when you request your free written estimate — quick to apply, with terms designed around your budget."
+      />
       <ServiceAreaLinks serviceName="Tree Trimming & Pruning" />
       <RelatedCaseStudies currentPath="/services/tree-trimming" preferred={['/case-studies/spikeless-pruning', '/case-studies/emerald-ash-borer', '/case-studies/property-value']} />
     </div>

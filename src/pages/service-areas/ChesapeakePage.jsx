@@ -42,6 +42,7 @@ const data = {
     { question: 'How fast can you respond to storm damage in Chesapeake?', answer: 'Our emergency crew is on call 24/7 across Chesapeake. After a storm we prioritize trees on homes, driveways, and power lines, stabilize the hazard, and return to complete full removal and cleanup.' },
     { question: 'Is your Chesapeake tree service run by an arborist?', answer: 'Yes. Art-is-Tree LLC is a member of the International Society of Arboriculture (ISA) and works to the ANSI A300 and Z133 standards. If you need an arborist in Chesapeake, VA to assess a tree’s health, judge whether it can be saved, or plan pruning the right way, that’s exactly what we do — an honest evaluation before any work is quoted.' },
   ],
+  financingText: "Art-is-Tree LLC now offers tree service financing throughout Chesapeake, so a big tree job never has to wait for the right time. From tree removal and trimming to stump grinding and land clearing, our local financing lets Chesapeake homeowners spread the cost into affordable monthly payments instead of one upfront bill. Whether it's a storm-cracked pine in Greenbrier, a large oak on a Great Bridge lot, or acreage to clear near Hickory, you can get professional, licensed, and insured tree care today and pay over time. Ask about our Chesapeake tree service financing and flexible payment plans when you request your free written estimate — quick to apply.",
   relatedPreferred: ['/case-studies/property-value', '/case-studies/crane-safety'],
 };
 

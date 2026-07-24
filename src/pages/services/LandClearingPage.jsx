@@ -8,6 +8,7 @@ import BreadcrumbListSchema from '@/components/seo/BreadcrumbListSchema';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
 import ServiceAreaLinks from '@/components/ServiceAreaLinks';
 import FAQSection from '@/components/FAQSection';
+import { FinancingSection } from '@/components/Financing';
 import FAQPageSchema from '@/components/seo/FAQPageSchema';
 
 const landClearingFaqs = [
@@ -171,6 +172,10 @@ const LandClearingPage = () => {
       </div>
       <FAQPageSchema items={landClearingFaqs} />
       <FAQSection items={landClearingFaqs} title="Land Clearing in Virginia Beach: FAQ" />
+      <FinancingSection
+        heading="Land &amp; Lot Clearing Financing"
+        description="Opening up a lot is a big project, so Art-is-Tree LLC now offers land and lot clearing financing across Virginia Beach and Hampton Roads. Whether you're clearing brush, trees, and overgrowth to build, farm, or expand, our flexible financing turns a large clearing job into affordable monthly payments instead of one upfront cost. Property owners in Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk can schedule professional, licensed, and insured land clearing today and pay over time. Ask about our land clearing financing and payment plans when you request your free written estimate — quick to apply, with terms built to fit your project."
+      />
       <ServiceAreaLinks serviceName="Land Clearing" />
       <RelatedCaseStudies currentPath="/services/land-clearing" preferred={['/case-studies/chesapeake-bay-preservation-act', '/case-studies/property-value']} />
     </div>

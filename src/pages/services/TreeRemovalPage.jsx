@@ -8,6 +8,7 @@ import BreadcrumbListSchema from '@/components/seo/BreadcrumbListSchema';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
 import ServiceAreaLinks from '@/components/ServiceAreaLinks';
 import FAQSection from '@/components/FAQSection';
+import { FinancingSection } from '@/components/Financing';
 import FAQPageSchema from '@/components/seo/FAQPageSchema';
 
 const TreeRemovalPage = () => {
@@ -181,6 +182,10 @@ const TreeRemovalPage = () => {
         </div>
       </div>
       <FAQSection items={faqData} title="Tree Removal in Virginia Beach: FAQ" />
+      <FinancingSection
+        heading="Tree Removal Financing"
+        description="Art-is-Tree LLC now offers flexible tree removal financing across Virginia Beach and Hampton Roads, so a hazardous or oversized tree never has to wait on your budget. From a single storm-cracked pine to a large crane-assisted removal over the house, our local financing lets you split the cost into affordable monthly payments instead of one lump sum. Homeowners in Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk can schedule professional, licensed, and insured tree removal today and pay over time. Ask about our tree removal payment plans and financing options when you request your free written estimate — the application is quick, and the terms are built to fit your household."
+      />
       <ServiceAreaLinks serviceName="Tree Removal" />
       <RelatedCaseStudies currentPath="/services/tree-removal" preferred={['/case-studies/crane-safety', '/case-studies/virginia-tree-law', '/case-studies/property-value']} />
     </div>

@@ -8,6 +8,7 @@ import BreadcrumbListSchema from '@/components/seo/BreadcrumbListSchema';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
 import ServiceAreaLinks from '@/components/ServiceAreaLinks';
 import FAQSection from '@/components/FAQSection';
+import { FinancingSection } from '@/components/Financing';
 import FAQPageSchema from '@/components/seo/FAQPageSchema';
 
 const emergencyFaqs = [
@@ -174,6 +175,10 @@ const EmergencyTreeServicePage = () => {
       </div>
       <FAQPageSchema items={emergencyFaqs} />
       <FAQSection items={emergencyFaqs} title="Emergency Tree Service in Virginia Beach: FAQ" />
+      <FinancingSection
+        heading="Emergency Tree Removal Financing"
+        description="Storm damage doesn't wait for payday, and neither should you. Art-is-Tree LLC now offers emergency tree removal financing across Virginia Beach and Hampton Roads, so a fallen or dangerous tree can be handled immediately and paid for over time. When a limb is on your roof, car, or driveway, our 24/7 crew responds first and our flexible payment plans handle the rest, splitting the cost into affordable monthly payments. Homeowners in Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk can get licensed, insured emergency tree service now and finance it. Ask about emergency tree removal financing and payment plans when you call — the application is fast."
+      />
       <ServiceAreaLinks serviceName="Emergency Tree Service" />
       <RelatedCaseStudies currentPath="/services/emergency-tree-service" preferred={['/case-studies/osha-compliance', '/case-studies/crane-safety', '/case-studies/property-value']} />
     </div>

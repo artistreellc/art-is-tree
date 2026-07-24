@@ -8,6 +8,7 @@ import BreadcrumbListSchema from '@/components/seo/BreadcrumbListSchema';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
 import ServiceAreaLinks from '@/components/ServiceAreaLinks';
 import FAQSection from '@/components/FAQSection';
+import { FinancingSection } from '@/components/Financing';
 import FAQPageSchema from '@/components/seo/FAQPageSchema';
 
 const craneFaqs = [
@@ -169,6 +170,10 @@ const CraneTreeRemovalPage = () => {
       </div>
       <FAQPageSchema items={craneFaqs} />
       <FAQSection items={craneFaqs} title="Crane Tree Removal in Virginia Beach: FAQ" />
+      <FinancingSection
+        heading="Crane Tree Removal Financing"
+        description="Crane-assisted removal is the safest option for big or hazardous trees — and now the most affordable, too. Art-is-Tree LLC offers crane tree removal financing across Virginia Beach and Hampton Roads, turning a major removal into manageable monthly payments instead of one large invoice. Homeowners in Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk can schedule professional, licensed, and insured crane removal today and pay over time. Ask about our crane removal financing and flexible payment plans when you request your free written estimate — quick to apply, with terms designed to fit your household budget."
+      />
       <ServiceAreaLinks serviceName="Crane Tree Removal" />
       <RelatedCaseStudies currentPath="/services/tree-removal" preferred={['/case-studies/crane-safety', '/case-studies/osha-compliance', '/case-studies/spikeless-pruning']} />
     </div>
