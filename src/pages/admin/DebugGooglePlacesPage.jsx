@@ -34,7 +34,21 @@ export default function DebugGooglePlacesPage() {
       const live = typeof data.total === 'number' && data.total > 0;
       setStatus({ configured, live });
 
-      if (data.error) {
+      const gs = data.googleStatus;
+      const gsHelp = {
+        REQUEST_DENIED: 'Google denied the request — the API key is missing the (legacy) Places API, billing is off, or the key is restricted. Enable "Places API" for this key in Google Cloud (or switch to a key that has it) and confirm billing is on.',
+        OVER_QUERY_LIMIT: 'The key hit its Google quota/billing cap.',
+        INVALID_REQUEST: 'The Place lookup request was malformed or the Place ID is wrong.',
+        ZERO_RESULTS: 'Google found no place for the lookup — set GOOGLE_PLACE_ID explicitly in Vercel.',
+        UNKNOWN: 'Google returned no status — check the key and network.',
+      };
+
+      if (gs && gs !== 'OK') {
+        setTestResult({
+          success: false,
+          message: `Google returned status: ${gs}. ${gsHelp[gs] || 'See Google Cloud Console for this key.'}`,
+        });
+      } else if (data.error) {
         setTestResult({
           success: false,
           message: 'The endpoint responded, but Google Places returned an error server-side. Check the API key, billing, and Places API enablement in Google Cloud.',

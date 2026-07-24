@@ -17,13 +17,13 @@ const PLACE_ID = process.env.GOOGLE_PLACE_ID || process.env.VITE_GOOGLE_PLACE_ID
 const LOOKUP_QUERY = 'Art-is-Tree LLC, 2597 Nestlebrook Trl, Virginia Beach, VA 23456';
 
 async function resolvePlaceId() {
-  if (PLACE_ID) return PLACE_ID;
+  if (PLACE_ID) return { placeId: PLACE_ID, status: 'OK' };
   const url = `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${encodeURIComponent(
     LOOKUP_QUERY
   )}&inputtype=textquery&fields=place_id&key=${API_KEY}`;
   const res = await fetch(url);
   const data = await res.json();
-  return data?.candidates?.[0]?.place_id || null;
+  return { placeId: data?.candidates?.[0]?.place_id || null, status: data?.status || 'UNKNOWN' };
 }
 
 export default async function handler(req, res) {
@@ -41,15 +41,28 @@ export default async function handler(req, res) {
   }
 
   try {
-    const placeId = await resolvePlaceId();
+    const { placeId, status: findStatus } = await resolvePlaceId();
     if (!placeId) {
+      // Surface the Google status (e.g. REQUEST_DENIED) so the failure is
+      // diagnosable instead of silently falling back. Don't long-cache it.
+      console.error('[api/reviews] place lookup failed:', findStatus);
       cacheShort();
-      return res.status(200).json({ reviews: [], rating: null, total: null, configured: true });
+      return res.status(200).json({ reviews: [], rating: null, total: null, configured: true, googleStatus: findStatus });
     }
 
     const detailsUrl = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&reviews_no_translations=true&fields=reviews,rating,user_ratings_total&key=${API_KEY}`;
     const detailsRes = await fetch(detailsUrl);
     const details = await detailsRes.json();
+
+    // A non-OK status (REQUEST_DENIED = key lacks the legacy Places API or
+    // billing; OVER_QUERY_LIMIT; INVALID_REQUEST; etc.) must NOT be cached as
+    // a success for 6h, and must be reported so we can see what's wrong.
+    if (details.status && details.status !== 'OK') {
+      console.error('[api/reviews] Places details status:', details.status, details.error_message || '');
+      cacheShort();
+      return res.status(200).json({ reviews: [], rating: null, total: null, configured: true, googleStatus: details.status });
+    }
+
     const result = details?.result || {};
 
     const reviews = (result.reviews || []).map((r) => ({
@@ -61,12 +74,16 @@ export default async function handler(req, res) {
       author_url: r.author_url || '',
     }));
 
-    cacheOk();
+    const total = typeof result.user_ratings_total === 'number' ? result.user_ratings_total : null;
+    // Only the real, live result earns the 6h edge cache.
+    if (total != null) cacheOk();
+    else cacheShort();
     return res.status(200).json({
       reviews,
       rating: result.rating ?? null,
-      total: result.user_ratings_total ?? null,
+      total,
       configured: true,
+      googleStatus: 'OK',
     });
   } catch (err) {
     console.error('[api/reviews] error', err);
