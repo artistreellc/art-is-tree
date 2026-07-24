@@ -21,7 +21,14 @@ const NAV_LINKS = [
       { name: 'Land Clearing', path: '/services/land-clearing' },
     ]
   },
-  { name: 'Financing', href: 'https://www.acornfinance.com/pre-qualify/?d=M7VPJ&utm_medium=web_pre_qual_link_copy', external: true },
+  {
+    name: 'Financing',
+    path: '/financing',
+    dropdown: [
+      { name: 'Financing Application', href: 'https://www.acornfinance.com/pre-qualify/?d=M7VPJ&utm_medium=web_pre_qual_link_copy', external: true },
+      { name: 'Understanding Financing', path: '/financing' },
+    ]
+  },
   { name: 'Contact', path: '/contact' },
   { name: 'About', path: '/about' },
   { name: 'Gallery', path: '/gallery' },
@@ -123,14 +130,27 @@ const NavLink = memo(({ link, isActive }) => {
       {open && (
         <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-52 bg-[#1B4D3E] border border-white/20 rounded-xl shadow-2xl z-[100] py-2 overflow-hidden">
           {link.dropdown.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              onClick={() => setOpen(false)}
-              className="block px-4 py-2.5 text-sm text-gray-200 hover:bg-white/10 hover:text-yellow-300 transition-colors font-medium"
-            >
-              {item.name}
-            </Link>
+            item.external ? (
+              <a
+                key={item.name}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                onClick={() => setOpen(false)}
+                className="block px-4 py-2.5 text-sm text-gray-200 hover:bg-white/10 hover:text-yellow-300 transition-colors font-medium"
+              >
+                {item.name}
+              </a>
+            ) : (
+              <Link
+                key={item.path}
+                to={item.path}
+                onClick={() => setOpen(false)}
+                className="block px-4 py-2.5 text-sm text-gray-200 hover:bg-white/10 hover:text-yellow-300 transition-colors font-medium"
+              >
+                {item.name}
+              </Link>
+            )
           ))}
         </div>
       )}
@@ -188,14 +208,27 @@ const MobileMenuItem = memo(({ link, isActive, onClick }) => {
       {expanded && (
         <div className="ml-4 mt-1 mb-2 border-l-2 border-yellow-400/30 pl-4 flex flex-col gap-1">
           {link.dropdown.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              onClick={onClick}
-              className="block py-2.5 text-base text-gray-300 hover:text-yellow-300 transition-colors font-medium"
-            >
-              {item.name}
-            </Link>
+            item.external ? (
+              <a
+                key={item.name}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                onClick={onClick}
+                className="block py-2.5 text-base text-gray-300 hover:text-yellow-300 transition-colors font-medium"
+              >
+                {item.name}
+              </a>
+            ) : (
+              <Link
+                key={item.path}
+                to={item.path}
+                onClick={onClick}
+                className="block py-2.5 text-base text-gray-300 hover:text-yellow-300 transition-colors font-medium"
+              >
+                {item.name}
+              </Link>
+            )
           ))}
         </div>
       )}
