@@ -5,7 +5,7 @@ const data = {
   city: 'Chesapeake',
   path: '/service-areas/chesapeake',
   geo: { lat: 36.7682, lng: -76.2875 },
-  metaTitle: 'Tree Service Chesapeake VA | Removal & Land Clearing',
+  metaTitle: 'Tree Service Chesapeake VA | Removal, Trimming & Arborist',
   metaDesc: 'Tree removal, trimming, stump grinding and land clearing in Chesapeake, VA. Licensed, insured, BBB A+ tree service with 24/7 storm response. Free estimates.',
   heroImg: '/images/virginia-beach-crane-operation-oak.webp',
   heroAlt: 'Crane crew removing a large oak beside a Chesapeake home',
@@ -19,7 +19,7 @@ const data = {
   services: [
     { iconKey: 'removal', kw: 'Tree Removal in Chesapeake', text: 'From storm-cracked pines in Greenbrier to sprawling oaks on Great Bridge lots, we plan every removal, rig it down safely, and protect the house, the fence, and the flower beds while we work.' },
     { iconKey: 'crane', kw: 'Crane-Assisted Removal', text: 'When a tree is too large or too close to the house to fell, our crane tree removal lifts it out in controlled sections — the safest option on Chesapeake’s tighter suburban lots.' },
-    { iconKey: 'trim', kw: 'Tree Trimming & Pruning', text: 'We prune to keep your canopy strong, off the roof, and ready for hurricane season, using spikeless climbing to protect mature hardwoods across Chesapeake.' },
+    { iconKey: 'trim', kw: 'Tree Trimming & Pruning', text: 'Regular tree trimming and pruning in Chesapeake keeps your canopy strong, off the roof, and ready for hurricane season. We climb spikeless to protect mature hardwoods from Greenbrier to Great Bridge.' },
     { iconKey: 'stump', kw: 'Stump Grinding', text: 'Grinding stumps below grade so you can reclaim the yard — part of a Chesapeake removal or a standalone stump grinding service.' },
     { iconKey: 'emergency', kw: '24/7 Emergency Tree Service', text: 'Storms roll through Chesapeake hard. Our emergency tree service answers 24/7 to clear fallen trees, secure hanging limbs, and reopen driveways and roads.' },
     { iconKey: 'land', kw: 'Land & Lot Clearing', text: 'Out toward Hickory, Fentress, and the Dismal Swamp edge, we clear acreage, brush, and overgrowth so you can build, farm, or open up your Chesapeake property.' },
@@ -40,6 +40,7 @@ const data = {
     { question: 'Do you clear large or wooded lots in Chesapeake?', answer: 'Yes. Beyond single-tree removals, we handle land and lot clearing on larger Chesapeake parcels out toward Hickory, Fentress, and the Dismal Swamp edge — taking down trees, clearing brush and undergrowth, and hauling it all off so you can build, farm, or open up the property.' },
     { question: 'Can you remove a big tree close to my house in Chesapeake?', answer: 'Yes. On tighter suburban lots in Greenbrier, Great Bridge, or Western Branch, a large tree over the house is exactly what crane-assisted removal is for. We lift it out in sections rather than dropping it, so the roof, fence, and landscaping stay untouched.' },
     { question: 'How fast can you respond to storm damage in Chesapeake?', answer: 'Our emergency crew is on call 24/7 across Chesapeake. After a storm we prioritize trees on homes, driveways, and power lines, stabilize the hazard, and return to complete full removal and cleanup.' },
+    { question: 'Is your Chesapeake tree service run by an arborist?', answer: 'Yes. Art-is-Tree LLC is a member of the International Society of Arboriculture (ISA) and works to the ANSI A300 and Z133 standards. If you need an arborist in Chesapeake, VA to assess a tree’s health, judge whether it can be saved, or plan pruning the right way, that’s exactly what we do — an honest evaluation before any work is quoted.' },
   ],
   relatedPreferred: ['/case-studies/property-value', '/case-studies/crane-safety'],
 };
