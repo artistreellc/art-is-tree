@@ -1,47 +1,55 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { CreditCard, ArrowRight, Phone, BadgeCheck } from 'lucide-react';
+import { CreditCard, ArrowRight, Phone } from 'lucide-react';
 
-// Financing promotion — two variants:
-//   <FinancingBanner />                 slim, prominent strip (used on the pricing guide)
-//   <FinancingSection description="…" /> lower-page section with a unique,
-//                                        keyword-rich paragraph per page (avoids
-//                                        duplicate-content across the money pages)
-//
-// Copy is intentionally general about terms (no invented APR/lender/approval
-// claims) and routes visitors to request an estimate, where real terms are given.
+// ---------------------------------------------------------------------------
+// SINGLE SOURCE OF TRUTH for the financing application link.
+// Switching financing providers later? Change this ONE line and every
+// "Apply for Financing" button across the site updates — no per-page edits.
+// (The Acorn banner images live in the banner components below; swap those two
+// <img> srcs if the provider changes.)
+// ---------------------------------------------------------------------------
+export const FINANCING_APPLY_URL =
+  'https://www.acornfinance.com/pre-qualify/?d=M7VPJ&utm_medium=web_pre_qual_link_copy';
 
-const CONTACT = '/contact';
-const TEL = 'tel:+17573195131';
+// Acorn's official hosted banner assets + their banner-attribution link.
+const ACORN_BANNER_URL = 'https://www.acornfinance.com/pre-qualify/?d=M7VPJ&utm_medium=web_pre_qual_banner';
+const ACORN_BANNER_HORIZONTAL = 'https://fs.acornfinance.com/banners/acorn-finance-banner-easy-payment-options-horizontal-small.png';
+const ACORN_BANNER_VERTICAL = 'https://fs.acornfinance.com/banners/acorn-finance-banner-easy-payment-options-vertical-small.png';
+const ACORN_BANNER_ALT = 'Acorn Finance — apply and get affordable payment options from multiple lenders';
 
+// Horizontal Acorn banner (home hero + pricing guide).
 export const FinancingBanner = ({ className = '' }) => (
-  <section aria-label="Financing available" className={`relative overflow-hidden rounded-2xl border-2 border-[#D4AF37]/60 bg-gradient-to-r from-[#0A2F24] via-[#11402F] to-[#0A2F24] shadow-lg ${className}`}>
-    <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-1/4 w-1/3 -skew-x-12 bg-gradient-to-r from-transparent via-[#D4AF37]/[0.12] to-transparent motion-safe:animate-sheen" />
-    <div className="relative px-5 py-5 md:px-8 md:py-6 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-center sm:text-left">
-      <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#D4AF37] text-[#0A2F24] flex-shrink-0 shadow">
-        <CreditCard className="w-6 h-6" aria-hidden="true" />
-      </div>
-      <div className="flex-1">
-        <p className="flex items-center justify-center sm:justify-start gap-1.5 text-[#D4AF37] font-bold tracking-[0.14em] uppercase text-xs mb-1">
-          <BadgeCheck className="w-4 h-4" aria-hidden="true" /> Now Available
-        </p>
-        <h3 className="font-playfair text-xl md:text-2xl font-bold text-white leading-snug">
-          Tree Service Financing in Virginia Beach &amp; Hampton Roads
-        </h3>
-        <p className="text-white/80 text-sm md:text-base mt-1">
-          Get the work done now and pay over time with affordable monthly payments — ask about flexible plans with your free estimate.
-        </p>
-      </div>
-      <Link
-        to={CONTACT}
-        className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#c39f2f] text-[#0A2F24] font-bold px-6 py-3 rounded-xl whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white flex-shrink-0"
-      >
-        Ask About Financing <ArrowRight className="w-4 h-4" aria-hidden="true" />
-      </Link>
-    </div>
-  </section>
+  <div className={`flex justify-center ${className}`}>
+    <a href={ACORN_BANNER_URL} target="_blank" rel="noopener noreferrer sponsored" aria-label="Apply for financing with Acorn Finance">
+      <img
+        src={ACORN_BANNER_HORIZONTAL}
+        alt={ACORN_BANNER_ALT}
+        loading="lazy"
+        className="max-w-full h-auto"
+        style={{ margin: '10px', padding: '1px', border: '1px solid black', borderRadius: '5px' }}
+      />
+    </a>
+  </div>
 );
 
+// Vertical Acorn banner (off the home page — e.g. contact page).
+export const FinancingBannerVertical = ({ className = '' }) => (
+  <div className={`flex justify-center ${className}`}>
+    <a href={ACORN_BANNER_URL} target="_blank" rel="noopener noreferrer sponsored" aria-label="Apply for financing with Acorn Finance">
+      <img
+        src={ACORN_BANNER_VERTICAL}
+        alt={ACORN_BANNER_ALT}
+        loading="lazy"
+        className="max-w-full h-auto"
+        style={{ margin: '10px', padding: '1px', border: '1px solid black', borderRadius: '5px' }}
+      />
+    </a>
+  </div>
+);
+
+// Provider-agnostic lower-page financing section (service + city pages).
+// Keeps the site's own look; the only provider-specific thing is the link,
+// which comes from FINANCING_APPLY_URL above.
 export const FinancingSection = ({
   description,
   heading = 'Tree Service Financing Available',
@@ -61,14 +69,16 @@ export const FinancingSection = ({
         </div>
         <p className="text-gray-700 text-lg leading-relaxed">{description}</p>
         <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
-          <Link
-            to={CONTACT}
+          <a
+            href={FINANCING_APPLY_URL}
+            target="_blank"
+            rel="noopener noreferrer sponsored"
             className="inline-flex items-center gap-2 bg-[#1B4D3E] hover:bg-[#143a2f] text-white font-bold px-7 py-3.5 rounded-xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] focus-visible:ring-offset-2 w-full sm:w-auto justify-center"
           >
-            Get a Free Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
-          </Link>
+            Apply for Financing <ArrowRight className="w-4 h-4" aria-hidden="true" />
+          </a>
           <a
-            href={TEL}
+            href="tel:+17573195131"
             className="inline-flex items-center gap-2 text-[#1B4D3E] font-bold hover:text-[#D4AF37] transition-colors"
           >
             <Phone className="w-4 h-4" aria-hidden="true" /> (757) 319-5131

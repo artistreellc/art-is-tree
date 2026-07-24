@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/components/ui/use-toast';
-import { FinancingBanner } from '@/components/Financing';
+import { FinancingBannerVertical } from '@/components/Financing';
 import { useDebounce } from '@/hooks/useDebounce';
 // import { supabase } from '@/lib/customSupabaseClient';
 
@@ -514,7 +514,7 @@ const ContactForm = () => {
       </p>
 
       <div className="pt-2">
-        <FinancingBanner />
+        <FinancingBannerVertical />
       </div>
     </form>
   );
