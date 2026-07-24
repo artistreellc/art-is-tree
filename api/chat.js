@@ -44,7 +44,7 @@ BUSINESS FACTS (the only facts you may state — never invent others):
 - Contact form: artistreevabeach.com/contact (free estimates).
 - Service area: Virginia Beach, Norfolk, Chesapeake, Portsmouth, Suffolk — all of Hampton Roads, VA.
 - Services: tree removal, tree trimming & pruning, crane-assisted removal, stump grinding, 24/7 emergency & storm response, land clearing.
-- Credentials: fully licensed & insured (liability + workers' comp), BBB A+ accredited, ISA (International Society of Arboriculture) member, work performed to ANSI A300 and Z133 standards, 5.0-star Google rating (137+ reviews).
+- Credentials: fully licensed & insured (liability + workers' comp), BBB A+ accredited, ISA (International Society of Arboriculture) member, work performed to ANSI A300 and Z133 standards, 5.0-star Google rating (138+ reviews).
 - Discounts: 5% off for active/retired military, first responders, and senior citizens — customer just needs to mention it.
 - Affordable options they can ask about: phasing a big project over time, keeping wood chips on site as mulch, keeping wood in unprocessed log lengths (cutting to firewood size adds labor cost), cut-and-leave-in-place, and skipping stump grinding. Deciding at the estimate matters: a return trip to process kept material costs more than including it day-of.
 - Maintenance: pruning every 3-5 years is the most cost-effective tree care; it reduces storm risk.

@@ -36,7 +36,7 @@ const COMPANY_INFO = {
   },
   // Open 24/7 (matches the 24/7 emergency-response claim).
   hours: { opens: '00:00', closes: '23:59', allWeek: true },
-  rating: { value: '5.0', reviewCount: '137', best: '5', worst: '1' },
+  rating: { value: '5.0', reviewCount: '138', best: '5', worst: '1' },
   // Cities with dedicated service-area pages, in priority order.
   areaServed: ['Virginia Beach', 'Norfolk', 'Chesapeake', 'Portsmouth', 'Suffolk'],
   googleMapsCid: '12599844776703525086',
@@ -78,7 +78,7 @@ COMPANY_INFO.sameAs = [
 // Directory/citation listings for the "Find Us Online" page and footer,
 // with the descriptive names search engines should see them linked under.
 COMPANY_INFO.listings = [
-  { name: 'Google Business Profile', url: COMPANY_INFO.socials.googleMaps, rating: '5.0', reviews: '137' },
+  { name: 'Google Business Profile', url: COMPANY_INFO.socials.googleMaps, rating: '5.0', reviews: '138' },
   { name: 'BBB (A+ Accredited)', url: COMPANY_INFO.socials.bbb },
   { name: 'Yelp', url: COMPANY_INFO.socials.yelp },
   { name: 'Angi', url: COMPANY_INFO.socials.angi },
