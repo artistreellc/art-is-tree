@@ -8,6 +8,7 @@ import BreadcrumbListSchema from '@/components/seo/BreadcrumbListSchema';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
 import ServiceAreaLinks from '@/components/ServiceAreaLinks';
 import FAQSection from '@/components/FAQSection';
+import { FinancingSection } from '@/components/Financing';
 import FAQPageSchema from '@/components/seo/FAQPageSchema';
 
 const stumpGrindingFaqs = [
@@ -173,6 +174,10 @@ const StumpGrindingPage = () => {
       </div>
       <FAQPageSchema items={stumpGrindingFaqs} />
       <FAQSection items={stumpGrindingFaqs} title="Stump Grinding in Virginia Beach: FAQ" />
+      <FinancingSection
+        heading="Stump Grinding Financing"
+        description="Reclaim your yard now and pay over time — Art-is-Tree LLC offers stump grinding financing across Virginia Beach and Hampton Roads. Whether you're grinding a single stump below grade or clearing several after a removal, our flexible financing splits the cost into affordable monthly payments instead of one bill. Homeowners in Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk can schedule professional, licensed, and insured stump grinding today with an easy payment plan. Ask about our stump grinding financing and payment options when you request your free written estimate — the application is quick and the terms are built to fit your budget."
+      />
       <ServiceAreaLinks serviceName="Stump Grinding" />
       <RelatedCaseStudies currentPath="/services/stump-grinding" preferred={['/case-studies/property-value', '/case-studies/virginia-tree-law']} />
     </div>

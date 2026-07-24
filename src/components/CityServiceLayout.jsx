@@ -8,6 +8,7 @@ import RelatedCaseStudies from '@/components/RelatedCaseStudies';
 import ServiceLinks from '@/components/ServiceLinks';
 import GoogleMap from '@/components/GoogleMap';
 import LocationFAQ from '@/components/LocationFAQ';
+import { FinancingSection } from '@/components/Financing';
 import { Eyebrow, SectionHeading, Figure } from '@/components/design/Primitives';
 import { COMPANY_INFO } from '@/constants/seoMetadata';
 import { ldJson } from '@/utils/seoHelpers';
@@ -26,7 +27,7 @@ const CityServiceLayout = ({ data }) => {
     introTitle, introParagraphs,
     neighborhoods, services,
     localTitle, localParagraphs, localImg, localAlt, localCaption, localBadges = [],
-    ctaTitle, ctaText, mapQuery, faqs, relatedPreferred,
+    ctaTitle, ctaText, mapQuery, faqs, relatedPreferred, financingText,
   } = data;
 
   const schema = {
@@ -165,6 +166,9 @@ const CityServiceLayout = ({ data }) => {
       </section>
 
       <LocationFAQ city={city} faqs={faqs} />
+      {financingText && (
+        <FinancingSection heading={`Tree Service Financing in ${city}`} description={financingText} />
+      )}
       <ServiceLinks cityName={city} />
       <RelatedCaseStudies currentPath={path} preferred={relatedPreferred} />
     </>

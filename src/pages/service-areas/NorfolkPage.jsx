@@ -42,6 +42,7 @@ const data = {
     { question: 'Do you handle storm and flood-damaged trees in Norfolk?', answer: "Absolutely. Norfolk's low elevation and frequent tidal flooding stress root systems and topple weakened trees during storms. Our 24/7 emergency team clears fallen and hanging limbs, secures the site, and hauls away debris." },
     { question: 'How often should I schedule tree trimming in Norfolk?', answer: 'For most mature trees, tree trimming in Norfolk, VA every three to five years is the sweet spot — often enough to clear deadwood, lift the canopy off roofs and power lines, and cut wind resistance before hurricane season, without over-pruning. Norfolk’s old live oaks and water oaks especially benefit from a regular, spikeless pruning cycle.' },
   ],
+  financingText: "Art-is-Tree LLC now offers tree service financing across Norfolk, so a necessary removal, trimming, or storm cleanup never has to wait on your budget. Our local financing lets Norfolk homeowners split the cost of professional tree work into affordable monthly payments instead of one lump sum. Whether it's a towering willow oak in Ghent, a crane removal on a tight Larchmont lot, or emergency storm response in Ocean View, you can get licensed, insured tree care today and pay over time. Ask about our Norfolk tree service financing and flexible payment plans when you request your free written estimate — quick to apply.",
   relatedPreferred: ['/case-studies/property-value', '/case-studies/virginia-tree-law'],
 };
 

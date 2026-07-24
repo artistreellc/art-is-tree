@@ -9,6 +9,7 @@ import LocalSEOMeta from '@/components/LocalSEOMeta';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
 import { Eyebrow, SectionHeading, Figure, ProjectSpec, Byline } from '@/components/design/Primitives';
 import { Button } from '@/components/ui/button';
+import { FinancingBanner } from '@/components/Financing';
 
 // AEO: self-contained, quotable answers to the questions homeowners actually
 // ask AI assistants about tree work cost. Rendered visibly (FAQSection) and
@@ -121,6 +122,11 @@ const AffordableTreeWorkGuide = () => {
             </div>
           </div>
         </header>
+
+        {/* FINANCING BANNER */}
+        <div className="container mx-auto px-4 max-w-4xl -mt-4 mb-10 md:mb-12">
+          <FinancingBanner />
+        </div>
 
         {/* INTRO */}
         <section className="container mx-auto px-4 max-w-4xl pb-12 md:pb-16">
