@@ -192,7 +192,7 @@ const OSHACaseStudyPage = () => {
             {/* sources */}
             <div className="mt-10 pt-6 border-t border-gray-200 text-sm text-gray-500 space-y-2">
               <p className="font-semibold text-gray-700 m-0">Sources</p>
-              <p id="src1" className="m-0">1. U.S. Centers for Disease Control and Prevention / NIOSH, <a href="https://www.cdc.gov/niosh/docs/92-106/default.html" target="_blank" rel="noopener noreferrer" className="text-[#1B4D3E] underline hover:text-[#D4AF37]">preventing falls and electrocutions during tree work</a> — falls, struck-by, and electrocution as leading causes of death in tree work.</p>
+              <p id="src1" className="m-0">1. U.S. Centers for Disease Control and Prevention / NIOSH, <a href="https://archive.cdc.gov/www_cdc_gov/niosh/docs/92-106/default.html" target="_blank" rel="noopener noreferrer" className="text-[#1B4D3E] underline hover:text-[#D4AF37]">preventing falls and electrocutions during tree work</a> — falls, struck-by, and electrocution as leading causes of death in tree work.</p>
               <p id="src2" className="m-0">2. U.S. Occupational Safety and Health Administration (OSHA), <a href="https://www.osha.gov/tree-care" target="_blank" rel="noopener noreferrer" className="text-[#1B4D3E] underline hover:text-[#D4AF37]">“Tree Care”</a> — General Duty Clause and 29 CFR 1910.269 (electric power line work).</p>
               <p id="src3" className="m-0">3. Tree Care Industry Association, <a href="https://treecareindustryassociation.org/products/ansi-z133-arboricultural-safety-standards/" target="_blank" rel="noopener noreferrer" className="text-[#1B4D3E] underline hover:text-[#D4AF37]">ANSI Z133 Arboricultural Safety Standards.</a></p>
             </div>
