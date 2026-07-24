@@ -12,7 +12,7 @@ const TermsAndConditionsPage = () => {
         </header>
         
         <div className="prose prose-lg text-gray-700 bg-white p-8 md:p-12 rounded-xl shadow-sm border border-gray-100">
-          <p><strong>Last Updated: July 10, 2026</strong></p>
+          <p><strong>Last Updated: July 24, 2026</strong></p>
           
           <p>
             Welcome to Art-is-Tree LLC. By accessing our website, requesting a quote, or engaging our professional tree care services, you agree to be bound by the following Terms and Conditions. Please read these terms carefully before proceeding with any service agreements.
@@ -51,6 +51,14 @@ const TermsAndConditionsPage = () => {
           <h2 className="mt-8 mb-4">7. Dispute Resolution</h2>
           <p>
             In the rare event that a dispute arises from these Terms and Conditions or the services provided by us, both parties agree to attempt to resolve the issue amicably through good-faith negotiations. If a resolution cannot be reached directly, the dispute shall be submitted to binding arbitration in the Commonwealth of Virginia, in accordance with the rules of the American Arbitration Association. The prevailing party shall be entitled to recover reasonable attorney's fees and costs.
+          </p>
+
+          <h2 className="mt-8 mb-4">8. Third-Party Financing</h2>
+          <p>
+            As a convenience to our customers, Art-is-Tree LLC may present financing options offered through Acorn Finance and its network of third-party lenders. Art-is-Tree LLC is a tree care company only. We are not a lender, bank, broker, or financial institution, and we do not originate, underwrite, fund, or service any loan or financial product. Acorn Finance and its partner lenders are independent third parties; Art-is-Tree LLC is not a subsidiary, agent, or representative of Acorn Finance or any lender, and we do not act on their behalf.
+          </p>
+          <p>
+            We do not make credit decisions and have no control over—and accept no responsibility or liability for—loan approval, denial, interest rates, terms, fees, funding times, or servicing, all of which are determined solely by Acorn Finance and the applicable lender. All financing is subject to credit review and approval. Checking your rate typically involves a soft credit inquiry that does not affect your credit score, while proceeding with an offer may involve a hard credit inquiry conducted by the lender. Any financing agreement you enter into is solely between you and the lender. We make no representations or warranties regarding any financing offer, and we encourage you to review all terms and the applicable third-party privacy policies before accepting.
           </p>
 
           <hr className="my-8 border-gray-200" />

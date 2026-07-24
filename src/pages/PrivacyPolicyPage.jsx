@@ -11,7 +11,7 @@ const PrivacyPolicyPage = () => {
       </header>
       
       <div className="prose prose-lg text-gray-700">
-        <p><strong>Last Updated: July 10, 2026</strong></p>
+        <p><strong>Last Updated: July 24, 2026</strong></p>
         
         <h2 className="mt-8 mb-4">1. Information Collection and Use</h2>
         <p>
@@ -36,6 +36,12 @@ const PrivacyPolicyPage = () => {
         <h2 className="mt-8 mb-4">5. Third-Party Services</h2>
         <p>
           To deliver a robust digital experience and analyze site traffic, we partner with trusted third-party service providers. This includes Google Analytics, which helps us understand user behavior and site performance; Google Maps, which we use to display our service areas and neighborhood coverage; and Supabase, which manages our database infrastructure and authentication processes securely. These third parties may collect anonymous, aggregated data or utilize their own cookies. We carefully vet our partners to ensure their data protection standards align with ours. We encourage you to review the respective privacy policies of these third-party services to understand their specific data handling practices.
+        </p>
+        <p>
+          <strong>AI Chat Assistant.</strong> Our website offers an AI-powered chat assistant provided by Anthropic (the maker of Claude). When you send a message in the chat, its contents are transmitted to Anthropic solely to generate a helpful response. Under Anthropic's commercial terms, these messages are not used to train their AI models and are retained only briefly for security and abuse-prevention purposes; we do not store your chat conversations on our own servers. Because messages are processed by a third party, we ask that you not enter sensitive personal, medical, or financial information into the chat—if you'd like to share project details privately, please call or email us instead.
+        </p>
+        <p>
+          <strong>Financing.</strong> If you choose to explore financing, our "Apply for Financing" and "Check Your Rate" links direct you to Acorn Finance and its network of independent third-party lenders. Any information you submit during that process—including financial details—is collected and processed by Acorn Finance and the applicable lender under their own privacy policies, not ours. We encourage you to review those policies before applying. See our <a href="/terms-and-conditions" className="text-[#1B4D3E] underline hover:text-[#D4AF37]">Terms and Conditions</a> for important financing disclaimers.
         </p>
 
         <h2 className="mt-8 mb-4">6. Contact Information</h2>
