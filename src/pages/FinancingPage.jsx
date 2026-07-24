@@ -184,9 +184,12 @@ const FinancingPage = () => {
               </a>
             </div>
             <p className="text-xs text-gray-400 mt-8 max-w-2xl mx-auto">
-              All loans and financial products are subject to credit review and approval by Acorn Finance partner lenders. Prequalifications
-              use a soft credit pull that does not impact your credit score; if you proceed with an offer, the lender may conduct a hard
-              credit pull. Rates, terms, and funding times vary by lender and are not set by Art-is-Tree LLC.
+              Art-is-Tree LLC is an independent tree care company — not a lender or financial institution — and is not a subsidiary or agent
+              of, and does not act on behalf of, Acorn Finance or its partner lenders. Financing is provided entirely by independent third
+              parties. All loans and financial products are subject to credit review and approval by Acorn Finance partner lenders.
+              Prequalifications use a soft credit pull that does not impact your credit score; if you proceed with an offer, the lender may
+              conduct a hard credit pull. Rates, terms, and funding times are set solely by the lender, not by Art-is-Tree LLC. See our{' '}
+              <Link to="/terms-and-conditions" className="text-[#1B4D3E] underline hover:text-[#D4AF37]">Terms and Conditions</Link> for full financing disclaimers.
             </p>
           </div>
         </section>
