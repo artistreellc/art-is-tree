@@ -17,7 +17,7 @@ const data = {
   ],
   neighborhoods: ['Olde Towne', 'Cradock', 'Port Norfolk', 'Churchland', 'Park View', 'West Park View', 'Cavalier Manor', 'Simonsdale'],
   services: [
-    { iconKey: 'removal', kw: 'Tree Removal in Portsmouth', text: 'Removing a big, failing tree in Portsmouth’s packed historic districts leaves no margin. We bring hazardous oaks, pines, and maples down in sections, lowering the heavy wood a piece at a time so nothing hits the house next door.' },
+    { iconKey: 'removal', kw: 'Tree Removal in Portsmouth', text: 'Tree removal in Portsmouth, VA leaves no margin in the city’s packed historic districts. We bring hazardous oaks, pines, and maples down in sections, lowering the heavy wood a piece at a time so nothing hits the house next door.' },
     { iconKey: 'crane', kw: 'Crane-Assisted Removal', text: 'On tight Olde Towne and Cradock lots there’s often no safe fell path. Our crane tree removal lifts each section up and over the rooftops to a clear staging area.' },
     { iconKey: 'trim', kw: 'Tree Trimming & Pruning', text: 'Keeping a mature canopy sound comes down to smart weight reduction and clearing deadwood. We trim back limbs that have grown too close to historic homes and power lines before they become a problem.' },
     { iconKey: 'stump', kw: 'Stump Grinding', text: 'We grind stumps below grade so you can restore the yard — part of a Portsmouth removal or on its own.' },
@@ -40,6 +40,7 @@ const data = {
     { question: 'Can you work around historic homes in Olde Towne?', answer: 'Yes — that’s much of what we do in Portsmouth. On tight historic lots we rig and lower each section by rope or crane instead of dropping the tree, so the house, porch, fence, and gardens stay protected throughout the job.' },
     { question: 'How do I know if my heritage tree is dangerous?', answer: 'Most structural decay isn’t visible from the ground. We assess heritage trees for internal rot, weak branch unions, and compromised roots, then give you an honest recommendation — prune, cable, or remove — before any work begins.' },
     { question: 'Do you offer 24/7 storm response in Portsmouth?', answer: 'Yes. Our emergency crew is on call around the clock across Portsmouth to clear fallen and hanging limbs, secure the property, and haul away debris after a storm.' },
+    { question: 'How much does tree removal in Portsmouth cost?', answer: 'There’s no flat rate — tree removal in Portsmouth depends on the tree’s size, how close it is to the house or power lines, equipment access, and whether you add stump grinding. A small backyard tree is far cheaper than a heritage oak over an Olde Towne rooftop that needs a crane. Every estimate from Art-is-Tree LLC is free and written, and the price we quote is the price you pay.' },
   ],
   relatedPreferred: ['/case-studies/virginia-tree-law', '/case-studies/spikeless-pruning'],
 };
