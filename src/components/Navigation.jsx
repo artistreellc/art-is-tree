@@ -21,6 +21,7 @@ const NAV_LINKS = [
       { name: 'Land Clearing', path: '/services/land-clearing' },
     ]
   },
+  { name: 'Financing', href: 'https://www.acornfinance.com/pre-qualify/?d=M7VPJ&utm_medium=web_pre_qual_link_copy', external: true },
   { name: 'Contact', path: '/contact' },
   { name: 'About', path: '/about' },
   { name: 'Gallery', path: '/gallery' },
@@ -74,6 +75,17 @@ const NavLink = memo(({ link, isActive }) => {
     document.addEventListener('mousedown', handler);
     return () => document.removeEventListener('mousedown', handler);
   }, [open]);
+
+  if (link.external) {
+    return (
+      <a href={link.href} target="_blank" rel="noopener noreferrer sponsored" className="group relative py-2 px-1">
+        <span className="text-sm font-bold uppercase tracking-wider transition-colors duration-200 text-yellow-400 hover:text-yellow-200">
+          {link.name}
+        </span>
+        <span className="absolute bottom-0 left-0 w-full h-0.5 transform origin-left transition-transform duration-300 bg-yellow-400 scale-x-0 group-hover:scale-x-100" />
+      </a>
+    );
+  }
 
   if (!link.dropdown) {
     return (
@@ -129,6 +141,20 @@ NavLink.displayName = 'NavLink';
 
 const MobileMenuItem = memo(({ link, isActive, onClick }) => {
   const [expanded, setExpanded] = useState(false);
+
+  if (link.external) {
+    return (
+      <a
+        href={link.href}
+        target="_blank"
+        rel="noopener noreferrer sponsored"
+        onClick={onClick}
+        className="block px-5 py-4 rounded-lg text-lg font-bold uppercase tracking-wider transition-all duration-200 min-h-[56px] flex items-center text-white hover:bg-white/5 hover:text-yellow-200"
+      >
+        {link.name}
+      </a>
+    );
+  }
 
   if (!link.dropdown) {
     return (
@@ -346,7 +372,7 @@ const Navigation = memo(() => {
         <div className="absolute top-full right-0 mt-px w-full max-w-sm bg-[#153e32] border-l border-b border-white/10 rounded-bl-2xl shadow-2xl overflow-hidden z-[60] animate-nav-drop">
              <div className="flex flex-col p-4 space-y-2 pb-6 max-h-[calc(100vh-90px)] overflow-y-auto">
                 {NAV_LINKS.map((link) => (
-                  <MobileMenuItem key={link.path} link={link} isActive={isActive(link.path)} onClick={closeMobileMenu} />
+                  <MobileMenuItem key={link.path || link.name} link={link} isActive={isActive(link.path)} onClick={closeMobileMenu} />
                 ))}
                 {adminLinks}
                 <div className="pt-6 mt-4 border-t border-white/10 flex flex-col items-center gap-4 px-4">
