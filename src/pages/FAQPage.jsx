@@ -234,6 +234,41 @@ const FAQPage = () => {
               <strong>What areas do you serve?</strong> We cover Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk — all of the greater Hampton Roads region.
             </p>
 
+            <h2>Sources &amp; further reading</h2>
+            <p>
+              These answers come from our hands-on work across Hampton Roads, kept grounded in the same public resources and industry standards you can check for yourself:
+            </p>
+            <ul>
+              <li>
+                <strong>Permits &amp; waterfront rules:</strong> Virginia Department of Environmental Quality —{' '}
+                <a href="https://www.deq.virginia.gov/water/chesapeake-bay/chesapeake-bay-preservation-act" target="_blank" rel="noopener noreferrer">Chesapeake Bay Preservation Act &amp; Resource Protection Area buffers</a>.
+              </li>
+              <li>
+                <strong>Pruning timing &amp; tree health:</strong> Virginia Department of Forestry —{' '}
+                <a href="https://dof.virginia.gov/urban-community-forestry/learn-about-urban-community-forestry/tree-care/" target="_blank" rel="noopener noreferrer">Tree Care (dormant-season pruning)</a>.
+              </li>
+              <li>
+                <strong>Insurance coverage:</strong> Insurance Information Institute —{' '}
+                <a href="https://www.iii.org/article/if-a-tree-falls-on-your-house-are-you-covered" target="_blank" rel="noopener noreferrer">If a tree falls on your house, are you covered?</a>
+              </li>
+              <li>
+                <strong>Digging &amp; stump-grinding safety:</strong> Virginia 811 —{' '}
+                <a href="https://va811.com/" target="_blank" rel="noopener noreferrer">call before you dig (Virginia Underground Damage Prevention Act)</a>.
+              </li>
+              <li>
+                <strong>Hiring a qualified professional:</strong> International Society of Arboriculture —{' '}
+                <a href="https://www.treesaregood.org/" target="_blank" rel="noopener noreferrer">Trees Are Good (why hire a certified arborist)</a>.
+              </li>
+              <li>
+                <strong>Safety standards (ANSI Z133 &amp; A300):</strong> see our{' '}
+                <Link to="/case-studies/osha-compliance">OSHA &amp; Z133 safety guide</Link>, which cites the underlying OSHA and NIOSH sources.
+              </li>
+              <li>
+                <strong>Virginia tree &amp; property-line law:</strong> see our{' '}
+                <Link to="/case-studies/virginia-tree-law">Virginia tree law guide</Link> (Fancher v. Fagella and the self-help rule).
+              </li>
+            </ul>
+
             <div className="not-prose mt-14 bg-[#1B4D3E] rounded-3xl p-10 md:p-12 text-center text-white shadow-2xl">
               <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-4 text-white mt-0">Still have a question about your tree?</h2>
               <p className="text-lg text-gray-200 mb-8 max-w-2xl mx-auto">
