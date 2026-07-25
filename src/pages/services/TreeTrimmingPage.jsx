@@ -10,6 +10,7 @@ import ServiceAreaLinks from '@/components/ServiceAreaLinks';
 import FAQSection from '@/components/FAQSection';
 import { FinancingSection } from '@/components/Financing';
 import FAQPageSchema from '@/components/seo/FAQPageSchema';
+import AnswerBlock from '@/components/AnswerBlock';
 
 const treeTrimmingFaqs = [
   {
@@ -76,6 +77,11 @@ const TreeTrimmingPage = () => {
           </Button>
         </div>
       </section>
+
+      <AnswerBlock>
+        The best time to <strong>trim or prune trees in Virginia Beach</strong> is the dormant season, late fall through early spring, though dead or hazardous limbs can be removed any time (oaks are pruned outside April–October to avoid oak wilt). Art-is-Tree LLC prunes to the ANSI A300 standard using spikeless climbing that never harms living trees — licensed, insured, free written estimates. Call{' '}
+        <a href="tel:7573195131" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">(757) 319-5131</a>.
+      </AnswerBlock>
 
       <div className="container mx-auto max-w-5xl px-4 py-16">
         <div className="mb-16 bg-white p-8 rounded-2xl shadow-sm border border-gray-100">

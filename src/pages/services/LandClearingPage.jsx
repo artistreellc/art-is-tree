@@ -10,6 +10,7 @@ import ServiceAreaLinks from '@/components/ServiceAreaLinks';
 import FAQSection from '@/components/FAQSection';
 import { FinancingSection } from '@/components/Financing';
 import FAQPageSchema from '@/components/seo/FAQPageSchema';
+import AnswerBlock from '@/components/AnswerBlock';
 
 const landClearingFaqs = [
   {
@@ -76,6 +77,11 @@ const LandClearingPage = () => {
           </Button>
         </div>
       </section>
+
+      <AnswerBlock>
+        <strong>Land and lot clearing in Virginia Beach</strong> removes trees, brush, undergrowth, and stumps to prepare a site for building, fencing, pasture, or a bigger yard — the visible growth above grade and the root systems below it. Art-is-Tree LLC clears residential lots and commercial acreage across Hampton Roads and helps confirm any Chesapeake Bay Preservation Act rules first. Licensed and insured. Call{' '}
+        <a href="tel:7573195131" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">(757) 319-5131</a>.
+      </AnswerBlock>
 
       <section className="bg-white py-16">
         <div className="container mx-auto max-w-4xl px-4">

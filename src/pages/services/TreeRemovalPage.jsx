@@ -10,6 +10,7 @@ import ServiceAreaLinks from '@/components/ServiceAreaLinks';
 import FAQSection from '@/components/FAQSection';
 import { FinancingSection } from '@/components/Financing';
 import FAQPageSchema from '@/components/seo/FAQPageSchema';
+import AnswerBlock from '@/components/AnswerBlock';
 
 const TreeRemovalPage = () => {
   const serviceAreas = ["Virginia Beach", "Norfolk", "Chesapeake", "Hampton Roads"];
@@ -86,6 +87,11 @@ const TreeRemovalPage = () => {
           </Button>
         </div>
       </section>
+
+      <AnswerBlock>
+        <strong>Tree removal in Virginia Beach</strong> usually means rigging the tree down in sections or lifting it out with a crane, because tight coastal lots and sandy soil make a straight fell unsafe. Art-is-Tree LLC is a licensed, insured, BBB A+ large-tree specialist serving all of Hampton Roads, with free written estimates and 24/7 emergency removal. Call{' '}
+        <a href="tel:7573195131" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">(757) 319-5131</a>.
+      </AnswerBlock>
 
       <section className="bg-white py-16">
         <div className="container mx-auto max-w-4xl px-4">
