@@ -10,6 +10,7 @@ import ServiceAreaLinks from '@/components/ServiceAreaLinks';
 import FAQSection from '@/components/FAQSection';
 import { FinancingSection } from '@/components/Financing';
 import FAQPageSchema from '@/components/seo/FAQPageSchema';
+import AnswerBlock from '@/components/AnswerBlock';
 
 const emergencyFaqs = [
   {
@@ -81,6 +82,11 @@ const EmergencyTreeServicePage = () => {
           </Button>
         </div>
       </section>
+
+      <AnswerBlock>
+        If you need <strong>emergency tree service in Virginia Beach</strong>, first get everyone clear of the tree and any downed power lines — call 911 for immediate danger — then call a licensed crew. Art-is-Tree LLC answers 24/7 across Hampton Roads, with a real person on the line, and responds fast to trees on homes, cars, or driveways. Call{' '}
+        <a href="tel:7573195131" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">(757) 319-5131</a>.
+      </AnswerBlock>
 
       <section className="bg-white py-16">
         <div className="container mx-auto max-w-4xl px-4">

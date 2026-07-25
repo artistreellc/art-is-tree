@@ -10,6 +10,7 @@ import ServiceAreaLinks from '@/components/ServiceAreaLinks';
 import FAQSection from '@/components/FAQSection';
 import { FinancingSection } from '@/components/Financing';
 import FAQPageSchema from '@/components/seo/FAQPageSchema';
+import AnswerBlock from '@/components/AnswerBlock';
 
 const craneFaqs = [
   {
@@ -76,6 +77,11 @@ const CraneTreeRemovalPage = () => {
           </Button>
         </div>
       </section>
+
+      <AnswerBlock>
+        A crane is the right call when a tree is too large, dead, or close to a structure to fell or rig down safely — it lifts heavy sections straight up and away from your roof, pool, or fence. Art-is-Tree LLC handles complex <strong>crane-assisted tree removal in Virginia Beach</strong> and across Hampton Roads, licensed and insured. Free written estimate: call{' '}
+        <a href="tel:7573195131" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">(757) 319-5131</a>.
+      </AnswerBlock>
 
       <section className="bg-white py-16">
         <div className="container mx-auto max-w-4xl px-4">

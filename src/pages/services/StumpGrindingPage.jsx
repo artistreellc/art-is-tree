@@ -10,6 +10,7 @@ import ServiceAreaLinks from '@/components/ServiceAreaLinks';
 import FAQSection from '@/components/FAQSection';
 import { FinancingSection } from '@/components/Financing';
 import FAQPageSchema from '@/components/seo/FAQPageSchema';
+import AnswerBlock from '@/components/AnswerBlock';
 
 const stumpGrindingFaqs = [
   {
@@ -76,6 +77,11 @@ const StumpGrindingPage = () => {
           </Button>
         </div>
       </section>
+
+      <AnswerBlock>
+        <strong>Stump grinding in Virginia Beach</strong> removes a leftover stump by chipping it about 4–6 inches below grade, so you can replant, lay sod, or build over the spot — faster and far less disruptive than pulling the whole root ball. Art-is-Tree LLC grinds to the depth your project needs and calls Miss Utility (811) first. Licensed and insured across Hampton Roads. Call{' '}
+        <a href="tel:7573195131" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">(757) 319-5131</a>.
+      </AnswerBlock>
 
       <section className="bg-white py-16">
         <div className="container mx-auto max-w-4xl px-4">
