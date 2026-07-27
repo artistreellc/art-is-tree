@@ -38,6 +38,18 @@ const FAQPage = () => {
       answer: "Tree work is one of the most dangerous jobs there is. Virginia has a dedicated safety regulation for tree operations that governs job briefings, minimum approach distances from power lines, how climbers are secured, and crane rigging, and Art-is-Tree LLC works to those standards. If a company that is not licensed and insured is hurt on your property or damages your home or a neighbor's, you can be held liable. Art-is-Tree LLC is licensed, insured, BBB A+ accredited, an ISA member, and works to the ANSI A300 and Z133 standards. Always ask any tree company for proof of insurance before work begins."
     },
     {
+      question: "How do I choose a good tree service in Virginia Beach?",
+      answer: "Put every company through the same checklist: read their recent Google reviews, confirm they are licensed and insured and will show proof, get a written itemized estimate that spells out removal, stump grinding, cleanup, and hauling, and look for an independent trust signal like a BBB A+ rating. Then compare. The company that shows up on time to give the estimate is usually the one that shows up on time to do the work. Art-is-Tree LLC is licensed, insured, BBB A+ accredited, and rated 5.0 across 140+ Google reviews."
+    },
+    {
+      question: "Should I get more than one quote for tree work?",
+      answer: "Yes — get a written estimate from every company you contact. Two honest companies can price the same tree differently based on their equipment, crew size, and insurance, so comparing is the only way to know what fair looks like for your specific tree. Multiple quotes protect you from overpaying and from the uninsured lowball 'guy with a truck' whose price looks great until something goes wrong. A confident, reputable company welcomes you shopping around."
+    },
+    {
+      question: "How recent should a tree company's reviews be?",
+      answer: "Recency matters more than most people realize: about 74% of consumers only trust reviews written in the last three months. Crews and ownership change, so a great rating from two years ago with nothing since is not proof a company is good today. Look for a steady stream of fresh, specific reviews that describe work like yours, and read how the owner responds to any critical review."
+    },
+    {
       question: "Do you handle cleanup, hauling, and stump grinding?",
       answer: "Yes. Cleanup and hauling are included with every tree removal. We chip the brush, haul the wood or cut it into firewood lengths if you want it, and rake the area so you can barely tell we were there. Stump grinding is a separate add-on because it uses a different machine and is priced by the stump. We grind below grade so you can sod, replant, or build over the spot, and we call 811 before grinding to protect underground utilities."
     },
@@ -201,6 +213,30 @@ const FAQPage = () => {
             </p>
             <p>
               Ask any company you're considering for proof of insurance before they touch a tree. A legitimate one will hand it right over. We break down what really goes wrong when a crew cuts corners on safety and insurance in our <Link to="/case-studies/osha-compliance">OSHA safety case study</Link>.
+            </p>
+
+            <h2>How do I choose a good tree service in Virginia Beach?</h2>
+            <p>
+              Put every company you're considering through the same short checklist. Read their recent Google reviews. Confirm they're licensed and insured — and that they'll show you proof. Get a written, itemized estimate that spells out removal, stump grinding, cleanup, and hauling. And look for an independent trust signal, like a BBB A+ rating or an owner who actually answers the phone.
+            </p>
+            <p>
+              Then compare. Honestly, the company that shows up on time to <em>estimate</em> your job is usually the one that'll show up on time to <em>do</em> it. Art-is-Tree LLC is licensed, insured, BBB A+ accredited, and rated 5.0 across 140+ Google reviews. I walk through the whole thing — including the real reason a good company <em>wants</em> you to shop around — in our <Link to="/case-studies/how-to-choose-a-tree-service">guide to choosing a tree service</Link>.
+            </p>
+
+            <h2>Should I get more than one quote for tree work?</h2>
+            <p>
+              Yes — get a written estimate from every company you contact. Tree work isn't like buying a gallon of milk. Two honest companies can look at the same tree and price it differently based on their equipment, crew size, and insurance, so comparing is the only way to know what fair looks like for <em>your</em> specific tree.
+            </p>
+            <p>
+              Multiple quotes protect you two ways: from overpaying, and from the uninsured lowball "guy with a truck" whose price looks amazing until something goes wrong. I tell people this even when it means they might not pick me, because a company that's confident in its work welcomes the comparison. We do.
+            </p>
+
+            <h2>How recent should a tree company's reviews be?</h2>
+            <p>
+              Recency matters more than most people realize — about 74% of consumers only trust reviews written in the last three months, and a growing group only looks at the last couple of weeks. Crews and ownership change, so a great rating from two years ago with nothing since isn't proof a company is good <em>today</em>.
+            </p>
+            <p>
+              Look for a steady stream of fresh, specific reviews that describe work like yours, and read how the owner responds to the occasional critical one — that tells you how they'll treat you if something goes sideways. You can <Link to="/testimonials">read our latest reviews here</Link>.
             </p>
 
             <h2>Do you handle cleanup, hauling, and stump grinding?</h2>

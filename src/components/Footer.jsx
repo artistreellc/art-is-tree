@@ -78,6 +78,7 @@ const Footer = () => {
             <ul className="space-y-4">
               {[
                 ['/case-studies', 'All Case Studies'],
+                ['/case-studies/how-to-choose-a-tree-service', 'How to Choose a Tree Service'],
                 ['/case-studies/affordable-tree-work', 'Affordable Tree Work'],
                 ['/case-studies/storm-damage-mitigation', 'Storm Damage'],
                 ['/case-studies/virginia-tree-law', 'Virginia Tree Law'],

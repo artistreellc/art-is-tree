@@ -5,6 +5,11 @@ import LocalSEOMeta from '@/components/LocalSEOMeta';
 
 const caseStudiesData = [
   {
+    title: "How to Choose a Tree Service in Virginia Beach",
+    description: "An honest guide from the owner on hiring the right tree service — how to read recent reviews, why you should get a written quote from every company, what to verify (licensed, insured, BBB A+), and the real reason a good company welcomes you shopping around.",
+    link: "/case-studies/how-to-choose-a-tree-service",
+  },
+  {
     title: "Spikeless Pruning & Bucket Truck Methods",
     description: "Discover why spikeless pruning and bucket truck methods are the professional standard for tree health and how we protect your trees.",
     link: "/case-studies/spikeless-pruning",
