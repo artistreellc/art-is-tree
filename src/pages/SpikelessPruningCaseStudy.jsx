@@ -197,7 +197,7 @@ const SpikelessPruningCaseStudy = () => {
             <div className="mt-10 pt-6 border-t border-gray-200 text-sm text-gray-500 space-y-2">
               <p className="font-semibold text-gray-700 m-0">Sources</p>
               <p id="src1" className="m-0">1. International Society of Arboriculture, <a href="https://www.treesaregood.org/treeowner/pruningmaturetrees" target="_blank" rel="noopener noreferrer" className="text-[#1B4D3E] underline hover:text-[#D4AF37]">“Pruning Mature Trees”</a> — proper cut placement, how trees compartmentalize wounds, and best climbing practices.</p>
-              <p id="src2" className="m-0">2. ANSI A300 (Part 1), Tree Care Operations — Pruning, published through the <a href="https://www.tcia.org" target="_blank" rel="noopener noreferrer" className="text-[#1B4D3E] underline hover:text-[#D4AF37]">Tree Care Industry Association</a>: the U.S. national standard for tree pruning.</p>
+              <p id="src2" className="m-0">2. <a href="https://www.ansi.org" target="_blank" rel="noopener noreferrer" className="text-[#1B4D3E] underline hover:text-[#D4AF37]">ANSI A300 (Part 1), Tree Care Operations — Pruning</a>: the U.S. national consensus standard for tree pruning, published by the American National Standards Institute.</p>
             </div>
           </div>
         </section>
