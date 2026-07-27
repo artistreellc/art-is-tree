@@ -7,6 +7,10 @@ import { ExternalLink } from 'lucide-react';
 // Real job-site photos, self-hosted and optimized (WebP). Descriptive alt text
 // doubles as local-SEO signal. Masonry keeps the portrait/landscape mix natural.
 const PHOTOS = [
+  { src: '/images/virginia-beach-storm-uprooted-tree.webp', alt: 'Uprooted tree with a failed root plate beside a Virginia Beach home after a storm' },
+  { src: '/images/virginia-beach-storm-tree-on-house.webp', alt: 'Storm-damaged tree leaning against a house in Virginia Beach, VA' },
+  { src: '/images/virginia-beach-storm-snapped-trunk-base.webp', alt: 'Storm-snapped tree trunk with a splintered break near a Virginia Beach home' },
+  { src: '/images/virginia-beach-tree-rigging-removal.webp', alt: 'Art-is-Tree crew rigging down a large tree section on a Virginia Beach removal' },
   { src: '/images/virginia-beach-crane-rigging-storm.webp', alt: 'Climber rigging a large storm-damaged trunk to a crane in Virginia Beach, VA' },
   { src: '/images/virginia-beach-church-ash-tree.webp', alt: 'A 200-year-old ash tree being climbed for an emerald ash borer removal in Kempsville, Virginia Beach' },
   { src: '/images/virginia-beach-crane-lift-over-house.webp', alt: 'Crane lifting a rigged tree section over a house in Virginia Beach, VA' },
