@@ -52,14 +52,20 @@ const GoogleTagManager = () => {
     };
 
     // Phone clicks: push a dataLayer event named to match GA4's recommended
-    // key event (`phone_call_click`) so the GTM trigger -> GA4 event -> Ads
-    // call-conversion can be wired 1:1.
+    // key event (`phone_call_click`). We fire it BOTH ways so no GTM config is
+    // required: a dataLayer push (for anyone who wants a GTM trigger) AND a
+    // direct GA4 event via gtag, which routes to GA4 through the config GTM
+    // already loads. Mark `phone_call_click` as a key event in GA4 and import
+    // it as a Google Ads conversion — no GTM tag needs to be built.
     let lastPhoneClick = 0;
     window.gtag_report_phone_click = function () {
       const now = Date.now();
       if (now - lastPhoneClick < 1000) return; // debounce double handlers
       lastPhoneClick = now;
       window.dataLayer.push({ event: 'phone_call_click' });
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'phone_call_click', { transport_type: 'beacon' });
+      }
     };
 
     // Global capture for EVERY tel: link on the site — present and future —
