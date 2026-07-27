@@ -6,13 +6,10 @@ import LocalSEOMeta from '@/components/LocalSEOMeta';
 import { COMPANY_INFO } from '@/constants/seoMetadata';
 
 // Partner companies Art-is-Tree works with regularly. Each entry renders as a
-// clickable tile linking to the partner's site. Add `logo` (e.g.
-// '/images/partners/company.png') when the logo file is available; until then
-// the tile shows the company name.
-//   { name: 'Company Name', url: 'https://…', tagline: '…', logo: '/images/partners/company.png' }
-const PARTNERS = [
-  { name: 'VB Fences', url: 'https://vbfences.com', tagline: 'Fence installation & repair — Hampton Roads' },
-];
+// clickable logo icon linking to the partner's site. Logos/links are added as
+// the owner supplies them:
+//   { name: 'Company Name', logo: '/images/partners/company.png', url: 'https://…' }
+const PARTNERS = [];
 
 // Compact "Listings" dropdown: the small company logo + a drop-bar that reveals
 // every verified Art-is-Tree profile, each linking out to that listing.
@@ -125,19 +122,12 @@ const FindUsOnlinePage = () => {
                   key={p.name}
                   href={p.url}
                   target="_blank"
-                  rel="noopener"
+                  rel="noopener noreferrer"
                   title={p.name}
-                  className="group bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col items-center justify-center gap-3 p-6 min-h-[160px] text-center"
+                  className="group bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col items-center justify-center gap-3 p-6 min-h-[160px]"
                 >
-                  {p.logo ? (
-                    <img src={p.logo} alt={`${p.name} logo`} className="max-h-16 w-auto object-contain" />
-                  ) : (
-                    <span className="flex items-center justify-center w-14 h-14 rounded-full bg-[#0A2F24] text-[#D4AF37]">
-                      <Building2 className="w-7 h-7" aria-hidden="true" />
-                    </span>
-                  )}
-                  <span className="font-bold text-[#1B4D3E] text-base group-hover:text-[#D4AF37] transition-colors">{p.name}</span>
-                  {p.tagline && <span className="text-gray-500 text-xs leading-snug">{p.tagline}</span>}
+                  <img src={p.logo} alt={`${p.name} logo`} className="max-h-16 w-auto object-contain" />
+                  <span className="font-semibold text-[#1B4D3E] text-sm text-center group-hover:text-[#D4AF37] transition-colors">{p.name}</span>
                 </a>
               ))}
             </div>
