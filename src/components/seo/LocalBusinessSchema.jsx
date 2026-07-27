@@ -10,6 +10,7 @@ const LocalBusinessSchema = () => {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
     "name": "Art-is-Tree LLC",
+    "alternateName": COMPANY_INFO.alternateName,
     "image": COMPANY_INFO.logo,
     "@id": `${BASE_URL}/#localbusiness`,
     "url": BASE_URL,

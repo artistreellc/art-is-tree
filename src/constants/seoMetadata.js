@@ -14,6 +14,10 @@ import { BASE_URL, stripWww } from '@/utils/seoHelpers';
 const COMPANY_INFO = {
   name: 'Art-is-Tree LLC',
   legalName: 'Art-is-Tree LLC',
+  // Legitimate name variants people actually search (run-together spelling and
+  // the email/social handle form). Helps search engines resolve the brand to
+  // this entity. Only true variants of our own name — never a competitor's.
+  alternateName: ['Artistree', 'Art is Tree', 'Artistree LLC', 'Artistree of Virginia'],
   phone: '(757) 319-5131',
   phoneRaw: '7573195131',
   phoneE164: '+1-757-319-5131',
