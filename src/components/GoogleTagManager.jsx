@@ -32,14 +32,16 @@ const GoogleTagManager = () => {
       return false;
     };
 
-    // Phone clicks aren't in the container yet — push a dataLayer event so a
-    // call-conversion / GA4 event can be wired in GTM with no code change.
+    // Phone clicks: push a dataLayer event named to match GA4's recommended
+    // key event (`phone_call_click`) so the GTM trigger -> GA4 event -> Ads
+    // call-conversion can be wired 1:1 with no further code change. Until that
+    // GTM tag exists, GA4 will keep reporting 0 phone-call conversions.
     let lastPhoneClick = 0;
     window.gtag_report_phone_click = function () {
       const now = Date.now();
       if (now - lastPhoneClick < 1000) return; // debounce double handlers
       lastPhoneClick = now;
-      window.dataLayer.push({ event: 'phone_click' });
+      window.dataLayer.push({ event: 'phone_call_click' });
     };
   }, []);
 
