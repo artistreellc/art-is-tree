@@ -214,6 +214,21 @@ const StormDamageMitigationCaseStudy = () => {
           </div>
         </section>
 
+        {/* MORE STORM WORK — additional field photos */}
+        <section className="bg-white border-y border-gray-100 py-14 md:py-20">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <SectionHeading eyebrow="More from the field" title="What storm failure actually looks like" />
+            <p className="mt-6 text-gray-700 text-lg leading-relaxed max-w-3xl">
+              Every storm call is different, but the failures rhyme: root plates levered out of saturated ground, trunks snapped mid-stem, and whole trees come to rest against the house. Here are a few more from around Virginia Beach and Hampton Roads.
+            </p>
+            <div className="grid sm:grid-cols-3 gap-6 mt-10">
+              <Figure src="/images/virginia-beach-storm-uprooted-tree.webp" alt="Uprooted tree with a failed root plate beside a Virginia Beach home after a storm" caption="A root-plate failure beside a home — the whole tree levered out of saturated ground" aspect="aspect-[3/4]" className="reveal" />
+              <Figure src="/images/virginia-beach-storm-tree-on-house.webp" alt="Storm-damaged tree leaning against a house in Virginia Beach, VA" caption="Come to rest against the siding — every limb still under load until we relieve it" aspect="aspect-[3/4]" className="reveal" />
+              <Figure src="/images/virginia-beach-storm-snapped-trunk-base.webp" alt="Storm-snapped tree trunk with a splintered break near a Virginia Beach home" caption="Snapped and split low on the trunk — fresh, splintered failure from storm-force wind" aspect="aspect-[3/4]" className="reveal" />
+            </div>
+          </div>
+        </section>
+
         {/*
           ========================================================================
           RESERVED — FUTURE STORM PROJECT (Project 3)
