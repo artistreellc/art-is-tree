@@ -23,7 +23,9 @@ const COMPANY_INFO = {
   // Self-hosted brand logo (public/logo.png).
   logo: 'https://artistreevabeach.com/logo.png',
   address: {
-    street: '2597 Nestlebrook Trl',
+    // Service-area business: street address intentionally omitted from public
+    // schema/content. The Google Places lookup in api/reviews.js still uses the
+    // full address privately to fetch reviews.
     city: 'Virginia Beach',
     state: 'VA',
     zip: '23456',

@@ -61,7 +61,6 @@ const OrganizationSchema = () => {
     ],
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "2597 Nestlebrook Trl",
       "addressLocality": "Virginia Beach",
       "addressRegion": "VA",
       "postalCode": "23456",
