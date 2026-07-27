@@ -108,6 +108,29 @@ const CaseStudiesIndexPage = () => {
             </div>
           </div>
         </section>
+
+        {/* FROM THE FIELD — real job-site photos as visual proof between the written case studies */}
+        <section className="pb-16 md:pb-24 bg-gray-50">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <div className="text-center mb-8">
+              <span className="text-[#D4AF37] font-bold tracking-widest uppercase text-sm mb-2 block">From the Field</span>
+              <h2 className="font-playfair text-2xl md:text-3xl font-bold text-gray-900">Real Art-is-Tree job sites across Virginia Beach</h2>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
+              {[
+                { src: '/images/virginia-beach-branded-tree-service-truck.webp', alt: 'Art-is-Tree LLC branded tree service truck on a job site in Green Run, Virginia Beach, VA' },
+                { src: '/images/virginia-beach-backyard-pine-removal.webp', alt: 'Art-is-Tree groundman working a backyard pine removal in Green Run, Virginia Beach, VA' },
+                { src: '/images/virginia-beach-driveway-protection-removal.webp', alt: 'Driveway protected with cones and plywood during a tree removal in Green Run, Virginia Beach, VA' },
+                { src: '/images/virginia-beach-stump-grinding-cleanup.webp', alt: 'Stump grinding and site cleanup after a tree removal in Green Run, Virginia Beach, VA' },
+                { src: '/images/virginia-beach-night-storm-response-truck.webp', alt: 'Art-is-Tree bucket truck on an after-hours storm response job in Virginia Beach, VA' },
+              ].map((photo) => (
+                <figure key={photo.src} className="overflow-hidden rounded-xl border border-black/5 ring-1 ring-black/5 shadow-[0_10px_24px_-12px_rgba(10,47,36,0.4)] bg-gray-100 group">
+                  <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" className="w-full h-full object-cover aspect-[3/4] transition-transform duration-500 group-hover:scale-[1.04]" />
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
       </div>
     </>
   );

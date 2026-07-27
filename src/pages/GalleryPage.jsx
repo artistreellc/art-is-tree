@@ -31,6 +31,11 @@ const PHOTOS = [
   { src: '/images/virginia-beach-arborist-hardwood-removal.webp', alt: 'Arborist sectioning a massive hardwood trunk in Virginia Beach' },
   { src: '/images/virginia-beach-storm-tree-removal.webp', alt: 'Art-is-Tree crew removing a storm-damaged tree in Virginia Beach, VA' },
   { src: '/images/virginia-beach-tree-debris-grapple-truck.webp', alt: 'Grapple truck loading tree debris for cleanup and hauling in Virginia Beach' },
+  { src: '/images/virginia-beach-backyard-pine-removal.webp', alt: 'Art-is-Tree groundman working a backyard pine removal in Green Run, Virginia Beach, VA' },
+  { src: '/images/virginia-beach-stump-grinding-cleanup.webp', alt: 'Stump grinding and site cleanup after a tree removal in Green Run, Virginia Beach, VA' },
+  { src: '/images/virginia-beach-driveway-protection-removal.webp', alt: 'Driveway protected with cones and plywood during a tree removal in Green Run, Virginia Beach, VA' },
+  { src: '/images/virginia-beach-night-storm-response-truck.webp', alt: 'Art-is-Tree bucket truck on an after-hours storm response job in Virginia Beach, VA' },
+  { src: '/images/virginia-beach-branded-tree-service-truck.webp', alt: 'Art-is-Tree LLC branded tree service truck on a job site in Green Run, Virginia Beach, VA' },
 ];
 
 const GalleryPage = () => {
