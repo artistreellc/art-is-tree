@@ -29,12 +29,12 @@ const stumpGrindingFaqs = [
 
 const StumpGrindingPage = () => {
   const serviceAreas = ["Virginia Beach", "Norfolk", "Chesapeake", "Hampton Roads"];
-  const description = "Fast, affordable stump grinding in Virginia Beach and Hampton Roads. Reclaim your yard with our licensed, insured crew. Free estimates. Call Art-is-Tree LLC.";
+  const description = "Fast, affordable stump grinding in Virginia Beach & Hampton Roads, ground below grade so you can replant. 5-star rated, licensed & insured. Free estimates.";
 
   return (
     <div className="bg-gray-50 min-h-screen">
       <LocalSEOMeta 
-        pageTitle="Stump Grinding Virginia Beach VA | Art-is-Tree" 
+        pageTitle="Stump Grinding Virginia Beach VA | 5-Star Rated"
         description={description} 
       />
       
