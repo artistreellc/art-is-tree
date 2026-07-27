@@ -65,6 +65,7 @@ export const routes = [
       { path: 'partners', ...page(() => import('@/pages/PartnersPage.jsx')) },
 
       { path: 'case-studies', ...page(() => import('@/pages/CaseStudiesIndexPage.jsx')) },
+      { path: 'case-studies/how-to-choose-a-tree-service', ...page(() => import('@/pages/case-studies/ChooseTreeServiceCaseStudy.jsx')) },
       { path: 'case-studies/crane-safety', ...page(() => import('@/pages/CaseStudyPage.jsx')) },
       { path: 'case-studies/chesapeake-bay-waterfront', element: <Navigate to="/case-studies/chesapeake-bay-preservation-act" replace /> },
       { path: 'case-studies/chesapeake-bay-preservation-act', ...page(() => import('@/pages/case-studies/CBPACaseStudy.jsx')) },

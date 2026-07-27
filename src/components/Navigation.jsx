@@ -51,6 +51,7 @@ const NAV_LINKS = [
     path: '/case-studies',
     dropdown: [
       { name: 'All Case Studies', path: '/case-studies' },
+      { name: 'How to Choose a Tree Service', path: '/case-studies/how-to-choose-a-tree-service' },
       { name: 'Crane Safety', path: '/case-studies/crane-safety' },
       { name: 'Chesapeake Bay', path: '/case-studies/chesapeake-bay-preservation-act' },
       { name: 'Emerald Ash Borer', path: '/case-studies/emerald-ash-borer' },

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 const CASE_STUDIES = [
+  { title: "How to Choose a Tree Service", path: "/case-studies/how-to-choose-a-tree-service", category: "Hiring a Pro" },
   { title: "Crane-Assisted Removal", path: "/case-studies/crane-safety", category: "Hazard Mitigation" },
   { title: "Waterfront Property Management", path: "/case-studies/chesapeake-bay-preservation-act", category: "Environmental Care" },
   { title: "Emerald Ash Borer Removal", path: "/case-studies/emerald-ash-borer", category: "Tree Health" },
