@@ -46,7 +46,6 @@ const LoginPage = () => {
       }
 
       // Mock login always succeeds in this disabled state
-      console.log('[LoginPage] Mock admin login successful');
       loginWithAdminId('mock-admin-id-999');
 
       toast({

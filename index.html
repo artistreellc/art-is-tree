@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <meta name="theme-color" content="#1B4D3E" />
-    <meta name="robots" content="index, follow" />
-    
+    <!-- robots is emitted per-route by LocalSEOMeta (index,follow by default;
+         noindex,nofollow on utility/error pages) so exactly one tag renders and
+         noindex pages never conflict with a baked-in "index, follow". -->
+
     <!-- Favicon Links (self-hosted) -->
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />

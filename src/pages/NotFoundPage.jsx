@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Home, AlertTriangle } from 'lucide-react';
-import { Head } from 'vite-react-ssg';
+import LocalSEOMeta from '@/components/LocalSEOMeta';
 
 const NotFoundPage = () => {
   return (
     <>
-      <Head>
-        <title>Page Not Found | Tree Service Virginia Beach</title>
-        <meta name="description" content="The page you're looking for doesn't exist. Return to our homepage to find the information you need." />
-        <meta name="robots" content="noindex" />
-      </Head>
+      <LocalSEOMeta
+        pageTitle="Page Not Found | Tree Service Virginia Beach"
+        description="The page you're looking for doesn't exist. Return to our homepage to find the tree service information you need."
+        noindex
+      />
       <div className="min-h-[70vh] flex items-center justify-center bg-gray-50 px-4 py-20">
         <div className="text-center max-w-md mx-auto">
           <div

@@ -32,10 +32,8 @@ const ForgotPasswordPage = () => {
         throw rpcError;
       }
 
-      // Token generated successfully. In a real-world scenario, you would 
+      // Token generated successfully. In a real-world scenario, you would
       // trigger an email service with the returned token here.
-      console.log('Token successfully generated via RPC.');
-      
       setSuccess(true);
     } catch (err) {
       console.error(err);

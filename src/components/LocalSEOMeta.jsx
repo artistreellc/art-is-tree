@@ -40,7 +40,7 @@ const LocalSEOMeta = ({
       {description && <meta name="description" content={description} />}
       <meta name="keywords" content={finalKeywords} />
       
-      {noindex && <meta name="robots" content="noindex, nofollow" />}
+      <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
       
       <link rel="canonical" href={canonicalUrl} />
       

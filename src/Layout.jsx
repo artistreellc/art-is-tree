@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
 // Core UI Components
@@ -20,15 +20,16 @@ import ChatWidget from '@/components/ChatWidget.jsx';
 import { AuthProvider } from '@/contexts/SupabaseAuthContext';
 import { CookieConsentProvider } from '@/contexts/CookieConsentContext';
 
-// SEO Components (Direct import)
+// SEO Components — imported directly (NOT lazy). These emit JSON-LD into the
+// prerendered HTML, so they must render on the client's first pass too;
+// lazy-loading them makes the initial client tree (Suspense fallback) differ
+// from the server HTML and breaks hydration for the whole page.
 import GeoSchema from '@/components/seo/GeoSchema.jsx';
+import OrganizationSchema from '@/components/seo/OrganizationSchema.jsx';
+import BreadcrumbListSchema from '@/components/seo/BreadcrumbListSchema.jsx';
+import SEOValidation from '@/components/seo/SEOValidation.jsx';
 import CookieConsentBanner from '@/components/CookieConsentBanner.jsx';
 import { SpeedInsights } from '@vercel/speed-insights/react';
-
-// SEO Components (Lazy loaded)
-const OrganizationSchema = lazy(() => import('@/components/seo/OrganizationSchema.jsx'));
-const SEOValidation = lazy(() => import('@/components/seo/SEOValidation.jsx'));
-const BreadcrumbListSchema = lazy(() => import('@/components/seo/BreadcrumbListSchema.jsx'));
 
 /**
  * Root layout for every route. Rendered once and kept mounted while the
@@ -48,11 +49,9 @@ function Layout() {
           <GeoSchema />
 
           <ErrorBoundary>
-            <Suspense fallback={null}>
-              <BreadcrumbListSchema />
-              <OrganizationSchema />
-              <SEOValidation />
-            </Suspense>
+            <BreadcrumbListSchema />
+            <OrganizationSchema />
+            <SEOValidation />
 
             <div className="min-h-screen flex flex-col relative pb-16 lg:pb-0">
               <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-white focus:text-[#1B4D3E] focus:px-4 focus:py-2 focus:rounded-md focus:shadow-lg focus:ring-2 focus:ring-[#D4AF37]">
