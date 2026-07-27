@@ -194,6 +194,30 @@ const CraneCaseStudy = () => {
           </div>
         </section>
 
+        {/* ── FROM A RECENT CRANE JOB ── */}
+        <section className="container mx-auto px-4 max-w-6xl py-16 md:py-24">
+          <SectionHeading eyebrow="From a recent crane job" title="Setting up and taking the weight" />
+          <p className="mt-6 text-gray-700 text-lg leading-relaxed max-w-3xl">
+            Here’s what a crane removal actually looks like on the ground in the <strong>Kempsville</strong> area of Virginia Beach — the truck set up with outriggers down and the boom over the house, and a groundman guiding each pick in as the crane takes the load off the tree before the cut.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-6 mt-10">
+            <Figure
+              src="/images/virginia-beach-crane-truck-boom-removal.webp"
+              alt="Crane truck set up with outriggers down and boom extended over a house for a tree removal in Kempsville, Virginia Beach, VA"
+              caption="Outriggers down, boom over the house — the setup is half the job"
+              aspect="aspect-[4/3]"
+              className="reveal"
+            />
+            <Figure
+              src="/images/virginia-beach-crane-removal-backyard.webp"
+              alt="Groundman in a hard hat guiding a crane pick as the cable takes the weight of a backyard tree in Kempsville, Virginia Beach, VA"
+              caption="Taking the weight off the tree before a single cut is made"
+              aspect="aspect-[4/3]"
+              className="reveal"
+            />
+          </div>
+        </section>
+
         {/* ── OUTCOME ── */}
         <section className="bg-[#0A2F24] py-16 md:py-20">
           <div className="container mx-auto px-4 max-w-5xl">
