@@ -31,11 +31,13 @@ const GoogleTagManager = () => {
     function gtag() { window.dataLayer.push(arguments); }
     window.gtag = window.gtag || gtag;
 
-    // Consent Mode v2 DEFAULT — denied until the visitor accepts. With denied
-    // analytics/ads storage, GA4 and Ads send cookieless pings that Google uses
-    // to model the conversions that consent would otherwise hide.
+    // Consent Mode v2 DEFAULT — opt-out model (US / Virginia): granted by
+    // default so conversions are measured for every visitor, EXCEPT when the
+    // browser sends Do Not Track, which we honor as an explicit opt-out. A
+    // visitor can still opt out via the banner, which fires a consent update.
+    const dnt = navigator.doNotTrack === '1' || window.doNotTrack === '1' || navigator.doNotTrack === 'yes';
     gtag('consent', 'default', {
-      ...consentState({ analytics: false, marketing: false }),
+      ...consentState({ analytics: !dnt, marketing: !dnt }),
       wait_for_update: 500,
     });
     gtag('set', 'ads_data_redaction', true);
