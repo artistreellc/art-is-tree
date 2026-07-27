@@ -54,6 +54,7 @@ export const routes = [
       { path: 'faq', ...page(() => import('@/pages/FAQPage.jsx')) },
       { path: 'emergency', ...page(() => import('@/pages/EmergencyPage.jsx')) },
       { path: 'financing', ...page(() => import('@/pages/FinancingPage.jsx')) },
+      { path: 'thank-you', ...page(() => import('@/pages/ThankYouPage.jsx')) },
 
       { path: 'services/tree-removal', ...page(() => import('@/pages/services/TreeRemovalPage.jsx')) },
       { path: 'services/tree-trimming', ...page(() => import('@/pages/services/TreeTrimmingPage.jsx')) },

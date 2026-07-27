@@ -81,7 +81,7 @@ const Footer = () => {
                 ['/case-studies/affordable-tree-work', 'Affordable Tree Work'],
                 ['/case-studies/storm-damage-mitigation', 'Storm Damage'],
                 ['/case-studies/virginia-tree-law', 'Virginia Tree Law'],
-                ['/case-studies/osha-compliance', 'OSHA Safety'],
+                ['/case-studies/osha-compliance', 'OSHA Compliance'],
               ].map(([to, label]) => (
                 <li key={to} className="leading-snug"><Link to={to} className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity inline-block flex-shrink-0"></span>{label}</Link></li>
               ))}
