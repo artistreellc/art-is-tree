@@ -3,21 +3,44 @@ import { Link } from 'react-router-dom';
 import { MapPin, Star, ArrowRight, ShieldCheck, ClipboardCheck, Search, MessageSquare, DollarSign } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import CaseStudySchema from '@/components/seo/CaseStudySchema';
+import FAQPageSchema from '@/components/seo/FAQPageSchema';
 import LocalSEOMeta from '@/components/LocalSEOMeta';
+import AnswerBlock from '@/components/AnswerBlock';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
 import { Eyebrow, SectionHeading, Figure, ProjectSpec, Byline } from '@/components/design/Primitives';
 import { Button } from '@/components/ui/button';
 
+// Schema FAQ items mirror the visible question H2s + their answers below.
+const FAQ_ITEMS = [
+  {
+    question: 'Do people really read reviews before hiring a tree service?',
+    answer: "Yes — 97% of consumers read online reviews for local businesses before choosing one, 68% won't consider a business under 4 stars, and 49% trust reviews as much as a personal recommendation.",
+  },
+  {
+    question: 'Should you get more than one tree removal quote?',
+    answer: 'Yes. Get a written estimate from every company you contact. Two honest companies can price the same tree differently based on equipment, crew, and insurance, so comparing is the only way to know what fair looks like and to avoid an uninsured lowball bid.',
+  },
+  {
+    question: 'How much does tree removal cost in Virginia Beach?',
+    answer: "Price depends on the tree's size, location, and risk, which is why you should get written quotes. Art-is-Tree gives free written estimates that spell out removal, stump grinding, cleanup, and hauling. Call (757) 319-5131.",
+  },
+  {
+    question: 'How do I choose the right tree service?',
+    answer: 'Check for recent, specific reviews; confirm the company is licensed and insured with proof; get a written itemized estimate; look for an independent trust signal like a BBB A+ rating; and see whether they treat the estimate appointment seriously.',
+  },
+];
+
 const ChooseTreeServiceCaseStudy = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
-  const title = 'Read the Reviews. Get Every Quote. Here’s the Honest Reason Why.';
-  const description = 'How to hire the right tree service in Virginia Beach — read recent reviews, verify licensed & insured, and get a written quote from every company you contact.';
+  const title = 'How to Choose a Tree Service in Virginia Beach: Read the Reviews, Get Every Quote';
+  // Meta description kept ~155 chars so it doesn't truncate in the SERP.
+  const description = 'A Virginia Beach owner on how to choose a tree service, why to get every quote, and what tree removal really costs. Free written estimates: (757) 319-5131.';
 
   return (
     <>
       <LocalSEOMeta
-        pageTitle="How to Choose a Tree Service in Virginia Beach | Art-is-Tree"
+        pageTitle="Tree Removal Cost Virginia Beach: Read Reviews, Get Quotes"
         description={description}
       />
       <CaseStudySchema
@@ -28,6 +51,7 @@ const ChooseTreeServiceCaseStudy = () => {
         datePublished="2026-07-27"
         dateModified="2026-07-27"
       />
+      <FAQPageSchema items={FAQ_ITEMS} />
 
       <article className="bg-[#FAF9F6]">
         <div className="container mx-auto px-4 pt-4 pb-2">
@@ -46,9 +70,10 @@ const ChooseTreeServiceCaseStudy = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#08251C]/90 via-[#08251C]/30 to-transparent" />
               <div className="absolute bottom-0 left-0 p-6 md:p-10">
                 <Eyebrow className="mb-3">Case Study · Hiring a Pro</Eyebrow>
-                <h1 className="font-playfair text-2xl md:text-4xl lg:text-[2.7rem] font-bold text-white leading-tight max-w-2xl">
-                  Read the Reviews. Get Every Quote.
+                <h1 className="font-playfair text-2xl md:text-4xl lg:text-[2.5rem] font-bold text-white leading-tight max-w-2xl">
+                  How to Choose a Tree Service in Virginia Beach
                 </h1>
+                <p className="text-white/90 font-inter text-base md:text-lg mt-3 max-w-xl">Read the reviews. Get every quote. Here’s the honest reason why.</p>
                 <Byline date="2026-07-27" light className="mt-4" />
                 <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-white/85 text-sm font-medium mt-4">
                   <span className="flex items-center gap-1.5"><MapPin className="w-4 h-4 text-[#D4AF37]" /> Virginia Beach · Hampton Roads</span>
@@ -69,23 +94,15 @@ const ChooseTreeServiceCaseStudy = () => {
           </div>
         </header>
 
-        {/* INTRO */}
-        <section className="container mx-auto px-4 max-w-4xl pb-12 md:pb-16">
-          <SectionHeading eyebrow="The 30-second version" title="Do your homework — the market is set up in your favor" />
-          <div className="mt-6 space-y-5 text-gray-700 text-lg leading-relaxed">
-            <p className="first-letter:text-5xl first-letter:font-playfair first-letter:font-bold first-letter:text-[#1B4D3E] first-letter:mr-2 first-letter:float-left first-letter:leading-[0.8]">
-              Almost everyone reads reviews before hiring now, and they’re right to. Before you let anyone put a chainsaw near your house, read the recent reviews, confirm the company is licensed and insured, and get a written quote from <em>every</em> company you reach out to. It costs you nothing but a little time.
-            </p>
-            <p>
-              And here’s a secret most contractors won’t tell you: it costs <em>us</em> real money every single time you reach out — which is exactly why you should make us earn it. I’m Mike Campbell, I own <Link to="/about" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">Art-is-Tree</Link>, and I’d rather win an informed customer than assume an uninformed one. So here’s an honest look at how to hire the right crew.
-            </p>
-          </div>
-        </section>
+        {/* QUICK ANSWER — AEO featured-snippet block */}
+        <AnswerBlock>
+          Almost everyone reads reviews before hiring a tree service now, and they’re right to. Before you let anyone put a chainsaw near your house, read the <strong>recent</strong> reviews, confirm the company is <strong>licensed and insured</strong>, and get a <strong>written quote from every company you contact</strong>. It costs you nothing but time — and it costs the tree company real money every time you reach out, which is exactly why you should make them earn it.
+        </AnswerBlock>
 
-        {/* NOBODY HIRES BLIND */}
+        {/* DO PEOPLE READ REVIEWS */}
         <section className="bg-white border-y border-gray-100 py-14 md:py-20">
           <div className="container mx-auto px-4 max-w-4xl">
-            <SectionHeading eyebrow="And that’s a good thing" title="Almost nobody hires blind anymore" />
+            <SectionHeading eyebrow="And that’s a good thing" title="Do people really read reviews before hiring a tree service?" />
             <div className="mt-6 space-y-5 text-gray-700 text-lg leading-relaxed">
               <p>
                 If you’ve ever pulled up Google, read a company’s reviews, and made your decision before you ever picked up the phone — you’re completely normal. You’re the overwhelming majority.
@@ -115,7 +132,7 @@ const ChooseTreeServiceCaseStudy = () => {
         <section className="container mx-auto px-4 max-w-6xl py-14 md:py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <SectionHeading eyebrow="It’s not just the star count" title="What good reviews actually tell you" />
+              <SectionHeading eyebrow="It’s not just the star count" title="What do good tree service reviews actually tell you?" />
               <div className="mt-6 space-y-5 text-gray-700 text-lg leading-relaxed">
                 <p>
                   <strong>Recency.</strong> This is the one most people miss. <strong>74% of consumers only trust reviews written in the last three months</strong>, and a growing group only pays attention to reviews from the last two weeks.<sup><a href="#src1" className="text-[#1B4D3E] hover:text-[#D4AF37]">1</a></sup> A great rating from two years ago with nothing since isn’t necessarily good <em>today</em> — crews change, ownership changes. Look for a steady stream of fresh reviews.
@@ -138,10 +155,10 @@ const ChooseTreeServiceCaseStudy = () => {
         {/* GET A QUOTE FROM EVERYONE */}
         <section className="bg-[#0A2F24] text-white py-14 md:py-20">
           <div className="container mx-auto px-4 max-w-4xl">
-            <SectionHeading eyebrow="Every company you contact" title="Get a written quote from every one" light />
+            <SectionHeading eyebrow="Every company you contact" title="Should you get more than one tree removal quote?" light />
             <div className="mt-6 space-y-5 text-lg leading-relaxed [&_p]:text-gray-100">
               <p>
-                Here’s the advice I give people even when it means they might not pick me: <strong>contact several companies and get a written estimate from each.</strong> Tree work isn’t like buying a gallon of milk. Two honest companies can look at the same tree and price it differently based on their equipment, crew size, insurance, and how they’d approach the job safely. The only way to know what fair looks like <em>for your specific tree</em> is to compare.
+                Yes — get a written quote from every company you contact. Here’s the advice I give people even when it means they might not pick me: <strong>contact several companies and get a written estimate from each.</strong> Tree work isn’t like buying a gallon of milk. Two honest companies can look at the same tree and price it differently based on their equipment, crew size, insurance, and how they’d approach the job safely. The only way to know what fair looks like <em>for your specific tree</em> is to compare.
               </p>
               <p>
                 Getting multiple quotes protects you from overpaying — and just as important, from the lowball “guy with a truck” whose price looks amazing until something goes wrong and you find out he wasn’t insured. When you compare, weigh more than price:
@@ -162,20 +179,23 @@ const ChooseTreeServiceCaseStudy = () => {
               ))}
             </div>
             <p className="text-gray-300 text-lg leading-relaxed mt-8">
-              A company confident in its work <em>wants</em> you to compare. We do. We’d rather you choose us with your eyes open than wonder later if you overpaid. It’s the same honesty we bring to pricing in our <Link to="/case-studies/affordable-tree-work" className="underline decoration-white/40 hover:decoration-white">affordable tree work guide</Link>.
+              A company confident in its work <em>wants</em> you to compare. We do. We’d rather you choose us with your eyes open than wonder later if you overpaid — you can <Link to="/contact" className="underline decoration-white/40 hover:decoration-white">get a free written estimate from us here</Link>. It’s the same honesty we bring to pricing in our <Link to="/case-studies/affordable-tree-work" className="underline decoration-white/40 hover:decoration-white">affordable tree work guide</Link>.
             </p>
           </div>
         </section>
 
-        {/* WHAT YOUR CLICK COSTS US */}
+        {/* WHAT IT COSTS / HOW MUCH */}
         <section className="container mx-auto px-4 max-w-4xl py-14 md:py-20">
-          <SectionHeading eyebrow="Behind the curtain" title="What your click actually costs us" />
+          <SectionHeading eyebrow="Behind the curtain" title="How much does tree removal cost in Virginia Beach — and why?" />
           <div className="mt-6 space-y-5 text-gray-700 text-lg leading-relaxed">
             <p>
-              Here’s the reason I actually <em>want</em> you to be a serious, informed buyer. Every time you search “tree service near me” and click an ad or fill out a form, that click costs the business real money. In home services, a single Google-ad click averages <strong>$7.85</strong> and is climbing toward <strong>$8.33 in 2026</strong>;<sup><a href="#src3" className="text-[#1B4D3E] hover:text-[#D4AF37]">3</a></sup><sup><a href="#src4" className="text-[#1B4D3E] hover:text-[#D4AF37]">4</a></sup> for competitive tree-service searches, estimates run $10–$20 or more apiece.
+              The honest answer is that it depends on the tree — its size, how close it is to your house or power lines, its condition, and whether you add stump grinding — which is exactly why you should get a written quote. But there’s a hidden cost most homeowners never see, and it’s the reason I <em>want</em> you to be a serious, informed buyer.
             </p>
             <p>
-              But the click is just the start. Only about <strong>7% of home-services ad clicks</strong> ever turn into a real inquiry — meaning more than 9 out of 10 clicks we pay for lead nowhere.<sup><a href="#src3" className="text-[#1B4D3E] hover:text-[#D4AF37]">3</a></sup> So the real cost of a single genuine phone call or quote request runs <strong>$90 on average, and $150–$230+</strong> in the priciest trades. On Google’s Local Services Ads, tree-service leads run roughly <strong>$20–$60 each</strong>,<sup><a href="#src5" className="text-[#1B4D3E] hover:text-[#D4AF37]">5</a></sup> and to actually <em>win</em> one new customer a home-services business typically spends <strong>$200–$300+</strong> after all the clicks and no-show estimates that didn’t pan out.<sup><a href="#src6" className="text-[#1B4D3E] hover:text-[#D4AF37]">6</a></sup> Home improvement is now one of the most expensive categories to advertise in — right behind lawyers and dentists.<sup><a href="#src4" className="text-[#1B4D3E] hover:text-[#D4AF37]">4</a></sup>
+              Every time you search “tree service near me” and click an ad or fill out a form, that click costs the business real money. In home services, a single Google-ad click averages <strong>$7.85</strong> and is climbing toward <strong>$8.33 in 2026</strong>;<sup><a href="#src3" className="text-[#1B4D3E] hover:text-[#D4AF37]">3</a></sup><sup><a href="#src4" className="text-[#1B4D3E] hover:text-[#D4AF37]">4</a></sup> for competitive tree-service searches, estimates run $10–$20 or more apiece.
+            </p>
+            <p>
+              But the click is just the start. Only about <strong>7% of home-services ad clicks</strong> ever turn into a real inquiry — meaning more than 9 out of 10 clicks we pay for lead nowhere.<sup><a href="#src3" className="text-[#1B4D3E] hover:text-[#D4AF37]">3</a></sup> So the real cost of a single genuine phone call or quote request runs <strong>$90 on average, and $150–$230+</strong> in the priciest trades. On Google’s Local Services Ads, tree-service leads run roughly <strong>$20–$60 each</strong>,<sup><a href="#src5" className="text-[#1B4D3E] hover:text-[#D4AF37]">5</a></sup> and to actually <em>win</em> one new customer a home-services business typically spends <strong>$75 to $250+</strong> after all the clicks and no-show estimates that didn’t pan out.<sup><a href="#src6" className="text-[#1B4D3E] hover:text-[#D4AF37]">6</a></sup> Home improvement is now one of the most expensive categories to advertise in — right behind lawyers and dentists.<sup><a href="#src4" className="text-[#1B4D3E] hover:text-[#D4AF37]">4</a></sup>
             </p>
           </div>
 
@@ -183,7 +203,7 @@ const ChooseTreeServiceCaseStudy = () => {
             {[
               ['$8.33', 'average home-services ad click in 2026'],
               ['~7%', 'of those clicks become a real inquiry'],
-              ['$200–$300+', 'typical cost to win one new customer'],
+              ['$75–$250+', 'typical cost to win one new customer'],
             ].map(([stat, label]) => (
               <div key={stat} className="card-3d bg-white border border-gray-200 border-t-4 border-t-[#D4AF37] rounded-2xl p-6 text-center">
                 <div className="font-playfair text-3xl font-bold text-[#1B4D3E] mb-2">{stat}</div>
@@ -208,12 +228,12 @@ const ChooseTreeServiceCaseStudy = () => {
         {/* CHECKLIST */}
         <section className="bg-white border-y border-gray-100 py-14 md:py-20">
           <div className="container mx-auto px-4 max-w-4xl">
-            <SectionHeading eyebrow="A simple checklist" title="How to choose the right tree service" />
+            <SectionHeading eyebrow="A simple checklist" title="What’s the checklist for choosing the right tree service?" />
             <p className="mt-6 text-gray-700 text-lg leading-relaxed">Put every company you’re considering through the same five questions:</p>
             <ol className="mt-8 space-y-5">
               {[
                 ['Recent, specific reviews?', 'A steady stream in the last few months, describing work like yours.'],
-                ['Licensed and insured — with proof on request?', 'Non-negotiable for anything near your home or power lines. More on why in our OSHA & safety case study.'],
+                ['Licensed and insured — with proof on request?', ''],
                 ['A written, itemized estimate?', 'Removal, stump grinding, cleanup, and hauling all spelled out.'],
                 ['An independent trust signal?', 'A BBB A+ rating, a long track record, an owner who answers the phone.'],
                 ['Do they treat the quote like it matters?', 'The company that shows up on time to estimate is the one that shows up on time to do the job.'],
@@ -234,10 +254,10 @@ const ChooseTreeServiceCaseStudy = () => {
 
         {/* WHERE WE STAND */}
         <section className="container mx-auto px-4 max-w-4xl py-14 md:py-20">
-          <SectionHeading eyebrow="Where we stand" title="Our promise" />
+          <SectionHeading eyebrow="Where we stand" title="Where Art-is-Tree stands — and our promise" />
           <div className="mt-6 space-y-5 text-gray-700 text-lg leading-relaxed">
             <p>
-              I’m Mike Campbell, and I own Art-is-Tree. We’re an owner-operated, <strong>licensed and insured</strong> tree service with a <strong>BBB A+ rating</strong> and a <strong>5.0 rating across 140+ Google reviews</strong>, serving <Link to="/service-areas/virginia-beach" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">Virginia Beach</Link>, Norfolk, Chesapeake, Portsmouth, and Suffolk. We do free written estimates, we spell out exactly what you’re paying for on every <Link to="/services/tree-removal" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">removal</Link>, and we leave your property cleaner than we found it.
+              I’m Mike Campbell, and I own Art-is-Tree. We’re an owner-operated, <strong>licensed and insured</strong> tree service with a <strong>BBB A+ rating</strong> and a <strong>5.0 rating across 140+ Google reviews</strong>, serving <Link to="/service-areas/virginia-beach" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">Virginia Beach</Link>, <Link to="/service-areas/norfolk" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">Norfolk</Link>, <Link to="/service-areas/chesapeake" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">Chesapeake</Link>, <Link to="/service-areas/portsmouth" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">Portsmouth</Link>, and <Link to="/service-areas/suffolk" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">Suffolk</Link>. We handle <Link to="/services/tree-removal" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">tree removal</Link>, <Link to="/services/tree-trimming" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">tree trimming</Link>, <Link to="/services/stump-grinding" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">stump grinding</Link>, and 24/7 storm response. We do free written estimates, we spell out exactly what you’re paying for, and we leave your property cleaner than we found it.
             </p>
             <p>
               And we mean what this whole article says: <strong>read our reviews, and go get other quotes.</strong> We’d rather win your trust than assume it. When you’ve compared honestly and you’re ready, we’ll be here — and we’ll earn it.
@@ -252,7 +272,7 @@ const ChooseTreeServiceCaseStudy = () => {
             <p id="src3" className="m-0">3. LocaliQ, <a href="https://localiq.com/blog/home-services-search-advertising-benchmarks/" target="_blank" rel="noopener noreferrer" className="text-[#1B4D3E] underline hover:text-[#D4AF37]">2025 Search Advertising Benchmarks for Home Services</a> — cost per click, conversion rate, and cost per lead.</p>
             <p id="src4" className="m-0">4. WordStream, <a href="https://www.wordstream.com/blog/2026-google-ads-benchmarks" target="_blank" rel="noopener noreferrer" className="text-[#1B4D3E] underline hover:text-[#D4AF37]">2026 Google Ads Benchmarks</a> — home-services CPC trend and category rankings.</p>
             <p id="src5" className="m-0">5. Home Service Direct, <a href="https://www.homeservicedirect.net/how-much-are-tree-service-leads-worth/" target="_blank" rel="noopener noreferrer" className="text-[#1B4D3E] underline hover:text-[#D4AF37]">How Much Are Tree Service Leads Worth?</a> (2026) — Local Services Ads tree-lead pricing.</p>
-            <p id="src6" className="m-0">6. WebFX, <a href="https://www.webfx.com/blog/home-services/hvac-marketing-benchmarks/" target="_blank" rel="noopener noreferrer" className="text-[#1B4D3E] underline hover:text-[#D4AF37]">2026 Home Services Marketing Benchmarks</a> — customer acquisition cost.</p>
+            <p id="src6" className="m-0">6. WebFX, <a href="https://www.webfx.com/blog/home-services/hvac-marketing-benchmarks/" target="_blank" rel="noopener noreferrer" className="text-[#1B4D3E] underline hover:text-[#D4AF37]">2026 Home Services Marketing Benchmarks</a> — customer acquisition cost ($75–$250).</p>
           </div>
         </section>
 
