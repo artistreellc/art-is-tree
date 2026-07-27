@@ -15,6 +15,7 @@ const LocalBusinessSchema = () => {
     "url": BASE_URL,
     "telephone": "(757) 319-5131",
     "email": "artistreeofvirginia@gmail.com",
+    "founder": { "@type": "Person", "name": "Mike Campbell" },
     "priceRange": "$$",
     "paymentAccepted": "Cash, Check, Credit Card",
     "currenciesAccepted": "USD",
@@ -27,7 +28,6 @@ const LocalBusinessSchema = () => {
     },
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "2597 Nestlebrook Trl",
       "addressLocality": "Virginia Beach",
       "addressRegion": "VA",
       "postalCode": "23456",

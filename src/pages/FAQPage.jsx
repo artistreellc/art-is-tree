@@ -257,7 +257,7 @@ const FAQPage = () => {
               </li>
               <li>
                 <strong>Hiring a qualified professional:</strong> International Society of Arboriculture —{' '}
-                <a href="https://www.treesaregood.org/" target="_blank" rel="noopener noreferrer">Trees Are Good (why hire a certified arborist)</a>.
+                <a href="https://www.treesaregood.org/" target="_blank" rel="noopener noreferrer">Trees Are Good (how to hire a qualified tree service)</a>.
               </li>
               <li>
                 <strong>Safety standards (ANSI Z133 &amp; A300):</strong> see our{' '}

@@ -2,11 +2,12 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 
 /**
- * Embedded Google Map. Defaults to the Art-is-Tree HQ; pass `query` (an
- * address or "City, VA") and `title` to center it on a specific service area.
+ * Embedded Google Map. Defaults to the Virginia Beach service area (service-area
+ * business — no home/street pin); pass `query` ("City, VA") and `title` to
+ * center it on a specific service area.
  */
 const GoogleMap = ({
-  query = '2597 Nestlebrook Trl, Virginia Beach, VA 23456',
+  query = 'Virginia Beach, VA',
   title = 'Art-is-Tree LLC Service Area — Virginia Beach',
   className,
 }) => {

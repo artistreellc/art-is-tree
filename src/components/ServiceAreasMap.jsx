@@ -24,7 +24,7 @@ const ServiceAreasMap = ({ className }) => {
         <div className={cn("w-full rounded-xl overflow-hidden shadow-lg border border-gray-200", className)}>
           <iframe
             title="Art-is-Tree LLC Service Area — Virginia Beach"
-            src="https://www.google.com/maps?q=2597+Nestlebrook+Trl,+Virginia+Beach,+VA+23456&output=embed"
+            src="https://www.google.com/maps?q=Virginia+Beach,+VA&output=embed"
             className="w-full h-[400px] md:h-[500px] border-0"
             loading="lazy"
             allowFullScreen
