@@ -219,16 +219,15 @@ const ContactForm = () => {
       }
 
       // Fire the lead conversions — ONLY here, after a confirmed 2xx success.
+      // The website code is the SINGLE source of truth for this conversion, so
+      // we deliberately do NOT push the `contact_form_submit` dataLayer event
+      // anymore: that stops any existing GTM trigger from firing the Ads
+      // conversion a second time, which means there is nothing to pause in the
+      // GTM container — no double-count, no manual GTM change required.
       if (typeof window !== 'undefined') {
-        // dataLayer signal for any existing GTM Custom Event trigger.
-        if (window.gtag_report_contact_form) window.gtag_report_contact_form();
-
         // Direct GA4 lead event + Google Ads "Request quote" conversion, using
         // the IDs already configured for this site (GA4 G-TLDWNQZZ81 and Ads
-        // AW-10806457837/i_SkCOqBhMQbEO3r9aAo, both loaded via GTM). NOTE: if
-        // GTM ALSO fires the Ads conversion from the `contact_form_submit`
-        // trigger, disable that trigger so this direct call is the single
-        // source and the conversion is not double-counted.
+        // AW-10806457837/i_SkCOqBhMQbEO3r9aAo, both loaded via GTM).
         if (typeof window.gtag === 'function') {
           window.gtag('event', 'generate_lead', {
             currency: 'USD',
