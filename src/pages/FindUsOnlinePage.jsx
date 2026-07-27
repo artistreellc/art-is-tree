@@ -11,8 +11,8 @@ const FindUsOnlinePage = () => {
   return (
     <>
       <LocalSEOMeta
-        pageTitle="Find Art-is-Tree Online | Virginia Beach Tree Care"
-        description="Connect with Art-is-Tree LLC on Google, BBB, Yelp and Angi. The licensed, insured, BBB A+ tree service for Virginia Beach and Hampton Roads, VA."
+        pageTitle="Find Art-is-Tree Online | 5-Star VA Beach Tree Service"
+        description="Find Art-is-Tree LLC on Google, BBB A+, Yelp & Angi — the 5-star rated, licensed & insured tree service for Virginia Beach & Hampton Roads."
       />
 
       <DirectoryLinksSchema />

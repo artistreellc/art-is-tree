@@ -19,8 +19,8 @@ const AboutPage = () => {
   return (
     <>
       <LocalSEOMeta 
-        pageTitle="About Art-is-Tree LLC | Tree Service Virginia Beach" 
-        description="Family-owned tree service in Virginia Beach with 15+ years experience. Licensed, insured, BBB A+, ISA member, and working to ANSI A300 &amp; Z133 standards, serving all of Hampton Roads, VA." 
+        pageTitle="About Art-is-Tree LLC | 5-Star Virginia Beach Tree Service"
+        description="Family-owned, 5-star Virginia Beach tree service — 15+ years, licensed, insured, BBB A+, ISA member, working to ANSI A300 &amp; Z133 standards across Hampton Roads."
       />
 
       <LocalBusinessSchema />

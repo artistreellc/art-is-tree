@@ -14,8 +14,8 @@ const ContactPage = () => {
    
     <>
       <LocalSEOMeta 
-        pageTitle="Contact Art-is-Tree LLC | Free Tree Service Quote" 
-        description="Contact Art-is-Tree LLC in Virginia Beach for a free tree service estimate. Call (757) 319-5131. Licensed, insured, serving all of Hampton Roads, VA." 
+        pageTitle="Contact Art-is-Tree LLC | Free Tree Service Estimate"
+        description="Get a free, no-obligation tree service estimate in Virginia Beach & Hampton Roads. 5-star rated, licensed & insured. Call (757) 319-5131 or request online."
       />
 
       <LocalBusinessSchema />
