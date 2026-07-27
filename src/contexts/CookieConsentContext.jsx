@@ -14,6 +14,11 @@ export const CookieConsentProvider = ({ children }) => {
   });
   const [hasConsented, setHasConsented] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  // Stays false through SSR + first client render so the banner is never in the
+  // prerendered HTML and never flashes; flips true only after we've read the
+  // stored choice. Prevents the "banner appears for a second then disappears"
+  // flash a returning visitor would otherwise see on every page load.
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     // Check for "Do Not Track" setting
@@ -37,6 +42,8 @@ export const CookieConsentProvider = ({ children }) => {
       // chance to opt out, while tracking is already active.
     } catch (e) {
       console.warn("Could not read cookie consent from localStorage", e);
+    } finally {
+      setReady(true);
     }
   }, []);
 
@@ -62,12 +69,13 @@ export const CookieConsentProvider = ({ children }) => {
   const value = useMemo(() => ({
     preferences,
     hasConsented,
+    ready,
     isModalOpen,
     setIsModalOpen,
     savePreferences,
     acceptAll,
     rejectAll
-  }), [preferences, hasConsented, isModalOpen, savePreferences, acceptAll, rejectAll]);
+  }), [preferences, hasConsented, ready, isModalOpen, savePreferences, acceptAll, rejectAll]);
 
   return (
     <CookieConsentContext.Provider value={value}>

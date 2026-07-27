@@ -8,9 +8,12 @@ import { useCookieConsent } from '@/hooks/useCookieConsent';
  * "Essential only" keeps them off. Choice persists via the consent context.
  */
 export default function CookieConsentBanner() {
-  const { hasConsented, acceptAll, rejectAll } = useCookieConsent();
+  const { hasConsented, ready, acceptAll, rejectAll } = useCookieConsent();
 
-  if (hasConsented) return null;
+  // Don't render until the stored choice has been read on the client. This
+  // keeps the banner out of the prerendered HTML so it never flashes for a
+  // visitor who already made a choice.
+  if (!ready || hasConsented) return null;
 
   return (
     <div className="fixed bottom-0 inset-x-0 z-[60] bg-[#1B4D3E] text-white shadow-2xl border-t border-[#D4AF37]/40">
