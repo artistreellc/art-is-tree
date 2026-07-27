@@ -15,7 +15,7 @@ const Breadcrumbs = () => {
   }
 
   return (
-    <nav aria-label="Breadcrumb" className="bg-gray-50 border-b border-gray-200 py-3 mt-20">
+    <nav aria-label="Breadcrumb" className="bg-gray-50 border-b border-gray-200 py-3">
       <div className="container mx-auto px-4">
         <ol className="flex items-center space-x-2 text-sm text-gray-600">
           <li>
