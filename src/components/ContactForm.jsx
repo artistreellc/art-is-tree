@@ -195,6 +195,10 @@ const ContactForm = () => {
         _subject: `New estimate request from ${formState.name.trim()}${formState.serviceNeeded ? ` — ${formState.serviceNeeded}` : ''}`,
         _template: 'table',
         _captcha: 'false',
+        // Clean post-submit confirmation URL for the non-AJAX fallback path
+        // (ignored by the /ajax endpoint, which returns JSON in place of a
+        // redirect — the in-page success state below is the AJAX confirmation).
+        _next: 'https://artistreevabeach.com/thank-you',
       };
 
       const response = await fetch(CONTACT_ENDPOINT, {
@@ -214,13 +218,28 @@ const ContactForm = () => {
         throw new Error(data.message || data.error || 'Failed to send message. Please try again.');
       }
 
-      // Signal a successful "Request quote" submission to GTM via the dataLayer.
-      // GTM owns the actual Google Ads conversion tag (AW-10806457837/
-      // i_SkCOqBhMQbEO3r9aAo) and fires it from a Custom Event trigger on
-      // `contact_form_submit`. This is the single source of truth — no direct
-      // gtag() conversion call, so there is no double-count.
-      if (typeof window !== 'undefined' && window.gtag_report_contact_form) {
-        window.gtag_report_contact_form();
+      // Fire the lead conversions — ONLY here, after a confirmed 2xx success.
+      if (typeof window !== 'undefined') {
+        // dataLayer signal for any existing GTM Custom Event trigger.
+        if (window.gtag_report_contact_form) window.gtag_report_contact_form();
+
+        // Direct GA4 lead event + Google Ads "Request quote" conversion, using
+        // the IDs already configured for this site (GA4 G-TLDWNQZZ81 and Ads
+        // AW-10806457837/i_SkCOqBhMQbEO3r9aAo, both loaded via GTM). NOTE: if
+        // GTM ALSO fires the Ads conversion from the `contact_form_submit`
+        // trigger, disable that trigger so this direct call is the single
+        // source and the conversion is not double-counted.
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'generate_lead', {
+            currency: 'USD',
+            value: 0,
+            form_id: 'contact',
+            service: formState.serviceNeeded || undefined,
+          });
+          window.gtag('event', 'conversion', {
+            send_to: 'AW-10806457837/i_SkCOqBhMQbEO3r9aAo',
+          });
+        }
       }
 
       setIsSuccess(true);
