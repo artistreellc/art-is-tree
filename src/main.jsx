@@ -1,5 +1,15 @@
 import { ViteReactSSG } from 'vite-react-ssg';
 import { routes } from '@/routes';
+
+// Self-hosted fonts (bundled + fingerprinted by Vite) — no render-blocking
+// request to fonts.googleapis.com. Latin subset only, and just the weights
+// the design actually uses (Inter 400/600/700, Playfair Display 600/700).
+import '@fontsource/inter/latin-400.css';
+import '@fontsource/inter/latin-600.css';
+import '@fontsource/inter/latin-700.css';
+import '@fontsource/playfair-display/latin-600.css';
+import '@fontsource/playfair-display/latin-700.css';
+
 import '@/index.css';
 
 export const createRoot = ViteReactSSG(
