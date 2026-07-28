@@ -11,6 +11,7 @@ import { COMPANY_INFO } from '@/constants/seoMetadata';
 //   { name: 'Company Name', url: 'https://…', tagline: '…', logo: '/images/partners/company.png' }
 const PARTNERS = [
   { name: 'Virginia Lawns', url: 'https://virginialawnsllc.com', tagline: 'Lawn care & landscaping — Virginia Beach' },
+  { name: 'Merritt Stump Grinding', url: 'https://www.cityof.com/va/portsmouth/merritt-stump-grinding-357727', tagline: 'Stump grinding — Portsmouth, VA' },
 ];
 
 // Compact "Listings" dropdown: the small company logo + a drop-bar that reveals
