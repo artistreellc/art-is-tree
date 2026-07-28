@@ -23,6 +23,7 @@ const PARTNERS = [
   { name: 'J.F. Whitlow, Jr. & Sons', url: 'https://www.jfwhitlow.com', tagline: 'Plumbing, heating & cooling — Portsmouth, VA' },
   { name: 'Hickory Towing', url: 'https://www.hickorytowing.com', tagline: 'Towing & recovery — Chesapeake, VA' },
   { name: 'Beach Brothers Diving & Salvage', url: 'https://www.beachbrosdive.com', tagline: 'Diving & marine salvage — Virginia Beach' },
+  { name: 'Colony Tire & Service', url: 'https://colonytire.com', tagline: 'Tires & auto repair — Hampton Roads' },
 ];
 
 // Compact "Listings" dropdown: the small company logo + a drop-bar that reveals
