@@ -16,6 +16,7 @@ const PARTNERS = [
   { name: 'Osborne Welding', url: 'https://www.facebook.com/p/Osborne-Welding-Inc-100035421654172/', tagline: 'Welding & steel fabrication — Portsmouth, VA' },
   { name: "Triton's Pressure Washing", url: 'https://tritonspressurewashing.com', tagline: 'Pressure & power washing — Virginia Beach' },
   { name: 'Alien Handyman', url: 'https://www.facebook.com/kyle.kiehnau/', tagline: 'Handyman services — Hampton Roads' },
+  { name: 'Law Offices of Daniel J. Miller', url: 'https://www.legaldefense.com', tagline: 'Attorney — Virginia Beach' },
 ];
 
 // Compact "Listings" dropdown: the small company logo + a drop-bar that reveals
