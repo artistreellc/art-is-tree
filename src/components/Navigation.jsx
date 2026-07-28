@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { useAuth } from '@/contexts/SupabaseAuthContext';
 import { useThrottle } from '@/hooks/useThrottle';
 import { useReviewStats } from '@/hooks/useReviewStats';
+import { COMPANY_INFO } from '@/constants/seoMetadata';
 
 const NAV_LINKS = [
   { name: 'Home', path: '/' },
@@ -63,7 +64,15 @@ const NAV_LINKS = [
       { name: 'Affordable Tree Work', path: '/case-studies/affordable-tree-work' },
     ]
   },
-  { name: 'Directories', path: '/find-us-online' },
+  {
+    name: 'Recommended Pros',
+    path: '/find-us-online',
+    dropdown: [
+      { name: 'Recommended Pros', path: '/find-us-online' },
+      // Our own verified listings — each links out to our profile on that site.
+      ...COMPANY_INFO.listings.map((l) => ({ name: l.name, href: l.url, external: true })),
+    ],
+  },
   { name: '🚨 Emergency', path: '/emergency' },
 ];
 
