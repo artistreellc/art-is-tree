@@ -10,21 +10,21 @@ import { COMPANY_INFO } from '@/constants/seoMetadata';
 // available; until then the tile shows a branded icon + the company name.
 //   { name: 'Company Name', url: 'https://…', tagline: '…', logo: '/images/partners/company.png' }
 const PARTNERS = [
-  { name: 'Virginia Lawns', url: 'https://virginialawnsllc.com', tagline: 'Lawn care & landscaping — Virginia Beach' },
+  { name: 'Virginia Lawns', url: 'https://virginialawnsllc.com', tagline: 'Lawn care & landscaping — Virginia Beach', logo: '/images/partners/virginia-lawns.png' },
   { name: 'Merritt Stump Grinding', url: 'https://www.cityof.com/va/portsmouth/merritt-stump-grinding-357727', tagline: 'Stump grinding — Portsmouth, VA' },
-  { name: 'Hartson Crane Service', url: 'https://www.facebook.com/people/Hartson-Crane-Service/61575475611389/', tagline: 'Crane services — Virginia Beach' },
-  { name: 'Osborne Welding', url: 'https://www.facebook.com/p/Osborne-Welding-Inc-100035421654172/', tagline: 'Welding & steel fabrication — Portsmouth, VA' },
-  { name: "Triton's Pressure Washing", url: 'https://tritonspressurewashing.com', tagline: 'Pressure & power washing — Virginia Beach' },
-  { name: 'Alien Handyman', url: 'https://www.facebook.com/kyle.kiehnau/', tagline: 'Handyman services — Hampton Roads' },
-  { name: 'Law Offices of Daniel J. Miller', url: 'https://www.legaldefense.com', tagline: 'Attorney — Virginia Beach' },
-  { name: "Brinn's Lawn Care", url: 'https://www.facebook.com/brinnslawncare/', tagline: 'Lawn care — Hampton Roads' },
-  { name: 'North Landing Firewood & Hauling', url: 'https://northlandingfirewood.com', tagline: 'Firewood, sawmilling & hauling — Virginia Beach' },
-  { name: 'Sign Wizards', url: 'https://www.facebook.com/SignWizards.VA/', tagline: 'Signs & banners — Virginia Beach' },
-  { name: 'J.F. Whitlow, Jr. & Sons', url: 'https://www.jfwhitlow.com', tagline: 'Plumbing, heating & cooling — Portsmouth, VA' },
-  { name: 'Hickory Towing', url: 'https://www.hickorytowing.com', tagline: 'Towing & recovery — Chesapeake, VA' },
-  { name: 'Beach Brothers Diving & Salvage', url: 'https://www.beachbrosdive.com', tagline: 'Diving & marine salvage — Virginia Beach' },
-  { name: 'Colony Tire & Service', url: 'https://colonytire.com', tagline: 'Tires & auto repair — Hampton Roads' },
-  { name: 'Land & Coates', url: 'https://www.landandcoates.net', tagline: 'Outdoor power equipment — Hampton Roads' },
+  { name: 'Hartson Crane Service', url: 'https://www.facebook.com/people/Hartson-Crane-Service/61575475611389/', tagline: 'Crane services — Virginia Beach', logo: '/images/partners/hartson-crane.png' },
+  { name: 'Osborne Welding', url: 'https://www.facebook.com/p/Osborne-Welding-Inc-100035421654172/', tagline: 'Welding & steel fabrication — Portsmouth, VA', logo: '/images/partners/osborne-welding.png' },
+  { name: "Triton's Pressure Washing", url: 'https://tritonspressurewashing.com', tagline: 'Pressure & power washing — Virginia Beach', logo: '/images/partners/tritons-pressure-washing.png' },
+  { name: 'Alien Handyman', url: 'https://www.facebook.com/kyle.kiehnau/', tagline: 'Handyman services — Hampton Roads', logo: '/images/partners/alien-handyman.png' },
+  { name: 'Law Offices of Daniel J. Miller', url: 'https://www.legaldefense.com', tagline: 'Attorney — Virginia Beach', logo: '/images/partners/daniel-miller-law.png' },
+  { name: "Brinn's Lawn Care", url: 'https://www.facebook.com/brinnslawncare/', tagline: 'Lawn care — Hampton Roads', logo: '/images/partners/brinns-lawn-care.png' },
+  { name: 'North Landing Firewood & Hauling', url: 'https://northlandingfirewood.com', tagline: 'Firewood, sawmilling & hauling — Virginia Beach', logo: '/images/partners/north-landing-firewood.png' },
+  { name: 'Sign Wizards', url: 'https://www.facebook.com/SignWizards.VA/', tagline: 'Signs & banners — Virginia Beach', logo: '/images/partners/sign-wizards.png' },
+  { name: 'J.F. Whitlow, Jr. & Sons', url: 'https://www.jfwhitlow.com', tagline: 'Plumbing, heating & cooling — Portsmouth, VA', logo: '/images/partners/jf-whitlow.png' },
+  { name: 'Hickory Towing', url: 'https://www.hickorytowing.com', tagline: 'Towing & recovery — Chesapeake, VA', logo: '/images/partners/hickory-towing.png' },
+  { name: 'Beach Brothers Diving & Salvage', url: 'https://www.beachbrosdive.com', tagline: 'Diving & marine salvage — Virginia Beach', logo: '/images/partners/beach-brothers-diving.png' },
+  { name: 'Colony Tire & Service', url: 'https://colonytire.com', tagline: 'Tires & auto repair — Hampton Roads', logo: '/images/partners/colony-tire.png' },
+  { name: 'Land & Coates', url: 'https://www.landandcoates.net', tagline: 'Outdoor power equipment — Hampton Roads', logo: '/images/partners/land-and-coates.png' },
 ];
 
 // Compact "Listings" dropdown: the small company logo + a drop-bar that reveals
@@ -73,6 +73,39 @@ const ListingsDropdown = () => {
         </div>
       )}
     </div>
+  );
+};
+
+// One partner tile. Renders the logo when the file is present; if the logo is
+// missing or fails to load, it falls back cleanly to a branded name tile so a
+// pending logo never shows a broken image.
+const PartnerTile = ({ partner }) => {
+  const [logoOk, setLogoOk] = useState(Boolean(partner.logo));
+
+  return (
+    <a
+      href={partner.url}
+      target="_blank"
+      rel="noopener"
+      title={partner.name}
+      className="group bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col items-center justify-center gap-3 p-6 min-h-[160px] text-center"
+    >
+      {logoOk ? (
+        <img
+          src={partner.logo}
+          alt={`${partner.name} logo`}
+          loading="lazy"
+          className="max-h-16 w-auto object-contain"
+          onError={() => setLogoOk(false)}
+        />
+      ) : (
+        <span className="flex items-center justify-center w-14 h-14 rounded-full bg-[#0A2F24] text-[#D4AF37]">
+          <Building2 className="w-7 h-7" aria-hidden="true" />
+        </span>
+      )}
+      <span className="font-bold text-[#1B4D3E] text-base group-hover:text-[#D4AF37] transition-colors">{partner.name}</span>
+      {partner.tagline && <span className="text-gray-500 text-xs leading-snug">{partner.tagline}</span>}
+    </a>
   );
 };
 
@@ -134,24 +167,7 @@ const FindUsOnlinePage = () => {
           {PARTNERS.length > 0 ? (
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
               {PARTNERS.map((p) => (
-                <a
-                  key={p.name}
-                  href={p.url}
-                  target="_blank"
-                  rel="noopener"
-                  title={p.name}
-                  className="group bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col items-center justify-center gap-3 p-6 min-h-[160px] text-center"
-                >
-                  {p.logo ? (
-                    <img src={p.logo} alt={`${p.name} logo`} className="max-h-16 w-auto object-contain" />
-                  ) : (
-                    <span className="flex items-center justify-center w-14 h-14 rounded-full bg-[#0A2F24] text-[#D4AF37]">
-                      <Building2 className="w-7 h-7" aria-hidden="true" />
-                    </span>
-                  )}
-                  <span className="font-bold text-[#1B4D3E] text-base group-hover:text-[#D4AF37] transition-colors">{p.name}</span>
-                  {p.tagline && <span className="text-gray-500 text-xs leading-snug">{p.tagline}</span>}
-                </a>
+                <PartnerTile key={p.name} partner={p} />
               ))}
             </div>
           ) : (
