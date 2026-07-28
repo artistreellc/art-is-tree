@@ -19,6 +19,7 @@ const PARTNERS = [
   { name: 'Law Offices of Daniel J. Miller', url: 'https://www.legaldefense.com', tagline: 'Attorney — Virginia Beach' },
   { name: "Brinn's Lawn Care", url: 'https://www.facebook.com/brinnslawncare/', tagline: 'Lawn care — Hampton Roads' },
   { name: 'North Landing Firewood & Hauling', url: 'https://northlandingfirewood.com', tagline: 'Firewood, sawmilling & hauling — Virginia Beach' },
+  { name: 'Tree Leads Today', url: 'https://www.treeleadstoday.com', tagline: 'Tree service marketing & lead generation' },
 ];
 
 // Compact "Listings" dropdown: the small company logo + a drop-bar that reveals
