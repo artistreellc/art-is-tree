@@ -24,6 +24,7 @@ const PARTNERS = [
   { name: 'Hickory Towing', url: 'https://www.hickorytowing.com', tagline: 'Towing & recovery — Chesapeake, VA' },
   { name: 'Beach Brothers Diving & Salvage', url: 'https://www.beachbrosdive.com', tagline: 'Diving & marine salvage — Virginia Beach' },
   { name: 'Colony Tire & Service', url: 'https://colonytire.com', tagline: 'Tires & auto repair — Hampton Roads' },
+  { name: 'Land & Coates', url: 'https://www.landandcoates.net', tagline: 'Outdoor power equipment — Hampton Roads' },
 ];
 
 // Compact "Listings" dropdown: the small company logo + a drop-bar that reveals
