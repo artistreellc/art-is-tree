@@ -79,7 +79,7 @@ const FindUsOnlinePage = () => {
   return (
     <>
       <LocalSEOMeta
-        pageTitle="Trusted Partners | Art-is-Tree Virginia Beach Tree Service"
+        pageTitle="Recommended Pros | Art-is-Tree Virginia Beach Tree Service"
         description="The local companies Art-is-Tree LLC trusts and works with across Virginia Beach & Hampton Roads — plus every verified listing where you can find and review us."
       />
 
@@ -93,7 +93,7 @@ const FindUsOnlinePage = () => {
               <Handshake className="w-5 h-5" aria-hidden="true" /> Who We Work With
             </span>
             <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold mb-5 mt-0">
-              Trusted Partners
+              Recommended Pros
             </h1>
             <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
               The local companies we count on — and who count on us — to get tree work done right across Virginia Beach and Hampton Roads.

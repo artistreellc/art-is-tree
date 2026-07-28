@@ -65,10 +65,10 @@ const NAV_LINKS = [
     ]
   },
   {
-    name: 'Trusted Partners',
+    name: 'Recommended Pros',
     path: '/find-us-online',
     dropdown: [
-      { name: 'Trusted Partners', path: '/find-us-online' },
+      { name: 'Recommended Pros', path: '/find-us-online' },
       // Our own verified listings — each links out to our profile on that site.
       ...COMPANY_INFO.listings.map((l) => ({ name: l.name, href: l.url, external: true })),
     ],
