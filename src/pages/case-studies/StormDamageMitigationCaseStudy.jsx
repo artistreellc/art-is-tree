@@ -205,9 +205,6 @@ const StormDamageMitigationCaseStudy = () => {
                 <p>
                   So we worked it the way you have to work a storm: one hazard at a time, in order. We took the weight off the house first, relieved the tension in the pieces that were loaded, and rigged down the broken spars in controlled sections instead of trusting a splintered trunk to behave. What looks like a pile of firewood to walk up and cut is, up close, a yard full of springs — and clearing it safely is slow, deliberate, planned work.
                 </p>
-                <p>
-                  A storm rarely takes just the tree — more often than not it takes a fence with it. Once we’ve cleared the tree and made the yard safe, we’ll point you to <a href="https://vbfences.com/services/fence-repair" target="_blank" rel="noopener" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">VB Fences for the fence repair</a> that comes next — a local Hampton Roads crew we trust to rebuild what the storm knocked down.
-                </p>
               </div>
             </div>
             <div className="grid sm:grid-cols-2 gap-6 mt-10">
