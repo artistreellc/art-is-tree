@@ -21,6 +21,7 @@ const PARTNERS = [
   { name: 'North Landing Firewood & Hauling', url: 'https://northlandingfirewood.com', tagline: 'Firewood, sawmilling & hauling — Virginia Beach' },
   { name: 'Sign Wizards', url: 'https://www.facebook.com/SignWizards.VA/', tagline: 'Signs & banners — Virginia Beach' },
   { name: 'J.F. Whitlow, Jr. & Sons', url: 'https://www.jfwhitlow.com', tagline: 'Plumbing, heating & cooling — Portsmouth, VA' },
+  { name: 'Hickory Towing', url: 'https://www.hickorytowing.com', tagline: 'Towing & recovery — Chesapeake, VA' },
 ];
 
 // Compact "Listings" dropdown: the small company logo + a drop-bar that reveals
