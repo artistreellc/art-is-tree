@@ -18,6 +18,7 @@ const PARTNERS = [
   { name: 'Alien Handyman', url: 'https://www.facebook.com/kyle.kiehnau/', tagline: 'Handyman services — Hampton Roads' },
   { name: 'Law Offices of Daniel J. Miller', url: 'https://www.legaldefense.com', tagline: 'Attorney — Virginia Beach' },
   { name: "Brinn's Lawn Care", url: 'https://www.facebook.com/brinnslawncare/', tagline: 'Lawn care — Hampton Roads' },
+  { name: 'North Landing Firewood & Hauling', url: 'https://northlandingfirewood.com', tagline: 'Firewood, sawmilling & hauling — Virginia Beach' },
 ];
 
 // Compact "Listings" dropdown: the small company logo + a drop-bar that reveals
