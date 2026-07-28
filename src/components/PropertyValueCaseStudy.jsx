@@ -145,7 +145,7 @@ const PropertyValueCaseStudy = () => {
                 There’s a Hampton Roads wrinkle worth adding, too. Buyers here are storm-aware — they know what a nor’easter or a hurricane can do to a big tree over a roof. So a tree that reads as neglected doesn’t just look bad; it reads as a <em>risk</em>, and risk gets priced in. A tree that’s been properly deadwooded and thinned reads as the opposite: safe, maintained, one less thing to worry about after closing. In a coastal market, healthy structure isn’t only prettier, it’s reassuring, and reassurance is worth money on offer day.
               </p>
               <p className="text-gray-300">
-                The point for a seller is simple. Spending a few thousand dollars to make your trees an asset instead of a liability is one of the highest-return moves you can make before a listing — right up there with paint and landscaping, and often cheaper than either.
+                The point for a seller is simple. Spending a few thousand dollars to make your trees an asset instead of a liability is one of the highest-return moves you can make before a listing — right up there with paint and landscaping, and often cheaper than either. And when the landscaping side needs attention too — reseeding the lawn that finally gets light again, fresh beds, and full cleanup — we hand it to the crew we do the tree work for, <a href="https://virginialawnsllc.com" target="_blank" rel="noopener" className="text-[#D4AF37] font-semibold underline hover:text-white">Virginia Lawns</a>, so the whole yard shows as one finished picture.
               </p>
             </div>
           </div>
