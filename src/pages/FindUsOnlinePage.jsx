@@ -14,6 +14,7 @@ const PARTNERS = [
   { name: 'Merritt Stump Grinding', url: 'https://www.cityof.com/va/portsmouth/merritt-stump-grinding-357727', tagline: 'Stump grinding — Portsmouth, VA' },
   { name: 'Hartson Crane Service', url: 'https://www.facebook.com/people/Hartson-Crane-Service/61575475611389/', tagline: 'Crane services — Virginia Beach' },
   { name: 'Osborne Welding', url: 'https://www.facebook.com/p/Osborne-Welding-Inc-100035421654172/', tagline: 'Welding & steel fabrication — Portsmouth, VA' },
+  { name: "Triton's Pressure Washing", url: 'https://tritonspressurewashing.com', tagline: 'Pressure & power washing — Virginia Beach' },
 ];
 
 // Compact "Listings" dropdown: the small company logo + a drop-bar that reveals
