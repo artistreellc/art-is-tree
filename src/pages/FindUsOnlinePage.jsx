@@ -9,22 +9,27 @@ import { COMPANY_INFO } from '@/constants/seoMetadata';
 // clickable tile linking to the partner's site. Add `logo` when the file is
 // available; until then the tile shows a branded icon + the company name.
 //   { name: 'Company Name', url: 'https://…', tagline: '…', logo: '/images/partners/company.png' }
+// NOTE: `logo` paths are intentionally omitted until the image files are
+// committed to public/images/partners/. Referencing a logo before its file
+// exists makes crawlers hit a 404 for that image URL. To turn a logo on, drop
+// the file into public/images/partners/ and add e.g.
+// logo: '/images/partners/virginia-lawns.png' to that partner below.
 const PARTNERS = [
-  { name: 'Virginia Lawns', url: 'https://virginialawnsllc.com', tagline: 'Lawn care & landscaping — Virginia Beach', logo: '/images/partners/virginia-lawns.png' },
+  { name: 'Virginia Lawns', url: 'https://virginialawnsllc.com', tagline: 'Lawn care & landscaping — Virginia Beach' },
   { name: 'Merritt Stump Grinding', url: 'https://www.cityof.com/va/portsmouth/merritt-stump-grinding-357727', tagline: 'Stump grinding — Portsmouth, VA' },
-  { name: 'Hartson Crane Service', url: 'https://www.facebook.com/people/Hartson-Crane-Service/61575475611389/', tagline: 'Crane services — Virginia Beach', logo: '/images/partners/hartson-crane.png' },
-  { name: 'Osborne Welding', url: 'https://www.facebook.com/p/Osborne-Welding-Inc-100035421654172/', tagline: 'Welding & steel fabrication — Portsmouth, VA', logo: '/images/partners/osborne-welding.png' },
-  { name: "Triton's Pressure Washing", url: 'https://tritonspressurewashing.com', tagline: 'Pressure & power washing — Virginia Beach', logo: '/images/partners/tritons-pressure-washing.png' },
-  { name: 'Alien Handyman', url: 'https://www.facebook.com/kyle.kiehnau/', tagline: 'Handyman services — Hampton Roads', logo: '/images/partners/alien-handyman.png' },
-  { name: 'Law Offices of Daniel J. Miller', url: 'https://www.legaldefense.com', tagline: 'Attorney — Virginia Beach', logo: '/images/partners/daniel-miller-law.png' },
-  { name: "Brinn's Lawn Care", url: 'https://www.facebook.com/brinnslawncare/', tagline: 'Lawn care — Hampton Roads', logo: '/images/partners/brinns-lawn-care.png' },
-  { name: 'North Landing Firewood & Hauling', url: 'https://northlandingfirewood.com', tagline: 'Firewood, sawmilling & hauling — Virginia Beach', logo: '/images/partners/north-landing-firewood.png' },
-  { name: 'Sign Wizards', url: 'https://www.facebook.com/SignWizards.VA/', tagline: 'Signs & banners — Virginia Beach', logo: '/images/partners/sign-wizards.png' },
-  { name: 'J.F. Whitlow, Jr. & Sons', url: 'https://www.jfwhitlow.com', tagline: 'Plumbing, heating & cooling — Portsmouth, VA', logo: '/images/partners/jf-whitlow.png' },
-  { name: 'Hickory Towing', url: 'https://www.hickorytowing.com', tagline: 'Towing & recovery — Chesapeake, VA', logo: '/images/partners/hickory-towing.png' },
-  { name: 'Beach Brothers Diving & Salvage', url: 'https://www.beachbrosdive.com', tagline: 'Diving & marine salvage — Virginia Beach', logo: '/images/partners/beach-brothers-diving.png' },
-  { name: 'Colony Tire & Service', url: 'https://colonytire.com', tagline: 'Tires & auto repair — Hampton Roads', logo: '/images/partners/colony-tire.png' },
-  { name: 'Land & Coates', url: 'https://www.landandcoates.net', tagline: 'Outdoor power equipment — Hampton Roads', logo: '/images/partners/land-and-coates.png' },
+  { name: 'Hartson Crane Service', url: 'https://www.facebook.com/people/Hartson-Crane-Service/61575475611389/', tagline: 'Crane services — Virginia Beach' },
+  { name: 'Osborne Welding', url: 'https://www.facebook.com/p/Osborne-Welding-Inc-100035421654172/', tagline: 'Welding & steel fabrication — Portsmouth, VA' },
+  { name: "Triton's Pressure Washing", url: 'https://tritonspressurewashing.com', tagline: 'Pressure & power washing — Virginia Beach' },
+  { name: 'Alien Handyman', url: 'https://www.facebook.com/kyle.kiehnau/', tagline: 'Handyman services — Hampton Roads' },
+  { name: 'Law Offices of Daniel J. Miller', url: 'https://www.legaldefense.com', tagline: 'Attorney — Virginia Beach' },
+  { name: "Brinn's Lawn Care", url: 'https://www.facebook.com/brinnslawncare/', tagline: 'Lawn care — Hampton Roads' },
+  { name: 'North Landing Firewood & Hauling', url: 'https://northlandingfirewood.com', tagline: 'Firewood, sawmilling & hauling — Virginia Beach' },
+  { name: 'Sign Wizards', url: 'https://www.facebook.com/SignWizards.VA/', tagline: 'Signs & banners — Virginia Beach' },
+  { name: 'J.F. Whitlow, Jr. & Sons', url: 'https://www.jfwhitlow.com', tagline: 'Plumbing, heating & cooling — Portsmouth, VA' },
+  { name: 'Hickory Towing', url: 'https://www.hickorytowing.com', tagline: 'Towing & recovery — Chesapeake, VA' },
+  { name: 'Beach Brothers Diving & Salvage', url: 'https://www.beachbrosdive.com', tagline: 'Diving & marine salvage — Virginia Beach' },
+  { name: 'Colony Tire & Service', url: 'https://colonytire.com', tagline: 'Tires & auto repair — Hampton Roads' },
+  { name: 'Land & Coates', url: 'https://www.landandcoates.net', tagline: 'Outdoor power equipment — Hampton Roads' },
 ];
 
 // Compact "Listings" dropdown: the small company logo + a drop-bar that reveals
