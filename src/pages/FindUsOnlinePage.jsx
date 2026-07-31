@@ -135,7 +135,7 @@ const FindUsOnlinePage = () => {
               Recommended Pros
             </h1>
             <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
-              The local companies we count on — and who count on us — to get tree work done right across Virginia Beach and Hampton Roads.
+              The local companies we use and recommend to get tree work done right across Virginia Beach and Hampton Roads.
             </p>
 
             {/* First icon on the page: company logo + Listings dropdown */}
@@ -154,10 +154,10 @@ const FindUsOnlinePage = () => {
             <p className="text-gray-700 leading-relaxed max-w-3xl mx-auto">
               Great tree work is a team effort. Over the years we’ve built real relationships with a
               handful of local companies we trust — landscapers, equipment and crane operators,
-              excavators, and fellow tradespeople across Hampton Roads. When a job calls for a partner,
-              these are the people we call, and they’re the ones who call us. We value them because they
-              show up, they do honest work, and they hold the same standard for their customers that we
-              hold for ours. If you’re working with any of the companies below, you’re in good hands.
+              excavators, and fellow tradespeople across Hampton Roads. When a job calls for one,
+              these are the people we call. We recommend them because they show up, they do honest
+              work, and they hold the same standard for their customers that we hold for ours. If
+              you’re working with any of the companies below, you’re in good hands.
             </p>
           </div>
         </section>
