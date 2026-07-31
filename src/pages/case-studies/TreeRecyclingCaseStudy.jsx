@@ -178,7 +178,7 @@ const TreeRecyclingCaseStudy = () => {
           </div>
           <div className="mt-8 space-y-5 text-gray-700 text-lg leading-relaxed">
             <p>
-              This is a <strong>commodity market</strong>, and it moves. The price a mill pays per ton of pulpwood swings with demand, the weather, and how many loggers are cutting that month — and a wet winter that bogs down the woods can spike prices as fast as a mill slowdown can crater them. The loggers I offload to don’t romanticize any of it. The way they put it to me: <em>it’s tonnage and diesel.</em> They live and die by the price the mill is posting that week and how far they’ve got to haul to hit it. When pulp prices are down, that “worthless” yard wood I’m handing off is barely worth the fuel to move — and when they’re up, everybody’s cutting.
+              This is a <strong>commodity market</strong>, and it moves. The price a mill pays per ton of pulpwood swings with demand, the weather, and how many loggers are cutting that month — and a wet winter that bogs down the woods can spike prices as fast as a mill slowdown can crater them. The old man I offload to doesn’t romanticize any of it. The way he puts it: <em>it’s tonnage and diesel.</em> He lives and dies by the price the mill is posting that week and how far he’s got to haul to hit it. When pulp prices are down, that “worthless” yard wood I’m handing off is barely worth the fuel to move — and when they’re up, everybody’s cutting.
             </p>
           </div>
         </section>
