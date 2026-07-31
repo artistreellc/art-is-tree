@@ -40,7 +40,7 @@ export default function EmergencyPage() {
       <ServiceSchema
         name="Emergency Tree Service"
         description="24/7 emergency tree removal across Virginia Beach and Hampton Roads."
-        serviceAreas={["Virginia Beach", "Norfolk", "Chesapeake", "Portsmouth", "Suffolk"]}
+        serviceAreas={["Virginia Beach", "Norfolk", "Chesapeake", "Portsmouth"]}
       />
       <SpeakableSchema pageUrl="https://artistreevabeach.com/emergency" />
       <LocalBusinessSchema />
@@ -198,7 +198,7 @@ export default function EmergencyPage() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-playfair text-2xl md:text-3xl font-bold text-gray-900 mb-8">Emergency Service Across Hampton Roads</h2>
           <div className="flex flex-wrap justify-center gap-3">
-            {["Virginia Beach", "Norfolk", "Chesapeake", "Portsmouth", "Suffolk"].map((city) => (
+            {["Virginia Beach", "Norfolk", "Chesapeake", "Portsmouth"].map((city) => (
               <span key={city} className="bg-gray-100 text-gray-800 px-6 py-3 rounded-full text-base font-semibold border border-gray-200">
                 {city}
               </span>

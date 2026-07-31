@@ -46,7 +46,7 @@ const HomePage = () => {
 
   const homeFaqData = [{
     question: "What areas does Art-is-Tree LLC serve?",
-    answer: "Art-is-Tree LLC is based in Virginia Beach, VA, and provides tree service throughout Virginia Beach, Norfolk, Chesapeake, Portsmouth, Suffolk, and the greater Hampton Roads region. Our service radius covers roughly 30 miles around Virginia Beach, including nearby coastal and waterfront communities."
+    answer: "Art-is-Tree LLC is based in Virginia Beach, VA, and provides tree service throughout Virginia Beach, Norfolk, Chesapeake, Portsmouth, and the greater Hampton Roads region. Our service radius covers roughly 30 miles around Virginia Beach, including nearby coastal and waterfront communities."
   }, {
     question: "Is Art-is-Tree LLC licensed and insured?",
     answer: "Yes. Art-is-Tree LLC is a fully licensed and insured tree service company operating in Virginia. We are BBB A+ accredited and members of the International Society of Arboriculture (ISA). Hiring a licensed and insured tree company protects you from liability if damage or injury occurs on your property during the work."
@@ -160,7 +160,7 @@ const HomePage = () => {
 
             <div className="prose prose-lg text-gray-700 leading-relaxed font-light text-left mx-auto max-w-none space-y-6">
               <p>
-                <strong>Art-is-Tree LLC is a licensed and insured tree service in Virginia Beach, VA</strong> &mdash; and we've earned a 5.0 rating across {COMPANY_INFO.rating.reviewCount} Google reviews<Cite href={COMPANY_INFO.socials.googleMaps} label="Google" /> doing the work a lot of companies would rather hand off. Removals, trimming and pruning, stump grinding, crane jobs, land clearing, and storm cleanup, all in-house and all over Hampton Roads: Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk. We're BBB A+ rated<Cite href={COMPANY_INFO.socials.bbb} label="BBB" />, licensed and insured, and members of the International Society of Arboriculture<Cite href="https://www.isa-arbor.com/" label="ISA" />.
+                <strong>Art-is-Tree LLC is a licensed and insured tree service in Virginia Beach, VA</strong> &mdash; and we've earned a 5.0 rating across {COMPANY_INFO.rating.reviewCount} Google reviews<Cite href={COMPANY_INFO.socials.googleMaps} label="Google" /> doing the work a lot of companies would rather hand off. Removals, trimming and pruning, stump grinding, crane jobs, land clearing, and storm cleanup, all in-house and all over Hampton Roads: Virginia Beach, Norfolk, Chesapeake, and Portsmouth. We're BBB A+ rated<Cite href={COMPANY_INFO.socials.bbb} label="BBB" />, licensed and insured, and members of the International Society of Arboriculture<Cite href="https://www.isa-arbor.com/" label="ISA" />.
               </p>
               <p>
                 Virginia Beach has no shortage of tree companies. What sets us apart is experience on the ropes. Owner Mike Campbell has climbed professionally since he was 19 and has spent years working the coastal trees of Hampton Roads &mdash; the loblolly pines that fail in a nor'easter, the mature water oaks overhanging homes in Kempsville, and the sandy soil that changes how a tree has to come down. Every job is run by someone who has done it thousands of times, not a crew learning on your property.

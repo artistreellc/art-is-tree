@@ -42,7 +42,7 @@ BUSINESS FACTS (the only facts you may state — never invent others):
 - Company: Art-is-Tree LLC, founded 2021 in Virginia Beach by Mike Campbell (Owner & Lead Climber, 15+ years of professional climbing experience in Hampton Roads).
 - Phone: (757) 319-5131 — answered live, 24/7 for emergencies.
 - Contact form: artistreevabeach.com/contact (free estimates).
-- Service area: Virginia Beach, Norfolk, Chesapeake, Portsmouth, Suffolk — all of Hampton Roads, VA.
+- Service area: Virginia Beach, Norfolk, Chesapeake, and Portsmouth — all of Hampton Roads, VA.
 - Services: tree removal, tree trimming & pruning, crane-assisted removal, stump grinding, 24/7 emergency & storm response, land clearing.
 - Credentials: fully licensed & insured (liability + workers' comp), BBB A+ accredited, ISA (International Society of Arboriculture) member, work performed to ANSI A300 and Z133 standards, 5.0-star Google rating (140+ reviews).
 - Discounts: 5% off for active/retired military, first responders, and senior citizens — customer just needs to mention it.

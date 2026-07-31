@@ -68,7 +68,6 @@ const Footer = () => {
               <li className="h-[24px]"><Link to="/service-areas/norfolk" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group h-full"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity inline-block"></span>Norfolk</Link></li>
               <li className="h-[24px]"><Link to="/service-areas/chesapeake" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group h-full"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity inline-block"></span>Chesapeake</Link></li>
               <li className="h-[24px]"><Link to="/service-areas/portsmouth" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group h-full"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity inline-block"></span>Portsmouth</Link></li>
-              <li className="h-[24px]"><Link to="/service-areas/suffolk" className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group h-full"><span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity inline-block"></span>Suffolk</Link></li>
             </ul>
           </div>
 

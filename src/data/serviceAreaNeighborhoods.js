@@ -68,15 +68,5 @@ export const serviceAreaNeighborhoods = [
   { name: "Simonsdale", city: "Portsmouth", region: "West", description: "Residential neighborhood bordering Chesapeake.", lat: 36.8400, lng: -76.3700 },
   { name: "Westhaven", city: "Portsmouth", region: "West", description: "Quiet community near the western branch of the Elizabeth River.", lat: 36.8300, lng: -76.3600 },
   { name: "Shea Terrace", city: "Portsmouth", region: "Central", description: "Waterfront neighborhood near the midtown tunnel area.", lat: 36.8400, lng: -76.3300 },
-  { name: "Cavalier Manor", city: "Portsmouth", region: "South", description: "Established residential community.", lat: 36.7900, lng: -76.3500 },
-
-  // --- SUFFOLK ---
-  { name: "Downtown Suffolk", city: "Suffolk", region: "Central", description: "The historic urban center of Suffolk.", lat: 36.7282, lng: -76.5836 },
-  { name: "Harbour View", city: "Suffolk", region: "North", description: "Rapidly growing area with modern developments and commercial centers.", lat: 36.8700, lng: -76.4300 },
-  { name: "Driver", city: "Suffolk", region: "North", description: "Quaint village atmosphere known for local charm.", lat: 36.8600, lng: -76.4900 },
-  { name: "Chuckatuck", city: "Suffolk", region: "North", description: "Rural community located near the Nansemond River.", lat: 36.8700, lng: -76.5600 },
-  { name: "Whaleyville", city: "Suffolk", region: "South", description: "Rural area near the North Carolina border.", lat: 36.6300, lng: -76.6700 },
-  { name: "Holland", city: "Suffolk", region: "South", description: "Small community known for peanut farming heritage.", lat: 36.6800, lng: -76.7800 },
-  { name: "Nansemond Parkway", city: "Suffolk", region: "East", description: "Corridor connecting Suffolk to Chesapeake.", lat: 36.7800, lng: -76.4800 },
-  { name: "Lake Prince", city: "Suffolk", region: "West", description: "Quiet area surrounding the reservoir.", lat: 36.7800, lng: -76.6300 }
+  { name: "Cavalier Manor", city: "Portsmouth", region: "South", description: "Established residential community.", lat: 36.7900, lng: -76.3500 }
 ];

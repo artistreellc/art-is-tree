@@ -11,7 +11,7 @@ const ServiceAreasPage = () => {
     <>
       <LocalSEOMeta 
         pageTitle="Tree Service Areas | Hampton Roads VA | Art-is-Tree" 
-        description="Art-is-Tree LLC serves Virginia Beach, Norfolk, Chesapeake, Portsmouth and Suffolk with licensed, insured tree removal, trimming and 24/7 storm cleanup." 
+        description="Art-is-Tree LLC serves Virginia Beach, Norfolk, Chesapeake, Portsmouth with licensed, insured tree removal, trimming and 24/7 storm cleanup." 
       />
 
       <div className="pt-0 min-h-screen bg-gray-50">
@@ -71,7 +71,7 @@ const ServiceAreasPage = () => {
               </div>
               <div className="prose prose-lg text-gray-700 leading-relaxed mx-auto space-y-6">
                 <p>We provide expert tree removal, trimming, and emergency tree services throughout the Oceanfront, Virginia Beach. In Great Neck, our tree care crew delivers precision pruning and canopy management for mature oaks. Homeowners in Kempsville rely on us for fast storm cleanup and hazardous tree removal.</p>
-                <p>Beyond Virginia Beach, we provide comprehensive tree care across the greater region. We offer precision urban tree removal and crane-assisted extraction in Norfolk. Large property tree care and extensive canopy maintenance are available throughout Chesapeake. We also deliver professional stump grinding and emergency tree services in Portsmouth and Suffolk.</p>
+                <p>Beyond Virginia Beach, we provide comprehensive tree care across the greater region. We offer precision urban tree removal and crane-assisted extraction in Norfolk. Large property tree care and extensive canopy maintenance are available throughout Chesapeake. We also deliver professional stump grinding and emergency tree services in Portsmouth.</p>
               </div>
             </div>
             

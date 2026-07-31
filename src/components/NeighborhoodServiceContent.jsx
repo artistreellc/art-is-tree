@@ -15,7 +15,7 @@ const NeighborhoodServiceContent = () => {
             Serving Every Neighborhood in Virginia Beach & Hampton Roads
           </h2>
           <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            We work all over Hampton Roads &mdash; from emergency storm calls to scheduled pruning &mdash; for homeowners and businesses in Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk. Trees, soil, and setback rules change from one neighborhood to the next, and we know the difference.
+            We work all over Hampton Roads &mdash; from emergency storm calls to scheduled pruning &mdash; for homeowners and businesses in Virginia Beach, Norfolk, Chesapeake, and Portsmouth. Trees, soil, and setback rules change from one neighborhood to the next, and we know the difference.
           </p>
         </div>
 

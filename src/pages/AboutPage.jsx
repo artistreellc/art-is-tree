@@ -78,7 +78,7 @@ const AboutPage = () => {
                      ['Credentials', 'Licensed & insured · BBB A+ Accredited · ISA member · works to ANSI A300 & Z133 standards'],
                      ['Google rating', `${reviewRating.toFixed(1)} ★ (${reviewCount} verified reviews)`],
                      ['Services', 'Tree removal, trimming & pruning, crane-assisted removal, stump grinding, 24/7 emergency & storm response, and land clearing'],
-                     ['Service area', 'Virginia Beach, Norfolk, Chesapeake, Portsmouth, Suffolk, and all of Hampton Roads, VA'],
+                     ['Service area', 'Virginia Beach, Norfolk, Chesapeake, Portsmouth, and all of Hampton Roads, VA'],
                      ['Phone', '(757) 319-5131'],
                    ].map(([term, def]) => (
                      <div key={term} className="grid grid-cols-1 sm:grid-cols-[150px_1fr] gap-0.5 sm:gap-4 py-3">

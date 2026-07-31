@@ -71,7 +71,7 @@ const FAQPage = () => {
     },
     {
       question: "What areas does Art-is-Tree LLC serve?",
-      answer: "We serve Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk — all of the greater Hampton Roads region of coastal Virginia."
+      answer: "We serve Virginia Beach, Norfolk, Chesapeake, and Portsmouth — all of the greater Hampton Roads region of coastal Virginia."
     }
   ];
 
@@ -267,7 +267,7 @@ const FAQPage = () => {
               <strong>Do you offer financing or payment plans for tree work?</strong> Yes. Through <Link to="/financing">Acorn Finance</Link> you can get the work done now and pay over time in affordable monthly payments — check your rate with no impact to your credit score, borrow from $1,000 to $100,000, and choose terms up to 20 years. Just ask when you request your free estimate.
             </p>
             <p>
-              <strong>What areas do you serve?</strong> We cover Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk — all of the greater Hampton Roads region.
+              <strong>What areas do you serve?</strong> We cover Virginia Beach, Norfolk, Chesapeake, and Portsmouth — all of the greater Hampton Roads region.
             </p>
 
             <h2>Sources &amp; further reading</h2>

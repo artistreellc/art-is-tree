@@ -44,7 +44,6 @@ const NAV_LINKS = [
       { name: 'Norfolk', path: '/service-areas/norfolk' },
       { name: 'Chesapeake', path: '/service-areas/chesapeake' },
       { name: 'Portsmouth', path: '/service-areas/portsmouth' },
-      { name: 'Suffolk', path: '/service-areas/suffolk' },
     ]
   },
   {
