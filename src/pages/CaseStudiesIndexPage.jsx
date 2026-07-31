@@ -5,6 +5,11 @@ import LocalSEOMeta from '@/components/LocalSEOMeta';
 
 const caseStudiesData = [
   {
+    title: "Where Your Tree Goes After We Take It Down",
+    description: "What really happens to your tree after removal — chips burned for biomass power and turned into mulch, logs sent to the West Point and Franklin paper mills as pulpwood, the big chunks split for firewood, and why your yard tree isn't the lumber gold mine people think it is. Plus the one thing that can't be recycled.",
+    link: "/case-studies/where-your-tree-goes",
+  },
+  {
     title: "How to Choose a Tree Service in Virginia Beach",
     description: "An honest guide from the owner on hiring the right tree service — how to read recent reviews, why you should get a written quote from every company, what to verify (licensed, insured, BBB A+), and the real reason a good company welcomes you shopping around.",
     link: "/case-studies/how-to-choose-a-tree-service",
