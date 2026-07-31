@@ -44,7 +44,7 @@ const COMPANY_INFO = {
   hours: { opens: '00:00', closes: '23:59', allWeek: true },
   rating: { value: '5.0', reviewCount: '141', best: '5', worst: '1' },
   // Cities with dedicated service-area pages, in priority order.
-  areaServed: ['Virginia Beach', 'Norfolk', 'Chesapeake', 'Portsmouth', 'Suffolk'],
+  areaServed: ['Virginia Beach', 'Norfolk', 'Chesapeake', 'Portsmouth'],
   googleMapsCid: '12599844776703525086',
   // Every listing/profile the business maintains. These are linked site-wide
   // (footer + Find Us Online) and emitted as JSON-LD sameAs so search engines

@@ -104,7 +104,7 @@ const TreeTrimmingPage = () => {
             We don't only work on shade trees. We also handle <strong>fruit tree pruning in Virginia Beach</strong> — apples, figs, cherries, and ornamentals pruned in the right season for structure and fruit, not hacked back. And it isn't only residential: we run <strong>commercial tree service</strong> for HOAs, property managers, and businesses across Hampton Roads, keeping street trees, parking-lot canopies, and common areas safe and clean. Same crew, same ANSI A300 standard, whether you searched "tree pruning near me" for one backyard fig or need a full commercial pruning contract.
           </p>
           <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-            All trimming quotes from Art-is-Tree are written, fixed, and include complete debris removal. We serve Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk. For a free tree trimming estimate call (757) 319-5131.
+            All trimming quotes from Art-is-Tree are written, fixed, and include complete debris removal. We serve Virginia Beach, Norfolk, Chesapeake, and Portsmouth. For a free tree trimming estimate call (757) 319-5131.
           </p>
         </div>
 
@@ -184,7 +184,7 @@ const TreeTrimmingPage = () => {
       <FAQSection items={treeTrimmingFaqs} title="Tree Trimming & Pruning in Virginia Beach: FAQ" />
       <FinancingSection
         heading="Tree Trimming &amp; Pruning Financing"
-        description="Keeping your canopy healthy shouldn't strain your wallet, so Art-is-Tree LLC now offers tree trimming and pruning financing throughout Virginia Beach and Hampton Roads. Whether you need routine crown thinning, deadwood removal, or full storm-prep pruning before hurricane season, our flexible payment plans spread the cost into manageable monthly payments. Homeowners across Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk can book professional, spikeless, ANSI A300 tree trimming today and pay over time. Ask about our tree trimming financing and affordable payment options when you request your free written estimate — quick to apply, with terms designed around your budget."
+        description="Keeping your canopy healthy shouldn't strain your wallet, so Art-is-Tree LLC now offers tree trimming and pruning financing throughout Virginia Beach and Hampton Roads. Whether you need routine crown thinning, deadwood removal, or full storm-prep pruning before hurricane season, our flexible payment plans spread the cost into manageable monthly payments. Homeowners across Virginia Beach, Norfolk, Chesapeake, and Portsmouth can book professional, spikeless, ANSI A300 tree trimming today and pay over time. Ask about our tree trimming financing and affordable payment options when you request your free written estimate — quick to apply, with terms designed around your budget."
       />
       <ServiceAreaLinks serviceName="Tree Trimming & Pruning" />
       <RelatedCaseStudies currentPath="/services/tree-trimming" preferred={['/case-studies/spikeless-pruning', '/case-studies/emerald-ash-borer', '/case-studies/property-value']} />

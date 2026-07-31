@@ -85,7 +85,6 @@ export const routes = [
       { path: 'service-areas/norfolk', ...page(() => import('@/pages/service-areas/NorfolkPage.jsx')) },
       { path: 'service-areas/chesapeake', ...page(() => import('@/pages/service-areas/ChesapeakePage.jsx')) },
       { path: 'service-areas/portsmouth', ...page(() => import('@/pages/service-areas/PortsmouthPage.jsx')) },
-      { path: 'service-areas/suffolk', ...page(() => import('@/pages/service-areas/SuffolkPage.jsx')) },
       { path: 'privacy-policy', ...page(() => import('@/pages/PrivacyPolicyPage.jsx')) },
       { path: 'cookies', ...page(() => import('@/pages/CookiePolicyPage.jsx')) },
       { path: 'find-us-online', ...page(() => import('@/pages/FindUsOnlinePage.jsx')) },

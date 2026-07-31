@@ -111,7 +111,7 @@ const CBPACaseStudy = () => {
             {[
               { city: 'Virginia Beach', body: 'A nine-member Chesapeake Bay Preservation Area Board reviews exceptions under Appendix F of the City Code; appeals go to Circuit Court. Violations can carry a civil penalty of up to $5,000 per day.' },
               { city: 'Norfolk', body: 'No board — city staff administer the overlay district, with appeals to the Board of Zoning Appeals then Circuit Court. A violation is a Class 1 misdemeanor, and each day counts as a separate one (up to 12 months and $2,500).' },
-              { city: 'Chesapeake, Portsmouth & Suffolk', body: 'Similar frameworks with their own staff, timelines, and definitions. The Hampton Roads Planning District Commission keeps an RPA mapping tool so we can check a property before work begins.' },
+              { city: 'Chesapeake & Portsmouth', body: 'Similar frameworks with their own staff, timelines, and definitions. The Hampton Roads Planning District Commission keeps an RPA mapping tool so we can check a property before work begins.' },
             ].map(({ city, body }) => (
               <div key={city} className="card-3d bg-white border border-gray-200 border-t-4 border-t-[#D4AF37] rounded-2xl p-6">
                 <div className="flex items-center gap-2 mb-3">

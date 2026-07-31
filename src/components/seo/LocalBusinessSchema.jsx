@@ -59,8 +59,7 @@ const LocalBusinessSchema = () => {
       { "@type": "City", "name": "Virginia Beach" },
       { "@type": "City", "name": "Norfolk" },
       { "@type": "City", "name": "Chesapeake" },
-      { "@type": "City", "name": "Portsmouth" },
-      { "@type": "City", "name": "Suffolk" }
+      { "@type": "City", "name": "Portsmouth"  }
     ],
     "sameAs": COMPANY_INFO.sameAs,
     "hasOfferCatalog": {

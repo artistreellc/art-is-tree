@@ -18,7 +18,7 @@ const ICONS = { removal: Axe, crane: Truck, trim: Scissors, stump: CircleOff, em
 /**
  * Shared, photo-led city service-area page. Content is city-specific (passed
  * via `data`) but the layout, styling, and structure stay consistent across
- * Virginia Beach, Norfolk, Chesapeake, Portsmouth and Suffolk.
+ * Virginia Beach, Norfolk, Chesapeake and Portsmouth.
  */
 const CityServiceLayout = ({ data }) => {
   const {

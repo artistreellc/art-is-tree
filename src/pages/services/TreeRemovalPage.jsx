@@ -36,7 +36,7 @@ const TreeRemovalPage = () => {
     answer: "Yes. Art-is-Tree LLC is fully licensed and insured, BBB A+ accredited, a member of the International Society of Arboriculture (ISA), and works to the ANSI A300 and Z133 industry standards. Tree removal is high-risk work; hiring a licensed and insured company means you are not held liable if damage or injury happens on your property during the job."
   }, {
     question: "What areas do you serve for tree removal?",
-    answer: "We provide tree removal in Virginia Beach, Norfolk, Chesapeake, Portsmouth, Suffolk, and the surrounding Hampton Roads region, roughly a 30-mile radius from Virginia Beach."
+    answer: "We provide tree removal in Virginia Beach, Norfolk, Chesapeake, Portsmouth, and the surrounding Hampton Roads region, roughly a 30-mile radius from Virginia Beach."
   }];
 
   return (
@@ -107,7 +107,7 @@ const TreeRemovalPage = () => {
 
             <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mt-10 mb-6">Complete Cleanup Included</h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-6">Every tree removal includes complete debris cleanup. We chip the brush, remove the wood, and rake the area. Your yard should look better when we leave than it did before we arrived. <Link to="/services/stump-grinding" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">Stump grinding</Link> is available as an add-on — ground below grade so you can sod, replant, or build over the area with no remnant root system left behind.</p>
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">All quotes are free, written, and never exceeded on the day of service. We serve Virginia Beach, Norfolk, Chesapeake, Portsmouth, Suffolk, and surrounding Hampton Roads. For a free tree removal estimate call (757) 319-5131.</p>
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">All quotes are free, written, and never exceeded on the day of service. We serve Virginia Beach, Norfolk, Chesapeake, Portsmouth, and surrounding Hampton Roads. For a free tree removal estimate call (757) 319-5131.</p>
           </div>
         </div>
       </section>
@@ -190,7 +190,7 @@ const TreeRemovalPage = () => {
       <FAQSection items={faqData} title="Tree Removal in Virginia Beach: FAQ" />
       <FinancingSection
         heading="Tree Removal Financing"
-        description="Art-is-Tree LLC now offers flexible tree removal financing across Virginia Beach and Hampton Roads, so a hazardous or oversized tree never has to wait on your budget. From a single storm-cracked pine to a large crane-assisted removal over the house, our local financing lets you split the cost into affordable monthly payments instead of one lump sum. Homeowners in Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk can schedule professional, licensed, and insured tree removal today and pay over time. Ask about our tree removal payment plans and financing options when you request your free written estimate — the application is quick, and the terms are built to fit your household."
+        description="Art-is-Tree LLC now offers flexible tree removal financing across Virginia Beach and Hampton Roads, so a hazardous or oversized tree never has to wait on your budget. From a single storm-cracked pine to a large crane-assisted removal over the house, our local financing lets you split the cost into affordable monthly payments instead of one lump sum. Homeowners in Virginia Beach, Norfolk, Chesapeake, and Portsmouth can schedule professional, licensed, and insured tree removal today and pay over time. Ask about our tree removal payment plans and financing options when you request your free written estimate — the application is quick, and the terms are built to fit your household."
       />
       <ServiceAreaLinks serviceName="Tree Removal" />
       <RelatedCaseStudies currentPath="/services/tree-removal" preferred={['/case-studies/crane-safety', '/case-studies/virginia-tree-law', '/case-studies/property-value']} />

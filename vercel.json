@@ -6,6 +6,11 @@
   "cleanUrls": true,
   "redirects": [
     {
+      "source": "/service-areas/suffolk",
+      "destination": "/service-areas",
+      "statusCode": 301
+    },
+    {
       "source": "/(.*)",
       "has": [{ "type": "host", "value": "www.artistreevabeach.com" }],
       "destination": "https://artistreevabeach.com/$1",

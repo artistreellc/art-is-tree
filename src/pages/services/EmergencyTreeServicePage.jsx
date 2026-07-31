@@ -71,7 +71,7 @@ const EmergencyTreeServicePage = () => {
             24/7 Emergency Tree Service in Virginia Beach
           </h1>
           <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-10 leading-relaxed">
-            When a tree comes down on your property at 2 in the morning, you need someone who picks up the phone. Art-is-Tree LLC answers emergency calls 24 hours a day, 365 days a year across Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk. Licensed, insured, and built on 15 years of Hampton Roads storm response experience.
+            When a tree comes down on your property at 2 in the morning, you need someone who picks up the phone. Art-is-Tree LLC answers emergency calls 24 hours a day, 365 days a year across Virginia Beach, Norfolk, Chesapeake, and Portsmouth. Licensed, insured, and built on 15 years of Hampton Roads storm response experience.
           </p>
           
           <Button size="lg" className="bg-[#D4AF37] text-black hover:bg-[#c19b2e] font-extrabold py-8 px-12 text-xl md:text-2xl shadow-xl w-full sm:w-auto animate-pulse" asChild>
@@ -94,7 +94,7 @@ const EmergencyTreeServicePage = () => {
             <p className="text-lg text-gray-700 leading-relaxed mb-6">Hampton Roads occupies a specific geographic position that makes it one of the more storm-exposed metro areas on the East Coast. The region sits at the intersection of Mid-Atlantic coastal storm tracks, tropical weather systems moving up the Atlantic seaboard, and the thermodynamic instability generated where warm Chesapeake Bay water meets summer continental air masses. In Virginia Beach, you do not need a direct hurricane landfall to have a major tree emergency. An ordinary summer convective event is enough.</p>
 
             <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mt-10 mb-6">A Real Person Answers Every Call</h2>
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">Art-is-Tree LLC provides 24/7 emergency tree service across Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk. Call (757) 319-5131 and a real person answers — not a voicemail, not an answering service, not a callback promise. We respond fast because a tree on a roof, a tree blocking emergency vehicle access, or a tree that has come down on a utility connection is not a situation where a next-business-day response is acceptable.</p>
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">Art-is-Tree LLC provides 24/7 emergency tree service across Virginia Beach, Norfolk, Chesapeake, and Portsmouth. Call (757) 319-5131 and a real person answers — not a voicemail, not an answering service, not a callback promise. We respond fast because a tree on a roof, a tree blocking emergency vehicle access, or a tree that has come down on a utility connection is not a situation where a next-business-day response is acceptable.</p>
 
             <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mt-10 mb-6">15 Years of Storm Response Experience</h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-6">Mike Campbell built Art-is-Tree on 15 years of climbing experience in Hampton Roads including storm response work across the region's worst weather events. His team has cleared trees from residential rooftops in Kempsville and Great Neck, cut storm-dropped loblolly pines from vehicles in Red Mill and Sandbridge, and cleared debris from access routes in Chesapeake following major storm events. For storm-damaged trees requiring crane-assisted extraction, see our <Link to="/services/crane-removal" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">crane tree removal service</Link>.</p>
@@ -119,7 +119,7 @@ const EmergencyTreeServicePage = () => {
                 "Fallen tree removal from roofs and vehicles",
                 "Hazardous hanging limb removal",
                 "Road and driveway clearance",
-                "Same-day response across Virginia Beach, Norfolk, Chesapeake, Portsmouth, Suffolk",
+                "Same-day response across Virginia Beach, Norfolk, Chesapeake, and Portsmouth",
                 "Available 365 days a year"
               ].map((item, idx) => (
                 <li key={idx} className="flex items-start">
@@ -183,7 +183,7 @@ const EmergencyTreeServicePage = () => {
       <FAQSection items={emergencyFaqs} title="Emergency Tree Service in Virginia Beach: FAQ" />
       <FinancingSection
         heading="Emergency Tree Removal Financing"
-        description="Storm damage doesn't wait for payday, and neither should you. Art-is-Tree LLC now offers emergency tree removal financing across Virginia Beach and Hampton Roads, so a fallen or dangerous tree can be handled immediately and paid for over time. When a limb is on your roof, car, or driveway, our 24/7 crew responds first and our flexible payment plans handle the rest, splitting the cost into affordable monthly payments. Homeowners in Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Suffolk can get licensed, insured emergency tree service now and finance it. Ask about emergency tree removal financing and payment plans when you call — the application is fast."
+        description="Storm damage doesn't wait for payday, and neither should you. Art-is-Tree LLC now offers emergency tree removal financing across Virginia Beach and Hampton Roads, so a fallen or dangerous tree can be handled immediately and paid for over time. When a limb is on your roof, car, or driveway, our 24/7 crew responds first and our flexible payment plans handle the rest, splitting the cost into affordable monthly payments. Homeowners in Virginia Beach, Norfolk, Chesapeake, and Portsmouth can get licensed, insured emergency tree service now and finance it. Ask about emergency tree removal financing and payment plans when you call — the application is fast."
       />
       <ServiceAreaLinks serviceName="Emergency Tree Service" />
       <RelatedCaseStudies currentPath="/services/emergency-tree-service" preferred={['/case-studies/osha-compliance', '/case-studies/crane-safety', '/case-studies/property-value']} />
