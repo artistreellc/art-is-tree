@@ -47,10 +47,11 @@ const NAV_LINKS = [
     ]
   },
   {
-    name: 'Case Studies',
+    name: 'ART-icles',
     path: '/case-studies',
     dropdown: [
-      { name: 'All Case Studies', path: '/case-studies' },
+      { name: 'All ART-icles', path: '/case-studies' },
+      { name: 'Where Your Tree Goes', path: '/case-studies/where-your-tree-goes' },
       { name: 'How to Choose a Tree Service', path: '/case-studies/how-to-choose-a-tree-service' },
       { name: 'Crane Safety', path: '/case-studies/crane-safety' },
       { name: 'Chesapeake Bay', path: '/case-studies/chesapeake-bay-preservation-act' },

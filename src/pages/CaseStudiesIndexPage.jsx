@@ -74,7 +74,7 @@ const CaseStudiesIndexPage = () => {
           <div className="container mx-auto px-4 text-center max-w-4xl">
              <span className="text-[#D4AF37] font-bold tracking-widest uppercase text-sm mb-4 block">Proven Expertise</span>
              <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-               Our Case Studies
+               ART-icles
              </h1>
              <p className="text-lg md:text-xl text-gray-200 font-light leading-relaxed">
                Welcome to our deep dive into some of the most challenging and rewarding projects we've completed at Art-is-Tree LLC. By reviewing these case studies, you'll gain a deeper understanding of our rigorous safety standards, technical proficiency, and our unwavering commitment to protecting property value and the natural landscape across Virginia Beach.
