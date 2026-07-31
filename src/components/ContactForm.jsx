@@ -1,5 +1,5 @@
 
-import React, { useState, useCallback, useMemo, useReducer, useEffect } from 'react';
+import React, { useState, useCallback, useMemo, useReducer, useEffect, useRef } from 'react';
 import { Send, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -65,6 +65,11 @@ const ContactForm = () => {
   const [formState, dispatch] = useReducer(formReducer, initialFormState);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  // Hard re-entrancy guard. `isSubmitting` disables the button, but React state
+  // is async — a fast double-click can enter handleSubmit twice before the
+  // re-render lands. This ref blocks that synchronously, so one submission can
+  // never produce two requests or two conversion events.
+  const submitLock = useRef(false);
 
   const debouncedName = useDebounce(formState.name, 300);
   const debouncedEmail = useDebounce(formState.email, 300);
@@ -153,6 +158,7 @@ const ContactForm = () => {
 
   const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
+    if (submitLock.current) return;
 
     const errors = {
       name: validateField('name', formState.name),
@@ -180,6 +186,7 @@ const ContactForm = () => {
       return;
     }
     
+    submitLock.current = true;
     setIsSubmitting(true);
     setIsSuccess(false);
 
@@ -218,27 +225,28 @@ const ContactForm = () => {
         throw new Error(data.message || data.error || 'Failed to send message. Please try again.');
       }
 
-      // Fire the lead conversions — ONLY here, after a confirmed 2xx success.
-      // The website code is the SINGLE source of truth for this conversion, so
-      // we deliberately do NOT push the `contact_form_submit` dataLayer event
-      // anymore: that stops any existing GTM trigger from firing the Ads
-      // conversion a second time, which means there is nothing to pause in the
-      // GTM container — no double-count, no manual GTM change required.
-      if (typeof window !== 'undefined') {
-        // Direct GA4 lead event + Google Ads "Request quote" conversion, using
-        // the IDs already configured for this site (GA4 G-TLDWNQZZ81 and Ads
-        // AW-10806457837/i_SkCOqBhMQbEO3r9aAo, both loaded via GTM).
-        if (typeof window.gtag === 'function') {
-          window.gtag('event', 'generate_lead', {
-            currency: 'USD',
-            value: 0,
-            form_id: 'contact',
-            service: formState.serviceNeeded || undefined,
-          });
-          window.gtag('event', 'conversion', {
-            send_to: 'AW-10806457837/i_SkCOqBhMQbEO3r9aAo',
-          });
-        }
+      // Fire the GA4 lead event — ONLY here, after a confirmed successful
+      // response from FormSubmit. Never on click, never on a validation
+      // failure, never on a network error.
+      //
+      // This routes through the shared window.gtag_report_lead helper (defined
+      // once in GoogleTagManager) so every form on the site reports identically
+      // and its 1s debounce makes a double-fire impossible. We deliberately do
+      // NOT fire a Google Ads conversion tag here — mark `generate_lead` as a
+      // key event in GA4 and import it into Ads instead, which avoids double
+      // counting.
+      if (typeof window !== 'undefined' && typeof window.gtag_report_lead === 'function') {
+        window.gtag_report_lead({
+          service_type: formState.serviceNeeded || 'Not specified',
+          form_location: window.location.pathname,
+        });
+      } else if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+        // Fallback if the helper hasn't initialized yet (tag script still
+        // loading): call gtag directly so the lead is never lost.
+        window.gtag('event', 'generate_lead', {
+          service_type: formState.serviceNeeded || 'Not specified',
+          form_location: window.location.pathname,
+        });
       }
 
       setIsSuccess(true);
@@ -271,6 +279,7 @@ const ContactForm = () => {
       });
       
     } finally {
+      submitLock.current = false;
       setIsSubmitting(false);
     }
   }, [formState, validateField, toast]);

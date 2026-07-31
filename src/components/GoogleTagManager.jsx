@@ -1,10 +1,20 @@
 import { useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useCookieConsent } from '@/hooks/useCookieConsent';
 
-// Container GTM-K9JBRQBJ carries both GA4 (G-TLDWNQZZ81) and the Google Ads
-// "Request quote" form conversion, so all tags are managed in GTM now — the
-// old direct gtag.js components were removed to avoid double-counting.
-const GTM_ID = 'GTM-K9JBRQBJ';
+// GA4 via gtag.js, loaded DIRECTLY — no Google Tag Manager.
+//
+// Why: the site previously only ever loaded GTM (GTM-K9JBRQBJ), while
+// `window.gtag` was just the classic shim (`dataLayer.push(arguments)`). When
+// that container didn't load, every event — generate_lead, phone_call_click —
+// pushed into a dataLayer array that nothing consumed, so GA4 recorded nothing.
+// Loading gtag.js here makes `window.gtag` the real Google tag, so events are
+// transmitted to GA4 on their own with no container config required.
+//
+// Mark `generate_lead` and `phone_call_click` as key events in GA4 and import
+// them into Google Ads — we deliberately do NOT fire a separate Ads conversion
+// tag from the site, which is what would cause double counting.
+const GA4_ID = 'G-TLDWNQZZ81';
 
 // Map our cookie-consent preferences to Google Consent Mode v2 signals.
 const consentState = (prefs) => ({
@@ -16,18 +26,20 @@ const consentState = (prefs) => ({
 
 const GoogleTagManager = () => {
   const loaded = useRef(false);
+  const lastPath = useRef(null);
   const { preferences, hasConsented } = useCookieConsent();
+  const location = useLocation();
 
-  // One-time setup: dataLayer, Consent Mode v2 defaults, global helpers, the
-  // site-wide tel: listener, and the (deferred) GTM load. Runs for EVERY
-  // visitor — consent is handled by Consent Mode (default denied) rather than
-  // by blocking GTM entirely, so conversions are still modeled for users who
-  // never interact with the banner instead of being lost outright.
+  // One-time setup: dataLayer, Consent Mode v2 defaults, global event helpers,
+  // the site-wide tel: listener, and the (deferred) gtag.js load. Runs for
+  // EVERY visitor — consent is handled by Consent Mode rather than by blocking
+  // the tag entirely, so conversions are still measured/modeled instead of
+  // being lost outright.
   useEffect(() => {
     if (typeof window === 'undefined') return;
     window.dataLayer = window.dataLayer || [];
-    // Classic gtag shim — Consent Mode requires the raw `arguments` object be
-    // pushed to the dataLayer, not a plain object.
+    // Classic gtag shim. This is the standard snippet: gtag.js (loaded below)
+    // is what actually drains this queue and transmits to GA4.
     function gtag() { window.dataLayer.push(arguments); }
     window.gtag = window.gtag || gtag;
 
@@ -35,30 +47,47 @@ const GoogleTagManager = () => {
     // default so conversions are measured for every visitor, EXCEPT when the
     // browser sends Do Not Track, which we honor as an explicit opt-out. A
     // visitor can still opt out via the banner, which fires a consent update.
+    // MUST be pushed before `config` so it applies to the very first hit.
     const dnt = navigator.doNotTrack === '1' || window.doNotTrack === '1' || navigator.doNotTrack === 'yes';
-    gtag('consent', 'default', {
+    window.gtag('consent', 'default', {
       ...consentState({ analytics: !dnt, marketing: !dnt }),
       wait_for_update: 500,
     });
-    gtag('set', 'ads_data_redaction', true);
-    gtag('set', 'url_passthrough', true);
+    window.gtag('set', 'ads_data_redaction', true);
+    window.gtag('set', 'url_passthrough', true);
 
-    // Contact-form conversion (GTM's Form Submission / custom-event trigger).
-    window.gtag_report_contact_form = function () {
-      window.dataLayer.push({ event: 'contact_form_submit' });
-    };
-    // Legacy signature used by a couple of buttons; caller handles navigation.
-    window.gtag_report_conversion = function () {
-      window.dataLayer.push({ event: 'contact_form_submit' });
-      return false;
+    // GA4 init. `config` sends the first page_view; SPA route changes are sent
+    // manually below, so we don't double-count the initial one.
+    window.gtag('js', new Date());
+    window.gtag('config', GA4_ID);
+    lastPath.current = window.location.pathname + window.location.search;
+
+    // --- Shared conversion helpers -----------------------------------------
+    // Every lead/call event on the site goes through one of these, so there is
+    // a single place that owns event names, parameters, and de-duplication.
+
+    // Contact-form lead. Called ONLY after a confirmed successful submission.
+    // The 1s debounce mirrors gtag_report_phone_click and guarantees a double
+    // submit (or a duplicate handler) can never double-count one lead.
+    let lastLead = 0;
+    window.gtag_report_lead = function (details) {
+      const now = Date.now();
+      if (now - lastLead < 1000) return false;
+      lastLead = now;
+      const payload = {
+        service_type: (details && details.service_type) || 'Not specified',
+        form_location:
+          (details && details.form_location) ||
+          (typeof window !== 'undefined' ? window.location.pathname : ''),
+      };
+      window.dataLayer.push({ event: 'generate_lead', ...payload });
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'generate_lead', payload);
+      }
+      return true;
     };
 
-    // Phone clicks: push a dataLayer event named to match GA4's recommended
-    // key event (`phone_call_click`). We fire it BOTH ways so no GTM config is
-    // required: a dataLayer push (for anyone who wants a GTM trigger) AND a
-    // direct GA4 event via gtag, which routes to GA4 through the config GTM
-    // already loads. Mark `phone_call_click` as a key event in GA4 and import
-    // it as a Google Ads conversion — no GTM tag needs to be built.
+    // Phone clicks: GA4's recommended key-event name for a tap-to-call.
     let lastPhoneClick = 0;
     window.gtag_report_phone_click = function () {
       const now = Date.now();
@@ -70,33 +99,32 @@ const GoogleTagManager = () => {
       }
     };
 
-    // Global capture for EVERY tel: link on the site — present and future —
-    // so no call button can leak an untracked conversion. Individual inline
+    // Global capture for EVERY tel: link on the site — present and future — so
+    // no call button can leak an untracked conversion. Individual inline
     // onClick handlers still exist on some links; the debounce above means
-    // this listener and those handlers can never double-count. This is the
-    // single source of truth for phone-call attribution.
+    // this listener and those handlers can never double-count.
     const handleTelClick = (e) => {
       const link = e.target && e.target.closest && e.target.closest('a[href^="tel:"]');
       if (link) window.gtag_report_phone_click();
     };
     document.addEventListener('click', handleTelClick, true);
 
-    // Load GTM once, deferred so it never blocks the critical render.
-    const initGTM = () => {
-      if (loaded.current || document.getElementById('gtm-script')) return;
+    // Load gtag.js once, deferred so it never blocks the critical render. The
+    // queued consent/config/event calls above are processed the moment it runs.
+    const initTag = () => {
+      if (loaded.current || document.getElementById('ga4-script')) return;
       loaded.current = true;
-      window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
       const s = document.createElement('script');
-      s.id = 'gtm-script';
+      s.id = 'ga4-script';
       s.async = true;
-      s.src = `https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`;
+      s.src = `https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`;
       document.head.appendChild(s);
     };
     const schedule = () => {
       if ('requestIdleCallback' in window) {
-        window.requestIdleCallback(() => setTimeout(initGTM, 1200), { timeout: 5000 });
+        window.requestIdleCallback(() => setTimeout(initTag, 1200), { timeout: 5000 });
       } else {
-        setTimeout(initGTM, 1200);
+        setTimeout(initTag, 1200);
       }
     };
     if (document.readyState === 'complete') schedule();
@@ -105,8 +133,26 @@ const GoogleTagManager = () => {
     return () => document.removeEventListener('click', handleTelClick, true);
   }, []);
 
+  // SPA page_view — gtag.js only auto-sends on initial load, so client-side
+  // route changes need an explicit hit. Skips the first render so the
+  // `config` page_view above isn't counted twice.
+  useEffect(() => {
+    if (typeof window === 'undefined' || typeof window.gtag !== 'function') return;
+    const path = location.pathname + location.search;
+    if (lastPath.current === null || lastPath.current === path) {
+      lastPath.current = path;
+      return;
+    }
+    lastPath.current = path;
+    window.gtag('event', 'page_view', {
+      page_path: path,
+      page_location: window.location.href,
+      page_title: document.title,
+    });
+  }, [location.pathname, location.search]);
+
   // Consent Mode UPDATE — whenever the visitor makes an explicit choice, push
-  // the granted/denied state so GA4 and Ads switch to full (cookie-based)
+  // the granted/denied state so GA4 switches to full (cookie-based)
   // measurement for those who accept.
   useEffect(() => {
     if (typeof window === 'undefined' || !window.gtag || !hasConsented) return;

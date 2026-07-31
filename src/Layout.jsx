@@ -11,7 +11,8 @@ import WwwRedirect from '@/components/WwwRedirect';
 import ErrorBoundary from '@/components/ErrorBoundary';
 import ScrollToTop from '@/components/ScrollToTop';
 
-// Tag management (GA4 + Google Ads run through GTM container GTM-K9JBRQBJ)
+// GA4 via gtag.js loaded directly (no GTM). Owns Consent Mode, the shared
+// gtag_report_lead / gtag_report_phone_click helpers, and SPA page_view.
 import GoogleTagManager from '@/components/GoogleTagManager.jsx';
 import MobileCTABar from '@/components/MobileCTABar.jsx';
 import ChatWidget from '@/components/ChatWidget.jsx';
