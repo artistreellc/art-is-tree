@@ -1,4 +1,4 @@
-import React, { lazy } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Navigate } from 'react-router-dom';
 import Layout from '@/Layout';
 import ProtectedRoute from '@/components/ProtectedRoute';
@@ -31,6 +31,21 @@ const PerformanceMetricsPage = lazy(() => import('@/pages/admin/PerformanceMetri
 const DebugNeighborhoodsPage = lazy(() => import('@/pages/admin/DebugNeighborhoodsPage.jsx'));
 const DebugGooglePlacesPage = lazy(() => import('@/pages/admin/DebugGooglePlacesPage.jsx'));
 const SEOAuditReportPage = lazy(() => import('@/pages/admin/SEOAuditReportPage.jsx'));
+
+// CRM app (client-only, its own providers + shell, excluded from prerender).
+const CrmRoot = lazy(() => import('@/crm/CrmRoot.jsx'));
+const CrmDashboard = lazy(() => import('@/crm/pages/CrmDashboard.jsx'));
+const LeadInbox = lazy(() => import('@/crm/pages/LeadInbox.jsx'));
+const Pipeline = lazy(() => import('@/crm/pages/Pipeline.jsx'));
+const JobDetail = lazy(() => import('@/crm/pages/JobDetail.jsx'));
+const CrmSettings = lazy(() => import('@/crm/pages/CrmSettings.jsx'));
+
+// Minimal boot spinner for the CRM tree (no marketing chrome).
+const CrmBoot = () => (
+  <div className="min-h-screen flex items-center justify-center bg-slate-50">
+    <div className="w-8 h-8 border-4 border-[#1B4D3E] border-t-transparent rounded-full animate-spin" />
+  </div>
+);
 
 const protectedEl = (Component) => (
   <ProtectedRoute>
@@ -108,6 +123,26 @@ export const routes = [
       // branded not-found page now that the SPA catch-all rewrite is gone.
       { path: '404', ...page(() => import('@/pages/NotFoundPage.jsx')) },
       { path: '*', ...page(() => import('@/pages/NotFoundPage.jsx')) },
+    ],
+  },
+
+  // CRM — a standalone app tree (its own providers/shell, no marketing chrome).
+  // Client-only: excluded from prerender in vite.config `includedRoutes`.
+  {
+    path: '/crm',
+    entry: 'src/crm/CrmRoot.jsx',
+    errorElement: <RootErrorBoundary />,
+    element: (
+      <Suspense fallback={<CrmBoot />}>
+        <CrmRoot />
+      </Suspense>
+    ),
+    children: [
+      { index: true, element: <CrmDashboard /> },
+      { path: 'inbox', element: <LeadInbox /> },
+      { path: 'pipeline', element: <Pipeline /> },
+      { path: 'jobs/:id', element: <JobDetail /> },
+      { path: 'settings', element: <CrmSettings /> },
     ],
   },
 ];
