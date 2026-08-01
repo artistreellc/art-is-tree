@@ -13,6 +13,7 @@ const LocalBusinessSchema = () => {
     "alternateName": COMPANY_INFO.alternateName,
     "image": COMPANY_INFO.logo,
     "@id": `${BASE_URL}/#localbusiness`,
+    "parentOrganization": { "@id": `${BASE_URL}/#organization` },
     "url": BASE_URL,
     "telephone": "(757) 319-5131",
     "email": "artistreeofvirginia@gmail.com",

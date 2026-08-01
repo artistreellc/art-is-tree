@@ -14,6 +14,17 @@ import { COMPANY_INFO } from '@/constants/seoMetadata';
 import { ldJson } from '@/utils/seoHelpers';
 
 const ICONS = { removal: Axe, crane: Truck, trim: Scissors, stump: CircleOff, emergency: Zap, land: Trees };
+// Maps a service's iconKey to its dedicated service page for internal linking.
+// A city service entry can override with its own `href` (or set `href: null` to
+// render an unlinked tile, e.g. Portsmouth's "Tree Risk Assessment").
+const SERVICE_HREF = {
+  removal: '/services/tree-removal',
+  crane: '/services/crane-removal',
+  trim: '/services/tree-trimming',
+  stump: '/services/stump-grinding',
+  emergency: '/services/emergency-tree-service',
+  land: '/services/land-clearing',
+};
 
 /**
  * Shared, photo-led city service-area page. Content is city-specific (passed
@@ -30,20 +41,44 @@ const CityServiceLayout = ({ data }) => {
     ctaTitle, ctaText, mapQuery, faqs, relatedPreferred, financingText,
   } = data;
 
+  // @graph: the city LocalBusiness node (linked up to the global Organization
+  // via parentOrganization) plus one Service node per service offered here —
+  // each scoped to this city and pointing back to the business — so the page
+  // is eligible for service + local rich results, not just a bare business card.
+  const bizId = `https://artistreevabeach.com${path}#business`;
   const schema = {
-    '@context': 'https://schema.org', '@type': 'LocalBusiness', name: 'Art-is-Tree LLC',
-    url: `https://artistreevabeach.com${path}`, telephone: '+17573195131',
-    address: { '@type': 'PostalAddress', addressLocality: city, addressRegion: 'VA', addressCountry: 'US' },
-    geo: { '@type': 'GeoCoordinates', latitude: geo.lat, longitude: geo.lng },
-    areaServed: { '@type': 'City', name: city }, priceRange: '$$',
-    image: 'https://artistreevabeach.com/logo.png',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: COMPANY_INFO.rating.value,
-      reviewCount: COMPANY_INFO.rating.reviewCount,
-      bestRating: COMPANY_INFO.rating.best,
-      worstRating: COMPANY_INFO.rating.worst,
-    },
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': ['LocalBusiness', 'HomeAndConstructionBusiness'],
+        '@id': bizId,
+        name: 'Art-is-Tree LLC',
+        url: `https://artistreevabeach.com${path}`,
+        telephone: '+17573195131',
+        image: 'https://artistreevabeach.com/logo.png',
+        priceRange: '$$',
+        address: { '@type': 'PostalAddress', addressLocality: city, addressRegion: 'VA', addressCountry: 'US' },
+        geo: { '@type': 'GeoCoordinates', latitude: geo.lat, longitude: geo.lng },
+        areaServed: { '@type': 'City', name: city },
+        parentOrganization: { '@id': 'https://artistreevabeach.com/#organization' },
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: COMPANY_INFO.rating.value,
+          reviewCount: COMPANY_INFO.rating.reviewCount,
+          bestRating: COMPANY_INFO.rating.best,
+          worstRating: COMPANY_INFO.rating.worst,
+        },
+      },
+      ...services.map((s, i) => ({
+        '@type': 'Service',
+        '@id': `${bizId}-service-${i + 1}`,
+        name: s.kw,
+        description: (s.text || '').replace(/<[^>]+>/g, ''),
+        serviceType: s.kw,
+        provider: { '@id': bizId },
+        areaServed: { '@type': 'City', name: city },
+      })),
+    ],
   };
 
   return (
@@ -107,19 +142,27 @@ const CityServiceLayout = ({ data }) => {
           <div className="container mx-auto px-4 max-w-6xl">
             <SectionHeading eyebrow="What we do here" title={`Full-service tree care in ${city}`} align="center" className="mb-12" />
             <div className="grid md:grid-cols-2 gap-5">
-              {services.map(({ iconKey, kw, text }) => {
+              {services.map(({ iconKey, kw, text, href }) => {
                 const Icon = ICONS[iconKey] || Axe;
-                return (
-                  <div key={kw} className="reveal card-3d group flex gap-5 bg-white border border-gray-200/90 border-t-[3px] border-t-[#D4AF37]/80 rounded-2xl p-6 hover:border-[#1B4D3E]/25">
+                const to = href !== undefined ? href : SERVICE_HREF[iconKey];
+                const cls = 'reveal card-3d group flex gap-5 bg-white border border-gray-200/90 border-t-[3px] border-t-[#D4AF37]/80 rounded-2xl p-6 hover:border-[#1B4D3E]/25';
+                const inner = (
+                  <>
                     <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#245c49] to-[#123a2d] flex items-center justify-center flex-shrink-0 shadow-md ring-1 ring-black/10 group-hover:scale-105 transition-transform">
                       <Icon className="w-6 h-6 text-[#D4AF37]" />
                     </div>
                     <div>
-                      <h3 className="font-playfair text-xl font-bold text-[#1B4D3E] mb-1.5">{kw}</h3>
+                      <h3 className="font-playfair text-xl font-bold text-[#1B4D3E] mb-1.5">
+                        {kw}
+                        {to && <ArrowRight className="inline-block w-4 h-4 ml-1 -mt-1 text-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />}
+                      </h3>
                       <p className="text-gray-600 leading-relaxed text-[15px] m-0">{text}</p>
                     </div>
-                  </div>
+                  </>
                 );
+                return to
+                  ? <Link key={kw} to={to} className={cls} aria-label={`${kw} — ${city}`}>{inner}</Link>
+                  : <div key={kw} className={cls}>{inner}</div>;
               })}
             </div>
           </div>

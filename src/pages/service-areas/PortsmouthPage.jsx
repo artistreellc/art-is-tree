@@ -22,7 +22,7 @@ const data = {
     { iconKey: 'trim', kw: 'Tree Trimming & Pruning', text: 'Keeping a mature canopy sound comes down to smart weight reduction and clearing deadwood. We trim back limbs that have grown too close to historic homes and power lines before they become a problem.' },
     { iconKey: 'stump', kw: 'Stump Grinding', text: 'We grind stumps below grade so you can restore the yard — part of a Portsmouth removal or on its own.' },
     { iconKey: 'emergency', kw: '24/7 Emergency Tree Service', text: 'When a storm drops a heritage limb across your roof or driveway, our emergency tree service answers 24/7 to secure the hazard and clear the damage.' },
-    { iconKey: 'land', kw: 'Tree Risk Assessment', text: 'Most structural decay doesn’t show from the ground. We check heritage trees for internal rot, weak unions, and failing roots — the problems that put a limb through a roof or crack a foundation.' },
+    { iconKey: 'land', kw: 'Tree Risk Assessment', href: null, text: 'Most structural decay doesn’t show from the ground. We check heritage trees for internal rot, weak unions, and failing roots — the problems that put a limb through a roof or crack a foundation.' },
   ],
   localTitle: 'Heritage trees over historic homes',
   localParagraphs: [
