@@ -86,3 +86,9 @@ deposit/unpaid-invoice reminder.
 ## Explicitly OUT (§5B — never build)
 
 Fully autonomous / self-rewriting learning · win-back nudges to cold estimates.
+
+## Mike-directed reprioritization (Aug 1)
+
+| # | Decision | Why |
+|---|---|---|
+| D24 | **App surface pulled forward** at Mike's explicit direction ("start really building the app"). Built the Morning Brief assembler (`src/ops/morningBrief.ts`, pure + tested) and an interactive design preview of the phone app (`design/app-preview.html`: Brief / Inbox / Approve / Property twin, §9 tokens, glove-scale targets, both themes). | The approval surface is the missing half of already-built recommend-don't-commit (#11), and Mike needs something visible. Preview uses sample data, clearly labeled; real wiring lands with the API layer. Phase ordering otherwise unchanged. |
