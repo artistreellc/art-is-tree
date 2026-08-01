@@ -8,8 +8,6 @@
 //                       For production, verify artistreevabeach.com in Resend and set this to
 //                       something like "Art-is-Tree Website <no-reply@artistreevabeach.com>".
 
-import { captureLead, getDb } from './crm/_lib.js';
-
 const TO_EMAIL = process.env.CONTACT_TO_EMAIL || 'artistreeofvirginia@gmail.com';
 const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || 'Art-is-Tree Website <onboarding@resend.dev>';
 
@@ -59,22 +57,6 @@ export default async function handler(req, res) {
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return res.status(400).json({ success: false, error: 'Please enter a valid email address.' });
-  }
-
-  // Best-effort: also drop this into the CRM inbox. Never let a CRM/DB hiccup
-  // break the email path the site depends on.
-  if (getDb()) {
-    try {
-      await captureLead({
-        name, phone, email, address,
-        service_needed: serviceNeeded,
-        urgency, message,
-        source: 'website_form',
-        source_detail: 'contact page',
-      });
-    } catch (e) {
-      console.error('[api/contact] CRM capture failed (non-fatal)', e?.message || e);
-    }
   }
 
   const rows = [
