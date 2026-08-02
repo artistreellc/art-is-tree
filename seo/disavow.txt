@@ -1,0 +1,61 @@
+# Disavow file for artistreevabeach.com
+# Source: Semrush Backlink Audit > Network Graph > Potential Link Networks
+# 43 domains, all Authority Score 2-15, none topically or geographically related
+# to tree service or Hampton Roads.
+#
+# UPLOAD AT: https://search.google.com/search-console/disavow-links
+# Select property artistreevabeach.com, upload this file, confirm.
+# This REPLACES any existing disavow list - it does not append.
+
+# --- Self-identifying link sellers / bookmark spam farms ---
+domain:getlinksnow.net
+domain:bookmarkspedia.com
+domain:bookmarkmiracle.com
+domain:social40.com
+domain:singnalsocial.com
+
+# --- Typosquat / throwaway TLD ---
+domain:goooogla.com
+domain:3xzcn160rxo.top
+domain:httpsridzeal.com
+domain:sporstcenter.com
+
+# --- Free-host subdomains (disavowing ONLY these subdomains,
+#     NOT wordpress.com or blogspot.com themselves) ---
+domain:cissiboy.wordpress.com
+domain:softoline.blogspot.com
+
+# --- Off-niche PBN cluster: furniture, dental, hair, cruise, sport, etc.
+#     None have any plausible reason to link to a Virginia tree company ---
+domain:c2g.us
+domain:crisryan.com
+domain:inoajuice.com
+domain:onlyhealthydeals.com
+domain:wijmarket.com
+domain:allanwinder.com
+domain:focaandjaw.com
+domain:gpdkeyboard.com
+domain:oilshipbrand.com
+domain:papaichair.com
+domain:purplecloudsky.com
+domain:finlandregion.com
+domain:hugocousin.com
+domain:jogosoccer.com
+domain:kerromarketing.com
+domain:maratehair.com
+domain:milkdente.com
+domain:mumheat.com
+domain:skinlashcare.com
+domain:testmycarnow.com
+domain:utcgraphic.com
+domain:wwpcruise.com
+domain:ytellbeach.com
+domain:zustchair.com
+domain:cindylaup.com
+domain:ecommercebenchmarking.com
+domain:getonline.co.in
+domain:plumeriamarketing.com
+domain:qwenterprise.com
+domain:skindentalcare.com
+domain:thebodisprememba.com
+domain:youtoo.in
