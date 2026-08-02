@@ -39,7 +39,7 @@ const FAQPage = () => {
     },
     {
       question: "How do I choose a good tree service in Virginia Beach?",
-      answer: "Put every company through the same checklist: read their recent Google reviews, confirm they are licensed and insured and will show proof, get a written itemized estimate that spells out removal, stump grinding, cleanup, and hauling, and look for an independent trust signal like a BBB A+ rating. Then compare. The company that shows up on time to give the estimate is usually the one that shows up on time to do the work. Art-is-Tree LLC is licensed, insured, BBB A+ accredited, and rated 5.0 across 141 Google reviews."
+      answer: "Put every company through the same checklist: read their recent Google reviews, confirm they are licensed and insured and will show proof, get a written itemized estimate that spells out removal, stump grinding, cleanup, and hauling, and look for an independent trust signal like a BBB A+ rating. Then compare. The company that shows up on time to give the estimate is usually the one that shows up on time to do the work. Art-is-Tree LLC is licensed, insured, BBB A+ accredited, and rated 5.0 across 142 Google reviews."
     },
     {
       question: "Should I get more than one quote for tree work?",
@@ -220,7 +220,7 @@ const FAQPage = () => {
               Put every company you're considering through the same short checklist. Read their recent Google reviews. Confirm they're licensed and insured — and that they'll show you proof. Get a written, itemized estimate that spells out removal, stump grinding, cleanup, and hauling. And look for an independent trust signal, like a BBB A+ rating or an owner who actually answers the phone.
             </p>
             <p>
-              Then compare. Honestly, the company that shows up on time to <em>estimate</em> your job is usually the one that'll show up on time to <em>do</em> it. Art-is-Tree LLC is licensed, insured, BBB A+ accredited, and rated 5.0 across 141 Google reviews. I walk through the whole thing — including the real reason a good company <em>wants</em> you to shop around — in our <Link to="/case-studies/how-to-choose-a-tree-service">guide to choosing a tree service</Link>.
+              Then compare. Honestly, the company that shows up on time to <em>estimate</em> your job is usually the one that'll show up on time to <em>do</em> it. Art-is-Tree LLC is licensed, insured, BBB A+ accredited, and rated 5.0 across 142 Google reviews. I walk through the whole thing — including the real reason a good company <em>wants</em> you to shop around — in our <Link to="/case-studies/how-to-choose-a-tree-service">guide to choosing a tree service</Link>.
             </p>
 
             <h2>Should I get more than one quote for tree work?</h2>
