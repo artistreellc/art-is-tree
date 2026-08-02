@@ -9,7 +9,7 @@ const CaseStudyPage = () => {
   return (
     <>
       <LocalSEOMeta
-        pageTitle="Crane Tree Removal Virginia Beach VA | Art-is-Tree LLC"
+        pageTitle="Crane Tree Removal Safety: How We Rig Big Trees | VA Beach"
         description="Crane-assisted tree removal case study in Virginia Beach. See how we safely extract large, hazardous pines near sensitive nesting sites using 100-ton cranes."
       />
       <CraneCaseStudy />
