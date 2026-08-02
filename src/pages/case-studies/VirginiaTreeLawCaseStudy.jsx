@@ -12,7 +12,7 @@ const VirginiaTreeLawCaseStudy = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   const title = 'The Tree on the Property Line: Virginia Tree Law in Kempsville';
-  const description = 'A first-person case study on Virginia tree and timber law — the self-help rule from Fancher v. Fagella, treble-damages liability under Va. Code § 55.1-2836, and how to handle a neighbor tree dispute the right way.';
+  const description = 'Virginia tree law and neighbor tree disputes — the self-help rule from Fancher v. Fagella, treble damages under Va. Code § 55.1-2836, and how to handle it.';
 
   return (
     <>

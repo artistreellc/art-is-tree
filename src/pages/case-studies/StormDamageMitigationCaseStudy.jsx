@@ -12,11 +12,11 @@ const StormDamageMitigationCaseStudy = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   const title = 'After the Storm: Hurricane and Tornado Tree Damage in Virginia Beach — and What It Takes to Clean It Up Safely';
-  const description = 'A first-person look at storm-damaged tree work in Virginia Beach and Hampton Roads: what to look for before a hurricane, why storm cleanup is so dangerous, and two real jobs — a root-failed tree we rigged by hand with no crane access, and tornado-snapped pines at Broad Bay Island.';
+  const description = 'Storm damage tree removal in Virginia Beach — what to check before a hurricane, why storm cleanup is dangerous, and two jobs including tornado-snapped pines.';
 
   return (
     <>
-      <LocalSEOMeta pageTitle="Storm &amp; Hurricane Tree Damage Cleanup in Virginia Beach | Art-is-Tree LLC" description={description} />
+      <LocalSEOMeta pageTitle="Storm Damage Tree Removal Virginia Beach | 24/7 Cleanup" description={description} />
       <CaseStudySchema
         title={title}
         description={description}

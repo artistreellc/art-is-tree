@@ -15,7 +15,7 @@ const ServicesPage = () => {
     <div className="bg-gray-50 min-h-screen pt-0 pb-24">
       <LocalSEOMeta 
         pageTitle="Tree Services Virginia Beach VA | Art-is-Tree LLC" 
-        description="Full-service tree care in Hampton Roads: removal, trimming, stump grinding, crane work, land clearing and 24/7 emergency service. Licensed, insured. Free quotes." 
+        description="Tree removal, trimming, stump grinding, crane work and land clearing in Virginia Beach & Hampton Roads. Licensed, insured, 24/7 emergency service. Free quotes." 
       />
 
       <LocalBusinessSchema />

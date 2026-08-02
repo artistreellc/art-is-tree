@@ -68,7 +68,7 @@ const AffordableTreeWorkGuide = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   const title = 'The Hampton Roads Guide to Affordable Tree Work';
-  const description = 'A straight-talking guide from a Virginia Beach tree service owner on making tree work affordable — phased projects, skipping stump grinding, keeping chips and wood on site, cut-and-leave options, military and senior discounts, what a bid actually pays for, and why a 3–5 year pruning program is the cheapest tree care there is.';
+  const description = 'How to make tree work affordable in Virginia Beach — phased projects, keeping the chips and wood on site, cut-and-leave options, military and senior discounts.';
 
   return (
     <>
