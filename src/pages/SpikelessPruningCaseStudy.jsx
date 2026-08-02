@@ -12,7 +12,7 @@ const SpikelessPruningCaseStudy = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   const title = 'Spikeless Pruning: Why We Never Put Spikes in a Tree We’re Not Removing';
-  const description = 'A first-person explanation of spikeless pruning in Virginia Beach — how rope-and-saddle climbing protects tree health, why climbing spikes wound a living tree, and what the ANSI A300 pruning standard actually requires.';
+  const description = 'Spikeless pruning in Virginia Beach — how rope-and-saddle climbing protects tree health, why spikes wound a living tree, and what ANSI A300 actually requires.';
 
   return (
     <>

@@ -44,7 +44,7 @@ const TreeRecyclingCaseStudy = () => {
     <>
       <LocalSEOMeta
         pageTitle="Where Your Tree Goes After Removal | Virginia Beach"
-        description="After clearing 15 loblolly pines and a red oak in Great Neck, Virginia Beach: where the wood goes — biomass power, the West Point & Franklin pulp mills, mulch, and firewood."
+        description="After clearing 15 loblolly pines and a red oak in Virginia Beach — where the wood goes: biomass power, the West Point & Franklin pulp mills, mulch and firewood."
       />
       <CaseStudySchema
         title={title}

@@ -37,7 +37,7 @@ const FinancingPage = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   const description =
-    'Understand your tree service financing options in Virginia Beach and Hampton Roads. Art-is-Tree LLC partners with Acorn Finance so you can get tree work done now and pay over time — check your rate with no impact to your credit score, borrow $1,000 to $100,000, and choose terms up to 20 years.';
+    'Tree service financing in Virginia Beach & Hampton Roads via Acorn Finance — check your rate with no credit impact, borrow $1,000–$100,000, terms to 20 years.';
 
   return (
     <>
