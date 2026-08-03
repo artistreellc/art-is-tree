@@ -165,7 +165,34 @@ These are not theoretical. Each one has already caused damage on this account.
 
 ---
 
-## 8. Stack facts
+## 8. The guardrails in `.claude/` are enforced, not advisory
+
+Sections 1 and 3 are wired to hooks. They are not reminders that can be
+weighed against being helpful — the tool call is refused.
+
+| File | Event | Does |
+|---|---|---|
+| `.claude/hooks/audit-lock-arm.sh` | `UserPromptSubmit` | Arms a lock when the owner uses an audit word; clears it on an explicit go-ahead |
+| `.claude/hooks/audit-lock-check.sh` | `PreToolUse` | Refuses `Edit`/`Write`/`NotebookEdit` while armed |
+| `.claude/hooks/keyword-guard.py` | `PreToolUse` | Refuses any edit under `src/` or `public/` that drops a term from the §3 table |
+| `.claude/skills/audit/SKILL.md` | `/audit` | The read-only procedure and findings format |
+
+`keyword-guard.py` reads its term list straight out of the §3 table, so that
+table is the single source of truth — edit it and the guard changes with it.
+If the table stops parsing, the guard **blocks rather than failing open**.
+
+Replaying `a8ff1f4` through it refuses 13 of 18 edits and catches 21 keyword
+losses. That commit could not have been made with this in place.
+
+**Do not route around a blocked edit** with `Bash`, `sed`, `tee`, `python`, or
+a heredoc. A caught mistake is cheap; a hidden one is what costs five hours.
+
+Hooks load from the settings file present when the session starts. After
+changing `.claude/settings.json`, open `/hooks` once or restart.
+
+---
+
+## 9. Stack facts
 
 - React 18 + Vite + `vite-react-ssg`, prerendering ~40 routes
 - `<Head>` from `vite-react-ssg`; page meta via the `LocalSEOMeta` component
