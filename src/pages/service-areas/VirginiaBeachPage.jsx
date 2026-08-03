@@ -5,7 +5,7 @@ const data = {
   city: 'Virginia Beach',
   path: '/service-areas/virginia-beach',
   geo: { lat: 36.8529, lng: -75.9780 },
-  metaTitle: 'Tree Service Virginia Beach VA | Free Estimates',
+  metaTitle: 'Tree Service Virginia Beach VA | Free Estimates | Art-is-Tree LLC',
   metaDesc: 'Local tree removal, trimming, stump grinding and 24/7 emergency service in Virginia Beach, VA. Licensed, insured, BBB A+. Free estimates from Art-is-Tree LLC.',
   heroImg: '/images/virginia-beach-bucket-truck-pine.webp',
   heroAlt: 'Art-is-Tree bucket truck servicing tall pines in a Virginia Beach neighborhood',

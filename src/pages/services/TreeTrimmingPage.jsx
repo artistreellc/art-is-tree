@@ -34,7 +34,7 @@ const TreeTrimmingPage = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       <LocalSEOMeta 
-        pageTitle="Tree Trimming & Pruning Virginia Beach VA" 
+        pageTitle="Tree Trimming & Pruning Virginia Beach VA | Art-is-Tree LLC"
         description={description} 
       />
       

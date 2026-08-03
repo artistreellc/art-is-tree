@@ -40,7 +40,7 @@ const ChooseTreeServiceCaseStudy = () => {
   return (
     <>
       <LocalSEOMeta
-        pageTitle="Tree Removal Cost Virginia Beach: Read Reviews, Get Quotes"
+        pageTitle="Tree Removal Cost Virginia Beach: Read Reviews, Get Quotes | Art-is-Tree LLC"
         description={description}
       />
       <CaseStudySchema

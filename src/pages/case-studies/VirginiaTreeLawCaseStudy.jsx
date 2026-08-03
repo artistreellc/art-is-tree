@@ -16,7 +16,7 @@ const VirginiaTreeLawCaseStudy = () => {
 
   return (
     <>
-      <LocalSEOMeta pageTitle="Virginia Tree Law &amp; Neighbor Tree Disputes | Kempsville, Virginia Beach | Art-is-Tree LLC" description={description} />
+      <LocalSEOMeta pageTitle="Virginia Tree Law &amp; Neighbor Tree Disputes | Virginia Beach | Art-is-Tree LLC" description={description} />
       <CaseStudySchema
         title={title}
         description={description}

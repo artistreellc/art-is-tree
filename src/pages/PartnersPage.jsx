@@ -91,7 +91,7 @@ const PartnersPage = () => {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       <LocalSEOMeta 
-        pageTitle="Partners | Tree Service Virginia Beach | Art-is-Tree" 
+        pageTitle="Partners | Tree Service Virginia Beach | Art-is-Tree LLC" 
         description="Art-is-Tree LLC partners with Hampton Roads property managers, builders and landscapers for reliable, licensed and insured tree care across Virginia Beach." 
       />
 

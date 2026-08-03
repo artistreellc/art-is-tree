@@ -96,8 +96,8 @@ const HomePage = () => {
       </Head>
 
       <LocalSEOMeta
-        pageTitle="Tree Service Virginia Beach VA | 5-Star, Licensed & Insured"
-        description="Google 5-star rated, BBB A+ tree service in Virginia Beach & Hampton Roads. Tree removal, trimming, stump grinding & 24/7 storm response. Free estimates."
+        pageTitle="Tree Service Virginia Beach VA | 5-Star, Licensed & Insured | Art-is-Tree LLC"
+        description="Tree service in Virginia Beach & Hampton Roads — Google 5-star rated, BBB A+, licensed & insured. Tree removal, trimming, stump grinding & 24/7 storm response. Free estimates."
       />
 
       <LocalBusinessSchema />

@@ -43,7 +43,7 @@ const TreeRecyclingCaseStudy = () => {
   return (
     <>
       <LocalSEOMeta
-        pageTitle="Where Your Tree Goes After Removal | Great Neck, Virginia Beach | Art-is-Tree LLC"
+        pageTitle="Where Your Tree Goes After Removal | Virginia Beach | Art-is-Tree LLC"
         description={description}
       />
       <CaseStudySchema

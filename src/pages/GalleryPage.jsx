@@ -38,7 +38,7 @@ const GalleryPage = () => {
   return (
     <>
       <LocalSEOMeta
-        pageTitle="Tree Service Gallery | Art-is-Tree Virginia Beach"
+        pageTitle="Tree Service Gallery | Virginia Beach | Art-is-Tree LLC"
         description="See real photos of tree removal, crane work and trimming by Art-is-Tree LLC across Virginia Beach and Hampton Roads. Licensed, insured crews."
       />
 

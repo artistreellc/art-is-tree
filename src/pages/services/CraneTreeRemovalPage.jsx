@@ -34,7 +34,7 @@ const CraneTreeRemovalPage = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       <LocalSEOMeta 
-        pageTitle="Crane Tree Removal Virginia Beach VA | Art-is-Tree" 
+        pageTitle="Crane Tree Removal Virginia Beach VA | Art-is-Tree LLC"
         description={description} 
       />
       

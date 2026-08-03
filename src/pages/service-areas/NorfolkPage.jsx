@@ -5,7 +5,7 @@ const data = {
   city: 'Norfolk',
   path: '/service-areas/norfolk',
   geo: { lat: 36.8508, lng: -76.2859 },
-  metaTitle: 'Tree Service Norfolk VA | Removal & Trimming',
+  metaTitle: 'Tree Service Norfolk VA | Removal & Trimming | Art-is-Tree LLC',
   metaDesc: 'Tree removal, trimming and stump grinding in Norfolk, VA. Licensed, insured, BBB A+ tree service with 24/7 storm response across Hampton Roads. Free estimates.',
   heroImg: '/images/virginia-beach-tall-tree-climb.webp',
   heroAlt: 'Art-is-Tree climber high in a mature tree beside a Norfolk home',
