@@ -13,12 +13,13 @@ const CBPACaseStudy = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   const title = 'Navigating the Chesapeake Bay Preservation Act: A Waterfront Tree Job in Hampton Roads';
+  const description = 'CBPA permits, RPA buffer zones, and waterfront tree work on private property in Virginia Beach, Norfolk and Hampton Roads — what the Chesapeake Bay Preservation Act actually allows, cited to Virginia DEQ.';
 
   return (
     <>
       <LocalSEOMeta
-        pageTitle="Chesapeake Bay Act Tree Permits | Virginia Beach"
-        description="A first-person case study on navigating CBPA permits, RPA buffer zones, and waterfront tree work on private property in Virginia Beach, Norfolk and Hampton Roads — cited to Virginia DEQ."
+        pageTitle="Chesapeake Bay Act Tree Permits | Virginia Beach | Art-is-Tree LLC"
+        description={description}
       />
       <BreadcrumbListSchema items={[
         { name: 'Home', url: '/' },
@@ -27,7 +28,7 @@ const CBPACaseStudy = () => {
       ]} />
       <CaseStudySchema
         title={title}
-        description="A first-person case study on navigating CBPA permits, RPA buffer zones, and waterfront tree work on private property in Virginia Beach, Norfolk and Hampton Roads — cited to Virginia DEQ."
+        description={description}
         imageUrl="https://artistreevabeach.com/images/virginia-beach-large-tree-over-house.webp"
         url="/case-studies/chesapeake-bay-preservation-act"
         datePublished="2026-07-07"

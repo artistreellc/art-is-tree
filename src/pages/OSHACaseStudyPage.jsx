@@ -12,11 +12,11 @@ const OSHACaseStudyPage = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   const title = 'Why Safety Isn’t Optional: OSHA, ANSI Z133, and How We Actually Work';
-  const description = 'A first-person look at how a licensed, insured Virginia Beach tree service runs OSHA-compliant, ANSI Z133 work — minimum approach distances to power lines, fall protection, PPE, and rigging — and why hiring an uninsured crew puts your property and your liability on the line.';
+  const description = 'OSHA-compliant, ANSI Z133 tree work in Virginia Beach — minimum approach distances to power lines, fall protection, PPE, and rigging. Hiring an uninsured crew instead of a licensed, insured tree service puts your property and your liability on the line.';
 
   return (
     <>
-      <LocalSEOMeta pageTitle="Tree Service Safety: OSHA &amp; ANSI Z133 | Art-is-Tree Virginia Beach" description={description} />
+      <LocalSEOMeta pageTitle="Tree Service Safety: OSHA &amp; ANSI Z133 | Virginia Beach | Art-is-Tree LLC" description={description} />
       <CaseStudySchema
         title={title}
         description={description}
