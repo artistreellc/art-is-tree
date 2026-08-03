@@ -79,7 +79,7 @@ const FAQPage = () => {
     <>
       <LocalSEOMeta
         pageTitle="Tree Service FAQ | Virginia Beach | Art-is-Tree LLC"
-        description="Straight answers on tree removal cost, permits, pruning timing and hiring a licensed, insured tree service in Virginia Beach — from owner Mike Campbell."
+        description="Straight answers on tree removal cost, permits, pruning timing, insurance & hiring a licensed, insured tree service in Virginia Beach — from owner Mike Campbell."
       />
 
       <FAQPageSchema items={faqSchemaItems} />

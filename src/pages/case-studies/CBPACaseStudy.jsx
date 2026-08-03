@@ -18,7 +18,7 @@ const CBPACaseStudy = () => {
     <>
       <LocalSEOMeta
         pageTitle="Chesapeake Bay Act Tree Permits | Virginia Beach"
-        description="Navigating CBPA permits, RPA buffer zones and waterfront tree work on private property in Virginia Beach and Norfolk — cited to Virginia DEQ."
+        description="A first-person case study on navigating CBPA permits, RPA buffer zones, and waterfront tree work on private property in Virginia Beach, Norfolk and Hampton Roads — cited to Virginia DEQ."
       />
       <BreadcrumbListSchema items={[
         { name: 'Home', url: '/' },
@@ -27,7 +27,7 @@ const CBPACaseStudy = () => {
       ]} />
       <CaseStudySchema
         title={title}
-        description="Navigating CBPA permits, RPA buffer zones and waterfront tree work on private property in Virginia Beach and Norfolk — cited to Virginia DEQ."
+        description="A first-person case study on navigating CBPA permits, RPA buffer zones, and waterfront tree work on private property in Virginia Beach, Norfolk and Hampton Roads — cited to Virginia DEQ."
         imageUrl="https://artistreevabeach.com/images/virginia-beach-large-tree-over-house.webp"
         url="/case-studies/chesapeake-bay-preservation-act"
         datePublished="2026-07-07"

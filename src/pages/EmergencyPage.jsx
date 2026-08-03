@@ -35,7 +35,7 @@ export default function EmergencyPage() {
     <div className="w-full">
       <LocalSEOMeta
         pageTitle="24/7 Emergency Tree Service Virginia Beach VA"
-        description="Storm damage or fallen tree? 24/7 emergency tree service across Virginia Beach and Hampton Roads. Licensed, insured, BBB A+. Call (757) 319-5131."
+        description="Storm damage or fallen tree? Art-is-Tree offers 24/7 emergency tree service across Virginia Beach and Hampton Roads. Licensed, insured, BBB A+. Call (757) 319-5131."
       />
       <ServiceSchema
         name="Emergency Tree Service"
