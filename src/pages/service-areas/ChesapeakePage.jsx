@@ -5,7 +5,7 @@ const data = {
   city: 'Chesapeake',
   path: '/service-areas/chesapeake',
   geo: { lat: 36.7682, lng: -76.2875 },
-  metaTitle: 'Tree Service Chesapeake VA | Removal, Trimming & Arborist',
+  metaTitle: 'Tree Service Chesapeake VA | Removal, Trimming & Arborist | Art-is-Tree LLC',
   metaDesc: 'Tree removal, trimming, stump grinding and land clearing in Chesapeake, VA. Licensed, insured, BBB A+ tree service with 24/7 storm response. Free estimates.',
   heroImg: '/images/virginia-beach-crane-operation-oak.webp',
   heroAlt: 'Crane crew removing a large oak beside a Chesapeake home',

@@ -7,11 +7,16 @@ import RelatedCaseStudies from '@/components/RelatedCaseStudies';
 import { Eyebrow, SectionHeading, Figure, ProjectSpec, Byline } from '@/components/design/Primitives';
 import { Button } from '@/components/ui/button';
 
+// Single source for this case study's description — used by the page's meta tag
+// and by the CaseStudySchema below, so the two can never drift apart.
+export const PROPERTY_VALUE_DESCRIPTION =
+  'How professional tree care raises property values in Virginia Beach and Hampton Roads — crown lifting, thinning and deadwooding an overgrown listing back to curb appeal, plus the ROI research behind it. Licensed and insured.';
+
 const PropertyValueCaseStudy = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   const title = 'The Listing That Sold in a Week: Tree Care and Property Value in Virginia Beach';
-  const description = 'A first-person account of prepping an overgrown Virginia Beach property for sale — crown lifting, thinning, and deadwooding to restore curb appeal — and the research on how professional tree care raises property value.';
+  const description = PROPERTY_VALUE_DESCRIPTION;
 
   return (
     <>

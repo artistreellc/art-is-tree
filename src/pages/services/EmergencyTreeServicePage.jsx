@@ -34,7 +34,7 @@ const EmergencyTreeServicePage = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       <LocalSEOMeta 
-        pageTitle="Emergency Tree Service Virginia Beach VA | 24/7" 
+        pageTitle="Emergency Tree Service Virginia Beach VA | 24/7 | Art-is-Tree LLC"
         description={description} 
       />
       

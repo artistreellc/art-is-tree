@@ -34,7 +34,7 @@ const LandClearingPage = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       <LocalSEOMeta 
-        pageTitle="Land Clearing Virginia Beach VA | Hampton Roads" 
+        pageTitle="Land Clearing Virginia Beach VA | Hampton Roads | Art-is-Tree LLC"
         description={description} 
       />
       

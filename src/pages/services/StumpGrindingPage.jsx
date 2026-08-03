@@ -34,7 +34,7 @@ const StumpGrindingPage = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       <LocalSEOMeta 
-        pageTitle="Stump Grinding Virginia Beach VA | 5-Star Rated"
+        pageTitle="Stump Grinding Virginia Beach VA | 5-Star Rated | Art-is-Tree LLC"
         description={description} 
       />
       

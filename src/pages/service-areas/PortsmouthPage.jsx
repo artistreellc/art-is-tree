@@ -5,7 +5,7 @@ const data = {
   city: 'Portsmouth',
   path: '/service-areas/portsmouth',
   geo: { lat: 36.8354, lng: -76.2983 },
-  metaTitle: 'Tree Service Portsmouth VA | Removal & Trimming',
+  metaTitle: 'Tree Service Portsmouth VA | Removal & Trimming | Art-is-Tree LLC',
   metaDesc: 'Tree removal, trimming, stump grinding and 24/7 emergency tree service in Portsmouth, VA. Licensed, insured, BBB A+. Free estimates from Art-is-Tree LLC.',
   heroImg: '/images/virginia-beach-crane-rigging-storm.webp',
   heroAlt: 'Art-is-Tree climber rigging a large trunk to a crane in Portsmouth',

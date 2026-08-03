@@ -10,7 +10,7 @@ const ServiceAreasPage = () => {
   return (
     <>
       <LocalSEOMeta 
-        pageTitle="Tree Service Areas | Hampton Roads VA | Art-is-Tree" 
+        pageTitle="Tree Service Areas | Hampton Roads VA | Art-is-Tree LLC"
         description="Art-is-Tree LLC serves Virginia Beach, Norfolk, Chesapeake, Portsmouth with licensed, insured tree removal, trimming and 24/7 storm cleanup." 
       />
 
