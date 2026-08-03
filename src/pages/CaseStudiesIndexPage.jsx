@@ -16,47 +16,47 @@ const caseStudiesData = [
   },
   {
     title: "Spikeless Pruning & Bucket Truck Methods",
-    description: "Discover why spikeless pruning and bucket truck methods are the professional standard for tree health and how we protect your trees.",
+    description: "Spikeless pruning in Virginia Beach — why rope-and-saddle climbing and bucket truck work are the professional standard, how climbing spikes wound a living tree, and what the ANSI A300 pruning standard actually requires.",
     link: "/case-studies/spikeless-pruning",
   },
   {
     title: "Emerald Ash Borer: The 200-Year-Old Church Ash",
-    description: "A first-person account of removing a massive, emerald ash borer–killed ash tree over a church altar and day-school play area in Kempsville — a rotten, cabled union that needed a crane.",
+    description: "Emerald ash borer tree removal in Kempsville, Virginia Beach — a 200-year-old ash over a church altar and day-school play area, with a rotten, cabled co-dominant union that needed a crane.",
     link: "/case-studies/emerald-ash-borer",
   },
   {
     title: "OSHA Case Study",
-    description: "Learn about workplace safety compliance and how proper tree care practices meet OSHA standards to protect workers and property.",
+    description: "OSHA-compliant, ANSI Z133 tree work in Virginia Beach — minimum approach distances to power lines, fall protection, PPE and rigging, and what hiring an uninsured crew actually puts at risk.",
     link: "/case-studies/osha-compliance",
   },
   {
     title: "Property Value Case Study",
-    description: "Discover how professional tree care and landscape management directly impact property values and curb appeal.",
+    description: "How professional tree care raises property values in Virginia Beach and Hampton Roads — real ROI data from strategic trimming and maintenance, and what neglected trees quietly cost you in curb appeal.",
     link: "/case-studies/property-value",
   },
   {
     title: "Virginia Tree Law: The Tree on the Property Line",
-    description: "A first-person case study on Virginia tree and timber law — the self-help rule from Fancher v. Fagella, treble-damages liability for cutting a tree that isn't yours, and how to handle a neighbor dispute the right way.",
+    description: "Virginia tree and timber law — the self-help rule from Fancher v. Fagella, treble-damages liability for cutting a tree that isn't yours, and how to handle a neighbor dispute in Kempsville, Virginia Beach the right way.",
     link: "/case-studies/virginia-tree-law",
   },
   {
     title: "Chesapeake Bay Case Study",
-    description: "See how environmental stewardship and proper tree management contribute to protecting the Chesapeake Bay ecosystem.",
+    description: "CBPA permits and RPA buffer zones on waterfront property in Virginia Beach and Norfolk — what the Chesapeake Bay Preservation Act actually allows on private land, cited to Virginia DEQ.",
     link: "/case-studies/chesapeake-bay-preservation-act",
   },
   {
     title: "Crane-Assisted Tree Removal Case Study",
-    description: "Discover how crane-assisted tree removal ensures the safe and efficient extraction of massive or hazardous trees in tight urban spaces with zero impact to surrounding structures.",
+    description: "Crane-assisted tree removal in Virginia Beach — how we safely extract massive, hazardous pines from tight spaces near sensitive nesting sites, with zero impact to surrounding structures.",
     link: "/case-studies/crane-safety",
   },
   {
     title: "After the Storm: Hurricane & Tornado Damage",
-    description: "A first-person account of storm-damaged tree work in Virginia Beach — what to look for before a hurricane, why storm cleanup is so dangerous, and two real jobs: a root-failed tree rigged by hand with no crane access, and tornado-snapped pines at Broad Bay Island.",
+    description: "Hurricane and tornado storm damage tree work in Virginia Beach — what to look for before a storm, why storm cleanup is so dangerous, and two real jobs: a root-failed tree rigged by hand with no crane access, and tornado-snapped pines at Broad Bay Island.",
     link: "/case-studies/storm-damage-mitigation",
   },
   {
     title: "The Hampton Roads Guide to Affordable Tree Work",
-    description: "Straight talk from the owner on making tree work affordable — not cheap: phasing projects, keeping chips and wood on site, skipping the stump, military/first responder/senior discounts, what a bid really pays for, and why a 3–5 year pruning cycle is the cheapest tree care there is.",
+    description: "Straight talk from the owner on making tree work affordable — not cheap: phasing projects, keeping chips and wood on site, cut-and-leave options, military/first responder/senior discounts, what a bid really pays for, and why a 3–5 year pruning cycle is the cheapest tree care there is.",
     link: "/case-studies/affordable-tree-work",
   }
 ];
@@ -65,7 +65,7 @@ const CaseStudiesIndexPage = () => {
   return (
     <>
       <LocalSEOMeta 
-        pageTitle="Tree Service Case Studies | Virginia Beach VA" 
+        pageTitle="Tree Service Case Studies | Virginia Beach VA | Art-is-Tree LLC"
         description="Real-world tree care success stories from Virginia Beach. Detailed case studies showcasing crane removals, safety protocols, and environmental stewardship." 
       />
 

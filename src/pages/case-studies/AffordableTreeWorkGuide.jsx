@@ -17,7 +17,7 @@ import { FinancingBanner } from '@/components/Financing';
 const faqData = [
   {
     question: 'How can I make tree removal more affordable in Virginia Beach?',
-    answer: 'Five honest levers lower the cost of professional tree removal in Virginia Beach: phase the work across seasons instead of doing the whole property at once, keep the wood chips on site as mulch, keep the wood in unprocessed log lengths, choose a cut-and-leave-in-place option where cleanup is not needed, and skip stump grinding. Art-is-Tree LLC also offers 5% off for military, first responders, and senior citizens. These options reduce the price without cutting corners on safety or insurance.',
+    answer: 'Five honest levers lower the cost of professional tree removal in Virginia Beach: phase the work across seasons instead of doing the whole property at once, keep the wood chips on site as mulch, keep the wood in unprocessed log lengths, choose a cut-and-leave-in-place option where cleanup is not needed, and skip stump grinding where the stump can stay. Art-is-Tree LLC also offers 5% off for military, first responders, and senior citizens. These options reduce the price without cutting corners on safety or insurance.',
   },
   {
     question: 'Does keeping the wood or chips really save money on tree work?',
@@ -29,7 +29,7 @@ const faqData = [
   },
   {
     question: 'Is it cheaper to leave the stump after tree removal?',
-    answer: 'Yes. Stump grinding is a separate service with its own machine and its own price, so skipping it lowers the total immediately. A stump in a back corner can often be left to weather; one in the middle of a lawn, near a driveway, or where you plan to replant is usually worth grinding. An honest tree company will tell you which situation you have before you spend the money.',
+    answer: 'Yes — if the stump can stay. A stump in a back corner can often be left to weather; one in the middle of a lawn, near a driveway, or where you plan to replant is usually worth grinding. Stump grinding is a separate service with its own machine and its own price, so skipping it lowers the total immediately. An honest tree company will tell you which situation you have before you spend the money.',
   },
   {
     question: 'Why does professional tree work cost so much?',
@@ -68,11 +68,11 @@ const AffordableTreeWorkGuide = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   const title = 'The Hampton Roads Guide to Affordable Tree Work';
-  const description = 'A straight-talking guide from a Virginia Beach tree service owner on making tree work affordable — phased projects, skipping stump grinding, keeping chips and wood on site, cut-and-leave options, military and senior discounts, what a bid actually pays for, and why a 3–5 year pruning program is the cheapest tree care there is.';
+  const description = 'Affordable tree service in Virginia Beach and Hampton Roads — straight talk from the owner on making tree work affordable, not cheap: phased projects, keeping chips and wood on site, cut-and-leave options, military and senior discounts, what a bid actually pays for, and why a 3–5 year pruning program is the cheapest tree care there is.';
 
   return (
     <>
-      <LocalSEOMeta pageTitle="Affordable Tree Service in Virginia Beach | Cost Guide" description={description} />
+      <LocalSEOMeta pageTitle="Affordable Tree Service in Virginia Beach | Cost Guide | Art-is-Tree LLC" description={description} />
       <CaseStudySchema
         title={title}
         description={description}
@@ -113,7 +113,7 @@ const AffordableTreeWorkGuide = () => {
             <div className="lg:col-span-5">
               <ProjectSpec rows={[
                 ['The promise', 'Affordable tree work — not cheap tree work. There’s a difference.'],
-                ['Biggest levers', 'Phasing the job, skipping the stump, keeping material on site'],
+                ['Biggest levers', 'Phasing the job, keeping material on site, cut-and-leave options'],
                 ['The catch', 'Having us come back later to process wood costs more than doing it day-of'],
                 ['Discounts', '5% off for military, first responders, and seniors'],
                 ['The long game', 'Pruning every 3–5 years — the cheapest tree care there is'],
@@ -235,7 +235,7 @@ const AffordableTreeWorkGuide = () => {
               <strong>Cut and leave in place.</strong> On bigger properties, or for a back-corner tree nobody sees, the cheapest safe option is for us to put the tree on the ground in a controlled way and leave everything where it lands. You’re paying purely for the dangerous part — the felling, the rigging, the skill — and none of the cleanup.
             </p>
             <p>
-              <strong>Skip the stump.</strong> <Link to="/services/stump-grinding" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">Stump grinding</Link> is a separate service with its own machine and its own price.<sup><a href="#src2" className="text-[#1B4D3E] hover:text-[#D4AF37]">2</a></sup> If the stump is somewhere you can live with it — or you’d rather let it weather a few years first — leaving it is an instant saving. I’ll always tell you straight whether a stump is fine to leave or whether it’s going to be a problem where it sits.
+              <strong>Skip the stump — if it can stay.</strong> <Link to="/services/stump-grinding" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">Stump grinding</Link> is a separate service with its own machine and its own price.<sup><a href="#src2" className="text-[#1B4D3E] hover:text-[#D4AF37]">2</a></sup> If the stump is somewhere you can live with it — or you’d rather let it weather a few years first — leaving it is an instant saving. I’ll always tell you straight whether a stump is fine to leave or whether it’s going to be a problem where it sits.
             </p>
             <p>
               <strong>Phase the project.</strong> Nobody says the whole property has to happen in one day. We do this all the time in <Link to="/service-areas/virginia-beach" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">Virginia Beach</Link> and across <Link to="/service-areas" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">Hampton Roads</Link>: the hazardous tree over the house this year, the two leaners in the fall, the pruning next spring. The urgent work gets done now, the rest gets scheduled when the budget allows, and you’re never writing one giant check.

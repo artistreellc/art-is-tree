@@ -12,7 +12,7 @@ const StormDamageMitigationCaseStudy = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   const title = 'After the Storm: Hurricane and Tornado Tree Damage in Virginia Beach — and What It Takes to Clean It Up Safely';
-  const description = 'A first-person look at storm-damaged tree work in Virginia Beach and Hampton Roads: what to look for before a hurricane, why storm cleanup is so dangerous, and two real jobs — a root-failed tree we rigged by hand with no crane access, and tornado-snapped pines at Broad Bay Island.';
+  const description = 'Hurricane and tornado storm damage tree removal in Virginia Beach and Hampton Roads: what to look for before a storm, why storm cleanup is so dangerous, and two real jobs — a root-failed tree we rigged by hand with no crane access, and tornado-snapped pines at Broad Bay Island.';
 
   return (
     <>

@@ -43,8 +43,8 @@ const TreeRecyclingCaseStudy = () => {
   return (
     <>
       <LocalSEOMeta
-        pageTitle="Where Your Tree Goes After Removal | Virginia Beach"
-        description="After clearing 15 loblolly pines and a red oak in Great Neck, Virginia Beach: where the wood goes — biomass power, the West Point & Franklin pulp mills, mulch, and firewood."
+        pageTitle="Where Your Tree Goes After Removal | Great Neck, Virginia Beach | Art-is-Tree LLC"
+        description={description}
       />
       <CaseStudySchema
         title={title}

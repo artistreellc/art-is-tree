@@ -14,11 +14,11 @@ const EmeraldAshBorerCaseStudy = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   const title = 'The 200-Year-Old Church Ash: An Emerald Ash Borer Removal in Kempsville';
-  const description = 'A first-person account of removing a massive, emerald ash borer–killed ash tree over a church altar and day-school play area in Kempsville, Virginia Beach — a cabled, rotten co-dominant union that needed a crane.';
+  const description = 'Emerald ash borer tree removal in Kempsville, Virginia Beach — a 200-year-old ash tree over a church altar and day-school play area, with a cabled, rotten co-dominant union that needed a crane.';
 
   return (
     <>
-      <LocalSEOMeta pageTitle="Emerald Ash Borer Tree Removal in Virginia Beach | Art-is-Tree" description={description} />
+      <LocalSEOMeta pageTitle="Emerald Ash Borer Tree Removal in Kempsville, Virginia Beach | Art-is-Tree LLC" description={description} />
       <CaseStudySchema
         title={title}
         description={description}
