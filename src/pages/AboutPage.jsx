@@ -116,7 +116,7 @@ const AboutPage = () => {
                  Where We Operate
                </h2>
                <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-                 Serving Virginia Beach, Norfolk, Chesapeake, and the rest of Hampton Roads.
+                 Serving Virginia Beach, Norfolk, Chesapeake, Portsmouth, and the rest of Hampton Roads.
                </p>
             </div>
             <GoogleMap />

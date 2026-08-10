@@ -89,7 +89,7 @@ const ContactPage = () => {
                       <MapPin className="w-6 h-6 text-[#D4AF37] mt-1 shrink-0" />
                       <div>
                         <strong className="block text-lg">Service Area</strong>
-                        <span className="text-gray-200">Virginia Beach, Norfolk, Chesapeake, and the greater Hampton Roads area.</span>
+                        <span className="text-gray-200">Virginia Beach, Norfolk, Chesapeake, Portsmouth, and the greater Hampton Roads area.</span>
                       </div>
                     </li>
                     <li className="flex items-start gap-4">
