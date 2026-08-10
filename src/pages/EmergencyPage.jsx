@@ -173,6 +173,19 @@ export default function EmergencyPage() {
               </div>
             ))}
           </div>
+          <p className="text-gray-600 text-lg max-w-3xl mx-auto text-center mt-10">
+            A tree that comes down in a storm usually takes the fence with it. Once we&rsquo;ve cleared it
+            and your yard is safe again, we&rsquo;ll point you to VB Fences for{' '}
+            <a
+              href="https://vbfences.com/services/fence-repair"
+              target="_blank"
+              rel="noopener"
+              className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]"
+            >
+              fence repair after tree damage
+            </a>
+            {' '}&mdash; a local Hampton Roads crew we trust to put it back.
+          </p>
         </div>
       </section>
 
