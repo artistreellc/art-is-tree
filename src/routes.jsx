@@ -79,6 +79,7 @@ export const routes = [
       { path: 'case-studies/spikeless-pruning', ...page(() => import('@/pages/SpikelessPruningCaseStudy.jsx')) },
       { path: 'case-studies/storm-damage-mitigation', ...page(() => import('@/pages/case-studies/StormDamageMitigationCaseStudy.jsx')) },
       { path: 'case-studies/affordable-tree-work', ...page(() => import('@/pages/case-studies/AffordableTreeWorkGuide.jsx')) },
+      { path: 'case-studies/tree-service-insurance', ...page(() => import('@/pages/case-studies/InsuranceCaseStudy.jsx')) },
 
       { path: 'terms-and-conditions', ...page(() => import('@/pages/TermsAndConditionsPage.jsx')) },
       { path: 'service-areas', ...page(() => import('@/pages/ServiceAreasPage.jsx')) },

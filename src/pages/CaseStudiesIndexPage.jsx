@@ -58,6 +58,11 @@ const caseStudiesData = [
     title: "The Hampton Roads Guide to Affordable Tree Work",
     description: "Straight talk from the owner on making tree work affordable — not cheap: phasing projects, keeping chips and wood on site, cut-and-leave options, military/first responder/senior discounts, what a bid really pays for, and why a 3–5 year pruning cycle is the cheapest tree care there is.",
     link: "/case-studies/affordable-tree-work",
+  },
+  {
+    title: "The Bid We Lost on Price and Won on Paper",
+    description: "A landscaping company underbid us by $2,240 on a Chicks Beach rental property in Virginia Beach — multiple large pines and a massive oak. The owner paid the difference on purpose after reading both certificates of insurance. The 30-foot height ceiling on landscaper coverage, the 15-foot power-line exclusion, NCCI class code 0106, and how Virginia enforces tree work safety under 16VAC25-73 and ANSI Z133.",
+    link: "/case-studies/tree-service-insurance",
   }
 ];
 

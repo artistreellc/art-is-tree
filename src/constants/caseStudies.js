@@ -17,6 +17,7 @@ export const CASE_STUDIES = [
   { path: '/case-studies/affordable-tree-work', title: 'The Hampton Roads Guide to Affordable Tree Work', datePublished: '2026-07-20' },
   { path: '/case-studies/how-to-choose-a-tree-service', title: 'How to Choose a Tree Service in Virginia Beach', datePublished: '2026-07-27' },
   { path: '/case-studies/where-your-tree-goes', title: 'Where Your Tree Goes After We Take It Down', datePublished: '2026-07-31' },
+  { path: '/case-studies/tree-service-insurance', title: 'The Bid We Lost on Price and Won on Paper: Tree Service Insurance', datePublished: '2026-08-10' },
 ];
 
 const DAY_MS = 24 * 60 * 60 * 1000;
