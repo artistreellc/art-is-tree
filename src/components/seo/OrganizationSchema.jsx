@@ -10,7 +10,7 @@ const OrganizationSchema = () => {
     "@type": "Organization",
     "name": "Art-is-Tree LLC",
     "alternateName": COMPANY_INFO.alternateName,
-    "description": "Professional, fully licensed, and insured tree care experts serving Virginia Beach, Norfolk, and Chesapeake. We bring safety, precision, and artistry to every job.",
+    "description": "Professional, fully licensed, and insured tree care experts serving Virginia Beach, Norfolk, Chesapeake, and Portsmouth. We bring safety, precision, and artistry to every job.",
     "slogan": "Safety, precision, and artistry in every tree job.",
     "url": BASE_URL,
     "@id": `${BASE_URL}/#organization`,

@@ -143,7 +143,7 @@ const SEO_METADATA = {
   },
   serviceAreas: {
     title: 'Service Areas - Virginia Beach & Hampton Roads | Art-is-Tree LLC',
-    description: 'Discover our professional tree service areas across Virginia Beach, Norfolk, Chesapeake, and Hampton Roads. Find reliable, licensed tree care near your home.',
+    description: 'Discover our professional tree service areas across Virginia Beach, Norfolk, Chesapeake, Portsmouth, and Hampton Roads. Find reliable, licensed tree care near your home.',
     keywords: 'tree service Virginia Beach, Norfolk tree removal, Chesapeake tree service, Hampton Roads tree service',
     ogImage: `${BASE_URL}/og-image.png`
   },

@@ -29,7 +29,7 @@ const Footer = () => {
               </span>
             </Link>
             <p className="text-gray-300 font-inter leading-relaxed max-w-sm min-h-[80px]">
-              Professional, fully licensed, and insured tree care experts serving Virginia Beach, Norfolk, and Chesapeake. We bring safety, precision, and artistry to every job.
+              Professional, fully licensed, and insured tree care experts serving Virginia Beach, Norfolk, Chesapeake, and Portsmouth. We bring safety, precision, and artistry to every job.
             </p>
             <div className="flex gap-4 h-[44px]">
               <a href="https://www.facebook.com/artistreeva" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-[#D4AF37] text-white p-3 rounded-full transition-all duration-300 hover:scale-110 w-[44px] h-[44px] flex items-center justify-center" aria-label="Facebook">
@@ -137,7 +137,7 @@ const Footer = () => {
             <ul className="space-y-5 text-gray-300 local-business-info">
               <li className="flex items-start gap-3 group min-h-[48px]">
                 <MapPin className="text-[#D4AF37] shrink-0 mt-1" size={20} width={20} height={20} />
-                <a href={GOOGLE_LISTING_URL} target="_blank" rel="noopener noreferrer" className="group-hover:text-white transition-colors">Serving Virginia Beach,<br />Chesapeake, and Norfolk</a>
+                <a href={GOOGLE_LISTING_URL} target="_blank" rel="noopener noreferrer" className="group-hover:text-white transition-colors">Serving Virginia Beach, Norfolk,<br />Chesapeake, and Portsmouth</a>
               </li>
               <li className="flex items-center gap-3 group min-h-[24px]">
                 <Phone className="text-[#D4AF37] shrink-0" size={20} width={20} height={20} />
