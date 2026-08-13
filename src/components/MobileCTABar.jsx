@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Phone, MessageSquare, ClipboardList } from 'lucide-react';
+import { Phone, ClipboardList } from 'lucide-react';
 
 export default function MobileCTABar() {
   const location = useLocation();
@@ -17,12 +17,14 @@ export default function MobileCTABar() {
         <Link
           to="/emergency"
           className={`flex-1 flex flex-col items-center justify-center gap-1 transition-colors duration-200 ${
-            location.pathname === '/emergency' ? 'bg-[#133A2E] text-white' : 'text-gray-300 hover:text-white hover:bg-[#133A2E]'
+            location.pathname === '/emergency' ? 'bg-[#133A2E]' : 'hover:bg-[#133A2E]'
           }`}
           aria-label="Emergency Services"
         >
-          <MessageSquare className="w-5 h-5" />
-          <span className="text-[10px] font-bold uppercase tracking-wider">Emergency</span>
+          {/* Strobe, matching the header badge. The old icon was a speech
+              bubble, which read as "chat" rather than "emergency". */}
+          <span className="text-xl leading-none" aria-hidden="true">🚨</span>
+          <span className="text-[10px] font-bold uppercase tracking-wider text-red-400">Emergency</span>
         </Link>
 
         <a
