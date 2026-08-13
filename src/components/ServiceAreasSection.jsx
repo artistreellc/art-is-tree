@@ -10,14 +10,20 @@ const ServiceAreasSection = ({ title = "Areas We Serve" }) => {
   // Each city links to its dedicated service-area page, so the homepage (the
   // site's strongest page) passes internal link equity and topical relevance to
   // those pages — helping them rank for "tree service <city>" instead of the
-  // homepage cannibalizing the term. Kempsville is a Virginia Beach neighborhood
-  // with no standalone page, so it stays a plain label.
+  // homepage cannibalizing the term.
+  //
+  // Cities only, and deliberately so. Kempsville sat in this list as a pill with
+  // path: null — a Virginia Beach neighborhood with no page of its own, so it
+  // rendered as the one chip in the row that looked clickable and wasn't. It was
+  // removed from the row on the owner's call. Do not re-add a neighborhood here
+  // unless it has a real page to point at; the term still earns its keep in body
+  // copy (the homepage "Why Us" paragraph, the crane case study, and the
+  // neighborhood section) where it reads as prose rather than a dead control.
   const areas = [
     { name: "Virginia Beach", path: "/service-areas/virginia-beach" },
     { name: "Norfolk", path: "/service-areas/norfolk" },
     { name: "Chesapeake", path: "/service-areas/chesapeake" },
     { name: "Portsmouth", path: "/service-areas/portsmouth" },
-    { name: "Kempsville", path: null },
   ];
 
   const pillBase = "bg-white border border-gray-200 px-6 py-3 rounded-full flex items-center gap-2 shadow-sm hover:border-[#D4AF37] hover:shadow-md transition-all";
