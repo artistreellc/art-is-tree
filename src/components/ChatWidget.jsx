@@ -50,6 +50,33 @@ const ChatWidget = () => {
   const buttonRef = useRef(null);
   const openedEventSent = useRef(false);
 
+  // Keyboard inset, in px, from the VisualViewport API.
+  //
+  // On a phone the software keyboard shrinks the *visual* viewport but not the
+  // layout viewport, and dvh tracks browser chrome rather than the keyboard —
+  // so a panel pinned with `bottom` and sized in dvh stays where it was, behind
+  // the keyboard. The transcript ends up off-screen and you see only the input.
+  // visualViewport reports the real visible box, so the panel can be lifted by
+  // exactly the keyboard's height and capped to what is actually on screen.
+  const [kbInset, setKbInset] = useState(0);
+  const [vvHeight, setVvHeight] = useState(0);
+
+  useEffect(() => {
+    const vv = typeof window !== 'undefined' ? window.visualViewport : null;
+    if (!open || !vv) return;
+    const update = () => {
+      setKbInset(Math.max(0, Math.round(window.innerHeight - (vv.height + vv.offsetTop))));
+      setVvHeight(Math.round(vv.height));
+    };
+    update();
+    vv.addEventListener('resize', update);
+    vv.addEventListener('scroll', update);
+    return () => {
+      vv.removeEventListener('resize', update);
+      vv.removeEventListener('scroll', update);
+    };
+  }, [open]);
+
   // Restore a previous session's conversation after mount (SSG-safe).
   useEffect(() => {
     const saved = loadSaved();
@@ -66,12 +93,14 @@ const ChatWidget = () => {
     }
   }, [messages]);
 
-  // Keep the newest message in view.
+  // Keep the newest message in view. kbInset/vvHeight are dependencies because
+  // the panel is resized when the keyboard opens — without re-scrolling, the
+  // last message sits above the new, shorter scroll box.
   useEffect(() => {
     if (open && scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
-  }, [messages, loading, open]);
+  }, [messages, loading, open, kbInset, vvHeight]);
 
   // Focus the input when the panel opens; Escape closes it.
   useEffect(() => {
@@ -153,7 +182,16 @@ const ChatWidget = () => {
           role="dialog"
           aria-label="Chat with Art-is-Tree"
           className="fixed z-[55] bottom-[5.5rem] right-2 left-2 sm:left-auto sm:right-5 md:bottom-24 w-auto sm:w-[24rem] max-w-[calc(100vw-1rem)] flex flex-col rounded-2xl overflow-hidden shadow-2xl border border-black/10 bg-white"
-          style={{ height: 'min(34rem, calc(100dvh - 9.5rem))' }}
+          style={
+            kbInset > 0
+              ? {
+                  // Keyboard is up: sit just above it and take the height that
+                  // is genuinely visible, so the transcript stays on screen.
+                  bottom: `${kbInset + 8}px`,
+                  height: `min(34rem, ${Math.max(200, vvHeight - 16)}px)`,
+                }
+              : { height: 'min(34rem, calc(100dvh - 9.5rem))' }
+          }
         >
           {/* header */}
           <div className="bg-[#0A2F24] text-white px-4 py-3 flex items-center justify-between border-b-2 border-[#D4AF37]">
