@@ -62,7 +62,10 @@ export const routes = [
       { path: 'services/emergency-tree-service', ...page(() => import('@/pages/services/EmergencyTreeServicePage.jsx')) },
       { path: 'services/crane-removal', ...page(() => import('@/pages/services/CraneTreeRemovalPage.jsx')) },
       { path: 'services/land-clearing', ...page(() => import('@/pages/services/LandClearingPage.jsx')) },
-      { path: 'partners', ...page(() => import('@/pages/PartnersPage.jsx')) },
+      // '/partners' removed — the page listed invented organizations ("Regional
+      // Arborist Association", "Tree Care Equipment Co.") that were never real
+      // partners. The genuine partner list lives on /find-us-online, and the old
+      // URL 301s there in vercel.json.
 
       { path: 'case-studies', ...page(() => import('@/pages/CaseStudiesIndexPage.jsx')) },
       { path: 'case-studies/how-to-choose-a-tree-service', ...page(() => import('@/pages/case-studies/ChooseTreeServiceCaseStudy.jsx')) },
