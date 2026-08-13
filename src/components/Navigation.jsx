@@ -373,6 +373,22 @@ const Navigation = memo(() => {
             </div>
           </Link>
 
+          {/* Desktop-only emergency badge, between the logo and the review
+              stars. Links to /emergency — in the header it should be the
+              fastest route to the panic page, not decoration.
+              xl, not lg: at 1024 the logo, stars and call button already fill
+              the row, and the badge collided with the logo and wrapped to three
+              lines. whitespace-nowrap keeps it a single pill at any width it
+              does show. */}
+          <Link
+            to="/emergency"
+            aria-label="24/7 emergency tree service — get help now"
+            className="hidden xl:inline-flex items-center gap-2 whitespace-nowrap bg-red-600 hover:bg-red-500 text-white px-4 py-1.5 rounded-full font-bold shadow-lg border border-red-400/60 text-xs tracking-wide uppercase transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1B4D3E]"
+          >
+            <span className="inline-flex h-2.5 w-2.5 rounded-full bg-white/70" aria-hidden="true" />
+            24/7 Emergency Response
+          </Link>
+
           <div className="flex items-center gap-3 md:gap-5 flex-shrink-0">
             <a 
               href={GOOGLE_LISTING_URL} 
