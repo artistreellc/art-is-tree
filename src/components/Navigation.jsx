@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, memo, useCallback, useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Phone, Instagram, Facebook, Menu, X, ShieldCheck, Terminal, Star, MapPin, Clock } from 'lucide-react';
+import { Phone, Instagram, Facebook, Menu, X, ShieldCheck, Terminal, Star, MapPin, Clock, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/contexts/SupabaseAuthContext';
 import { useThrottle } from '@/hooks/useThrottle';
@@ -429,8 +429,25 @@ const Navigation = memo(() => {
               </a>
             </Button>
             
-            <button onClick={toggleMobileMenu} className="text-white p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 hover:bg-white/10 rounded-md transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label={isMobileMenuOpen ? "Close Menu" : "Open Menu"} aria-expanded={isMobileMenuOpen}>
-               {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+            {/* The word replaces the hamburger rather than sitting beside it.
+                This is the site's only navigation at any width — there is no
+                horizontal menu bar — and a bare icon on a 1600px screen reads
+                as a mobile leftover, so people do not open it and never reach
+                Services or Service Areas. The chevron signals it opens a panel.
+                The icon is kept below sm, where the row is only the logo, Call
+                Now and this button, and there is no room for the word. */}
+            <button onClick={toggleMobileMenu} className="text-white p-2 sm:px-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 hover:bg-white/10 border border-transparent sm:border-white/25 sm:hover:border-white/50 rounded-md transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label={isMobileMenuOpen ? "Close Menu" : "Open Menu"} aria-expanded={isMobileMenuOpen}>
+               {/* phone: icon only */}
+               <span className="sm:hidden" aria-hidden="true">
+                 {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+               </span>
+               {/* sm and up: the word instead of the hamburger */}
+               <span className="hidden sm:inline-flex items-center gap-1.5 text-sm font-bold uppercase tracking-wider" aria-hidden="true">
+                 {isMobileMenuOpen ? 'Close' : 'Explore'}
+                 {isMobileMenuOpen
+                   ? <X className="w-4 h-4" />
+                   : <ChevronDown className="w-4 h-4" />}
+               </span>
             </button>
           </div>
         </div>
