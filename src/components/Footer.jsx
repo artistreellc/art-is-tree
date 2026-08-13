@@ -34,27 +34,31 @@ const CASE_STUDIES = [
   ['/case-studies/osha-compliance', 'OSHA Compliance'],
 ];
 
-// Collapsible bar on mobile, plain always-open column at md+. The button keeps
-// its accessible semantics on mobile; at md+ the chevron is hidden and pointer
-// events are dropped so the heading doesn't read as a control that does nothing.
+// A collapsed bar at every width, not just on mobile. Expanded columns made the
+// footer ~585px tall on desktop — half a screen of links below the fold on every
+// page. Collapsed, the four bars sit on one line and the whole footer is a strip.
+//
+// The links stay in the HTML when collapsed (display:none, not conditional
+// render), so crawlers still see them and internal link equity to the
+// service-area and ART-icle pages is unaffected.
 const FooterSection = ({ title, children }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border-b border-white/10 md:border-0">
+    <div className="border-b border-white/10">
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
-        className="w-full flex items-center justify-between gap-2 py-4 md:py-0 md:mb-5 md:pointer-events-none text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] rounded"
+        className="w-full flex items-center justify-between gap-2 py-3.5 text-left group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] rounded"
       >
-        <h3 className="font-playfair text-lg md:text-xl font-bold text-[#D4AF37] m-0">{title}</h3>
+        <h3 className="font-playfair text-lg font-bold text-[#D4AF37] m-0 group-hover:text-white transition-colors">{title}</h3>
         <ChevronDown
-          className={`w-5 h-5 text-[#D4AF37] shrink-0 transition-transform md:hidden ${open ? 'rotate-180' : ''}`}
+          className={`w-5 h-5 text-[#D4AF37] shrink-0 transition-transform ${open ? 'rotate-180' : ''}`}
           aria-hidden="true"
         />
       </button>
-      <div className={`${open ? 'block' : 'hidden'} md:block pb-5 md:pb-0`}>
+      <div className={`${open ? 'block' : 'hidden'} pb-4`}>
         {children}
       </div>
     </div>
@@ -85,31 +89,35 @@ const Footer = () => {
             lg = 2 (brand) + 4 sections = 6.  md = 2, brand takes a full row. */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-x-8 md:gap-y-10 mb-10">
 
-          {/* Brand block — never collapses; it is the identity, not a link list. */}
-          <div className="space-y-5 md:col-span-2 lg:col-span-2 pb-8 md:pb-0">
+          {/* Brand block — never collapses; it is the identity, not a link list.
+              Kept tight because it is the tallest item in the row and therefore
+              sets the whole footer's height. */}
+          <div className="space-y-3.5 md:col-span-2 lg:col-span-2 pb-6 lg:pb-0">
             <Link to="/" className="inline-flex items-center gap-3 bg-white/5 p-2 rounded-xl hover:bg-white/10 transition-colors w-fit" aria-label="Home">
               <img src="/logo.png" alt="Art-is-Tree LLC Logo" className="w-[42px] h-[36px] bg-white p-1 rounded-md" width="42" height="36" loading="lazy" decoding="async" />
               <span className="font-playfair text-2xl font-bold text-white tracking-tight">
                 Art-is-Tree <span className="text-[#D4AF37] ml-1">LLC</span>
               </span>
             </Link>
-            <p className="text-gray-300 font-inter leading-relaxed max-w-sm">
+            <p className="text-gray-300 font-inter text-sm leading-relaxed max-w-sm">
               Professional, fully licensed, and insured tree care experts serving Virginia Beach, Norfolk, Chesapeake, and Portsmouth. We bring safety, precision, and artistry to every job.
             </p>
-            <div className="flex flex-wrap gap-3">
-              <a href="https://www.facebook.com/artistreeva" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-[#D4AF37] text-white rounded-full transition-colors w-[44px] h-[44px] flex items-center justify-center" aria-label="Facebook">
-                <Facebook size={20} width={20} height={20} />
+            {/* Socials, rating and the trust badge on one wrapping row rather
+                than three stacked blocks — same content, a third of the height. */}
+            <div className="flex flex-wrap items-center gap-2">
+              <a href="https://www.facebook.com/artistreeva" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-[#D4AF37] text-white rounded-full transition-colors w-[40px] h-[40px] flex items-center justify-center" aria-label="Facebook">
+                <Facebook size={18} width={18} height={18} />
               </a>
-              <a href="https://www.instagram.com/artistreeva" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-[#D4AF37] text-white rounded-full transition-colors w-[44px] h-[44px] flex items-center justify-center" aria-label="Instagram">
-                <Instagram size={20} width={20} height={20} />
+              <a href="https://www.instagram.com/artistreeva" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-[#D4AF37] text-white rounded-full transition-colors w-[40px] h-[40px] flex items-center justify-center" aria-label="Instagram">
+                <Instagram size={18} width={18} height={18} />
               </a>
-              <a href={GOOGLE_LISTING_URL} target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-[#D4AF37] text-white rounded-full px-4 h-[44px] flex items-center gap-2 text-sm font-semibold transition-colors citation-link">
-                <Star className="text-yellow-400" size={16} width={16} height={16} /> 5.0 ({reviewCount})
+              <a href={GOOGLE_LISTING_URL} target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-[#D4AF37] text-white rounded-full px-3 h-[40px] flex items-center gap-1.5 text-sm font-semibold transition-colors citation-link">
+                <Star className="text-yellow-400" size={15} width={15} height={15} /> 5.0 ({reviewCount})
               </a>
-            </div>
-            <div className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg text-sm font-medium w-fit">
-              <ShieldCheck className="text-[#D4AF37]" size={20} width={20} height={20} />
-              Licensed &amp; Fully Insured &middot; BBB A+
+              <span className="inline-flex items-center gap-2 bg-white/10 px-3 h-[40px] rounded-full text-xs font-medium whitespace-nowrap">
+                <ShieldCheck className="text-[#D4AF37]" size={16} width={16} height={16} />
+                Licensed &amp; Fully Insured &middot; BBB A+
+              </span>
             </div>
           </div>
 
