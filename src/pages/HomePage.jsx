@@ -124,7 +124,12 @@ const HomePage = () => {
             <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto font-light mb-6 drop-shadow speakable">
               Tree removal, trimming, stump grinding, and 24/7 storm cleanup across Virginia Beach and Hampton Roads. Licensed, insured, BBB A+, and rated 5.0 across {COMPANY_INFO.rating.reviewCount} reviews &mdash; with the crane and the experience to take on the jobs other companies turn down.
             </p>
-            <p className="text-lg text-[#D4AF37] font-semibold max-w-2xl mx-auto mb-10">
+            {/* Brand gold #D4AF37 is an antique tone that washes out over the
+                lighter middle of the hero gradient, and this was the only line
+                in the hero without a shadow. Uses the brighter gold the nav
+                already runs on this same dark green, plus the drop-shadow its
+                two neighbours have. */}
+            <p className="text-lg md:text-xl text-[#FACC15] font-bold max-w-2xl mx-auto mb-10 drop-shadow-md">
               Get 5% off any service when you request your free estimate through our website.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
