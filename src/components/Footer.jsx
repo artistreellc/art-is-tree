@@ -80,10 +80,13 @@ const Footer = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-x-8 md:gap-y-10 mb-10">
+        {/* Column count must equal brand span + one per section, or the last
+            section wraps to a second row with a dead void beside it:
+            lg = 2 (brand) + 4 sections = 6.  md = 2, brand takes a full row. */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-x-8 md:gap-y-10 mb-10">
 
           {/* Brand block — never collapses; it is the identity, not a link list. */}
-          <div className="space-y-5 lg:col-span-2 pb-8 md:pb-0">
+          <div className="space-y-5 md:col-span-2 lg:col-span-2 pb-8 md:pb-0">
             <Link to="/" className="inline-flex items-center gap-3 bg-white/5 p-2 rounded-xl hover:bg-white/10 transition-colors w-fit" aria-label="Home">
               <img src="/logo.png" alt="Art-is-Tree LLC Logo" className="w-[42px] h-[36px] bg-white p-1 rounded-md" width="42" height="36" loading="lazy" decoding="async" />
               <span className="font-playfair text-2xl font-bold text-white tracking-tight">
@@ -146,15 +149,20 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="text-[#D4AF37] shrink-0" size={20} width={20} height={20} />
-                <a href="mailto:artistreeofvirginia@gmail.com" className="hover:text-white transition-colors break-all">artistreeofvirginia@gmail.com</a>
+                {/* The address is one unbreakable token wider than this column,
+                    so it needs a forced break or it overflows — that is why the
+                    original used break-all. `anywhere` does the same job but
+                    only after normal break opportunities are exhausted. */}
+                <a href="mailto:artistreeofvirginia@gmail.com" className="hover:text-white transition-colors [overflow-wrap:anywhere]">artistreeofvirginia@gmail.com</a>
               </li>
               <li className="flex items-center gap-3">
                 <Clock className="text-[#D4AF37] shrink-0" size={20} width={20} height={20} />
                 <span>Open 24/7</span>
               </li>
               <li className="pt-1">
-                <Link to="/testimonials" className="inline-flex items-center gap-2 text-[#D4AF37] font-semibold hover:text-white transition-colors">
-                  Reviews &amp; where to find us &rarr;
+                <Link to="/testimonials" className="inline-flex items-center gap-1.5 text-[#D4AF37] font-semibold hover:text-white transition-colors">
+                  Reviews &amp; listings
+                  <span aria-hidden="true">&rarr;</span>
                 </Link>
               </li>
             </ul>

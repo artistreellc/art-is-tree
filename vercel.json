@@ -11,6 +11,11 @@
       "statusCode": 301
     },
     {
+      "source": "/partners",
+      "destination": "/find-us-online",
+      "statusCode": 301
+    },
+    {
       "source": "/(.*)",
       "has": [{ "type": "host", "value": "www.artistreevabeach.com" }],
       "destination": "https://artistreevabeach.com/$1",
