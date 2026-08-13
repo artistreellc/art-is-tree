@@ -373,20 +373,34 @@ const Navigation = memo(() => {
             </div>
           </Link>
 
-          {/* Desktop-only emergency badge, between the logo and the review
-              stars. Links to /emergency — in the header it should be the
-              fastest route to the panic page, not decoration.
-              xl, not lg: at 1024 the logo, stars and call button already fill
-              the row, and the badge collided with the logo and wrapped to three
-              lines. whitespace-nowrap keeps it a single pill at any width it
-              does show. */}
+          {/* Emergency badge between the logo and the review stars, linking to
+              /emergency — in the header this should be the fastest route to the
+              panic page, not decoration.
+              It has two forms so it degrades instead of colliding: the full pill
+              at xl, and a compact siren + "24/7" from lg to xl.
+              lg is the floor, not md: the review stars also appear at md, and at
+              768 the two together pushed the Call Now button off the right edge.
+              At 700 (stars hidden) the row is fine, which is how that was
+              isolated. Measured clearance from the logo: 87px at 1280, 38px at
+              1024, 0px at 900 — so 1024 is the last width that holds.
+              The aria-label is fixed across both forms so screen readers always
+              get the full meaning, and whitespace-nowrap keeps either on one
+              line. */}
           <Link
             to="/emergency"
             aria-label="24/7 emergency tree service — get help now"
-            className="hidden xl:inline-flex items-center gap-2 whitespace-nowrap bg-red-600 hover:bg-red-500 text-white px-4 py-1.5 rounded-full font-bold shadow-lg border border-red-400/60 text-xs tracking-wide uppercase transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1B4D3E]"
+            className="hidden lg:inline-flex items-center gap-2 whitespace-nowrap bg-red-600 hover:bg-red-500 text-white px-3 xl:px-4 py-1.5 rounded-full font-bold shadow-lg border border-red-400/60 text-xs tracking-wide uppercase transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1B4D3E]"
           >
-            <span className="inline-flex h-2.5 w-2.5 rounded-full bg-white/70" aria-hidden="true" />
-            24/7 Emergency Response
+            {/* full form */}
+            <span className="hidden xl:inline-flex items-center gap-2">
+              <span className="inline-flex h-2.5 w-2.5 rounded-full bg-white/70" aria-hidden="true" />
+              24/7 Emergency Response
+            </span>
+            {/* compact form */}
+            <span className="xl:hidden inline-flex items-center gap-1.5" aria-hidden="true">
+              <span className="text-sm leading-none">🚨</span>
+              24/7
+            </span>
           </Link>
 
           <div className="flex items-center gap-3 md:gap-5 flex-shrink-0">
