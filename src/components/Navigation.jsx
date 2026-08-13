@@ -389,7 +389,7 @@ const Navigation = memo(() => {
           <Link
             to="/emergency"
             aria-label="24/7 emergency tree service — get help now"
-            className="hidden lg:inline-flex items-center gap-2 whitespace-nowrap bg-red-600 hover:bg-red-500 text-white px-3 xl:px-4 py-1.5 rounded-full font-bold shadow-lg border border-red-400/60 text-xs tracking-wide uppercase transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1B4D3E]"
+            className="hidden md:inline-flex items-center gap-2 whitespace-nowrap bg-red-600 hover:bg-red-500 text-white px-3 xl:px-4 py-1.5 rounded-full font-bold shadow-lg border border-red-400/60 text-xs tracking-wide uppercase transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1B4D3E]"
           >
             {/* full form */}
             <span className="hidden xl:inline-flex items-center gap-2">
@@ -411,7 +411,7 @@ const Navigation = memo(() => {
               /* Gold outline only — a border, no fill. A solid gold pill here
                  would compete with the yellow phone button beside it; the
                  outline groups the stars and the count without adding weight. */
-              className="hidden md:flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#D4AF37]/60 hover:border-[#D4AF37] hover:bg-white/10 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="hidden lg:flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#D4AF37]/60 hover:border-[#D4AF37] hover:bg-white/10 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-400"
               aria-label={`Read our ${reviewCount} 5-star reviews on Google`}
             >
               <div className="flex text-[#D4AF37]">
@@ -428,11 +428,14 @@ const Navigation = memo(() => {
 
             <Button className="bg-yellow-400 text-[#1B4D3E] hover:bg-yellow-300 font-bold border-none px-3 md:px-5 shadow-md text-sm md:text-base h-10 md:h-11" size="default" asChild>
               <a href="tel:7573195131" onClick={() => { if (window.gtag_report_phone_click) window.gtag_report_phone_click(); }} aria-label="Call Art-is-Tree LLC">
-                {/* Phone icon + the number only. The words "Call Now" were
-                    redundant next to a phone icon on a tap-to-call link, and
-                    the number is the thing worth reading. */}
-                <Phone className="w-4 h-4 md:w-5 md:h-5 mr-1.5 md:mr-2" />
-                <span className="font-bold whitespace-nowrap">757-319-5131</span>
+                {/* Phone icon + the number. "Call Now" was redundant next to a
+                    phone icon on a tap-to-call link, and the number is the part
+                    worth reading.
+                    Below lg the number drops and this becomes the icon alone,
+                    so the row gives up the phone digits and the review count
+                    before it gives up the emergency badge. */}
+                <Phone className="w-4 h-4 md:w-5 md:h-5 lg:mr-2" />
+                <span className="hidden lg:inline font-bold whitespace-nowrap">757-319-5131</span>
               </a>
             </Button>
             
