@@ -4,6 +4,7 @@ import { ShieldCheck, Award, ThumbsUp, ExternalLink, Star, Facebook, Instagram }
 import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema';
 import LocalSEOMeta from '@/components/LocalSEOMeta';
 import { useReviewStats } from '@/hooks/useReviewStats';
+import { COMPANY_INFO } from '@/constants/seoMetadata';
 
 const GOOGLE_LISTING_URL = 'https://www.google.com/maps?cid=12599844776703525086';
 
@@ -126,6 +127,17 @@ const PLATFORMS = [
   { name: 'BBB A+', url: 'https://www.bbb.org/us/va/virginia-beach/profile/tree-service/art-is-tree-llc-0583-90336149', icon: <BBBMark /> },
 ];
 
+// The rest of our verified profiles. These used to hang off a "Recommended Pros"
+// dropdown in the header — twelve outbound links in the nav, which read as
+// clutter rather than as trust. They belong here, on the page someone lands on
+// when they are checking whether we are real. Kept as a plain second row so the
+// six branded badges above stay the focal point.
+// Read straight off COMPANY_INFO.listings rather than retyping each Art-is-Tree
+// profile URL — several carry opaque numeric IDs, and a hand-copied one points
+// at nothing. One source of truth, in src/constants/seoMetadata.js.
+const BADGED = new Set(['Google Business Profile', 'BBB (A+ Accredited)', 'Yelp', 'Angi', 'Facebook', 'Instagram']);
+const MORE_LISTINGS = COMPANY_INFO.listings.filter((l) => !BADGED.has(l.name));
+
 const TestimonialsPage = () => {
   const { count, rating } = useReviewStats();
   return (
@@ -244,6 +256,24 @@ const TestimonialsPage = () => {
                   </span>
                 </a>
               ))}
+            </div>
+
+            <div className="border-t border-gray-100 pt-6 mb-8">
+              <p className="text-gray-500 text-sm mb-4">Also listed on</p>
+              <div className="flex flex-wrap items-center justify-center gap-2">
+                {MORE_LISTINGS.map((l) => (
+                  <a
+                    key={l.name}
+                    href={l.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Art-is-Tree LLC on ${l.name}`}
+                    className="citation-link text-sm font-medium text-gray-600 hover:text-[#1B4D3E] bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-full px-4 py-2 transition-colors"
+                  >
+                    {l.name}
+                  </a>
+                ))}
+              </div>
             </div>
 
             <p className="text-gray-600 mb-4">

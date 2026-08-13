@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button';
 import { useAuth } from '@/contexts/SupabaseAuthContext';
 import { useThrottle } from '@/hooks/useThrottle';
 import { useReviewStats } from '@/hooks/useReviewStats';
-import { COMPANY_INFO } from '@/constants/seoMetadata';
 
 const NAV_LINKS = [
   { name: 'Home', path: '/' },
@@ -65,15 +64,11 @@ const NAV_LINKS = [
       { name: 'Tree Service Insurance', path: '/case-studies/tree-service-insurance' },
     ]
   },
-  {
-    name: 'Recommended Pros',
-    path: '/find-us-online',
-    dropdown: [
-      { name: 'Recommended Pros', path: '/find-us-online' },
-      // Our own verified listings — each links out to our profile on that site.
-      ...COMPANY_INFO.listings.map((l) => ({ name: l.name, href: l.url, external: true })),
-    ],
-  },
+  // The twelve directory/review profiles that used to hang off this item now
+  // live in one block on /testimonials — that is where someone checking our
+  // reputation is already headed, and twelve outbound links in the header read
+  // as clutter rather than as trust signals.
+  { name: 'Recommended Pros', path: '/find-us-online' },
   { name: '🚨 Emergency', path: '/emergency' },
 ];
 
