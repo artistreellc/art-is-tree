@@ -418,14 +418,18 @@ const Navigation = memo(() => {
                 <Star className="w-4 h-4 md:w-5 md:h-5 fill-current" />
                 <Star className="w-4 h-4 md:w-5 md:h-5 fill-current" />
               </div>
-              <span className="text-white font-bold text-sm md:text-base tracking-wide">{reviewRating.toFixed(1)} stars, {reviewCount} reviews</span>
+              {/* The five gold stars already say "5.0"; repeating it in words
+                  next to them was saying the same thing twice. */}
+              <span className="text-white font-bold text-sm md:text-base tracking-wide whitespace-nowrap">{reviewCount} reviews</span>
             </a>
 
             <Button className="bg-yellow-400 text-[#1B4D3E] hover:bg-yellow-300 font-bold border-none px-3 md:px-5 shadow-md text-sm md:text-base h-10 md:h-11" size="default" asChild>
               <a href="tel:7573195131" onClick={() => { if (window.gtag_report_phone_click) window.gtag_report_phone_click(); }} aria-label="Call Art-is-Tree LLC">
-                <Phone className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
-                <span className="hidden sm:inline">Call Now: 757-319-5131</span>
-                <span className="sm:hidden font-bold">Call Now</span>
+                {/* Phone icon + the number only. The words "Call Now" were
+                    redundant next to a phone icon on a tap-to-call link, and
+                    the number is the thing worth reading. */}
+                <Phone className="w-4 h-4 md:w-5 md:h-5 mr-1.5 md:mr-2" />
+                <span className="font-bold whitespace-nowrap">757-319-5131</span>
               </a>
             </Button>
             
@@ -475,7 +479,7 @@ const Navigation = memo(() => {
                        <Star className="w-5 h-5 fill-current" />
                        <Star className="w-5 h-5 fill-current" />
                      </div>
-                     <span className="tracking-wide">{reviewRating.toFixed(1)} stars, {reviewCount} reviews</span>
+                     <span className="tracking-wide">{reviewCount} reviews</span>
                    </a>
 
                    <Button className="w-full bg-yellow-400 hover:bg-yellow-500 text-[#1B4D3E] font-bold h-12 text-lg" asChild>
