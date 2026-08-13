@@ -31,7 +31,12 @@ const caseStudiesData = [
     kicker: "Why a good company wants you to shop around",
     category: "Hiring a Pro",
     read: "10 min",
-    image: "/images/virginia-beach-arborist-hardwood-removal.webp",
+    // A climber portrait rather than a removal shot: this piece is about who you
+    // are hiring, not what the job looks like. The source is a tall 1200x2250
+    // portrait, so it needs a top-weighted crop — centred, the 16:10 card frames
+    // a torso and boots with the head cut off.
+    image: "/images/virginia-beach-tree-climber-portrait.webp",
+    focal: "object-top",
     description: "An honest guide from the owner on hiring the right tree service — how to read recent reviews, why you should get a written quote from every company, what to verify (licensed, insured, BBB A+), and the real reason a good company welcomes you shopping around.",
     link: "/case-studies/how-to-choose-a-tree-service",
   },
@@ -245,7 +250,7 @@ const CaseStudiesIndexPage = () => {
                     aria-hidden="true"
                     loading="lazy"
                     decoding="async"
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+                    className={`absolute inset-0 w-full h-full object-cover ${cs.focal || ''} transition-transform duration-500 group-hover:scale-[1.05]`}
                   />
                   <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/70 to-transparent" />
                   <span className="absolute bottom-3 left-3">
