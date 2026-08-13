@@ -12,43 +12,54 @@ import { FinancingSection } from '@/components/Financing';
 import FAQPageSchema from '@/components/seo/FAQPageSchema';
 import AnswerBlock from '@/components/AnswerBlock';
 
+// This page is the AFTERMATH, not the event. The tree is already off the roof and
+// the homeowner is now dealing with the adjuster, the estimate and the bill.
+// The acute "it just happened" moment lives at /emergency — keep them separate.
 const emergencyFaqs = [
   {
-    question: "How fast can you respond to a tree emergency?",
-    answer: "We answer emergency calls 24/7 across Virginia Beach and Hampton Roads. Storm-damaged trees on homes, vehicles, and power lines get top priority. Call (757) 319-5131 and we will get a crew moving.",
-  },
-  {
-    question: "What should I do if a tree falls on my house?",
-    answer: "First make sure everyone is safe and out of the affected area. Stay well away from any downed power lines and report them to the utility. Then call us; we will stabilize the situation, remove the tree safely, and document the damage for your insurance claim.",
-  },
-  {
     question: "Does homeowners insurance cover emergency tree removal?",
-    answer: "Usually yes, when a covered event such as a storm topples a tree and it damages a covered structure like your home, garage, or fence. Removing a healthy or leaning tree as a precaution is considered maintenance and typically is not covered. We provide written estimates and documentation to support your claim.",
+    answer: "Usually yes, when a covered event such as a storm topples a tree and it damages a covered structure like your home, garage, or fence. Most policies cover removal of the tree from the structure and the repair of what it hit. Removing a healthy or leaning tree as a precaution is considered maintenance and typically is not covered. A tree that falls in the yard and hits nothing is often only partially covered, or capped at a few hundred dollars. Art-is-Tree LLC provides written estimates and documentation to support your claim.",
+  },
+  {
+    question: "What documentation does my adjuster need for a storm damage tree claim?",
+    answer: "Photographs of the damage before anything was moved, a written scope of what was removed and how, and an itemized estimate. Adjusters look for the distinction between emergency mitigation — stabilizing the property so it does not get worse — and the removal and repair that follows, because those are often handled differently under the policy. Our 24/7 crew documents both separately so the claim is not held up, and we can talk to your adjuster directly.",
+  },
+  {
+    question: "Who pays when a neighbor's tree falls on my house in Virginia?",
+    answer: "In most cases your own homeowners policy handles it, even though the tree came from next door. Virginia follows the rule that a tree falling from natural causes is nobody's fault. Liability shifts to the neighbor only if the tree was visibly dead, decayed, or hazardous and they had been notified and did nothing. That is why written notice matters. Our Virginia tree law case study covers the property line rules in detail.",
+  },
+  {
+    question: "How much does storm damage tree removal cost in Virginia Beach?",
+    answer: "It depends on size, what the tree is resting on, and whether a crane is needed to lift sections clear of the structure. A tree on a roof costs more than the same tree in an open yard because every piece has to be rigged and lifted rather than dropped. Crane time, the size of the crew, and the disposal volume are the real drivers. We give free estimates in writing before any work starts, so the number in your claim is the number you pay.",
+  },
+  {
+    question: "Can I finance emergency tree removal if my claim has not paid out yet?",
+    answer: "Yes. Insurance often reimburses after the work is done, which leaves a gap. Art-is-Tree LLC offers financing across Virginia Beach, Norfolk, Chesapeake, and Portsmouth so the tree can be handled immediately and paid over time. The application is fast and you can ask about it on the same call.",
   },
 ];
 
 const EmergencyTreeServicePage = () => {
-  const serviceAreas = ["Virginia Beach", "Norfolk", "Chesapeake", "Hampton Roads"];
-  const description = "Around-the-clock emergency and storm-damage tree service in Virginia Beach and Hampton Roads. Fallen or leaning trees removed fast. Licensed, insured. Call now.";
+  const serviceAreas = ["Virginia Beach", "Norfolk", "Chesapeake", "Portsmouth"];
+  const description = "What homeowners insurance actually covers after a storm-damaged tree hits your house in Virginia Beach, Norfolk, Chesapeake, Portsmouth and Hampton Roads: what an adjuster needs documented, who pays when a neighbor's tree falls on your roof under Virginia law, what storm damage tree removal really costs and why a crane changes the number, and financing while the claim is pending. Licensed, insured, BBB A+, 24/7. Free estimates.";
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      <LocalSEOMeta 
-        pageTitle="Emergency Tree Service Virginia Beach VA | 24/7 | Art-is-Tree LLC"
-        description={description} 
+      <LocalSEOMeta
+        pageTitle="Storm Damage Tree Removal 24/7: Insurance Claims &amp; Cost | Virginia Beach VA | Art-is-Tree LLC"
+        description={description}
       />
-      
-      <ServiceSchema 
-        name="Emergency Tree Service" 
-        description={description} 
-        serviceAreas={serviceAreas} 
+
+      <ServiceSchema
+        name="Storm Damage Tree Removal and Insurance Claim Documentation"
+        description={description}
+        serviceAreas={serviceAreas}
       />
       
       <BreadcrumbListSchema 
         items={[
           { name: 'Home', url: '/' },
           { name: 'Services', url: '/services' },
-          { name: 'Emergency Tree Service', url: '/services/emergency-tree-service' }
+          { name: 'Storm Damage & Insurance Claims', url: '/services/emergency-tree-service' }
         ]} 
       />
 
@@ -59,19 +70,20 @@ const EmergencyTreeServicePage = () => {
             <span>→</span>
             <Link to="/services" className="hover:text-[#D4AF37] transition-colors">Services</Link>
             <span>→</span>
-            <span className="text-[#D4AF37]">Emergency Tree Service</span>
+            <span className="text-[#D4AF37]">Storm Damage &amp; Insurance Claims</span>
           </nav>
 
           <div className="inline-flex items-center gap-2 bg-red-600/90 text-white px-4 py-2 rounded-full font-bold uppercase tracking-wider text-sm mb-6 border border-red-500/50 shadow-lg">
             <AlertTriangle className="w-5 h-5" />
-            24/7 EMERGENCY RESPONSE
+            Tree on the house right now? 24/7&nbsp;
+            <Link to="/emergency" className="underline hover:text-[#D4AF37]">emergency response &rarr;</Link>
           </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-white mb-6">
-            24/7 Emergency Tree Service in Virginia Beach
+            Storm Damage Tree Removal: Insurance Claims and What It Costs
           </h1>
           <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-10 leading-relaxed">
-            When a tree comes down on your property at 2 in the morning, you need someone who picks up the phone. Art-is-Tree LLC answers emergency calls 24 hours a day, 365 days a year across Virginia Beach, Norfolk, Chesapeake, and Portsmouth. Licensed, insured, and built on 15 years of Hampton Roads storm response experience.
+            The tree is off the roof. Now comes the adjuster, the estimate, and the question of who pays for what. This is the part nobody explains: what a homeowners policy actually covers after a storm, what your adjuster needs in writing, who is liable when the tree came from next door, and why a crane changes the number. Art-is-Tree LLC has documented storm damage claims across Virginia Beach, Norfolk, Chesapeake, and Portsmouth on 15 years of Hampton Roads storm response &mdash; licensed, insured, BBB A+, and still answering 24/7 if the tree is still on the house.
           </p>
           
           <Button size="lg" className="bg-[#D4AF37] text-black hover:bg-[#c19b2e] font-extrabold py-8 px-12 text-xl md:text-2xl shadow-xl w-full sm:w-auto animate-pulse" asChild>
@@ -83,8 +95,13 @@ const EmergencyTreeServicePage = () => {
         </div>
       </section>
 
-      <AnswerBlock>
-        If you need <strong>emergency tree service in Virginia Beach</strong>, first get everyone clear of the tree and any downed power lines — call 911 for immediate danger — then call a licensed crew. Art-is-Tree LLC answers 24/7 across Hampton Roads, with a real person on the line, and responds fast to trees on homes, cars, or driveways. Call{' '}
+      <AnswerBlock label="The short answer on coverage">
+        Homeowners insurance generally covers <strong>storm damage tree removal in Virginia Beach</strong> when
+        a covered event drops a tree onto a covered structure &mdash; the house, garage, or fence. It
+        generally does not cover taking down a healthy or leaning tree as a precaution, which is treated
+        as maintenance, and a tree that falls in the yard and hits nothing is often capped at a few hundred
+        dollars. Photograph everything before it is moved and get the scope in writing from a licensed,
+        insured crew. Art-is-Tree LLC documents claims across Hampton Roads and answers 24/7 at{' '}
         <a href="tel:7573195131" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">(757) 319-5131</a>.
       </AnswerBlock>
 
@@ -93,8 +110,8 @@ const EmergencyTreeServicePage = () => {
           <div className="prose prose-lg max-w-none">
             <p className="text-lg text-gray-700 leading-relaxed mb-6">Hampton Roads occupies a specific geographic position that makes it one of the more storm-exposed metro areas on the East Coast. The region sits at the intersection of Mid-Atlantic coastal storm tracks, tropical weather systems moving up the Atlantic seaboard, and the thermodynamic instability generated where warm Chesapeake Bay water meets summer continental air masses. In Virginia Beach, you do not need a direct hurricane landfall to have a major tree emergency. An ordinary summer convective event is enough.</p>
 
-            <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mt-10 mb-6">A Real Person Answers Every Call</h2>
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">Art-is-Tree LLC provides 24/7 emergency tree service across Virginia Beach, Norfolk, Chesapeake, and Portsmouth. Call (757) 319-5131 and a real person answers — not a voicemail, not an answering service, not a callback promise. We respond fast because a tree on a roof, a tree blocking emergency vehicle access, or a tree that has come down on a utility connection is not a situation where a next-business-day response is acceptable.</p>
+            <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mt-10 mb-6">What a Homeowners Policy Actually Covers</h2>
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">The line most policies draw is whether the tree hit something covered. A storm drops a loblolly pine through your roof and the policy generally pays to get the tree off the structure and repair what it broke. The same pine falls in the open yard and hits nothing, and you are often looking at a few hundred dollars of debris allowance or nothing at all — the tree itself is not the insured thing, the structure is. And a leaning tree you want down before it fails is maintenance, not a claim, no matter how obviously dangerous it looks. That last one is where most homeowners in Virginia Beach get surprised, and it is worth knowing before you call rather than after. Art-is-Tree LLC provides 24/7 emergency tree service across Virginia Beach, Norfolk, Chesapeake, and Portsmouth, and a real person answers — not a voicemail, not an answering service.</p>
 
             <h2 className="text-3xl font-playfair font-bold text-[#1B4D3E] mt-10 mb-6">15 Years of Storm Response Experience</h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-6">Mike Campbell built Art-is-Tree on 15 years of climbing experience in Hampton Roads including storm response work across the region's worst weather events. His team has cleared trees from residential rooftops in Kempsville and Great Neck, cut storm-dropped loblolly pines from vehicles in Red Mill and Sandbridge, and cleared debris from access routes in Chesapeake following major storm events. For storm-damaged trees requiring crane-assisted extraction, see our <Link to="/services/crane-removal" className="text-[#1B4D3E] underline hover:text-[#D4AF37] font-semibold">crane tree removal service</Link>.</p>
@@ -180,7 +197,7 @@ const EmergencyTreeServicePage = () => {
         </div>
       </div>
       <FAQPageSchema items={emergencyFaqs} />
-      <FAQSection items={emergencyFaqs} title="Emergency Tree Service in Virginia Beach: FAQ" />
+      <FAQSection items={emergencyFaqs} title="Storm Damage Insurance Claims in Virginia Beach: FAQ" />
       <FinancingSection
         heading="Emergency Tree Removal Financing"
         description="Storm damage doesn't wait for payday, and neither should you. Art-is-Tree LLC now offers emergency tree removal financing across Virginia Beach and Hampton Roads, so a fallen or dangerous tree can be handled immediately and paid for over time. When a limb is on your roof, car, or driveway, our 24/7 crew responds first and our flexible payment plans handle the rest, splitting the cost into affordable monthly payments. Homeowners in Virginia Beach, Norfolk, Chesapeake, and Portsmouth can get licensed, insured emergency tree service now and finance it. Ask about emergency tree removal financing and payment plans when you call — the application is fast."

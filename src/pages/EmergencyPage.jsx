@@ -5,8 +5,46 @@ import LocalSEOMeta from '@/components/LocalSEOMeta.jsx';
 import ServiceSchema from '@/components/seo/ServiceSchema.jsx';
 import SpeakableSchema from '@/components/seo/SpeakableSchema';
 import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema';
+import FAQPageSchema from '@/components/seo/FAQPageSchema';
+import FAQSection from '@/components/FAQSection';
+import AnswerBlock from '@/components/AnswerBlock';
 import StormSeasonChart from '@/components/StormSeasonChart';
 import { useReviewStats } from '@/hooks/useReviewStats';
+
+// Panic-moment questions. These are what somebody types with one hand while
+// standing in the yard looking at the tree — not research questions.
+const emergencyFaqs = [
+  {
+    question: 'A tree just fell on my house — what do I do first?',
+    answer:
+      'Get everyone out of the affected rooms and well away from the tree. Treat every downed wire as live and stay clear of it. If a line is down, gas is leaking, or anyone is hurt, call 911 and the power company before anyone else. Then call a licensed, insured tree crew — Art-is-Tree LLC answers 24/7 at (757) 319-5131. Photograph the damage before anything is moved; it makes the insurance claim far easier. Do not try to cut the tree yourself. A fallen trunk is loaded with tension and can kick back or roll without warning, which is where most homeowner injuries happen.',
+  },
+  {
+    question: 'How fast can you get here for an emergency tree removal in Virginia Beach?',
+    answer:
+      'A real person answers the phone day or night, and we dispatch around the clock across Virginia Beach, Norfolk, Chesapeake, and Portsmouth. Trees on homes, on vehicles, on power connections, or blocking emergency access get worked first. During a major storm every tree company in Hampton Roads is running at once, so we triage by danger rather than by call order — the honest answer is that we tell you a real window when you call instead of promising a number we cannot hold.',
+  },
+  {
+    question: 'Is it safe to go near a storm-damaged tree that is still standing?',
+    answer:
+      'No. A leaning tree, a split trunk, or a limb hung up in the canopy is still holding stored energy and can release with no warning and no sound. Root plates that lifted in saturated soil can settle further hours or days after the storm. Stay out from under it, keep children and pets clear, park vehicles somewhere else, and let a crew with rigging and the right insurance take the load off it.',
+  },
+  {
+    question: 'Do I call my insurance company or the tree service first?',
+    answer:
+      'Call the tree service first if the tree is an active hazard. Insurers expect you to prevent further damage, and stabilizing a tree that is still threatening the structure is part of that. Photograph everything before it is moved, then open the claim. Art-is-Tree LLC provides written documentation of what was removed and how, and we can coordinate directly with your adjuster.',
+  },
+  {
+    question: 'Does emergency tree removal cost more at night or on a holiday?',
+    answer:
+      'Emergency work does cost more than scheduled work, and that is true of any licensed tree service. You are paying for a crew mobilized outside normal hours, rigging a tree that is already damaged and unpredictable, and often crane time. What does not change is that you get a written price before we start. We give free estimates, and if the tree can safely wait until morning we will tell you so rather than bill you for the hour.',
+  },
+  {
+    question: 'Which cities do you cover for 24/7 emergency tree service?',
+    answer:
+      'Art-is-Tree LLC runs emergency and storm damage tree work across Virginia Beach, Norfolk, Chesapeake, and Portsmouth, and throughout Hampton Roads. We are licensed, insured, and BBB A+ rated, with 15 years of storm response in this region.',
+  },
+];
 
 const EMERGENCY_STEPS = [
   { icon: Users, title: 'Get everyone clear', text: 'Move people and pets well away from the tree and anything it is leaning on. Stay clear of wires — treat every downed line as live.' },
@@ -34,12 +72,12 @@ export default function EmergencyPage() {
   return (
     <div className="w-full">
       <LocalSEOMeta
-        pageTitle="24/7 Emergency Tree Service Virginia Beach VA | Art-is-Tree LLC"
-        description="Storm damage or fallen tree? Art-is-Tree offers 24/7 emergency tree service across Virginia Beach and Hampton Roads. Licensed, insured, BBB A+. Call (757) 319-5131."
+        pageTitle="Emergency Tree Removal Near Me | 24/7 Storm Damage | Virginia Beach VA | Art-is-Tree LLC"
+        description="Tree down on your house right now? Art-is-Tree LLC answers 24/7 for emergency tree removal and storm damage across Virginia Beach, Norfolk, Chesapeake, Portsmouth and Hampton Roads. A real person picks up, day or night. What to do in the first 10 minutes, what not to touch, and how we document it for your insurance claim. Licensed, insured, BBB A+, 5-Star rated. Free estimates. Call (757) 319-5131."
       />
       <ServiceSchema
-        name="Emergency Tree Service"
-        description="24/7 emergency tree removal across Virginia Beach and Hampton Roads."
+        name="Emergency Storm Damage Tree Removal"
+        description="24/7 emergency tree removal and storm damage response across Virginia Beach, Norfolk, Chesapeake, Portsmouth and Hampton Roads. Fallen trees on homes, vehicles and power connections, hung limbs and hurricane cleanup."
         serviceAreas={["Virginia Beach", "Norfolk", "Chesapeake", "Portsmouth"]}
       />
       <SpeakableSchema pageUrl="https://artistreevabeach.com/emergency" />
@@ -65,7 +103,7 @@ export default function EmergencyPage() {
           </div>
 
           <h1 className="text-4xl md:text-6xl font-playfair font-bold mb-6 text-white leading-tight speakable">
-            24/7 Emergency Tree Service in Virginia Beach
+            Emergency Storm Damage Tree Removal, 24/7 — Virginia Beach
           </h1>
           <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto speakable">
             Tree down on your house? We answer day or night. When a nor’easter drops a loblolly pine on your roof or the saturated coastal soil lets a water oak go over, our emergency tree service crew is standing by around the clock across Virginia Beach and Hampton Roads to make your property safe — fast.
@@ -88,6 +126,17 @@ export default function EmergencyPage() {
           </div>
         </div>
       </section>
+
+      {/* ─── QUICK ANSWER (AI Overview / featured snippet target) ─ */}
+      <AnswerBlock label="If a tree just came down">
+        Get everyone clear of the tree and stay away from any downed wire &mdash; call 911 first if a
+        line is down, gas is leaking, or someone is hurt. Then call a licensed, insured crew rather
+        than cutting it yourself, because a fallen trunk holds tension and can kick back. For{' '}
+        <strong>emergency tree removal in Virginia Beach</strong> and storm damage across Hampton
+        Roads, Art-is-Tree LLC answers 24/7 at{' '}
+        <a href="tel:7573195131" onClick={handlePhoneClick} className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">(757) 319-5131</a>
+        {' '}&mdash; a real person, day or night. Photograph the damage before anything is moved.
+      </AnswerBlock>
 
       {/* ─── FIRST 10 MINUTES: STEP TIMELINE ──────────────────── */}
       <section className="bg-white py-20 md:py-24 px-4">
@@ -206,15 +255,31 @@ export default function EmergencyPage() {
         </div>
       </section>
 
+      {/* ─── FAQ (panic-moment questions; feeds FAQPage schema) ── */}
+      <FAQPageSchema items={emergencyFaqs} />
+      <FAQSection items={emergencyFaqs} title="Emergency Tree Removal in Virginia Beach: FAQ" />
+
       {/* ─── SERVICE AREAS ─────────────────────────────────────── */}
       <section className="bg-white py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-playfair text-2xl md:text-3xl font-bold text-gray-900 mb-8">Emergency Service Across Hampton Roads</h2>
+          <h2 className="font-playfair text-2xl md:text-3xl font-bold text-gray-900 mb-4">24/7 Emergency Tree Service Across Hampton Roads</h2>
+          <p className="text-gray-600 mb-8">
+            Storm damage and emergency tree removal in Virginia Beach, Norfolk, Chesapeake and Portsmouth &mdash; licensed, insured, and dispatched around the clock.
+          </p>
           <div className="flex flex-wrap justify-center gap-3">
-            {["Virginia Beach", "Norfolk", "Chesapeake", "Portsmouth"].map((city) => (
-              <span key={city} className="bg-gray-100 text-gray-800 px-6 py-3 rounded-full text-base font-semibold border border-gray-200">
+            {[
+              ['Virginia Beach', '/service-areas/virginia-beach'],
+              ['Norfolk', '/service-areas/norfolk'],
+              ['Chesapeake', '/service-areas/chesapeake'],
+              ['Portsmouth', '/service-areas/portsmouth'],
+            ].map(([city, path]) => (
+              <Link
+                key={city}
+                to={path}
+                className="bg-gray-100 hover:bg-[#1B4D3E] hover:text-white text-gray-800 px-6 py-3 rounded-full text-base font-semibold border border-gray-200 transition-colors"
+              >
                 {city}
-              </span>
+              </Link>
             ))}
           </div>
         </div>
@@ -228,6 +293,13 @@ export default function EmergencyPage() {
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-white mb-4">Don’t wait for it to get worse.</h2>
           <p className="text-gray-300 text-lg mb-8">
             A leaning tree or a hung limb only gets more dangerous. Call now — we answer every time, and we can coordinate with your insurance adjuster to make the claim painless.
+          </p>
+          <p className="text-gray-400 text-base mb-8">
+            Already past the emergency and dealing with the paperwork? Here&rsquo;s{' '}
+            <Link to="/services/emergency-tree-service" className="text-[#D4AF37] underline hover:text-white">
+              what insurance covers on a storm damage claim
+            </Link>
+            {' '}&mdash; and what it costs.
           </p>
           <a
             href="tel:7573195131"
