@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 
 // Core UI Components
 import Navigation from '@/components/Navigation';
@@ -66,6 +67,19 @@ function Layout() {
                   <Outlet />
                 </Suspense>
               </main>
+
+              {/* Gold ART-icles button on every page, in the strip between the
+                  page content and the footer. Lives here rather than in each
+                  page so it cannot drift out of sync. */}
+              <div className="bg-gray-50 border-t border-gray-200 py-8 px-4 text-center">
+                <Link
+                  to="/case-studies"
+                  className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#e5c14f] text-[#1B4D3E] font-bold px-6 py-3 rounded-lg shadow-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1B4D3E] focus-visible:ring-offset-2"
+                >
+                  ART-icles
+                  <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
+              </div>
 
               <Footer />
               <Toaster />
