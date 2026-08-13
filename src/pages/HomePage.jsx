@@ -20,8 +20,12 @@ import QuickLinksBento from '@/components/QuickLinksBento';
 // Lazy Loaded Components
 const AboutSection = lazy(() => import('@/components/AboutSection'));
 const ServicesSection = lazy(() => import('@/components/ServicesSection'));
-const ComprehensiveServicesOverview = lazy(() => import('@/components/ComprehensiveServicesOverview'));
-const TrustAndCredentialsSection = lazy(() => import('@/components/TrustAndCredentialsSection'));
+// ComprehensiveServicesOverview ("Full-Service Tree Care in Virginia Beach") and
+// TrustAndCredentialsSection (Licensed & Insured / 15+ Years / 5.0 Star Rating)
+// were removed from this page on the owner's call. Services were listed three
+// times and trust signals five times; both of those blocks were the third and
+// fifth pass at the same claims. The components are still in src/components/ and
+// used nowhere else.
 const FAQSection = lazy(() => import('@/components/FAQSection'));
 const ContactSection = lazy(() => import('@/components/ContactSection'));
 const ServiceAreasSection = lazy(() => import('@/components/ServiceAreasSection'));
@@ -219,8 +223,6 @@ const HomePage = () => {
           </section>
 
           <WhyChooseSection title="Why Choose Art-is-Tree LLC?" />
-          <ComprehensiveServicesOverview />
-          <TrustAndCredentialsSection />
           <AboutSection />
           <GoogleReviewsDisplay />
           <ContactSection />
