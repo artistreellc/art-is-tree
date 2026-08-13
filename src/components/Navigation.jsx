@@ -408,7 +408,10 @@ const Navigation = memo(() => {
               href={GOOGLE_LISTING_URL} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hidden md:flex items-center gap-1.5 px-3 py-2 rounded-md hover:bg-white/10 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              /* Gold outline only — a border, no fill. A solid gold pill here
+                 would compete with the yellow phone button beside it; the
+                 outline groups the stars and the count without adding weight. */
+              className="hidden md:flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#D4AF37]/60 hover:border-[#D4AF37] hover:bg-white/10 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-400"
               aria-label={`Read our ${reviewCount} 5-star reviews on Google`}
             >
               <div className="flex text-[#D4AF37]">
@@ -483,7 +486,12 @@ const Navigation = memo(() => {
                    </a>
 
                    <Button className="w-full bg-yellow-400 hover:bg-yellow-500 text-[#1B4D3E] font-bold h-12 text-lg" asChild>
-                     <a href="tel:7573195131" onClick={() => { if (window.gtag_report_phone_click) window.gtag_report_phone_click(); }}>Call Now: (757) 319-5131</a>
+                     {/* Same as the header button: phone icon plus the number,
+                         no "Call Now". */}
+                     <a href="tel:7573195131" onClick={() => { if (window.gtag_report_phone_click) window.gtag_report_phone_click(); }} aria-label="Call Art-is-Tree LLC">
+                       <Phone className="w-5 h-5 mr-2" />
+                       (757) 319-5131
+                     </a>
                    </Button>
                   <a href="https://www.instagram.com/artistreeva" target="_blank" rel="noopener noreferrer" className="flex items-center text-yellow-400 font-bold uppercase text-sm tracking-wider min-h-[44px]">
                     <Instagram className="w-6 h-6 mr-2" /> Follow on Instagram
