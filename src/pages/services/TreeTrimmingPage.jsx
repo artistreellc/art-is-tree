@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import LocalSEOMeta from '@/components/LocalSEOMeta';
 import ServiceSchema from '@/components/seo/ServiceSchema';
 import BreadcrumbListSchema from '@/components/seo/BreadcrumbListSchema';
+import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
 import ServiceAreaLinks from '@/components/ServiceAreaLinks';
 import FAQSection from '@/components/FAQSection';
@@ -44,6 +45,11 @@ const TreeTrimmingPage = () => {
         serviceAreas={serviceAreas} 
       />
       
+      {/* Same LocalBusiness node the hub and city pages already emit, so the
+          rating Google sees is one consistent entity rather than a new claim
+          per page. It carries aggregateRating from COMPANY_INFO. */}
+      <LocalBusinessSchema />
+
       <BreadcrumbListSchema 
         items={[
           { name: 'Home', url: '/' },
