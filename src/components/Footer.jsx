@@ -94,7 +94,8 @@ const Footer = () => {
               sets the whole footer's height. */}
           <div className="space-y-3.5 md:col-span-2 lg:col-span-2 pb-6 lg:pb-0">
             <Link to="/" className="inline-flex items-center gap-3 bg-white/5 p-2 rounded-xl hover:bg-white/10 transition-colors w-fit" aria-label="Home">
-              <img src="/logo.png" alt="Art-is-Tree LLC Logo" className="w-[42px] h-[36px] bg-white p-1 rounded-md" width="42" height="36" loading="lazy" decoding="async" />
+              {/* 192x156 WebP, 7.7KB — rendered at 42x36. See Navigation.jsx. */}
+              <img src="/logo-192.webp" alt="Art-is-Tree LLC Logo" className="w-[42px] h-[36px] bg-white p-1 rounded-md" width="42" height="36" loading="lazy" decoding="async" />
               <span className="font-playfair text-2xl font-bold text-white tracking-tight">
                 Art-is-Tree <span className="text-[#D4AF37] ml-1">LLC</span>
               </span>
