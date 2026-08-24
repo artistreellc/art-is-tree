@@ -6,6 +6,7 @@ import ServiceSchema from '@/components/seo/ServiceSchema.jsx';
 import SpeakableSchema from '@/components/seo/SpeakableSchema';
 import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema';
 import FAQPageSchema from '@/components/seo/FAQPageSchema';
+import HowToSchema from '@/components/seo/HowToSchema';
 import FAQSection from '@/components/FAQSection';
 import AnswerBlock from '@/components/AnswerBlock';
 import StormSeasonChart from '@/components/StormSeasonChart';
@@ -82,6 +83,13 @@ export default function EmergencyPage() {
       />
       <SpeakableSchema pageUrl="https://artistreevabeach.com/emergency" />
       <LocalBusinessSchema />
+      {/* Fed by EMERGENCY_STEPS — the same array "The First 10 Minutes" renders
+          below — so the markup and the visible steps cannot drift apart. */}
+      <HowToSchema
+        name="What to do when a tree falls on your house"
+        description="The first ten minutes after a tree comes down on a home in Virginia Beach or Hampton Roads, in order, before anyone touches a saw."
+        steps={EMERGENCY_STEPS}
+      />
 
       {/* ─── HERO ─────────────────────────────────────────────── */}
       <section className="relative isolate overflow-hidden pt-28 pb-20 md:pt-36 md:pb-28 px-4">
