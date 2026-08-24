@@ -53,7 +53,7 @@ const ListingsDropdown = () => {
         aria-haspopup="true"
         className="inline-flex items-center gap-2.5 bg-white border border-gray-200 shadow-sm hover:shadow-md rounded-full pl-2 pr-4 py-2 transition-shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37]"
       >
-        <img src="/logo.png" alt="Art-is-Tree LLC" width="28" height="28" className="h-7 w-7 rounded-full object-contain bg-white" />
+        <img src="/logo-192.webp" alt="Art-is-Tree LLC" width="28" height="28" className="h-7 w-7 rounded-full object-contain bg-white" />
         <span className="font-bold text-[#1B4D3E] text-sm md:text-base">Listings</span>
         <ChevronDown className={`w-4 h-4 text-[#1B4D3E] transition-transform ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
       </button>

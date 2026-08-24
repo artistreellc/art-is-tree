@@ -328,7 +328,10 @@ const Navigation = memo(() => {
     );
   }, [user, closeMobileMenu]);
 
-  const logoUrl = "/logo.png";
+  // 7.7KB 192x156 WebP instead of the 121KB 900x731 PNG. The header renders it
+  // at 42x36, so the full-size file was ~7x oversized on every page load.
+  // Schema still points at /logo.png — that one is the canonical brand asset.
+  const logoUrl = "/logo-192.webp";
 
   return (
     <nav className="sticky top-0 z-50 w-full bg-[#1B4D3E] shadow-xl border-b border-white/10 transition-transform duration-300 ease-in-out" style={{ transform: navHidden ? 'translateY(-100%)' : 'translateY(0)' }} ref={menuRef} aria-label="Main Navigation">
