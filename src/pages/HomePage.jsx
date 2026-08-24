@@ -198,7 +198,11 @@ const HomePage = () => {
                 ['virginia-beach-crane-operation-oak', 'Crane crew removing a large oak by a Virginia Beach home'],
               ].map(([file, alt]) => (
                 <Link key={file} to="/gallery" className="relative aspect-[4/5] overflow-hidden rounded-xl shadow-md border border-gray-200 bg-gray-100 group">
-                  <img src={`/images/${file}.webp`} alt={alt} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  {/* -480 variant: these render ~171px wide on mobile and ~280px
+                      on desktop, so the full-size files were 3-8x oversized. The
+                      originals stay in use for the gallery, the case-study heroes
+                      and the service-area heroes. */}
+                  <img src={`/images/${file}-480.webp`} alt={alt} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 </Link>
               ))}
             </div>
