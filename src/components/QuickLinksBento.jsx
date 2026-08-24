@@ -68,7 +68,7 @@ const QuickLinksBento = () => {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 auto-rows-[220px]">
           <PhotoTile
             to="/emergency"
-            img="/images/virginia-beach-crane-rigging-storm.webp"
+            img="/images/virginia-beach-crane-rigging-storm-480.webp"
             alt="Climber rigging a large storm-damaged trunk to a crane under a dark sky"
             badge="24/7 Emergency"
             eyebrow="Storm damage?"
@@ -78,7 +78,7 @@ const QuickLinksBento = () => {
           />
           <PhotoTile
             to="/services/crane-removal"
-            img="/images/virginia-beach-crane-operation-oak.webp"
+            img="/images/virginia-beach-crane-operation-oak-480.webp"
             alt="Crane and crew removing a large oak beside a Virginia Beach home"
             eyebrow="Big & hazardous"
             title="Crane Removals"
@@ -100,7 +100,7 @@ const QuickLinksBento = () => {
           />
           <PhotoTile
             to="/gallery"
-            img="/images/virginia-beach-tall-tree-climb.webp"
+            img="/images/virginia-beach-tall-tree-climb-480.webp"
             alt="Climber high in a bare tree next to a house in Virginia Beach"
             eyebrow="See the work"
             title="Our Gallery"
