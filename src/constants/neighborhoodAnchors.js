@@ -45,15 +45,16 @@ export const NEIGHBORHOOD_ANCHORS = [
   },
   {
     name: 'Great Neck', city: 'Virginia Beach',
-    lat: 36.79664, lon: -76.21012, verified: false,
-    source: 'virginia-beach-grapple-truck-street.webp',
+    lat: 36.8833, lon: -76.0667, verified: true,
+    source: 'src/data/serviceAreaNeighborhoods.js',
     note:
-      'DISPUTED — do not rely on this one. -76.21 sits well west, out toward the ' +
-      'Norfolk line, whereas Great Neck is generally nearer -76.08 by the ' +
-      'Lynnhaven. Flagged for the owner to confirm. Great Neck is a protected ' +
-      'term under CLAUDE.md section 3 and sits in the oceanfront zone where the ' +
-      'Aug 2026 heatmap shows the weakest rankings, so a wrong anchor here would ' +
-      'mislabel jobs in exactly the area that matters most.',
+      'CORRECTED. The photo-derived tag put this at 36.79664, -76.21012 — about ' +
+      '13km west, out toward the Norfolk line. The owner confirmed that photo was ' +
+      'simply reused and its tag says nothing about where the work happened. ' +
+      'Coordinates now come from the repo\'s own neighborhood dataset. This anchor ' +
+      'matters twice over: Great Neck is a protected term under CLAUDE.md section 3, ' +
+      'and it sits in the oceanfront zone the Aug 2026 heatmap shows as weakest, so ' +
+      'a wrong anchor would mislabel jobs in exactly the area worth winning.',
   },
 ];
 
