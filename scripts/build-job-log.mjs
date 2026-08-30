@@ -59,6 +59,25 @@ const EXCLUDE_KM = 0.35;
 const JOB_RADIUS_M = 150;
 const JOB_MERGE_DAYS = 3;
 
+// Places the trucks go that are not customers. Owner-confirmed, one at a time —
+// nothing belongs here on a guess, because every entry silently deletes work.
+// These are business locations, never a customer address.
+const EXCLUDED_SITES = [
+  {
+    name: 'Repair shop',
+    lat: 36.7652, lon: -76.3592, radiusM: 250,
+    // 31 visits, and the reason it has to be removed before the yard is found
+    // rather than after: the stays run 17, 28 and 44 days, which fed straight
+    // into overnight-stop clustering. Eight visits landed in the 45-600 min
+    // window and were being counted as Chesapeake jobs. Cluster spread is 61m,
+    // so 250m is comfortable without reaching any neighbouring property.
+  },
+];
+const isExcluded = (g) =>
+  EXCLUDED_SITES.some(
+    (s) => Math.hypot((g.lat - s.lat) * 111000, (g.lon - s.lon) * 89000) <= s.radiusM,
+  );
+
 /** Minimal CSV reader that respects quoted fields containing commas. */
 function parseCsv(text) {
   const rows = [];
@@ -126,7 +145,20 @@ for (const [vehicle, trips] of Object.entries(byVehicle)) {
   console.log(`  ${vehicle.padEnd(16)} trips ${String(t.length).padStart(5)}`);
 }
 
-/** The yard is where the trucks sit overnight, far more than anywhere else. */
+const excludedCount = gaps.filter(isExcluded).length;
+for (let i = gaps.length - 1; i >= 0; i--) if (isExcluded(gaps[i])) gaps.splice(i, 1);
+if (excludedCount) {
+  console.log(
+    `\nexcluded ${excludedCount} stops at ${EXCLUDED_SITES.length} known non-customer site(s): ` +
+      EXCLUDED_SITES.map((s) => s.name).join(', '),
+  );
+}
+
+/**
+ * The yard is where the trucks sit overnight, far more than anywhere else.
+ * It doubles as the dump site — owner-confirmed — which is why debris never
+ * shows up as a landfill anywhere in the trip data.
+ */
 function detectYard(all) {
   const overnight = all.filter((g) => g.mins > MAX_STOP_MIN);
   if (overnight.length < 5) return null;
@@ -157,12 +189,13 @@ const isYard = (g) => yard && Math.hypot((g.lat - yard.lat) * 111, (g.lon - yard
  * and the stop in between was a landfill being miscounted as a job. The pattern
  * is real. The conclusion does not follow, because of where the dumping happens.
  *
- * In the real export there is no landfill at all. Stops bracketed by a return to
- * the same place scatter across 79 distinct locations, 79 of 111 under fifteen
+ * No landfill appears anywhere in the export, and the owner confirmed why: the
+ * lot where the trucks park IS the dump site. Stops bracketed by a return to the
+ * same place scatter across 79 distinct locations, 79 of 111 under fifteen
  * minutes, on roads like Lynnhaven Pkwy and Independence Blvd — errands. What
  * shows up instead is 396 mid-day visits to the yard, 271 of them under fifteen
- * minutes, and 74 round trips of job -> yard -> back to the same job inside a
- * day. They dump on their own property.
+ * minutes, and 75 round trips of job -> yard -> back to the same job inside a
+ * day.
  *
  * That is already handled twice: the yard exclusion drops the dump stop, and
  * grouping merges the two visits either side of it into one job.
