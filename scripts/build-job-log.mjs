@@ -15,7 +15,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
-import { resolveNeighborhood } from '../src/constants/neighborhoodAnchors.js';
+import { NEIGHBORHOOD_ANCHORS, MAX_KM, haversineKm } from '../src/constants/neighborhoodAnchors.js';
 import { serviceAreaNeighborhoods } from '../src/data/serviceAreaNeighborhoods.js';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -27,9 +27,37 @@ if (!src) {
   process.exit(1);
 }
 
-const MIN_STOP_MIN = 45;   // below this it is a light, a fuel stop, or traffic
+// 45 minutes is what separates working from everything else a truck does, and
+// fuel is the case worth stating because these are diesel trucks that refuel
+// constantly. In the real export the most-visited location in the entire year
+// is a stop on Indian River Rd: 69 separate days, median duration 9 minutes,
+// exactly one visit reaching 45 minutes. Fuel is frequent and brief, so the
+// floor removes it without any need to special-case it. The next four
+// most-visited locations behave the same way — 3 to 9 minute medians, one
+// long stop between them.
+const MIN_STOP_MIN = 45;
 const MAX_STOP_MIN = 600;  // above this it is overnight parking
 const EXCLUDE_KM = 0.35;
+
+// ONE JOB IS NOT ONE STOP. Read this before touching the numbers.
+//
+// A stop is one truck sitting still. A job is one customer's property. The chip
+// truck and the grapple truck roll to the same address and each logs its own
+// stop; the bucket truck joins on the tall work; any of them may leave to dump
+// and come back. In the real export that is a 49% overcount — 706 stops for 361
+// same-day sites — and 122 sites had more than one truck on them.
+//
+// So stops are grouped into jobs by place and time: within JOB_RADIUS_M of each
+// other and no more than JOB_MERGE_DAYS apart. The day window is what keeps a
+// two-day removal from counting twice, and what stops next spring's job at the
+// same house from merging into this one.
+//
+// These thresholds barely matter, which is the reassuring part. Sweeping
+// 30-60 min x 100-200 m x 1-3 days moves the job count only between 283 and 394,
+// while the raw stop count swings 577 to 843. Counting jobs is roughly three
+// times more stable than counting stops.
+const JOB_RADIUS_M = 150;
+const JOB_MERGE_DAYS = 3;
 
 /** Minimal CSV reader that respects quoted fields containing commas. */
 function parseCsv(text) {
@@ -124,58 +152,154 @@ const isYard = (g) => yard && Math.hypot((g.lat - yard.lat) * 111, (g.lon - yard
  * Neighborhood resolution, best source first:
  *   1. the curated anchors (owner-verified where marked)
  *   2. the repo's 56-neighborhood dataset, nearest within 3km
- * City always comes from the geocoded address, which is authoritative.
+ *
+ * THE CITY FROM THE ADDRESS IS AUTHORITATIVE AND CONSTRAINS THE MATCH.
+ * Nearest-by-distance alone is wrong on every city line in Hampton Roads, and
+ * these lines are close together: Ocean View and East Beach are Norfolk, but
+ * they sit near enough to the Virginia Beach border that a pure distance match
+ * can hand a Norfolk job to a Virginia Beach neighborhood or the reverse. The
+ * geocoder already knows which city the truck was standing in, so a candidate
+ * in a different city is rejected outright rather than accepted as "closest".
+ *
+ * With no city on the address there is nothing to check against, so the match
+ * runs unconstrained and is tagged as such.
  */
-function resolve(g) {
-  const anchor = resolveNeighborhood(g.lat, g.lon);
-  if (anchor) return { neighborhood: anchor.name, source: 'anchor' };
+function resolve(g, city) {
+  const sameCity = (c) => !city || !c || c.toLowerCase() === city.toLowerCase();
   let best = null;
+  const consider = (name, c, km, limit, source) => {
+    if (km > limit || !sameCity(c)) return;
+    if (!best || km < best.km) best = { neighborhood: name, km, source: city ? source : `${source}:uncheckedCity` };
+  };
+  for (const a of NEIGHBORHOOD_ANCHORS) {
+    consider(a.name, a.city, haversineKm(g.lat, g.lon, a.lat, a.lon), MAX_KM, 'anchor');
+  }
+  if (best) return best;
   for (const n of serviceAreaNeighborhoods) {
     if (n.lat == null) continue;
-    const km = Math.hypot((g.lat - n.lat) * 111, (g.lon - n.lng) * 89);
-    if (km <= 3 && (!best || km < best.km)) best = { neighborhood: n.name, km, source: 'dataset' };
+    consider(n.name, n.city, haversineKm(g.lat, g.lon, n.lat, n.lng), 3, 'dataset');
   }
   return best ?? { neighborhood: null, source: 'none' };
 }
 
+// Full precision here on purpose: grouping happens at 150m, so the ~1km
+// rounding that protects the customer has to come after it, not before.
 const stops = gaps
   .filter((g) => g.mins >= MIN_STOP_MIN && g.mins <= MAX_STOP_MIN && !isYard(g))
   .map((g) => {
-    const { city, zip } = parseAddr(g.addr);
-    const { neighborhood } = resolve(g);
-    return {
-      date: g.arrive.toISOString().slice(0, 10),
-      minutes: Math.round(g.mins),
-      // ~1km precision, deliberately. See the privacy note at the top.
-      lat: Number(g.lat.toFixed(2)),
-      lon: Number(g.lon.toFixed(2)),
-      city,
-      zip,
-      neighborhood,
-      vehicle: g.vehicle,
-    };
+    const addr = parseAddr(g.addr);
+    return { ...g, ...addr, ...resolve(g, addr.city) };
   })
-  .sort((a, b) => a.date.localeCompare(b.date));
+  .sort((a, b) => a.arrive - b.arrive);
+
+/** Most frequent non-null value, so one odd geocode cannot relabel a job. */
+function mode(values) {
+  const tally = {};
+  for (const v of values) if (v) tally[v] = (tally[v] || 0) + 1;
+  return Object.entries(tally).sort((a, b) => b[1] - a[1])[0]?.[0] ?? null;
+}
+
+/** Collapse stops into jobs by place and time. Stops arrive already sorted. */
+function groupJobs(all) {
+  const jobs = [];
+  for (const s of all) {
+    const day = Math.floor(s.arrive / 864e5);
+    const hit = jobs.find(
+      (j) =>
+        day - j.lastDay <= JOB_MERGE_DAYS &&
+        Math.hypot((s.lat - j.lat) * 111000, (s.lon - j.lon) * 89000) <= JOB_RADIUS_M,
+    );
+    if (hit) {
+      hit.stops.push(s);
+      hit.lastDay = day;
+    } else jobs.push({ lat: s.lat, lon: s.lon, lastDay: day, stops: [s] });
+  }
+  return jobs.map((j) => {
+    const days = [...new Set(j.stops.map((s) => s.arrive.toISOString().slice(0, 10)))].sort();
+    return {
+      date: days[0],
+      days: days.length,
+      // Full precision, stripped before the payload is written. Any distance
+      // test has to run on this: the published coordinates are rounded to about
+      // 1km, so at that resolution a "within 300m" check matches every property
+      // in the same grid cell and reports the whole city as recurring.
+      precise: { lat: j.lat, lon: j.lon },
+      // ~1km precision, deliberately. See the privacy note at the top.
+      lat: Number(j.lat.toFixed(2)),
+      lon: Number(j.lon.toFixed(2)),
+      city: mode(j.stops.map((s) => s.city)),
+      zip: mode(j.stops.map((s) => s.zip)),
+      neighborhood: mode(j.stops.map((s) => s.neighborhood)),
+      hours: Number((j.stops.reduce((t, s) => t + s.mins, 0) / 60).toFixed(1)),
+      trucks: [...new Set(j.stops.map((s) => s.vehicle))].length,
+    };
+  });
+}
+
+const jobs = groupJobs(stops).sort((a, b) => a.date.localeCompare(b.date));
 
 const count = (key) =>
-  stops.reduce((m, s) => (s[key] ? ((m[s[key]] = (m[s[key]] || 0) + 1), m) : m), {});
+  jobs.reduce((m, j) => (j[key] ? ((m[j[key]] = (m[j[key]] || 0) + 1), m) : m), {});
 const byNeighborhood = count('neighborhood');
 const byCity = count('city');
 const byZip = count('zip');
 
-console.log(`\ngaps: ${gaps.length}   job stops (${MIN_STOP_MIN}-${MAX_STOP_MIN} min): ${stops.length}`);
+console.log(`\ngaps: ${gaps.length}   stops (${MIN_STOP_MIN}-${MAX_STOP_MIN} min): ${stops.length}`);
 if (yard) console.log(`yard: ${Math.round(yard.share * 100)}% of ${yard.nights} overnight stops — excluded`);
 else console.log('yard: not identified; counts may include overnight parking');
 
+const multiTruck = jobs.filter((j) => j.trucks > 1).length;
+const multiDay = jobs.filter((j) => j.days > 1).length;
+console.log(
+  `\njobs after grouping: ${jobs.length}  ` +
+    `(${stops.length - jobs.length} duplicate stops collapsed — ` +
+    `${multiTruck} jobs ran more than one truck, ${multiDay} spanned more than a day)`,
+);
+
+// A customer's property is a one-time visit. A location that keeps producing
+// separate long stops months apart is something else — a dump, a supply yard, a
+// standing commercial account — and only the owner can say which. These are
+// reported rather than dropped, because guessing either way corrupts the count.
+const recurring = [];
+for (const j of jobs) {
+  const hit = recurring.find(
+    (r) =>
+      Math.hypot((j.precise.lat - r.lat) * 111000, (j.precise.lon - r.lon) * 89000) <= JOB_RADIUS_M * 2,
+  );
+  if (hit) hit.dates.push(j.date);
+  else recurring.push({ lat: j.precise.lat, lon: j.precise.lon, dates: [j.date], show: [j.lat, j.lon] });
+}
+const suspect = recurring
+  .filter((r) => r.dates.length >= 3)
+  .map((r) => ({ ...r, span: Math.round((new Date(r.dates.at(-1)) - new Date(r.dates[0])) / 864e5) }))
+  .filter((r) => r.span > 60);
+if (suspect.length) {
+  console.log('\n⚠ locations producing repeat jobs over a long span — confirm these are customers:');
+  for (const r of suspect.sort((a, b) => b.dates.length - a.dates.length))
+    console.log(`  ${String(r.dates.length).padStart(3)} jobs over ${r.span}d near ${r.show[0]}, ${r.show[1]}`);
+  console.log('  (coordinates are the rounded ~1km ones, enough to locate on a map)');
+}
+
 console.log('\nby city:');
 for (const [k, n] of Object.entries(byCity).sort((a, b) => b[1] - a[1])) console.log(`  ${String(n).padStart(5)}  ${k}`);
-console.log('\nby neighborhood (top 20):');
-for (const [k, n] of Object.entries(byNeighborhood).sort((a, b) => b[1] - a[1]).slice(0, 20))
-  console.log(`  ${String(n).padStart(5)}  ${k}`);
-const unresolved = stops.filter((s) => !s.neighborhood).length;
-console.log(`\nunresolved neighborhood: ${unresolved} of ${stops.length}`);
+// Grouped under the city each neighborhood actually belongs to. A flat list
+// hides exactly the mistake worth catching — Ocean View and East Beach reading
+// as Virginia Beach when both are Norfolk.
+console.log('\nby neighborhood, under its city:');
+const cityOf = {};
+for (const j of jobs) if (j.neighborhood && j.city) cityOf[j.neighborhood] = j.city;
+for (const [city] of Object.entries(byCity).sort((a, b) => b[1] - a[1])) {
+  const here = Object.entries(byNeighborhood)
+    .filter(([n]) => cityOf[n] === city)
+    .sort((a, b) => b[1] - a[1]);
+  const named = here.reduce((t, [, n]) => t + n, 0);
+  console.log(`\n  ${city} — ${byCity[city]} jobs, ${byCity[city] - named} not resolved to a neighborhood`);
+  for (const [n, c] of here) console.log(`    ${String(c).padStart(4)}  ${n}`);
+}
+const unresolved = jobs.filter((j) => !j.neighborhood).length;
+console.log(`\nunresolved neighborhood: ${unresolved} of ${jobs.length} jobs`);
 
-const dates = stops.map((s) => s.date).sort();
+const dates = jobs.map((j) => j.date).sort();
 const payload = {
   generated: new Date().toISOString(),
   source: 'Bouncie Trip Data Export',
@@ -183,11 +307,17 @@ const payload = {
   to: dates.at(-1) ?? null,
   windowDays: dates.length ? Math.round((new Date(dates.at(-1)) - new Date(dates[0])) / 864e5) : 0,
   minStopMinutes: MIN_STOP_MIN,
+  jobRadiusM: JOB_RADIUS_M,
+  jobMergeDays: JOB_MERGE_DAYS,
+  // Both are kept so the grouping stays auditable: jobCount is what the site
+  // may claim, stopCount is the unreduced input it came from.
+  jobCount: jobs.length,
   stopCount: stops.length,
   byCity,
   byZip,
   byNeighborhood,
-  stops,
+  // `precise` is dropped here: it exists only for in-script distance tests.
+  jobs: jobs.map(({ precise, ...j }) => j),
 };
 
 if (DRY) console.log('\n--dry-run: nothing written.');
