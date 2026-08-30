@@ -24,6 +24,7 @@
 //      ~52 sequential requests per vehicle, so this pages through weekly windows
 //      with a small delay rather than asking for the range in one call.
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { createInterface } from 'node:readline';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { resolveNeighborhood } from '../src/constants/neighborhoodAnchors.js';
@@ -53,7 +54,7 @@ const EARLIEST = new Date('2020-05-21');
 const EXCLUDE_KM = 0.35;
 const EXCLUDED = [{ name: 'yard (2597 Nestlebrook Trail)', lat: null, lon: null }];
 
-function loadToken() {
+async function loadToken() {
   const p = join(root, '.env');
   if (existsSync(p)) {
     for (const line of readFileSync(p, 'utf8').split('\n')) {
@@ -61,18 +62,24 @@ function loadToken() {
       if (m && !process.env[m[1]]) process.env[m[1]] = m[2].replace(/^["']|["']$/g, '');
     }
   }
-  const t = process.env.BOUNCIE_ACCESS_TOKEN;
-  if (!t) {
-    console.error(
-      '\n\x1b[31mBOUNCIE_ACCESS_TOKEN is not set.\x1b[0m\n' +
-        'Put it in a local .env (already gitignored):\n  BOUNCIE_ACCESS_TOKEN=...\n' +
-        'Never commit it and never paste it into chat.\n'
-    );
+  if (process.env.BOUNCIE_ACCESS_TOKEN) return process.env.BOUNCIE_ACCESS_TOKEN;
+
+  // No .env and no env var: ask, rather than making the user create a file by
+  // hand. Written to .env (already gitignored) so it is asked for exactly once.
+  const rl = createInterface({ input: process.stdin, output: process.stdout });
+  const answer = await new Promise((res) =>
+    rl.question('\nPaste your Bouncie access token (it is saved to .env, which git ignores):\n> ', (a) => { rl.close(); res(a.trim()); })
+  );
+  if (!answer) {
+    console.error('\n\x1b[31mNo token entered.\x1b[0m');
     process.exit(1);
   }
-  return t;
+  writeFileSync(p, `BOUNCIE_ACCESS_TOKEN=${answer}\n`, { flag: existsSync(p) ? 'a' : 'w' });
+  console.log('saved to .env');
+  return answer;
 }
-const TOKEN = loadToken();
+
+const TOKEN = await loadToken();
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -127,36 +134,75 @@ const excluded = (lat, lon) =>
     return Math.hypot((lat - e.lat) * 111, (lon - e.lon) * 89) <= EXCLUDE_KM;
   });
 
-function stopsFromTrips(trips) {
+/** Every gap between consecutive trips, unfiltered. */
+function gapsFromTrips(trips) {
   const t = trips
     .map((x) => ({ start: x.startTime, end: x.endTime, pos: tripEnd(x) }))
     .filter((x) => x.start && x.end && x.pos)
     .sort((a, b) => new Date(a.end) - new Date(b.end));
 
-  const stops = [];
+  const gaps = [];
   for (let i = 0; i < t.length - 1; i++) {
     const arrive = new Date(t[i].end);
-    const depart = new Date(t[i + 1].start);
-    const mins = (depart - arrive) / 60000;
-    if (!(mins >= MIN_STOP_MIN && mins <= MAX_STOP_MIN)) continue;
-    const { lat, lon } = t[i].pos;
-    if (excluded(lat, lon)) continue;
-    const hood = resolveNeighborhood(lat, lon);
-    stops.push({
-      date: arrive.toISOString().slice(0, 10),
-      arrivedAt: arrive.toISOString(),
-      minutes: Math.round(mins),
-      // Rounded to ~1km on purpose. This file is committed to a public repo and
-      // full-precision job coordinates are customer home addresses. The log
-      // answers "which neighborhood", never "which house".
-      lat: Number(lat.toFixed(2)),
-      lon: Number(lon.toFixed(2)),
-      neighborhood: hood?.name ?? null,
-      city: hood?.city ?? null,
-      anchorKm: hood?.km ?? null,
-    });
+    const mins = (new Date(t[i + 1].start) - arrive) / 60000;
+    if (mins <= 0) continue;
+    gaps.push({ arrive, mins, lat: t[i].pos.lat, lon: t[i].pos.lon });
   }
-  return stops;
+  return gaps;
+}
+
+/**
+ * Find the yard without being told where it is.
+ *
+ * The trucks answer this themselves: the yard is the place they return to and
+ * sit at overnight, far more often than any customer. So cluster the long stops
+ * and take the most frequent location. That beats asking the owner to look up
+ * coordinates, and it cannot go stale if the yard moves.
+ *
+ * Returns null when no location dominates — better to exclude nothing and say so
+ * than to silently drop a real neighborhood that happens to be busy.
+ */
+function detectYard(gaps) {
+  const overnight = gaps.filter((g) => g.mins > MAX_STOP_MIN);
+  if (overnight.length < 5) return null;
+
+  const clusters = [];
+  for (const g of overnight) {
+    const hit = clusters.find(
+      (c) => Math.hypot((g.lat - c.lat) * 111, (g.lon - c.lon) * 89) <= EXCLUDE_KM
+    );
+    if (hit) {
+      hit.n++;
+      hit.lat = (hit.lat * (hit.n - 1) + g.lat) / hit.n;
+      hit.lon = (hit.lon * (hit.n - 1) + g.lon) / hit.n;
+    } else clusters.push({ lat: g.lat, lon: g.lon, n: 1 });
+  }
+  clusters.sort((a, b) => b.n - a.n);
+  const top = clusters[0];
+  const share = top.n / overnight.length;
+  // Needs to be clearly dominant, not just first past the post.
+  return share >= 0.4 ? { ...top, share, nights: overnight.length } : null;
+}
+
+function stopsFromGaps(gaps) {
+  return gaps
+    .filter((g) => g.mins >= MIN_STOP_MIN && g.mins <= MAX_STOP_MIN && !excluded(g.lat, g.lon))
+    .map((g) => {
+      const hood = resolveNeighborhood(g.lat, g.lon);
+      return {
+        date: g.arrive.toISOString().slice(0, 10),
+        arrivedAt: g.arrive.toISOString(),
+        minutes: Math.round(g.mins),
+        // Rounded to ~1km on purpose. This file is committed to a public repo and
+        // full-precision job coordinates are customer home addresses. The log
+        // answers "which neighborhood", never "which house".
+        lat: Number(g.lat.toFixed(2)),
+        lon: Number(g.lon.toFixed(2)),
+        neighborhood: hood?.name ?? null,
+        city: hood?.city ?? null,
+        anchorKm: hood?.km ?? null,
+      };
+    });
 }
 
 /** Weekly windows from `from` to now, because the API caps a query at 7 days. */
@@ -185,7 +231,7 @@ if (!vehicles.length) {
 }
 console.log(`vehicles: ${vehicles.length}`);
 
-const all = [];
+const allGaps = [];
 let totalTrips = 0, failed = 0;
 for (const v of vehicles) {
   const imei = v.imei ?? v.deviceImei;
@@ -209,12 +255,28 @@ for (const v of vehicles) {
     }
     await sleep(DELAY_MS);
   }
-  const stops = stopsFromTrips(trips);
   totalTrips += trips.length;
-  console.log(`  trips ${String(trips.length).padStart(5)} -> stops ${stops.length}`);
-  all.push(...stops.map((s) => ({ ...s, vehicle: String(label) })));
+  console.log(`  trips ${String(trips.length).padStart(5)}`);
+  allGaps.push(...gapsFromTrips(trips).map((g) => ({ ...g, vehicle: String(label) })));
 }
 
+// Exclude the yard before counting anything, or overnight parking is the
+// busiest "job site" in the log.
+const yard = detectYard(allGaps);
+if (yard) {
+  EXCLUDED.push({ name: 'yard (auto-detected)', lat: yard.lat, lon: yard.lon });
+  console.log(
+    `\nyard detected automatically: ${Math.round(yard.share * 100)}% of ${yard.nights} overnight stops` +
+      ` cluster at one location — excluded from job counts.`
+  );
+} else {
+  console.log(
+    '\n\x1b[33mCould not identify a yard from overnight stops.\x1b[0m Counts may include' +
+      '\novernight parking. Add its coordinates to EXCLUDED if a location looks inflated.'
+  );
+}
+
+const all = stopsFromGaps(allGaps).map((s, i) => ({ ...s, vehicle: allGaps[i]?.vehicle }));
 all.sort((a, b) => a.arrivedAt.localeCompare(b.arrivedAt));
 
 const byNeighborhood = {};
@@ -235,27 +297,4 @@ if (unresolved) {
       'neighborhoods with no anchor yet. Add anchors for them rather than widening\n' +
       'MAX_KM, which would mislabel the ones already resolving correctly.'
   );
-}
-if (!EXCLUDED.some((e) => e.lat != null)) {
-  console.log(
-    '\n\x1b[33mThe yard is not excluded — its coordinates are null in EXCLUDED.\x1b[0m\n' +
-      'Until you fill those in locally, overnight parking will show up as the\n' +
-      'busiest "job site" in the log.'
-  );
-}
-
-const payload = {
-  generated: new Date().toISOString(),
-  since: SINCE.toISOString().slice(0, 10),
-  windowDays: Math.round((Date.now() - SINCE) / 864e5),
-  minStopMinutes: MIN_STOP_MIN,
-  stopCount: all.length,
-  byNeighborhood,
-  stops: all,
-};
-
-if (DRY) console.log('\n--dry-run: nothing written.');
-else {
-  writeFileSync(OUT, JSON.stringify(payload, null, 2) + '\n');
-  console.log(`\nwrote ${OUT.replace(root + '/', '')}`);
 }
