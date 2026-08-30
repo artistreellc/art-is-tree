@@ -12,6 +12,7 @@ import { FinancingSection } from '@/components/Financing';
 import { Eyebrow, SectionHeading, Figure } from '@/components/design/Primitives';
 import { COMPANY_INFO } from '@/constants/seoMetadata';
 import { ldJson } from '@/utils/seoHelpers';
+import { jobsIn, jobsInCity, coverageMonths } from '@/utils/jobCoverage';
 
 const ICONS = { removal: Axe, crane: Truck, trim: Scissors, stump: CircleOff, emergency: Zap, land: Trees };
 // Maps a service's iconKey to its dedicated service page for internal linking.
@@ -40,6 +41,9 @@ const CityServiceLayout = ({ data }) => {
     localTitle, localParagraphs, localImg, localAlt, localCaption, localBadges = [],
     ctaTitle, ctaText, mapQuery, faqs, relatedPreferred, financingText,
   } = data;
+
+  // Verified job count for this city, or null when no tracker log exists yet.
+  const cityJobs = jobsInCity(neighborhoods);
 
   // @graph: the city LocalBusiness node (linked up to the global Organization
   // via parentOrganization) plus one Service node per service offered here —
@@ -130,10 +134,27 @@ const CityServiceLayout = ({ data }) => {
               <h3 className="font-bold text-[#1B4D3E] m-0">{city} neighborhoods we work in every week</h3>
             </div>
             <div className="flex flex-wrap gap-2.5">
-              {neighborhoods.map((n) => (
-                <span key={n} className="bg-white text-[#1B4D3E] border border-gray-200 shadow-[0_1px_2px_rgba(10,47,36,0.10)] px-3.5 py-1.5 rounded-full text-sm font-semibold hover:border-[#D4AF37]/50 hover:shadow-md transition-all">{n}</span>
-              ))}
+              {neighborhoods.map((n) => {
+                // Job count from the fleet trackers, when there is one. A pill
+                // with a number behind it is a verifiable local claim; without
+                // one it stays exactly the marketing copy it was before.
+                const jobs = jobsIn(n);
+                return (
+                  <span key={n} className="bg-white text-[#1B4D3E] border border-gray-200 shadow-[0_1px_2px_rgba(10,47,36,0.10)] px-3.5 py-1.5 rounded-full text-sm font-semibold hover:border-[#D4AF37]/50 hover:shadow-md transition-all">
+                    {n}
+                    {jobs && <span className="ml-1.5 text-[#A8801A] font-bold tabular-nums">{jobs}</span>}
+                  </span>
+                );
+              })}
             </div>
+
+            {/* Only renders once a real job log exists. No data, no claim. */}
+            {cityJobs && coverageMonths() && (
+              <p className="mt-5 mb-0 text-sm text-gray-600 border-t border-gray-100 pt-4">
+                <strong className="text-[#1B4D3E]">{cityJobs} tree jobs</strong> completed across these {city} neighborhoods
+                in the last {coverageMonths()} months, logged by GPS on our own trucks.
+              </p>
+            )}
           </div>
         </section>
 
