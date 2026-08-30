@@ -149,6 +149,54 @@ const yard = detectYard(gaps);
 const isYard = (g) => yard && Math.hypot((g.lat - yard.lat) * 111, (g.lon - yard.lon) * 89) <= EXCLUDE_KM;
 
 /**
+ * DUMP RUNS — why there is no rule excluding them, having checked that there
+ * should not be.
+ *
+ * All three trucks fill up and have to empty out, so the owner's expectation was
+ * that a truck leaving a site and returning a trip or two later had gone to dump,
+ * and the stop in between was a landfill being miscounted as a job. The pattern
+ * is real. The conclusion does not follow, because of where the dumping happens.
+ *
+ * In the real export there is no landfill at all. Stops bracketed by a return to
+ * the same place scatter across 79 distinct locations, 79 of 111 under fifteen
+ * minutes, on roads like Lynnhaven Pkwy and Independence Blvd — errands. What
+ * shows up instead is 396 mid-day visits to the yard, 271 of them under fifteen
+ * minutes, and 74 round trips of job -> yard -> back to the same job inside a
+ * day. They dump on their own property.
+ *
+ * That is already handled twice: the yard exclusion drops the dump stop, and
+ * grouping merges the two visits either side of it into one job.
+ *
+ * Adding a bracket rule on top would actively destroy data. Of the bracketed
+ * stops, 16 run 45 minutes to five hours on residential streets — Ormond Ct,
+ * Penrith Clos, Harrington Ct. Those are second jobs worked between two visits
+ * to a first one, and a dump-run rule would silently delete all of them.
+ *
+ * So this is a diagnostic, not a filter. If dumping ever moves off-site, the
+ * round-trip count here drops and the landfill starts appearing in the recurring
+ * locations report below.
+ */
+function countDumpRuns(all) {
+  const perVehicle = {};
+  for (const g of all) if (g.mins <= MAX_STOP_MIN) (perVehicle[g.vehicle] ||= []).push(g);
+  let runs = 0;
+  for (const list of Object.values(perVehicle)) {
+    list.sort((a, b) => a.arrive - b.arrive);
+    for (let i = 0; i < list.length; i++) {
+      if (isYard(list[i])) continue;
+      for (let j = i + 2; j < Math.min(i + 5, list.length); j++) {
+        const back =
+          Math.hypot((list[i].lat - list[j].lat) * 111000, (list[i].lon - list[j].lon) * 89000) <= JOB_RADIUS_M;
+        if (!back || (list[j].arrive - list[i].arrive) / 36e5 > 14) continue;
+        if (list.slice(i + 1, j).some(isYard)) runs++;
+        break;
+      }
+    }
+  }
+  return runs;
+}
+
+/**
  * Neighborhood resolution, best source first:
  *   1. the curated anchors (owner-verified where marked)
  *   2. the repo's 56-neighborhood dataset, nearest within 3km
@@ -245,8 +293,15 @@ const byCity = count('city');
 const byZip = count('zip');
 
 console.log(`\ngaps: ${gaps.length}   stops (${MIN_STOP_MIN}-${MAX_STOP_MIN} min): ${stops.length}`);
-if (yard) console.log(`yard: ${Math.round(yard.share * 100)}% of ${yard.nights} overnight stops — excluded`);
-else console.log('yard: not identified; counts may include overnight parking');
+if (yard) {
+  const midday = gaps.filter((g) => isYard(g) && g.mins <= MAX_STOP_MIN);
+  console.log(`yard: ${Math.round(yard.share * 100)}% of ${yard.nights} overnight stops — excluded`);
+  console.log(
+    `dump runs: ${countDumpRuns(gaps)} round trips job -> yard -> same job, ` +
+      `${midday.length} mid-day yard visits (${midday.filter((g) => g.mins < 15).length} under 15 min). ` +
+      `Debris goes to the yard, so these are already out of the count.`,
+  );
+} else console.log('yard: not identified; counts may include overnight parking');
 
 const multiTruck = jobs.filter((j) => j.trucks > 1).length;
 const multiDay = jobs.filter((j) => j.days > 1).length;
