@@ -32,3 +32,11 @@ pnpm-debug.log*
 
 # Vite / cache
 .vite/
+
+# Customer data. The client master list carries names, home addresses, phone
+# numbers and prices; it is read from outside the repo by
+# scripts/build-job-log.mjs and must never be committed. Only aggregate counts
+# belong in git, in src/constants/jobLog.json.
+*client*master*.csv
+*Client*Master*.csv
+*Trip_Data_Export*.csv

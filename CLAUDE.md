@@ -203,3 +203,45 @@ changing `.claude/settings.json`, open `/hooks` once or restart.
   `src/hooks/useReviewStats.js`, `FAQPage.jsx`,
   `case-studies/ChooseTreeServiceCaseStudy.jsx`, and `public/llms.txt`.
   Update all of them together.
+
+---
+
+## 10. Customer data is handled once, at arm's length
+
+The GPS trackers and the client master list are the two sources behind the job
+counts on the city pages. The list is the most sensitive file this project
+touches: real names, home addresses, phone numbers, and prices.
+
+**It is never committed, and no field of it is ever copied into the repo.**
+
+| | Allowed | Never |
+|---|---|---|
+| Source file | Read by path from outside the repo | Committed, or copied into the repo |
+| Address | Street name, to look up a neighborhood | Written to any file, at any precision |
+| Coordinates | Rounded to ~1km in `jobLog.json` | Full precision, which is a house |
+| Name, phone, price | Not read at all | Anywhere, for any reason |
+| Output | Counts per neighborhood and city | Anything traceable to one property |
+
+`.gitignore` blocks `*client*master*.csv` and `*Trip_Data_Export*.csv`, but the
+rule is the point, not the pattern — a file named something else is still
+customer data.
+
+**Purpose limit: these numbers exist to prove service-area coverage to search
+engines.** That is the whole mandate. They are not for outreach, remarketing
+audiences, customer lists, or anything shared outside the business.
+
+The counts are claims about real work on real people's property, so they follow
+§2 as strictly as anything here — no gap gets filled with an assumption:
+
+- A stop is not a job. Three trucks at one address is one job. Grouping is by
+  place and time, and the raw stop count never goes on a page.
+- Non-customer sites (the yard, which is also the dump; the repair shop) come
+  out **only** on confirmation. Every entry silently deletes real work, so none
+  is added on a hunch.
+- A neighborhood is assigned only where there is evidence. Inferring one from a
+  ZIP would place jobs on streets nobody visited. Unresolved stays unresolved.
+- Both sources overlap in time. Rows already covered by the trackers are
+  dropped rather than added twice.
+
+When a number cannot be supported, the page renders exactly as it did before it
+had data. `src/utils/jobCoverage.js` returns null on every path for that reason.
