@@ -40,3 +40,9 @@ pnpm-debug.log*
 *client*master*.csv
 *Client*Master*.csv
 *Trip_Data_Export*.csv
+# Geocoding inputs and cache: calendar/Drive exports carry customer names and
+# addresses; the cache holds full-precision coordinates. None of it belongs in
+# git — scripts/build-job-history.mjs reads them by path from outside the repo.
+cal_all*.json
+drive_jobs*.json
+*geocode-cache*
