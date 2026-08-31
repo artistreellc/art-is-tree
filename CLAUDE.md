@@ -208,11 +208,16 @@ changing `.claude/settings.json`, open `/hooks` once or restart.
 
 ## 10. Customer data is handled once, at arm's length
 
-The GPS trackers and the client master list are the two sources behind the job
-counts on the city pages. The list is the most sensitive file this project
-touches: real names, home addresses, phone numbers, and prices.
+Four sources describe this company's work: the GPS trackers, the Google Calendar,
+the completed-jobs folders in Drive, and the client master list. All but the
+trackers carry real names, home addresses, phone numbers and prices.
 
-**It is never committed, and no field of it is ever copied into the repo.**
+**None of them is ever committed, and no field of any of them is copied into the
+repo.** They are read by path or by API from outside the repo, by whatever script
+needs them, and nothing else.
+
+Only the trackers currently feed `jobLog.json`, because only they place a job in
+a neighborhood on evidence. See "What the other three cannot do yet" below.
 
 | | Allowed | Never |
 |---|---|---|
@@ -245,3 +250,36 @@ The counts are claims about real work on real people's property, so they follow
 
 When a number cannot be supported, the page renders exactly as it did before it
 had data. `src/utils/jobCoverage.js` returns null on every path for that reason.
+
+### What the other three cannot do yet
+
+There is more history than the site shows, and the reason it is not on the site
+is worth recording so nobody re-derives it the hard way.
+
+| source | span | records | → city | → neighborhood |
+|---|---|---|---|---|
+| GPS trackers | 12 months | 326 jobs | 100% | **85%** |
+| Completed-jobs folders | Mar 2023 – Aug 2026 | 1,049 | 40% | **10%** |
+| Google Calendar | Jan 2023 – Aug 2026 | 2,921 with a location | ~1% | 19% |
+| Client master list | Jun 2024 – Dec 2025 | 368 | 98% | 18% |
+
+The trackers win because they record a coordinate. Everything else records an
+address, and **this environment cannot reach a geocoder** — the network policy
+returns 403 for Nominatim, the Census geocoder and every commercial service, so
+an address cannot become a point. The stopgap is a gazetteer built from the
+trucks themselves: 459 streets they have actually stopped on, each with a
+confirmed city and neighborhood. It resolves 10-19% of the older records and
+nothing more, because a street the trucks never drove is a street it has never
+heard of.
+
+Two further traps in that older data:
+
+- The calendar's `location` is a bare street with no city — 24 of 2,921 name one.
+  Street names repeat across Virginia Beach, Norfolk and Chesapeake, so matching
+  on street alone would assign jobs to the wrong city.
+- The calendar records **estimates**, not completed work. Counting an estimate as
+  a job inflates the total, which is exactly the error that had to be reverted
+  once already. Completed work lives in the Drive folders.
+
+Unlocking the full three years needs a geocoder, not more parsing. Until then the
+site shows the twelve months that can be proven.

@@ -6,7 +6,10 @@ export const serviceAreaNeighborhoods = [
   { name: "Croatan", city: "Virginia Beach", region: "Coastal", description: "Exclusive surf community located just south of the resort area.", lat: 36.8167, lng: -75.9750 },
   { name: "Shadowlawn", city: "Virginia Beach", region: "Coastal", description: "Eclectic neighborhood within walking distance to the oceanfront.", lat: 36.8360, lng: -75.9800 },
   
-  { name: "Chicks Beach", city: "Virginia Beach", region: "North VB", description: "Relaxed bayfront community famous for calm waters and local vibes.", lat: 36.9216, lng: -76.1264 },
+  // "Chic's Beach" — owner-confirmed spelling, and it matches the apostrophe
+  // used in VirginiaBeachPage.jsx. The two files disagreeing meant job counts
+  // for this neighborhood silently failed to reach the page.
+  { name: "Chic’s Beach", city: "Virginia Beach", region: "North VB", description: "Relaxed bayfront community famous for calm waters and local vibes.", lat: 36.9216, lng: -76.1264 },
   { name: "Thoroughgood", city: "Virginia Beach", region: "North VB", description: "Historic neighborhood featuring some of the oldest homes and trees in the city.", lat: 36.9000, lng: -76.1167 },
   { name: "Bay Colony", city: "Virginia Beach", region: "North VB", description: "Exclusive neighborhood tucked away near the oceanfront.", lat: 36.8667, lng: -75.9917 },
   { name: "Bayside", city: "Virginia Beach", region: "North VB", description: "Diverse area surrounding the Bayside Town Center and Independence Blvd.", lat: 36.8900, lng: -76.1400 },
