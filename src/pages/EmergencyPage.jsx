@@ -78,7 +78,7 @@ export default function EmergencyPage() {
   return (
     <div className="w-full">
       <LocalSEOMeta
-        pageTitle="Emergency Tree Removal Near Me | 24/7 Storm Damage | Virginia Beach VA | Art-is-Tree LLC"
+        pageTitle="Emergency Tree Service Virginia Beach VA | 24/7 Emergency Tree Removal Near Me, Storm Damage | Art-is-Tree LLC"
         description="Tree down on your house right now? Art-is-Tree LLC answers 24/7 for emergency tree removal and storm damage across Virginia Beach, Norfolk, Chesapeake, Portsmouth and Hampton Roads. A real person picks up, day or night. What to do in the first 10 minutes, what not to touch, and how we document it for your insurance claim. Licensed, insured, BBB A+, 5-Star rated. Free estimates. Call (757) 319-5131."
       />
       <ServiceSchema
@@ -116,7 +116,7 @@ export default function EmergencyPage() {
           </div>
 
           <h1 className="text-4xl md:text-6xl font-playfair font-bold mb-6 text-white leading-tight speakable">
-            Emergency Storm Damage Tree Removal, 24/7 — Virginia Beach
+            Emergency Tree Service in Virginia Beach: 24/7 Storm Damage Tree Removal
           </h1>
           <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto speakable">
             Tree down on your house? We answer day or night. When a nor’easter drops a loblolly pine on your roof or the saturated coastal soil lets a water oak go over, our emergency tree service crew is standing by around the clock across Virginia Beach and Hampton Roads to make your property safe — fast.

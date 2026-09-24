@@ -14,8 +14,14 @@ import FAQPageSchema from '@/components/seo/FAQPageSchema';
 import AnswerBlock from '@/components/AnswerBlock';
 
 const TreeRemovalPage = () => {
-  const serviceAreas = ["Virginia Beach", "Norfolk", "Chesapeake", "Hampton Roads"];
-  const description = "Safe, licensed and insured tree removal in Virginia Beach and Hampton Roads. Hazardous, dead and large tree specialists. Crane-assisted. Free estimates.";
+  const serviceAreas = ["Virginia Beach", "Norfolk", "Chesapeake", "Portsmouth", "Hampton Roads"];
+  // Search Console (90 days to Sep 2026): "tree removal virginia beach" put the
+  // HOMEPAGE at position 3.6 with 9 clicks from 1,781 impressions while this
+  // page sat at 34. The title, H1, description and quick answer now lead with
+  // that exact query and its "tree removal service / company" variants so
+  // Google hands the query to this page. The homepage keeps the broad "tree
+  // service virginia beach" term; nothing here competes for it.
+  const description = "Tree removal in Virginia Beach VA by Art-is-Tree LLC: a safe, licensed and insured tree removal service for hazardous, dead and large trees — over roofs, on tight lots, near power lines, crane-assisted when the drop zone is not there. Large tree specialists serving Virginia Beach, Norfolk, Chesapeake, Portsmouth and Hampton Roads. BBB A+, 5-Star rated, 24/7 emergency tree removal. Free estimates, written and never exceeded.";
 
   const faqData = [{
     question: "How much does tree removal cost in Virginia Beach?",
@@ -43,7 +49,7 @@ const TreeRemovalPage = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       <LocalSEOMeta 
-        pageTitle="Tree Removal Virginia Beach VA | Art-is-Tree LLC" 
+        pageTitle="Tree Removal Virginia Beach VA | Large &amp; Hazardous Tree Removal Service, Crane-Assisted | Art-is-Tree LLC"
         description={description} 
       />
       
@@ -79,10 +85,10 @@ const TreeRemovalPage = () => {
           </nav>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-white mb-6">
-            Tree Removal in Virginia Beach & Hampton Roads
+            Tree Removal in Virginia Beach: Large &amp; Hazardous Tree Removal Service for Hampton Roads
           </h1>
           <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-10 leading-relaxed">
-            Tree removal in Virginia Beach is not a simple job, especially when dealing with towering timber in tight spaces. We are large tree specialists dedicated to safe and efficient extraction.
+            Tree removal in Virginia Beach is not a simple job, especially when dealing with towering timber in tight spaces. Art-is-Tree LLC is the tree removal company built for it: large tree specialists, licensed and insured, with the rigging and the crane to take a tree off a roof or out of a lot other companies turn down.
           </p>
           
           <Button size="lg" className="bg-[#D4AF37] text-black hover:bg-[#c19b2e] font-bold py-6 px-10 text-lg shadow-xl" asChild>
@@ -95,7 +101,7 @@ const TreeRemovalPage = () => {
       </section>
 
       <AnswerBlock>
-        <strong>Tree removal in Virginia Beach</strong> usually means rigging the tree down in sections or lifting it out with a crane, because tight coastal lots and sandy soil make a straight fell unsafe. Art-is-Tree LLC is a licensed, insured, BBB A+ large-tree specialist serving all of Hampton Roads, with free written estimates and 24/7 emergency removal. Call{' '}
+        Art-is-Tree LLC is a licensed, insured tree removal service in Virginia Beach, VA. <strong>Tree removal in Virginia Beach</strong> usually means rigging the tree down in sections or lifting it out with a crane, because tight coastal lots and sandy soil make a straight fell unsafe. We are the BBB A+ large-tree specialist serving all of Hampton Roads — Virginia Beach, Norfolk, Chesapeake and Portsmouth — with free written estimates and 24/7 emergency tree removal. Call{' '}
         <a href="tel:7573195131" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">(757) 319-5131</a>.
       </AnswerBlock>
 

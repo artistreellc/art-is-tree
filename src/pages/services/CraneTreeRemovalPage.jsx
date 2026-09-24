@@ -29,13 +29,18 @@ const craneFaqs = [
 ];
 
 const CraneTreeRemovalPage = () => {
-  const serviceAreas = ["Virginia Beach", "Norfolk", "Chesapeake", "Hampton Roads"];
-  const description = "Crane-assisted removal of large, hazardous trees in Virginia Beach and Hampton Roads. Tight lots and trees over homes handled safely. Licensed, insured.";
+  const serviceAreas = ["Virginia Beach", "Norfolk", "Chesapeake", "Portsmouth", "Hampton Roads"];
+  // Search Console (90 days to Sep 2026): this page already wins "crane tree
+  // removal" (position 8, homepage at 60) — the one service term Google gave
+  // to the service page. "crane tree removal service" (498 impressions) still
+  // goes to the homepage at position 1 with zero clicks; the title and H1 now
+  // say "service" so this page takes that variant too.
+  const description = "Crane tree removal service in Virginia Beach VA from Art-is-Tree LLC: crane-assisted removal of large, hazardous trees over homes, pools and fences, on tight lots and waterfront properties where there is no drop zone. Handled safely by a licensed, insured, BBB A+ crew with 17 years of Hampton Roads climbing experience. Serving Virginia Beach, Norfolk, Chesapeake and Portsmouth. Free estimates.";
 
   return (
     <div className="bg-gray-50 min-h-screen">
       <LocalSEOMeta 
-        pageTitle="Crane Tree Removal Virginia Beach VA | Art-is-Tree LLC"
+        pageTitle="Crane Tree Removal Service Virginia Beach VA | Crane-Assisted Tree Removal Over Homes &amp; Tight Lots | Art-is-Tree LLC"
         description={description} 
       />
       
@@ -69,7 +74,7 @@ const CraneTreeRemovalPage = () => {
           </nav>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-white mb-6">
-            Crane Tree Removal Services in Virginia Beach
+            Crane Tree Removal Service in Virginia Beach
           </h1>
           <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-10 leading-relaxed">
             When a tree is too big, too close to a structure, or in a location where standard rigging is not safe, crane-assisted removal is often the only correct option. Art-is-Tree LLC handles complex crane removals across Virginia Beach, Norfolk, and Chesapeake — licensed, insured, and built around 17 years of Hampton Roads climbing experience.

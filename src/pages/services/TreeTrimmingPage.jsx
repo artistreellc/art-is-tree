@@ -29,13 +29,18 @@ const treeTrimmingFaqs = [
 ];
 
 const TreeTrimmingPage = () => {
-  const serviceAreas = ["Virginia Beach", "Norfolk", "Chesapeake", "Hampton Roads"];
-  const description = "Expert tree trimming and pruning in Virginia Beach and Hampton Roads. Improve tree health, safety and curb appeal. Licensed, insured. Free estimates.";
+  const serviceAreas = ["Virginia Beach", "Norfolk", "Chesapeake", "Portsmouth", "Hampton Roads"];
+  // Search Console (90 days to Sep 2026): "tree trimming virginia beach" (665
+  // impressions) and "tree pruning virginia beach" (190) put the HOMEPAGE at
+  // 3.6 and 8 with 2 clicks between them; this page did not rank for the first
+  // and sat at 41 for the second. Title, H1, description and quick answer now
+  // lead with those exact queries so Google hands them to this page.
+  const description = "Tree trimming in Virginia Beach and Hampton Roads from Art-is-Tree LLC: an expert tree trimming and pruning service for crown thinning, deadwood removal, storm-prep trimming and canopy clearance over roofs and power lines — spikeless climbing to the ANSI A300 standard, never topping. Improve tree health, safety and curb appeal. Serving Virginia Beach, Norfolk, Chesapeake and Portsmouth. Licensed, insured, BBB A+. Free estimates.";
 
   return (
     <div className="bg-gray-50 min-h-screen">
       <LocalSEOMeta 
-        pageTitle="Tree Trimming & Pruning Virginia Beach VA | Art-is-Tree LLC"
+        pageTitle="Tree Trimming Virginia Beach VA | Tree Pruning Service, Spikeless &amp; ANSI A300 | Art-is-Tree LLC"
         description={description} 
       />
       
@@ -69,10 +74,10 @@ const TreeTrimmingPage = () => {
           </nav>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-white mb-6">
-            Tree Trimming & Pruning in Virginia Beach
+            Tree Trimming in Virginia Beach: Tree Pruning Service to the ANSI A300 Standard
           </h1>
           <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-10 leading-relaxed">
-            Enhance the beauty, safety, and health of your landscape with our expert, zero-impact spikeless pruning services.
+            Enhance the beauty, safety, and health of your landscape with our expert, zero-impact spikeless pruning services &mdash; crown thinning, deadwood removal and storm-prep trimming for Virginia Beach, Norfolk, Chesapeake and Portsmouth.
           </p>
           
           <Button size="lg" className="bg-[#D4AF37] text-black hover:bg-[#c19b2e] font-bold py-6 px-10 text-lg shadow-xl" asChild>
@@ -85,7 +90,7 @@ const TreeTrimmingPage = () => {
       </section>
 
       <AnswerBlock>
-        The best time to <strong>trim or prune trees in Virginia Beach</strong> is the dormant season, late fall through early spring, though dead or hazardous limbs can be removed any time (oaks are pruned outside April–October to avoid oak wilt). Art-is-Tree LLC prunes to the ANSI A300 standard using spikeless climbing that never harms living trees — licensed, insured, free written estimates. Call{' '}
+        Art-is-Tree LLC provides <strong>tree trimming in Virginia Beach</strong> and tree pruning service across Hampton Roads: crown thinning, deadwood removal, canopy clearance over roofs and power lines, and storm-prep trimming. The best time to trim or prune trees in Virginia Beach is the dormant season, late fall through early spring, though dead or hazardous limbs can be removed any time (oaks are pruned outside April–October to avoid oak wilt). We prune to the ANSI A300 standard using spikeless climbing that never harms living trees — licensed, insured, free written estimates. Call{' '}
         <a href="tel:7573195131" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">(757) 319-5131</a>.
       </AnswerBlock>
 
