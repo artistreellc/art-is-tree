@@ -16,7 +16,7 @@ const NAV_LINKS = [
       { name: 'Tree Removal', path: '/services/tree-removal' },
       { name: 'Tree Trimming', path: '/services/tree-trimming' },
       { name: 'Stump Grinding', path: '/services/stump-grinding' },
-      { name: 'Emergency Service', path: '/services/emergency-tree-service' },
+      { name: 'Storm Damage & Insurance', path: '/services/emergency-tree-service' },
       { name: 'Crane Removal', path: '/services/crane-removal' },
       { name: 'Land Clearing', path: '/services/land-clearing' },
     ]
@@ -70,6 +70,17 @@ const NAV_LINKS = [
   // as clutter rather than as trust signals.
   { name: 'Recommended Pros', path: '/find-us-online' },
   { name: '🚨 Emergency', path: '/emergency' },
+];
+
+// The three destinations that also get a visible link in the header row, so
+// crawlers and people both reach them without opening Explore. Everything
+// else stays behind the Explore button on purpose — a full menu bar would
+// clutter the top of the site. They stay in NAV_LINKS too, so the drawer is
+// complete on its own.
+const HEADER_LINKS = [
+  { name: 'Service Areas', path: '/service-areas' },
+  { name: 'ART-icles', path: '/case-studies' },
+  { name: 'Contact', path: '/contact' },
 ];
 
 const GOOGLE_LISTING_URL = "https://www.google.com/maps?cid=12599844776703525086";
@@ -211,8 +222,10 @@ const MobileMenuItem = memo(({ link, isActive, onClick }) => {
           <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
         </svg>
       </button>
-      {expanded && (
-        <div className="ml-4 mt-1 mb-2 border-l-2 border-yellow-400/30 pl-4 flex flex-col gap-1">
+      {/* Rendered hidden rather than not at all, so every sub-page link is in
+          the prerendered HTML for crawlers — the same reason the footer's
+          collapsed sections keep their links in the DOM. */}
+      <div className={`${expanded ? 'flex' : 'hidden'} ml-4 mt-1 mb-2 border-l-2 border-yellow-400/30 pl-4 flex-col gap-1`}>
           {link.dropdown.map((item) => (
             item.external ? (
               <a
@@ -236,8 +249,7 @@ const MobileMenuItem = memo(({ link, isActive, onClick }) => {
               </Link>
             )
           ))}
-        </div>
-      )}
+      </div>
     </div>
   );
 });
@@ -380,7 +392,8 @@ const Navigation = memo(() => {
               /emergency — in the header this should be the fastest route to the
               panic page, not decoration.
               It has two forms so it degrades instead of colliding: the full pill
-              at xl, and a compact siren + "24/7" from lg to xl.
+              at 2xl, and a compact siren + "24/7" from lg to 2xl. It used to go
+              full at xl; the three header links now take that room at xl.
               lg is the floor, not md: the review stars also appear at md, and at
               768 the two together pushed the Call Now button off the right edge.
               At 700 (stars hidden) the row is fine, which is how that was
@@ -392,19 +405,29 @@ const Navigation = memo(() => {
           <Link
             to="/emergency"
             aria-label="24/7 emergency tree service — get help now"
-            className="hidden md:inline-flex items-center gap-2 whitespace-nowrap bg-red-600 hover:bg-red-500 text-white px-3 xl:px-4 py-1.5 rounded-full font-bold shadow-lg border border-red-400/60 text-xs tracking-wide uppercase transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1B4D3E]"
+            className="hidden md:inline-flex items-center gap-2 whitespace-nowrap bg-red-600 hover:bg-red-500 text-white px-3 2xl:px-4 py-1.5 rounded-full font-bold shadow-lg border border-red-400/60 text-xs tracking-wide uppercase transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1B4D3E]"
           >
             {/* full form */}
-            <span className="hidden xl:inline-flex items-center gap-2">
+            <span className="hidden 2xl:inline-flex items-center gap-2">
               <span className="inline-flex h-2.5 w-2.5 rounded-full bg-white/70" aria-hidden="true" />
               24/7 Emergency Response
             </span>
             {/* compact form */}
-            <span className="xl:hidden inline-flex items-center gap-1.5" aria-hidden="true">
+            <span className="2xl:hidden inline-flex items-center gap-1.5" aria-hidden="true">
               <span className="text-sm leading-none">🚨</span>
               24/7
             </span>
           </Link>
+
+          {/* Three plain links in the row itself — Service Areas, ART-icles,
+              Contact — visible from xl, where the row has the width for them
+              (with the emergency badge in its compact form). Below xl they are
+              only in the Explore drawer, which stays complete. */}
+          <div className="hidden xl:flex items-center gap-6">
+            {HEADER_LINKS.map((link) => (
+              <NavLink key={link.path} link={link} isActive={isActive(link.path)} />
+            ))}
+          </div>
 
           <div className="flex items-center gap-3 md:gap-5 flex-shrink-0">
             <a 
@@ -467,8 +490,11 @@ const Navigation = memo(() => {
 
       </div>
 
-      {isMobileMenuOpen && (
-        <div className="absolute top-full right-0 mt-px w-full max-w-sm bg-[#153e32] border-l border-b border-white/10 rounded-bl-2xl shadow-2xl overflow-hidden z-[60] animate-nav-drop">
+      {/* The drawer is always in the DOM and toggled with `hidden`, not
+          conditionally rendered: that puts every navigation link in the
+          prerendered HTML for crawlers. Before this, the menu existed only
+          after a click, and the header contributed no internal links at all. */}
+      <div className={`${isMobileMenuOpen ? 'block animate-nav-drop' : 'hidden'} absolute top-full right-0 mt-px w-full max-w-sm bg-[#153e32] border-l border-b border-white/10 rounded-bl-2xl shadow-2xl overflow-hidden z-[60]`}>
              <div className="flex flex-col p-4 space-y-2 pb-6 max-h-[calc(100vh-90px)] overflow-y-auto">
                 {NAV_LINKS.map((link) => (
                   <MobileMenuItem key={link.path || link.name} link={link} isActive={isActive(link.path)} onClick={closeMobileMenu} />
@@ -504,8 +530,7 @@ const Navigation = memo(() => {
                   </a>
                 </div>
              </div>
-        </div>
-      )}
+      </div>
     </nav>
   );
 });

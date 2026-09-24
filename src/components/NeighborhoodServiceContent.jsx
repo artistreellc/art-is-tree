@@ -39,7 +39,7 @@ const NeighborhoodServiceContent = () => {
               Salt spray and steady wind are hard on trees near the beach. We prune and remove them to hold up in coastal conditions.
             </p>
             <Link 
-              to="/service-areas" 
+              to="/service-areas/virginia-beach" 
               className="inline-flex items-center text-sm font-bold text-[#1B4D3E] hover:text-[#D4AF37] transition-colors mt-auto relative z-10 touch-target"
             >
               View Service Area <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -64,7 +64,7 @@ const NeighborhoodServiceContent = () => {
               Big mature oaks that need proper pruning and canopy work to stay healthy and safe over the house.
             </p>
             <Link 
-              to="/service-areas" 
+              to="/service-areas/virginia-beach" 
               className="inline-flex items-center text-sm font-bold text-[#1B4D3E] hover:text-[#D4AF37] transition-colors mt-auto relative z-10 touch-target"
             >
               View Service Area <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -89,7 +89,7 @@ const NeighborhoodServiceContent = () => {
               Fast storm cleanup and hazardous removals when a limb or a whole tree comes down on your property.
             </p>
             <Link 
-              to="/service-areas" 
+              to="/service-areas/virginia-beach" 
               className="inline-flex items-center text-sm font-bold text-[#1B4D3E] hover:text-[#D4AF37] transition-colors mt-auto relative z-10 touch-target"
             >
               View Service Area <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -114,14 +114,14 @@ const NeighborhoodServiceContent = () => {
               An older neighborhood with heritage trees &mdash; careful pruning and honest health checks to keep them standing.
             </p>
             <Link 
-              to="/service-areas" 
+              to="/service-areas/virginia-beach" 
               className="inline-flex items-center text-sm font-bold text-[#1B4D3E] hover:text-[#D4AF37] transition-colors mt-auto relative z-10 touch-target"
             >
               View Service Area <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
 
-          {/* Card 5: Chicks Beach */}
+          {/* Card 5: Chic’s Beach */}
           <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100 hover:shadow-xl hover:border-[#1B4D3E]/20 transition-all duration-300 relative group contain-content flex flex-col h-full">
             <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
               <Trees className="w-16 h-16 text-[#1B4D3E]" />
@@ -131,7 +131,7 @@ const NeighborhoodServiceContent = () => {
                 <MapPin className="w-6 h-6 text-[#1B4D3E]" />
               </div>
               <div>
-                <h3 className="font-playfair text-2xl font-bold text-gray-900 m-0 leading-tight">Chicks Beach</h3>
+                <h3 className="font-playfair text-2xl font-bold text-gray-900 m-0 leading-tight">Chic’s Beach</h3>
                 <p className="text-sm text-gray-500 font-medium m-0 uppercase tracking-wide">Virginia Beach</p>
               </div>
             </div>
@@ -139,7 +139,7 @@ const NeighborhoodServiceContent = () => {
               Waterfront lots where we lift canopies and clear trees crowding the house or blocking the view.
             </p>
             <Link 
-              to="/service-areas" 
+              to="/service-areas/virginia-beach" 
               className="inline-flex items-center text-sm font-bold text-[#1B4D3E] hover:text-[#D4AF37] transition-colors mt-auto relative z-10 touch-target"
             >
               View Service Area <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -164,7 +164,7 @@ const NeighborhoodServiceContent = () => {
               Exposed coastal properties where storms hit hardest &mdash; we prune trees to take the wind.
             </p>
             <Link 
-              to="/service-areas" 
+              to="/service-areas/virginia-beach" 
               className="inline-flex items-center text-sm font-bold text-[#1B4D3E] hover:text-[#D4AF37] transition-colors mt-auto relative z-10 touch-target"
             >
               View Service Area <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -189,7 +189,7 @@ const NeighborhoodServiceContent = () => {
               Commercial and street trees kept trimmed, safe, and clear of buildings, parking, and signage.
             </p>
             <Link 
-              to="/service-areas" 
+              to="/service-areas/virginia-beach" 
               className="inline-flex items-center text-sm font-bold text-[#1B4D3E] hover:text-[#D4AF37] transition-colors mt-auto relative z-10 touch-target"
             >
               View Service Area <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -214,7 +214,7 @@ const NeighborhoodServiceContent = () => {
               Residential trimming, lot clearing, and stump grinding done clean in an established neighborhood.
             </p>
             <Link 
-              to="/service-areas" 
+              to="/service-areas/virginia-beach" 
               className="inline-flex items-center text-sm font-bold text-[#1B4D3E] hover:text-[#D4AF37] transition-colors mt-auto relative z-10 touch-target"
             >
               View Service Area <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -239,7 +239,7 @@ const NeighborhoodServiceContent = () => {
               Rural acreage &mdash; land clearing, brush work, and taking down dead or hazardous trees on bigger lots.
             </p>
             <Link 
-              to="/service-areas" 
+              to="/service-areas/virginia-beach" 
               className="inline-flex items-center text-sm font-bold text-[#1B4D3E] hover:text-[#D4AF37] transition-colors mt-auto relative z-10 touch-target"
             >
               View Service Area <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -264,7 +264,7 @@ const NeighborhoodServiceContent = () => {
               Waterfront thinning and storm prep so your trees are ready before hurricane season, not after.
             </p>
             <Link 
-              to="/service-areas" 
+              to="/service-areas/virginia-beach" 
               className="inline-flex items-center text-sm font-bold text-[#1B4D3E] hover:text-[#D4AF37] transition-colors mt-auto relative z-10 touch-target"
             >
               View Service Area <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -288,8 +288,8 @@ const NeighborhoodServiceContent = () => {
             <p className="text-gray-600 mb-6 flex-grow text-base">
               Tight urban lots where removals take crane work and careful rigging, plus 24/7 storm response.
             </p>
-            <Link 
-              to="/service-areas" 
+            <Link
+              to="/service-areas/norfolk"
               className="inline-flex items-center text-sm font-bold text-[#1B4D3E] hover:text-[#D4AF37] transition-colors mt-auto relative z-10 touch-target"
             >
               View Service Area <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -313,8 +313,8 @@ const NeighborhoodServiceContent = () => {
             <p className="text-gray-600 mb-6 flex-grow text-base">
               Larger properties with a lot of canopy to manage, plus land clearing when you need space opened up.
             </p>
-            <Link 
-              to="/service-areas" 
+            <Link
+              to="/service-areas/chesapeake"
               className="inline-flex items-center text-sm font-bold text-[#1B4D3E] hover:text-[#D4AF37] transition-colors mt-auto relative z-10 touch-target"
             >
               View Service Area <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />

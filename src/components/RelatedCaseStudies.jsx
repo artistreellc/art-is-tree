@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 const CASE_STUDIES = [
   { title: "How to Choose a Tree Service", path: "/case-studies/how-to-choose-a-tree-service", category: "Hiring a Pro" },
+  { title: "Tree Service Insurance: The Bid We Lost on Price", path: "/case-studies/tree-service-insurance", category: "Insurance" },
   { title: "Where Your Tree Goes After Removal", path: "/case-studies/where-your-tree-goes", category: "Wood & Recycling" },
   { title: "Crane-Assisted Removal", path: "/case-studies/crane-safety", category: "Hazard Mitigation" },
   { title: "Waterfront Property Management", path: "/case-studies/chesapeake-bay-preservation-act", category: "Environmental Care" },

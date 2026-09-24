@@ -9,7 +9,7 @@ import LocalSEOMeta from '@/components/LocalSEOMeta';
 import SpeakableSchema from '@/components/seo/SpeakableSchema';
 
 const ServicesPage = () => {
-  const serviceAreas = ["Virginia Beach", "Norfolk", "Chesapeake", "Hampton Roads"];
+  const serviceAreas = ["Virginia Beach", "Norfolk", "Chesapeake", "Portsmouth", "Hampton Roads"];
 
   return (
     <div className="bg-gray-50 min-h-screen pt-0 pb-24">
@@ -142,9 +142,16 @@ const ServicesPage = () => {
               <p className="text-gray-700 mb-4 flex-grow">
                 Severe thunderstorms, hurricanes, and heavy winds can cause unexpected and devastating damage to your canopy. Our <strong>emergency tree service</strong> team is on call 24/7 to respond to urgent situations.
               </p>
+              {/* Two pages, two links: /emergency is the tree-on-the-house
+                  moment this card describes; the storm damage page is the
+                  insurance claim afterwards. The card used to send an active
+                  emergency to the insurance page. */}
               <Button asChild variant="outline" className="border-[#1B4D3E] text-[#1B4D3E] hover:bg-[#1B4D3E] hover:text-white mt-4 w-fit">
-                <Link to="/services/emergency-tree-service">Emergency Tree Service →</Link>
+                <Link to="/emergency">24/7 Emergency Tree Removal →</Link>
               </Button>
+              <Link to="/services/emergency-tree-service" className="mt-3 text-sm font-semibold text-[#1B4D3E] underline hover:text-[#D4AF37] w-fit">
+                Storm damage insurance claims &amp; cost →
+              </Link>
             </div>
 
             <div className="bg-gray-50 p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow flex flex-col">

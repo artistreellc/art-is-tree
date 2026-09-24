@@ -42,10 +42,10 @@ export default function MobileCTABar() {
           className={`flex-1 flex flex-col items-center justify-center gap-1 transition-colors duration-200 ${
             location.pathname === '/contact' ? 'bg-[#133A2E] text-white' : 'text-gray-300 hover:text-white hover:bg-[#133A2E]'
           }`}
-          aria-label="Get a Free Quote"
+          aria-label="Get a Free Estimate"
         >
           <ClipboardList className="w-5 h-5" />
-          <span className="text-[10px] font-bold uppercase tracking-wider">Free Quote</span>
+          <span className="text-[10px] font-bold uppercase tracking-wider">Free Estimate</span>
         </Link>
       </div>
     </div>

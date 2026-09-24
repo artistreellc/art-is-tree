@@ -11,10 +11,25 @@ const QUICK_LINKS = [
   ['/services', 'Services'],
   ['/emergency', '24/7 Emergency Service'],
   ['/gallery', 'Project Gallery'],
+  ['/testimonials', 'Customer Reviews'],
   ['/financing', 'Financing'],
   ['/faq', 'FAQ'],
   ['/find-us-online', 'Recommended Pros'],
   ['/contact', 'Contact Us'],
+];
+
+// Every service page, plus the two emergency pages under the names that tell
+// them apart: /emergency is the tree-on-the-house moment, the storm damage
+// page is the insurance claim afterwards.
+const SERVICES = [
+  ['/services', 'All Services'],
+  ['/services/tree-removal', 'Tree Removal'],
+  ['/services/tree-trimming', 'Tree Trimming & Pruning'],
+  ['/services/stump-grinding', 'Stump Grinding'],
+  ['/services/crane-removal', 'Crane Tree Removal'],
+  ['/services/land-clearing', 'Land Clearing'],
+  ['/emergency', '24/7 Emergency Tree Removal'],
+  ['/services/emergency-tree-service', 'Storm Damage & Insurance Claims'],
 ];
 
 const SERVICE_AREAS = [
@@ -25,13 +40,22 @@ const SERVICE_AREAS = [
   ['/service-areas', 'All Service Areas'],
 ];
 
+// All twelve ART-icles, same order as the header drawer. The footer used to
+// list five of them, which left the other seven with almost no internal links.
 const CASE_STUDIES = [
   ['/case-studies', 'All ART-icles'],
   ['/case-studies/how-to-choose-a-tree-service', 'How to Choose a Tree Service'],
+  ['/case-studies/tree-service-insurance', 'Tree Service Insurance'],
   ['/case-studies/affordable-tree-work', 'Affordable Tree Work'],
-  ['/case-studies/storm-damage-mitigation', 'Storm Damage'],
+  ['/case-studies/storm-damage-mitigation', 'Storm Damage & Hurricanes'],
   ['/case-studies/virginia-tree-law', 'Virginia Tree Law'],
   ['/case-studies/osha-compliance', 'OSHA Compliance'],
+  ['/case-studies/where-your-tree-goes', 'Where Your Tree Goes'],
+  ['/case-studies/crane-safety', 'Crane Safety'],
+  ['/case-studies/chesapeake-bay-preservation-act', 'Chesapeake Bay Preservation Act'],
+  ['/case-studies/emerald-ash-borer', 'Emerald Ash Borer'],
+  ['/case-studies/property-value', 'Property Value'],
+  ['/case-studies/spikeless-pruning', 'Spikeless Pruning'],
 ];
 
 // A collapsed bar at every width, not just on mobile. Expanded columns made the
@@ -73,7 +97,7 @@ const FooterLink = ({ to, children }) => (
 );
 
 const Footer = () => {
-  const { count: reviewCount } = useReviewStats();
+  const { count: reviewCount, rating: reviewRating } = useReviewStats();
   const currentYear = new Date().getFullYear();
   const { setIsModalOpen } = useCookieConsent();
 
@@ -86,13 +110,16 @@ const Footer = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Column count must equal brand span + one per section, or the last
             section wraps to a second row with a dead void beside it:
-            lg = 2 (brand) + 4 sections = 6.  md = 2, brand takes a full row. */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-x-8 md:gap-y-10 mb-10">
+            xl = 2 (brand) + 5 sections = 7.  lg = 5, brand takes a full row
+            (seven columns at 1024 are too narrow for the section titles).
+            md = 2, and the brand takes one cell so brand + 5 sections fill
+            three rows of two with no void. */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 xl:grid-cols-7 gap-x-8 md:gap-y-10 mb-10">
 
           {/* Brand block — never collapses; it is the identity, not a link list.
               Kept tight because it is the tallest item in the row and therefore
               sets the whole footer's height. */}
-          <div className="space-y-3.5 md:col-span-2 lg:col-span-2 pb-6 lg:pb-0">
+          <div className="space-y-3.5 lg:col-span-5 xl:col-span-2 pb-6 xl:pb-0">
             <Link to="/" className="inline-flex items-center gap-3 bg-white/5 p-2 rounded-xl hover:bg-white/10 transition-colors w-fit" aria-label="Home">
               {/* 192x156 WebP, 7.7KB — rendered at 42x36. See Navigation.jsx. */}
               <img src="/logo-192.webp" alt="Art-is-Tree LLC Logo" className="w-[42px] h-[36px] bg-white p-1 rounded-md" width="42" height="36" loading="lazy" decoding="async" />
@@ -113,7 +140,7 @@ const Footer = () => {
                 <Instagram size={18} width={18} height={18} />
               </a>
               <a href={GOOGLE_LISTING_URL} target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-[#D4AF37] text-white rounded-full px-3 h-[40px] flex items-center gap-1.5 text-sm font-semibold transition-colors citation-link">
-                <Star className="text-yellow-400" size={15} width={15} height={15} /> 5.0 ({reviewCount})
+                <Star className="text-yellow-400" size={15} width={15} height={15} /> {reviewRating.toFixed(1)} ({reviewCount})
               </a>
               <span className="inline-flex items-center gap-2 bg-white/10 px-3 h-[40px] rounded-full text-xs font-medium whitespace-nowrap">
                 <ShieldCheck className="text-[#D4AF37]" size={16} width={16} height={16} />
@@ -125,6 +152,14 @@ const Footer = () => {
           <FooterSection title="Quick Links">
             <ul>
               {QUICK_LINKS.map(([to, label]) => (
+                <li key={to}><FooterLink to={to}>{label}</FooterLink></li>
+              ))}
+            </ul>
+          </FooterSection>
+
+          <FooterSection title="Services">
+            <ul>
+              {SERVICES.map(([to, label]) => (
                 <li key={to}><FooterLink to={to}>{label}</FooterLink></li>
               ))}
             </ul>

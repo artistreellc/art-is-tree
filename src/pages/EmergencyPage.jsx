@@ -41,9 +41,14 @@ const emergencyFaqs = [
       'Emergency work does cost more than scheduled work, and that is true of any licensed tree service. You are paying for a crew mobilized outside normal hours, rigging a tree that is already damaged and unpredictable, and often crane time. What does not change is that you get a written price before we start. We give free estimates, and if the tree can safely wait until morning we will tell you so rather than bill you for the hour.',
   },
   {
+    question: 'Do nor’easters really bring trees down, or is it just hurricanes?',
+    answer:
+      'Nor’easters do, and in Hampton Roads the fall ones are the storms that catch people off guard. A hurricane crosses Virginia Beach in a matter of hours; a fall nor’easter parks off the coast and pushes northeast wind, rain and tide at us for two or three days. In October and November the oaks still have their leaves, so the canopy catches the full load of that wind, and by the second day the ground is saturated and the root plate is sitting in mud. That is when a healthy-looking water oak or loblolly pine tips over whole. Art-is-Tree LLC runs the same 24/7 emergency tree service through nor’easter season as through hurricane season, across Virginia Beach, Norfolk, Chesapeake and Portsmouth.',
+  },
+  {
     question: 'Which cities do you cover for 24/7 emergency tree service?',
     answer:
-      'Art-is-Tree LLC runs emergency and storm damage tree work across Virginia Beach, Norfolk, Chesapeake, and Portsmouth, and throughout Hampton Roads. We are licensed, insured, and BBB A+ rated, with 15 years of storm response in this region.',
+      'Art-is-Tree LLC runs emergency and storm damage tree work across Virginia Beach, Norfolk, Chesapeake, and Portsmouth, and throughout Hampton Roads. We are licensed, insured, and BBB A+ rated, with 17 years of storm response in this region.',
   },
 ];
 
@@ -192,7 +197,7 @@ export default function EmergencyPage() {
             </blockquote>
 
             <p className="text-gray-700 text-lg leading-relaxed">
-              That’s why timing matters. Risk isn’t spread evenly across the year — it spikes with hurricane season and again with winter nor’easters. A little <Link to="/services/tree-trimming" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">storm-prep trimming</Link> before the season beats an emergency call during it.
+              That’s why timing matters. Risk isn’t spread evenly across the year — it spikes with hurricane season and again with the fall and winter nor’easters. A little <Link to="/services/tree-trimming" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">storm-prep trimming</Link> before the season beats an emergency call during it.
             </p>
           </div>
 
@@ -210,6 +215,61 @@ export default function EmergencyPage() {
               </span>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ─── FALL NOR'EASTERS ──────────────────────────────────── */}
+      <section className="bg-[#0A2F24] text-white py-20 md:py-24 px-4">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-5 gap-12 items-start">
+          <div className="lg:col-span-3">
+            <span className="text-[#D4AF37] font-bold tracking-widest uppercase text-sm">The season after hurricane season</span>
+            <h2 className="font-playfair text-3xl md:text-4xl font-bold mt-2 mb-6">Fall Nor’easters: The Storms That Take Hampton Roads Trees by Surprise</h2>
+            <p className="text-gray-200 text-lg leading-relaxed">
+              Hurricane season winds down and everyone relaxes. Then a nor’easter sets up off the Outer Banks in October or November and does something a hurricane rarely does here: it stays. A hurricane crosses Virginia Beach in a matter of hours. A fall nor’easter parks offshore and pushes northeast wind, rain and tide at the coast for two or three days straight.
+            </p>
+            <p className="text-gray-200 text-lg leading-relaxed mt-4">
+              That is exactly the wrong weather for our trees. In October the oaks still have their leaves, so a canopy that would let a January wind through catches the whole load. By the second day the ground is saturated, and along the Bay and the Lynnhaven the tide has pushed water up into yards that never flood, so the root plate is sitting in mud. A water oak or loblolly pine that looked fine all summer tips over whole &mdash; roots and all &mdash; often on the last night of the storm, after the worst of the wind has already passed.
+            </p>
+            <p className="text-gray-200 text-lg leading-relaxed mt-4">
+              The November 2009 nor’easter Hampton Roads still calls Nor’Ida sat off the coast for three days, and between the water and the wind it put trees down across Norfolk and Virginia Beach. Nothing about that storm was rare except its name. The same setup comes back most falls, and it finds the same trees: the leaner nobody looked at, the loblolly pine standing alone after the neighbors took theirs out, the water oak with a hollow nobody could see from the ground.
+            </p>
+
+            <h3 className="font-playfair text-xl md:text-2xl font-bold text-[#D4AF37] mt-8 mb-4">What to look at before the first fall storm</h3>
+            <ul className="space-y-3 text-gray-200 text-lg">
+              {[
+                'A lean that was not there last year, or soil lifting and cracking on the side away from the lean. That is a root plate starting to move.',
+                'Dead limbs and hangers over the roof, the driveway or the service drop. Wind does not need a whole tree to fail to put a limb through a window.',
+                'Loblolly pines left standing alone. Pines grow up in a stand and share the wind; the last one left catches all of it.',
+                'Water oaks and other soft-wooded trees with cavities, fungal conks at the base, or a co-dominant union that has started to split.',
+              ].map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-[#D4AF37]" aria-hidden="true" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-gray-200 text-lg leading-relaxed mt-6">
+              A few hours of <Link to="/services/tree-trimming" className="text-[#D4AF37] font-semibold underline hover:text-white">storm-prep trimming</Link> in September is cheaper than any emergency call in November, and the warning signs a tree gives before it fails are laid out in our <Link to="/case-studies/storm-damage-mitigation" className="text-[#D4AF37] font-semibold underline hover:text-white">storm &amp; hurricane damage case study</Link>. If the storm gets there first, the same crew answers 24/7 &mdash; and documents the damage for <Link to="/services/emergency-tree-service" className="text-[#D4AF37] font-semibold underline hover:text-white">your insurance claim</Link>.
+            </p>
+          </div>
+
+          <aside className="lg:col-span-2 bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 lg:mt-14">
+            <h3 className="font-playfair text-xl font-bold text-white mt-0 mb-5">Nor’easter season at a glance</h3>
+            <dl className="divide-y divide-white/10 m-0">
+              {[
+                ['When', 'September through April. The fall storms hit while the trees are still in leaf.'],
+                ['Wind', 'Northeast, sustained for a day or more, with the strongest gusts along the Bay and the Oceanfront.'],
+                ['Ground', 'Saturated by the second day, with tidal flooding on the low streets near the Bay, the Lynnhaven and the Elizabeth River.'],
+                ['Trees most at risk', 'Loblolly pine, water oak, willow oak, and Bradford pear with a split co-dominant union.'],
+                ['How they fail', 'Whole-tree root-plate failure in wet ground; long limbs snapped by sustained wind.'],
+              ].map(([term, def]) => (
+                <div key={term} className="py-3 grid grid-cols-1 sm:grid-cols-[130px_1fr] gap-1 sm:gap-4">
+                  <dt className="text-[#D4AF37] font-semibold text-xs uppercase tracking-wide sm:pt-0.5">{term}</dt>
+                  <dd className="text-gray-100 m-0">{def}</dd>
+                </div>
+              ))}
+            </dl>
+          </aside>
         </div>
       </section>
 
@@ -251,7 +311,7 @@ export default function EmergencyPage() {
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
           {[
             ['24/7', 'Every day of the year'],
-            ['15+ yrs', 'Climbing Hampton Roads'],
+            ['17 yrs', 'Climbing Hampton Roads'],
             [`${reviewRating.toFixed(1)} ★`, `${reviewCount} Google reviews`],
             ['BBB A+', 'Licensed & insured'],
           ].map(([big, small]) => (
@@ -307,7 +367,11 @@ export default function EmergencyPage() {
             <Link to="/services/emergency-tree-service" className="text-[#D4AF37] underline hover:text-white">
               what insurance covers on a storm damage claim
             </Link>
-            {' '}&mdash; and what it costs.
+            {' '}&mdash; and what it costs. If the tree came from next door, our{' '}
+            <Link to="/case-studies/virginia-tree-law" className="text-[#D4AF37] underline hover:text-white">
+              Virginia tree law guide
+            </Link>
+            {' '}covers who is responsible.
           </p>
           <a
             href="tel:7573195131"
