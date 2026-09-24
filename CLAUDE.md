@@ -1,0 +1,290 @@
+# Art-is-Tree LLC — Working Rules
+
+This is a live business. The site and the ad account bring in real leads that pay
+real bills. A change that "looks cleaner" but costs a ranking costs money.
+
+---
+
+## 1. The word "audit" means STOP AND READ
+
+When the owner says **audit**, **review**, **check**, **go over**, or **look at**,
+that is a **read-only instruction**. It is not permission to change anything.
+
+An audit is:
+
+1. **Slow down.** There is no time pressure. There has never been time pressure.
+2. **Read every single line.** Not a grep, not a sample, not the first three
+   matches. The actual file, top to bottom.
+3. **Use logical reasoning.** Ask *why is this here?* before asking *should this
+   change?* Assume the thing you are looking at was put there on purpose by
+   someone who knew more about this business than you do.
+4. **Report findings. Change nothing.** Present what you found and wait.
+
+An audit is **not**:
+
+- A license to "fix while I'm in here"
+- A batch of edits followed by a summary
+- Anything that ends in a commit
+
+**If you are auditing and you find something you want to change, write it down
+and ask.** The answer is frequently "no, that's deliberate."
+
+---
+
+## 2. Never fill a gap with an assumption
+
+If you do not know something, you do not know it. Say so.
+
+Do not reason backwards from a conclusion to invent the evidence for it. Do not
+describe a system's behavior you have not observed. Do not report a status you
+have not verified. Do not treat "I would have done it this way" as evidence for
+"this is why it was done."
+
+Real failures from this project, all from filling gaps:
+
+- Told the owner to raise the LSA budget. Budget was 4.8% utilized. LSA is
+  lead-supply limited, not budget limited.
+- Blamed junk search terms on Performance Max. The search terms report contained
+  zero PMax rows.
+- Said the GBP/LSA link was unresolved after reading 5 emails out of 12. It had
+  been resolved days earlier — and that fix was what took LSA from 3 conversions
+  in 21 days to 14 in 9.
+- Recommended blocking `crepe myrtle` and `bush removal` as negative keywords.
+  Both are services this company actively sells and bids on.
+- Assumed recent changes were the established baseline. Some of what looked
+  "wrong" was work the owner had done days before, on purpose.
+
+**The Google Ads change-history API only returns the current day.** You cannot
+tell new from established through it. Ask.
+
+---
+
+## 3. Meta descriptions and titles are AEO, not filler
+
+The long, entity-dense meta descriptions on the case studies and service pages
+are **deliberate**. They are built for local SEO and Answer Engine Optimization.
+Neighborhood names, regulatory citations, and the brand give answer engines
+specific, attributable entities to pull.
+
+**Never trim a title or description to hit a character count.** Google truncates
+the *display*; it still indexes the whole string. A 190-character description
+that contains `Great Neck`, `Broad Bay Island`, `co-dominant union`, and
+`Art-is-Tree LLC` outperforms a tidy 155-character one that contains none of them.
+
+Words that must never be removed to "make it fit":
+
+| Category | Examples |
+|---|---|
+| Brand | `Art-is-Tree`, `Art-is-Tree LLC` |
+| Neighborhoods | `Great Neck`, `Broad Bay Island`, `Kempsville` |
+| Cities served | `Virginia Beach`, `Norfolk`, `Chesapeake`, `Portsmouth`, `Hampton Roads` |
+| Seasonal / local | `Hurricane`, `storm damage`, `24/7` |
+| Trust signals | `Licensed`, `insured`, `BBB A+`, `5-Star`, `Free estimates` |
+| Regulatory terms | `minimum approach distances`, `ANSI Z133`, `ANSI A300`, `CBPA`, `RPA buffer` |
+| Arboriculture terms | `co-dominant union`, `spikeless pruning`, `emerald ash borer` |
+
+`Free estimates` is the phrase people search. Not `Free quotes`.
+
+Because brand names, neighborhoods, and technical terms naturally sit at the
+**end** of a sentence, any edit that shortens from the end deletes exactly the
+words worth keeping. This has already happened once — commit `a8ff1f4`, reverted
+in `52e05e9`, 14 keyword losses across 14 files.
+
+---
+
+## 4. Show the work before it ships
+
+"Let me review before posting" covers **every** part of the change, not the part
+that is convenient to paste in chat.
+
+In `a8ff1f4` the titles were shown and approved. The 17 rewritten descriptions
+went to production unseen. That is the whole reason that commit had to be
+reverted.
+
+If a change touches titles **and** descriptions, show both. If it touches 14
+files, show 14 files.
+
+---
+
+## 5. Deploy procedure
+
+`main` is the only branch. Commit on `main` and push to `main` — Vercel deploys
+production from it. Do not create side branches; if a session is assigned one,
+land the work on `main` and delete the branch when done.
+
+```sh
+git fetch origin main -q
+git checkout main && git pull --ff-only origin main
+# ...change, build, verify...
+git push origin main
+```
+
+Older branches were retired on 2026-09-24 and kept as `archive/*` tags (for
+example `archive/code-cleanup-k9isfi`, which holds the unshipped Bouncie job-log
+work). `git tag -l 'archive/*'` lists them.
+
+Always `npm run build` and confirm the strings you changed appear in `dist/`
+before committing. `scripts/check-prerender.mjs` runs post-build and must pass.
+
+**HTML entity trap:** raw JSX source contains `&amp;` where the rendered page has
+`&`. Any length or content check must run `html.unescape()` first, or `&` counts
+as 5 characters and every audit result is wrong.
+
+---
+
+## 6. Google Ads API — destructive semantics
+
+These are not theoretical. Each one has already caused damage on this account.
+
+- **`campaign_update.targeting` REPLACES the whole object.** Send `languages`,
+  `negative_keywords`, and `location_details` together every time, or the omitted
+  ones are wiped.
+- **`campaign_update.extensions` REPLACES the whole object.** Send `calls`,
+  `images`, and `lead_forms` together every time. Sending only `lead_forms` once
+  dropped the call extension and 20 image assets from a live campaign.
+- **`add_keywords` / `remove_keywords` are safe.** They append and remove without
+  touching targeting. Prefer them.
+- **Google Ads cannot edit an ad in place.** Any edit removes and recreates it.
+  The new ad comes back **PAUSED**, with a new ID and zero performance history.
+  Re-enable explicitly with `platform_settings: {status: "ENABLED"}` and expect
+  the learning period to restart.
+- **Negative keywords do not match apostrophes, plurals, or close variants.**
+  `mike's tree service` [EXACT] does not block `mikes tree service`.
+- Every negative added should be balanced with positives. Google rewards a
+  campaign that adds intent, not one that only subtracts.
+
+---
+
+## 7. Secrets
+
+- Never write an API key, token, or credential into a file in this repo.
+- `CRM_ACCESS_TOKEN` / `VITE_CRM_ACCESS_TOKEN` live in Vercel env vars only.
+  Keep it that way.
+- Never print a secret into chat. Name the variable and where it lives.
+- Never handle the owner's Google account password. That account controls ad
+  spend, Gmail, and the Business Profile.
+- If a key appears in conversation, flag it as exposed and recommend rotation.
+
+---
+
+## 8. The guardrails in `.claude/` are enforced, not advisory
+
+Sections 1 and 3 are wired to hooks. They are not reminders that can be
+weighed against being helpful — the tool call is refused.
+
+| File | Event | Does |
+|---|---|---|
+| `.claude/hooks/audit-lock-arm.sh` | `UserPromptSubmit` | Arms a lock when the owner uses an audit word; clears it on an explicit go-ahead |
+| `.claude/hooks/audit-lock-check.sh` | `PreToolUse` | Refuses `Edit`/`Write`/`NotebookEdit` while armed |
+| `.claude/hooks/keyword-guard.py` | `PreToolUse` | Refuses any edit under `src/` or `public/` that drops a term from the §3 table |
+| `.claude/skills/audit/SKILL.md` | `/audit` | The read-only procedure and findings format |
+
+`keyword-guard.py` reads its term list straight out of the §3 table, so that
+table is the single source of truth — edit it and the guard changes with it.
+If the table stops parsing, the guard **blocks rather than failing open**.
+
+Replaying `a8ff1f4` through it refuses 13 of 18 edits and catches 21 keyword
+losses. That commit could not have been made with this in place.
+
+**Do not route around a blocked edit** with `Bash`, `sed`, `tee`, `python`, or
+a heredoc. A caught mistake is cheap; a hidden one is what costs five hours.
+
+Hooks load from the settings file present when the session starts. After
+changing `.claude/settings.json`, open `/hooks` once or restart.
+
+---
+
+## 9. Stack facts
+
+- React 18 + Vite + `vite-react-ssg`, prerendering ~40 routes
+- `<Head>` from `vite-react-ssg`; page meta via the `LocalSEOMeta` component
+- GA4 via **gtag.js loaded directly — not GTM**. Measurement ID `G-TLDWNQZZ81`
+- Consent Mode v2, opt-out model
+- Deployed on Vercel from `main`
+- Review count lives in `src/constants/seoMetadata.js` and is mirrored in
+  `src/hooks/useReviewStats.js`, `FAQPage.jsx`,
+  `case-studies/ChooseTreeServiceCaseStudy.jsx`, and `public/llms.txt`.
+  Update all of them together.
+
+---
+
+## 10. Customer data is handled once, at arm's length
+
+Four sources describe this company's work: the GPS trackers, the Google Calendar,
+the completed-jobs folders in Drive, and the client master list. All but the
+trackers carry real names, home addresses, phone numbers and prices.
+
+**None of them is ever committed, and no field of any of them is copied into the
+repo.** They are read by path or by API from outside the repo, by whatever script
+needs them, and nothing else.
+
+Only the trackers feed `jobLog.json`, because only they place a job in
+a neighborhood on evidence. (That pipeline is not on `main` or the live site; it
+lives in the `archive/code-cleanup-k9isfi` tag. If it ever ships, strip the
+per-job `jobs` array first — the page only needs the totals, and the file is
+bundled into public JavaScript.) See "What the other three cannot do yet" below.
+
+| | Allowed | Never |
+|---|---|---|
+| Source file | Read by path from outside the repo | Committed, or copied into the repo |
+| Address | Street name, to look up a neighborhood | Written to any file, at any precision |
+| Coordinates | Rounded to ~1km in `jobLog.json` | Full precision, which is a house |
+| Name, phone, price | Not read at all | Anywhere, for any reason |
+| Output | Counts per neighborhood and city | Anything traceable to one property |
+
+`.gitignore` blocks `*client*master*.csv` and `*Trip_Data_Export*.csv`, but the
+rule is the point, not the pattern — a file named something else is still
+customer data.
+
+**Purpose limit: these numbers exist to prove service-area coverage to search
+engines.** That is the whole mandate. They are not for outreach, remarketing
+audiences, customer lists, or anything shared outside the business.
+
+The counts are claims about real work on real people's property, so they follow
+§2 as strictly as anything here — no gap gets filled with an assumption:
+
+- A stop is not a job. Three trucks at one address is one job. Grouping is by
+  place and time, and the raw stop count never goes on a page.
+- Non-customer sites (the yard, which is also the dump; the repair shop) come
+  out **only** on confirmation. Every entry silently deletes real work, so none
+  is added on a hunch.
+- A neighborhood is assigned only where there is evidence. Inferring one from a
+  ZIP would place jobs on streets nobody visited. Unresolved stays unresolved.
+- Both sources overlap in time. Rows already covered by the trackers are
+  dropped rather than added twice.
+
+When a number cannot be supported, the page renders exactly as it did before it
+had data. `src/utils/jobCoverage.js` returns null on every path for that reason.
+
+### What the other three cannot do yet
+
+There is more history than the site shows, and the reason it is not on the site
+is worth recording so nobody re-derives it the hard way.
+
+| source | span | records | → city | → neighborhood |
+|---|---|---|---|---|
+| GPS trackers | 12 months | 326 jobs | 100% | **85%** |
+| Completed-jobs folders | Mar 2023 – Aug 2026 | 1,049 | 40% | **10%** |
+| Google Calendar | Jan 2023 – Aug 2026 | 2,921 with a location | ~1% | 19% |
+| Client master list | Jun 2024 – Dec 2025 | 368 | 98% | 18% |
+
+The trackers win because they record a coordinate. Everything else records an
+address, and **this environment cannot reach a geocoder** — the network policy
+returns 403 for Nominatim, the Census geocoder and every commercial service, so
+an address cannot become a point. The stopgap is a gazetteer built from the
+trucks themselves: 459 streets they have actually stopped on, each with a
+confirmed city and neighborhood. It resolves 10-19% of the older records and
+nothing more, because a street the trucks never drove is a street it has never
+heard of.
+
+Two further traps in that older data:
+
+- The calendar's `location` is a bare street with no city — 24 of 2,921 name one.
+  Street names repeat across Virginia Beach, Norfolk and Chesapeake, so matching
+  on street alone would assign jobs to the wrong city.
+- The calendar records **estimates**, not completed work. Counting an estimate as
+  a job inflates the total, which is exactly the error that had to be reverted
+  once already. Completed work lives in the Drive folders.
+
+Unlocking the full three years needs a geocoder, not more parsing. Until then only
+the twelve months that can be proven are usable.

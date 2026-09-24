@@ -1,0 +1,40 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PROJECT_DIR:-.}/.claude/hooks/audit-lock-arm.sh\"",
+            "timeout": 10,
+            "statusMessage": "Checking audit lock"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PROJECT_DIR:-.}/.claude/hooks/audit-lock-check.sh\"",
+            "timeout": 10,
+            "statusMessage": "Audit lock"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR:-.}/.claude/hooks/keyword-guard.py\"",
+            "timeout": 15,
+            "statusMessage": "Checking protected keywords"
+          }
+        ]
+      }
+    ]
+  }
+}
