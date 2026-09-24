@@ -50,7 +50,7 @@ const GoogleReviewsDisplay = () => {
             What Your Neighbors Say
           </h2>
           <p className="font-sans text-gray-600 max-w-2xl mx-auto text-lg">
-            A few of the {count} five-star reviews from homeowners across Virginia Beach and Hampton Roads.
+            A few of the five-star reviews from homeowners across Virginia Beach and Hampton Roads &mdash; rated {ratingText} across {count} Google reviews.
           </p>
         </div>
 

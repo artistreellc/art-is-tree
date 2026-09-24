@@ -277,7 +277,7 @@ const TestimonialsPage = () => {
             </div>
 
             <p className="text-gray-600 mb-4">
-              These are just a few — read all {count} five-star reviews on our Google Business Profile.
+              These are just a few — read all {count} reviews ({rating.toFixed(1)} stars) on our Google Business Profile.
             </p>
             <a
               href={GOOGLE_LISTING_URL}

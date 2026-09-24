@@ -1,4 +1,8 @@
 import { BASE_URL, stripWww } from '@/utils/seoHelpers';
+// Google rating and review count. Refreshed from the Places API at the top of
+// every build by scripts/fetch-review-stats.mjs; the committed copy is what
+// ships when that fetch cannot run.
+import reviewStats from './reviewStats.json';
 
 // ---------------------------------------------------------------------------
 // Single source of truth for business identity (NAP), geo, socials, and
@@ -42,7 +46,7 @@ const COMPANY_INFO = {
   },
   // Open 24/7 (matches the 24/7 emergency-response claim).
   hours: { opens: '00:00', closes: '23:59', allWeek: true },
-  rating: { value: '5.0', reviewCount: '146', best: '5', worst: '1' },
+  rating: { value: reviewStats.rating, reviewCount: reviewStats.reviewCount, best: '5', worst: '1' },
   // Cities with dedicated service-area pages, in priority order.
   areaServed: ['Virginia Beach', 'Norfolk', 'Chesapeake', 'Portsmouth'],
   googleMapsCid: '12599844776703525086',
@@ -84,7 +88,7 @@ COMPANY_INFO.sameAs = [
 // Directory/citation listings for the "Find Us Online" page and footer,
 // with the descriptive names search engines should see them linked under.
 COMPANY_INFO.listings = [
-  { name: 'Google Business Profile', url: COMPANY_INFO.socials.googleMaps, rating: '5.0', reviews: '146' },
+  { name: 'Google Business Profile', url: COMPANY_INFO.socials.googleMaps, rating: COMPANY_INFO.rating.value, reviews: COMPANY_INFO.rating.reviewCount },
   { name: 'BBB (A+ Accredited)', url: COMPANY_INFO.socials.bbb },
   { name: 'Yelp', url: COMPANY_INFO.socials.yelp },
   { name: 'Angi', url: COMPANY_INFO.socials.angi },
@@ -149,7 +153,7 @@ const SEO_METADATA = {
   },
   about: {
     title: 'About Art-is-Tree LLC | Licensed & Insured Tree Service',
-    description: 'Learn about Art-is-Tree LLC, your trusted tree service provider in Virginia Beach. We bring 15+ years of hands-on experience and deep local trust.',
+    description: 'Learn about Art-is-Tree LLC, your trusted tree service provider in Virginia Beach. We bring 17 years of hands-on experience and deep local trust.',
     keywords: 'about Art-is-Tree, Virginia Beach tree service, tree service company, Virginia Beach tree experts',
     ogImage: `${BASE_URL}/og-image.png`
   },

@@ -36,8 +36,12 @@ export default async function handler(req, res) {
 
   if (!API_KEY) {
     // Not configured yet — respond gracefully so the site shows the "Leave a Review" state.
+    // keyState says whether the variable is absent or present-but-empty, which
+    // is the difference between "never added to Vercel" and "added with no value".
+    const keyState =
+      'GOOGLE_PLACES_API_KEY' in process.env || 'VITE_GOOGLE_PLACES_API_KEY' in process.env ? 'empty' : 'missing';
     cacheShort();
-    return res.status(200).json({ reviews: [], rating: null, total: null, configured: false });
+    return res.status(200).json({ reviews: [], rating: null, total: null, configured: false, keyState });
   }
 
   try {
@@ -65,14 +69,20 @@ export default async function handler(req, res) {
 
     const result = details?.result || {};
 
-    const reviews = (result.reviews || []).map((r) => ({
-      reviewer_name: r.author_name,
-      rating: r.rating,
-      review_text: r.text,
-      review_image_url: r.profile_photo_url || '',
-      created_at: r.time ? new Date(r.time * 1000).toISOString() : null,
-      author_url: r.author_url || '',
-    }));
+    // Only five-star reviews are ever shown on the site (owner's call — the
+    // testimonials page is a wall of 5-star reviews). The aggregate rating and
+    // total below stay exactly what Google reports, so the number is honest
+    // even when the displayed reviews are the best of them.
+    const reviews = (result.reviews || [])
+      .filter((r) => Number(r.rating) >= 5)
+      .map((r) => ({
+        reviewer_name: r.author_name,
+        rating: r.rating,
+        review_text: r.text,
+        review_image_url: r.profile_photo_url || '',
+        created_at: r.time ? new Date(r.time * 1000).toISOString() : null,
+        author_url: r.author_url || '',
+      }));
 
     const total = typeof result.user_ratings_total === 'number' ? result.user_ratings_total : null;
     // Only the real, live result earns the 6h edge cache.

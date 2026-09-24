@@ -32,7 +32,7 @@ const certifications = [
   {
     id: 'google',
     name: 'Google Verified',
-    description: `Verified Google Business Profile with a 5.0 rating across ${COMPANY_INFO.rating.reviewCount} reviews.`,
+    description: `Verified Google Business Profile with a ${COMPANY_INFO.rating.value} rating across ${COMPANY_INFO.rating.reviewCount} reviews.`,
     Icon: CheckCircle,
   },
   {

@@ -42,6 +42,9 @@
       "statusCode": 301
     }
   ],
+  "crons": [
+    { "path": "/api/cron/rebuild", "schedule": "0 10 * * *" }
+  ],
   "rewrites": [
     { "source": "/admin", "destination": "/index.html" },
     { "source": "/admin/:path*", "destination": "/index.html" },
