@@ -13,7 +13,7 @@ const caseStudiesData = [
     category: "Insurance",
     read: "12 min",
     image: "/images/virginia-beach-crane-pine-tree-removal.webp",
-    description: "A landscaping company underbid us by $2,240 on a Chicks Beach rental property in Virginia Beach — multiple large pines and a massive oak. The owner paid the difference on purpose after reading both certificates of insurance. The 30-foot height ceiling on landscaper coverage, the 15-foot power-line exclusion, NCCI class code 0106, and how Virginia enforces tree work safety under 16VAC25-73 and ANSI Z133.",
+    description: "A landscaping company underbid us by $2,240 on a Chic’s Beach rental property in Virginia Beach — multiple large pines and a massive oak. The owner paid the difference on purpose after reading both certificates of insurance. The 30-foot height ceiling on landscaper coverage, the 15-foot power-line exclusion, NCCI class code 0106, and how Virginia enforces tree work safety under 16VAC25-73 and ANSI Z133.",
     link: "/case-studies/tree-service-insurance",
     feature: true,
   },

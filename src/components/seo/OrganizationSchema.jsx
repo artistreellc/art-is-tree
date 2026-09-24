@@ -22,7 +22,7 @@ const OrganizationSchema = () => {
       "@type": "Person",
       "name": "Mike Campbell",
       "jobTitle": "Owner & Lead Climber",
-      "description": "Owner and lead climber of Art-is-Tree LLC, with more than 15 years of professional tree-climbing experience across Virginia Beach and Hampton Roads. He founded the company in 2021."
+      "description": "Owner and lead climber of Art-is-Tree LLC, with 17 years of professional tree-climbing experience across Virginia Beach and Hampton Roads. He founded the company in 2021."
     },
     "numberOfEmployees": {
       "@type": "QuantitativeValue",

@@ -86,7 +86,7 @@ const StormDamageMitigationCaseStudy = () => {
                 <SectionHeading eyebrow="Before the wind" title="The warning signs a tree is going to fail" />
                 <div className="mt-6 space-y-5 text-gray-700 text-lg leading-relaxed">
                   <p>
-                    Most trees that fail in a storm were telling you something first. The International Society of Arboriculture publishes a straightforward list of the things that make a tree hazardous, and after twenty years of climbing them I look for the same handful every time I walk a property.<sup><a href="#src1" className="text-[#1B4D3E] hover:text-[#D4AF37]">1</a></sup>
+                    Most trees that fail in a storm were telling you something first. The International Society of Arboriculture publishes a straightforward list of the things that make a tree hazardous, and after seventeen years of climbing them I look for the same handful every time I walk a property.<sup><a href="#src1" className="text-[#1B4D3E] hover:text-[#D4AF37]">1</a></sup>
                   </p>
                   <ul className="space-y-3 list-none pl-0">
                     {[

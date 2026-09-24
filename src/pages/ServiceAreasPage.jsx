@@ -39,7 +39,7 @@ const ServiceAreasPage = () => {
                  <strong>Art-is-Tree LLC</strong> is a locally owned <strong>Hampton Roads tree service</strong>, working across Virginia Beach and the surrounding cities.
                </p>
                <p>
-                 Our owner has 15+ years climbing in these exact communities, so we know how the coast treats trees here &mdash; the wind, the sandy and clay soils, and which removals fall under local and waterfront rules. We work for homeowners, HOAs, and businesses throughout the region.
+                 Our owner has 17 years climbing in these exact communities, so we know how the coast treats trees here &mdash; the wind, the sandy and clay soils, and which removals fall under local and waterfront rules. We work for homeowners, HOAs, and businesses throughout the region.
                </p>
                <h2 className="text-2xl font-bold text-[#1B4D3E] font-playfair mt-8 mb-4">Virginia Beach Coverage</h2>
                <p>

@@ -160,8 +160,8 @@ const TreeTrimmingPage = () => {
                   <Shield className="w-8 h-8 text-[#1B4D3E]" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-xl text-gray-900 mb-1">15+ Years Experience</h3>
-                  <p className="text-gray-600">Decades of professional trimming experience across Hampton Roads.</p>
+                  <h3 className="font-bold text-xl text-gray-900 mb-1">17 Years Experience</h3>
+                  <p className="text-gray-600">17 years of professional trimming experience across Hampton Roads.</p>
                 </div>
               </li>
             </ul>

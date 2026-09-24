@@ -20,7 +20,7 @@ const AboutPage = () => {
     <>
       <LocalSEOMeta 
         pageTitle="About Art-is-Tree LLC | 5-Star Virginia Beach Tree Service"
-        description="Family-owned, 5-star Virginia Beach tree service — 15+ years, licensed, insured, BBB A+, ISA member, working to ANSI A300 &amp; Z133 standards across Hampton Roads."
+        description="Family-owned, 5-star Virginia Beach tree service — 17 years, licensed, insured, BBB A+, ISA member, working to ANSI A300 &amp; Z133 standards across Hampton Roads."
       />
 
       <LocalBusinessSchema />
@@ -57,7 +57,7 @@ const AboutPage = () => {
              <div className="prose prose-lg text-gray-700 leading-relaxed mx-auto max-w-none space-y-8">
                
                <div className="flex flex-wrap gap-4 mb-8 p-6 bg-gray-50 rounded-xl border border-gray-200 justify-center">
-                 <div className="flex items-center gap-2 font-semibold text-[#1B4D3E]"><Award className="text-[#D4AF37]"/> 15+ Years Experience</div>
+                 <div className="flex items-center gap-2 font-semibold text-[#1B4D3E]"><Award className="text-[#D4AF37]"/> 17 Years Experience</div>
                  <div className="flex items-center gap-2 font-semibold text-[#1B4D3E]"><ShieldCheck className="text-[#D4AF37]"/> Licensed & Insured</div>
                  <div className="flex items-center gap-2 font-semibold text-[#1B4D3E]"><BadgeCheck className="text-[#D4AF37]"/> BBB A+ Accredited<Cite href={COMPANY_INFO.socials.bbb} label="BBB" /></div>
                  <div className="flex items-center gap-2 font-semibold text-[#1B4D3E]"><TreePine className="text-[#D4AF37]"/> ISA Member<Cite href="https://www.isa-arbor.com/" label="ISA" /></div>
@@ -74,7 +74,7 @@ const AboutPage = () => {
                    {[
                      ['Owner', 'Mike Campbell — Owner & Lead Climber'],
                      ['Founded', '2021, in Virginia Beach, VA'],
-                     ['Experience', 'More than 15 years of professional tree climbing across Hampton Roads'],
+                     ['Experience', '17 years of professional tree climbing across Hampton Roads'],
                      ['Credentials', 'Licensed & insured · BBB A+ Accredited · ISA member · works to ANSI A300 & Z133 standards'],
                      ['Google rating', `${reviewRating.toFixed(1)} ★ (${reviewCount} verified reviews)`],
                      ['Services', 'Tree removal, trimming & pruning, crane-assisted removal, stump grinding, 24/7 emergency & storm response, and land clearing'],
@@ -91,7 +91,7 @@ const AboutPage = () => {
 
                <h2 className="text-3xl font-bold text-[#1B4D3E] font-playfair mb-6">Our History and Foundation</h2>
                <p>
-                 Mike Campbell grew up in Virginia Beach and has always felt a strong connection to the local environment. He has more than 15 years of professional tree-climbing experience across Hampton Roads, and he founded Art-is-Tree LLC in 2021 after years of climbing for other companies — tackling increasingly complex challenges and refining his technique along the way. He knows firsthand that safely removing 25-foot sections from a 60-foot oak requires not just strength, but calculated precision and deep expertise.
+                 Mike Campbell grew up in Virginia Beach and has always felt a strong connection to the local environment. He has 17 years of professional tree-climbing experience across Hampton Roads, and he founded Art-is-Tree LLC in 2021 after years of climbing for other companies — tackling increasingly complex challenges and refining his technique along the way. He knows firsthand that safely removing 25-foot sections from a 60-foot oak requires not just strength, but calculated precision and deep expertise.
                </p>
                
                <h2 className="text-3xl font-bold text-[#1B4D3E] font-playfair mt-12 mb-6">Uncompromising Professionalism & Credentials</h2>

@@ -49,7 +49,7 @@ const InsuranceCaseStudy = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   const title = 'The Bid We Lost on Price and Won on Paper: Arborist Insurance vs. a Landscaper Policy';
-  const description = 'A Chicks Beach rental property in Virginia Beach with multiple large pines and a massive oak — and a landscaping company that came in $2,240 under us. The owner paid the difference on purpose after reading both certificates of insurance. What a landscaper policy actually covers, the 30-foot height line, the 15-foot power-line exclusion, NCCI class code 0106, and how Virginia enforces tree work safety under 16VAC25-73 and ANSI Z133.';
+  const description = 'A Chic’s Beach rental property in Virginia Beach with multiple large pines and a massive oak — and a landscaping company that came in $2,240 under us. The owner paid the difference on purpose after reading both certificates of insurance. What a landscaper policy actually covers, the 30-foot height line, the 15-foot power-line exclusion, NCCI class code 0106, and how Virginia enforces tree work safety under 16VAC25-73 and ANSI Z133.';
 
   return (
     <>
@@ -85,12 +85,12 @@ const InsuranceCaseStudy = () => {
             </h1>
             <p className="text-lg md:text-xl text-gray-200 leading-relaxed">
               A landscaping company underbid us by <strong className="text-[#D4AF37]">$2,240</strong> on a
-              Chicks Beach rental property. The owner hired us anyway — after he read both certificates
+              Chic’s Beach rental property. The owner hired us anyway — after he read both certificates
               of insurance and saw what one of them didn&rsquo;t cover.
             </p>
             <Byline date="2026-08-10" light className="mt-4" />
             <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-white/85 text-sm font-medium mt-4">
-              <span className="flex items-center gap-1.5"><MapPin className="w-4 h-4 text-[#D4AF37]" /> Chicks Beach · Virginia Beach</span>
+              <span className="flex items-center gap-1.5"><MapPin className="w-4 h-4 text-[#D4AF37]" /> Chic’s Beach · Virginia Beach</span>
               <span className="flex items-center gap-1.5"><ShieldCheck className="w-4 h-4 text-[#D4AF37]" /> Licensed &amp; insured · BBB A+</span>
             </div>
           </div>
@@ -101,7 +101,7 @@ const InsuranceCaseStudy = () => {
           <SectionHeading eyebrow="The job" title="Multiple big pines and one massive oak" />
           <div className="prose prose-lg max-w-none text-gray-700 space-y-5">
             <p>
-              Chicks Beach sits right on the Chesapeake Bay, and the trees up there live a hard life —
+              Chic’s Beach sits right on the Chesapeake Bay, and the trees up there live a hard life —
               constant salt air off the water, wind with nothing to break it, and lots that were platted
               long before anyone thought about where a seventy-foot pine would eventually need to land.
               This was a rental property with several large pines and one genuinely massive oak, all of
@@ -128,7 +128,7 @@ const InsuranceCaseStudy = () => {
 
           <div className="mt-10">
             <ProjectSpec rows={[
-              ['Location', 'Chicks Beach, Virginia Beach — Chesapeake Bay front'],
+              ['Location', 'Chic’s Beach, Virginia Beach — Chesapeake Bay front'],
               ['Scope', 'Multiple large pines plus one massive oak, all near the structure'],
               ['Property type', 'Rental property — owner carries his own liability'],
               ['The competing bid', '$2,240 below ours, from a landscaping company'],
@@ -153,7 +153,7 @@ const InsuranceCaseStudy = () => {
                 A standard landscaping general liability policy is generally written for pruning,
                 cutting, and shaping trees and shrubs <strong>up to roughly 30 feet</strong>.<sup><a href="#src2" className="text-[#1B4D3E] hover:text-[#D4AF37]">2</a></sup>{' '}
                 That’s a reasonable ceiling for the work landscapers actually do. It’s also well below
-                the pines on that Chicks Beach lot.
+                the pines on that Chic’s Beach lot.
               </p>
               <p>
                 Above that line the coverage commonly stops, and so does coverage for the three things
@@ -228,7 +228,7 @@ const InsuranceCaseStudy = () => {
             <SectionHeading eyebrow="Equipment" title="The crane in your driveway is its own question" />
             <div className="prose prose-lg max-w-none text-gray-700 space-y-5">
               <p>
-                On that Chicks Beach oak, a crane was the safe answer — the same call we make whenever a
+                On that Chic’s Beach oak, a crane was the safe answer — the same call we make whenever a
                 tree is too big or too committed to a target to bring down by hand, which I wrote about
                 in our <Link to="/case-studies/crane-safety" className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]">crane removal case study</Link>.
               </p>
@@ -326,7 +326,7 @@ const InsuranceCaseStudy = () => {
         <section className="container mx-auto px-4 py-14 md:py-16 max-w-4xl">
           <div className="prose prose-lg max-w-none text-gray-700 space-y-5">
             <p>
-              We did that Chicks Beach job. The pines came down, the oak came out over the roof on the
+              We did that Chic’s Beach job. The pines came down, the oak came out over the roof on the
               crane, and the property went back to being a rental instead of a liability. That’s what a
               licensed and insured tree service in Virginia Beach is actually selling you.
             </p>

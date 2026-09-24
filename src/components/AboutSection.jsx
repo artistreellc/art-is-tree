@@ -40,7 +40,7 @@ const AboutSection = () => {
                   <Award className="w-6 h-6 text-[#D4AF37]" />
                 </div>
                 <div>
-                  <p className="font-bold text-gray-900 text-lg leading-tight">15+ Years</p>
+                  <p className="font-bold text-gray-900 text-lg leading-tight">17 Years</p>
                   <p className="text-sm text-gray-600 font-medium">Local Experience</p>
                 </div>
               </div>
