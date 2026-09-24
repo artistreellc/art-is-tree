@@ -430,15 +430,15 @@ const Navigation = memo(() => {
           </div>
 
           <div className="flex items-center gap-3 md:gap-5 flex-shrink-0">
-            <a 
-              href={GOOGLE_LISTING_URL} 
-              target="_blank" 
+            <a
+              href={GOOGLE_LISTING_URL}
+              target="_blank"
               rel="noopener noreferrer"
               /* Gold outline only — a border, no fill. A solid gold pill here
                  would compete with the yellow phone button beside it; the
                  outline groups the stars and the count without adding weight. */
               className="hidden lg:flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#D4AF37]/60 hover:border-[#D4AF37] hover:bg-white/10 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-              aria-label={`Read our ${reviewCount} 5-star reviews on Google`}
+              aria-label={`Read our ${reviewCount} Google reviews — rated ${reviewRating.toFixed(1)} out of 5`}
             >
               <div className="flex text-[#D4AF37]">
                 <Star className="w-4 h-4 md:w-5 md:h-5 fill-current" />
