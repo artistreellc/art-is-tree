@@ -296,7 +296,7 @@ export default function EmergencyPage() {
             <a
               href="https://vbfences.com/services/fence-repair"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               className="text-[#1B4D3E] font-semibold underline hover:text-[#D4AF37]"
             >
               fence repair after tree damage

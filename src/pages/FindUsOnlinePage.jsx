@@ -91,7 +91,7 @@ const PartnerTile = ({ partner }) => {
     <a
       href={partner.url}
       target="_blank"
-      rel="noopener"
+      rel="noopener noreferrer"
       title={partner.name}
       className="group bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col items-center justify-center gap-3 p-6 min-h-[160px] text-center"
     >
