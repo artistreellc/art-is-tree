@@ -1,11 +1,27 @@
 # Disavow file for artistreevabeach.com
-# Source: Semrush Backlink Audit > Network Graph > Potential Link Networks
-# 43 domains, all Authority Score 2-15, none topically or geographically related
-# to tree service or Hampton Roads.
+# Updated 2026-09-24 from the Semrush backlink profile (261 referring domains,
+# 900 backlinks, Authority Score 9). 268 domains: the 43 from the Aug 2 file
+# plus 225 added today. 82% of the current referring domains are link-seller
+# and PBN spam, 100 of them new in the last 30 days — a bot advertising
+# "buy backlinks online cheap" with our domain in the anchor text on 76 sites.
+# None of the domains below sells trees, lives in Hampton Roads, or has any
+# reason to link to a Virginia Beach tree company.
+#
+# Two farms account for most of it:
+#   Singapore  — 118.139.x.x / 184.168.x.x (53 domains)
+#   Moldova    — 195.20.19.178, URL-shortener spam (17 domains)
 #
 # UPLOAD AT: https://search.google.com/search-console/disavow-links
 # Select property artistreevabeach.com, upload this file, confirm.
 # This REPLACES any existing disavow list - it does not append.
+#
+# NOT in this file (keep): bbb.org, yellowpages.com, birdeye.com,
+# homeadvisor.com, superpages.com, dexknows.com, hours.com, ontoplist.com,
+# serviceatlas.org, vbfences.com, treeserviceguru.com, arborcompass.com,
+# mulchdeck.com, lpraudit.com, serden.com, sergechel.info and the small
+# local directories — those are the real links.
+
+# ===================== Aug 2, 2026 list (unchanged) =====================
 
 # --- Self-identifying link sellers / bookmark spam farms ---
 domain:getlinksnow.net
@@ -59,3 +75,252 @@ domain:qwenterprise.com
 domain:skindentalcare.com
 domain:thebodisprememba.com
 domain:youtoo.in
+
+# ===================== Added Sep 24, 2026 =====================
+
+# --- Link-seller / "buy backlinks" bot sites (the "high quality dofollow
+#     backlinks ... buy backlinks online cheap" anchor text) ---
+domain:100ranking.info
+domain:all-aged-domains.com
+domain:backlinkgenerator.org
+domain:backlinksboost.info
+domain:backlinkspulse.com
+domain:best-seo-domains.com
+domain:bestbacklinksoftware.com
+domain:blinks.monster
+domain:blinks.sbs
+domain:boost-traffic.com
+domain:boosttraffic.site
+domain:digitalboost.site
+domain:digitalseotool.com
+domain:digitizeseo.info
+domain:diversifiedseo.link
+domain:domaindexer.com
+domain:eliteseo.site
+domain:fastranking.shop
+domain:firstguestpost.com
+domain:fiverr-quality-seo-at-affordable-rates.site
+domain:getranked.site
+domain:getseotips.com
+domain:getseotips.link
+domain:go4seo.info
+domain:greatseolinks.link
+domain:indiabacklinks.link
+domain:localranking.site
+domain:marketsseo.com
+domain:organictraffic.site
+domain:plrdownloadshub.com
+domain:premiumseo.shop
+domain:raiseold.com
+domain:rankfirst.shop
+domain:seo-asia.link
+domain:seo-globallink.com
+domain:seo-revealed.club
+domain:seo-study.info
+domain:seodomains.website
+domain:seoinks.link
+domain:seol.store
+domain:seosmalltool.com
+domain:seotoolslike.link
+domain:stormbacklink.com
+domain:topranking.shop
+domain:trafficexperts.site
+domain:upseorank.link
+domain:webrandseo.com
+domain:winningseo.site
+
+# --- Singapore farm: one hosting block (118.139.x.x / 184.168.x.x),
+#     fake directories, "website worth" checkers, .in/.cv/.pro throwaways ---
+domain:1000.co.in
+domain:2x9.co
+domain:alljobs.info
+domain:allwebsitesdirectory.com
+domain:australianwebdirectory.shop
+domain:backlinkhouse.com
+domain:backlinkon.com
+domain:backlinksbank.com
+domain:backlinkshouse.com
+domain:backlinkstree.com
+domain:bestwebstats.com
+domain:booksreadr.org
+domain:cheapsmmprovider.online
+domain:domain.com.lc
+domain:domainanalysis.org
+domain:domains.com.bz
+domain:domainsc.com
+domain:egyptiandirectory.com
+domain:findinfo.in
+domain:gamerkun.com
+domain:getwebsiteworth.com
+domain:globalecommerce.org
+domain:hebagh.cv
+domain:homefinance.co.in
+domain:indexaward.com
+domain:indians.cc
+domain:linksnatcher.art
+domain:linksnatcher.com
+domain:mp3fresh.net
+domain:musweb.org
+domain:newwebsiteslist.com
+domain:pagesearch.net
+domain:prashikshan.in
+domain:preparation.co.in
+domain:procycling.org
+domain:pudhe.com
+domain:read.org.in
+domain:ready.pro
+domain:taxies.biz
+domain:theface.in
+domain:themumbai.in
+domain:tunca.org
+domain:tyre.pro
+domain:tyres.pro
+domain:uaewebdirectory.info
+domain:wallpapers.pro
+domain:way2check.art
+domain:way2check.cv
+domain:websiterace.com
+domain:webworthchecker.cv
+domain:wonvision.com
+domain:ycm.info
+domain:yesdomains.space
+
+# --- Moldova farm: URL shorteners and link dumps, all on 195.20.19.178 ---
+domain:analyticshaven.top
+domain:anchorurl.cloud
+domain:atomizelink.icu
+domain:blogsphere.top
+domain:buzzshrink.website
+domain:bye.fyi
+domain:byteshort.xyz
+domain:creativeposts.top
+domain:dailymusings.top
+domain:drjack.world
+domain:jake.eu
+domain:metamagic.top
+domain:optimizeflow.top
+domain:quero.party
+domain:screenshots.wiki
+domain:shortenurls.eu
+domain:urls-shortener.eu
+
+# --- "domraider" clone network (Authority Score 0) ---
+domain:domraider.br.com
+domain:domraider.de.com
+domain:domraider.eu.com
+domain:domraider.gb.net
+domain:domraider.it.com
+domain:domraider.uk.com
+domain:domraider.uk.net
+domain:domraider.us.com
+
+# --- Casino, betting, pharma ---
+domain:bestirishcasinoonline.online
+domain:bestnz-poker-casinoslot.com
+domain:betulcrime.com
+domain:betwinnermirror.com
+domain:canadapsilocybin.com
+domain:casinooftheking.com
+domain:casinoonlinecrazytime.online
+domain:doxycycline100mg.store
+domain:hotonlinegaming.com
+domain:realwinningonlinecasino.online
+domain:ufabettererm4.com
+
+# --- Throwaway-TLD spam (.shop/.site/.sbs/.cfd/.monster and .co.com/.us.com) ---
+domain:bestwebs123.site
+domain:bunero.shop
+domain:burpio.shop
+domain:cripio.shop
+domain:daechul.co.com
+domain:fioro.shop
+domain:florta.shop
+domain:forvi.shop
+domain:fralto.shop
+domain:ggmap.co.com
+domain:ggmap.us.com
+domain:knows.monster
+domain:knows.sbs
+domain:lentio.shop
+domain:luminko.shop
+domain:mertio.shop
+domain:nimpa.shop
+domain:nitinenterprises.shop
+domain:nivira.shop
+domain:piolo.shop
+domain:prepaidgiftbalance.online
+domain:royaldb.us.com
+domain:shanzytechs.site
+domain:sisusan88ax.shop
+domain:takes.sbs
+domain:wants.cfd
+
+# --- Off-niche PBN / auto-generated "news" and blog sites (Authority Score
+#     0-2, 2-11 links each: pizza, flowers, kitchens, celebrity gossip, a
+#     Richmond dentist, a podcast...) ---
+domain:8coint.com
+domain:adcreativevideo.com
+domain:bestofthefirstcoast.com
+domain:bisprofit.com
+domain:blogerreviewers.com
+domain:breachviews.com
+domain:businessvocal.com
+domain:cgpa2percentag.com
+domain:chordmp3.net
+domain:clifflisting.com
+domain:coruzants.com
+domain:currentchron.com
+domain:digitalchatni.com
+domain:dupurgeniefr.com
+domain:emergencydentistinrichmondva.com
+domain:exotichealths.com
+domain:expresskitchendesigns.com
+domain:fashionclothingnews.com
+domain:fastlifesite.com
+domain:fixhubs.net
+domain:fletcherrld.com
+domain:gladeflowers.com
+domain:jobsapp.info
+domain:kernelpanicpodcast.com
+domain:kkinsider.com
+domain:leshy.pages.dev
+domain:marinasone.com
+domain:masihnyata.com
+domain:missburrg.com
+domain:mylisthero.com
+domain:mymarketpost.com
+domain:onvaxs.com
+domain:phanerosart.com
+domain:primenewsartical.com
+domain:quotesblom.com
+domain:reisenweg.com
+domain:rjcentinc.com
+domain:s-tribe.net
+domain:sahammurah.com
+domain:soulvocable.com
+domain:sushimean.com
+domain:takes.homes
+domain:texturometer.com
+domain:thecloudherald.com
+domain:thedocmag.com
+domain:themicrodigits.com
+domain:toplikevideo.com
+domain:uncledspizza.com
+domain:wecelebrities.com
+domain:wiki-park.com
+
+# --- Same shape as the Aug 2 off-niche PBN cluster: Authority Score 3-12,
+#     several links each, fake "Forbes" and "news" sites, CT real estate,
+#     food, hosting — nothing to do with trees or Virginia ---
+domain:aloysionunes.com
+domain:archive-hu.com
+domain:fieseros.com
+domain:fittyfoody.com
+domain:forbesstories.com
+domain:homesforsaleoldgreenwichct.com
+domain:hostprinter.com
+domain:mediaboooster.com
+domain:smartstimer.com
+domain:southfwb.com
+domain:techbumppy.com
+domain:theforbestimes.com
