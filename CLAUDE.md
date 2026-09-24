@@ -108,9 +108,22 @@ files, show 14 files.
 
 ## 5. Deploy procedure
 
-`main` is the only branch. Commit on `main` and push to `main` — Vercel deploys
-production from it. Do not create side branches; if a session is assigned one,
-land the work on `main` and delete the branch when done.
+**GitHub holds the code; Vercel hosts the site.** Vercel watches `main` and
+rebuilds the live site on every push to it. Pushing to `main` *is* deploying.
+Any other branch only gets a private Vercel preview URL — it never goes live.
+
+**Branches are allowed for coding and for review.** Do work on a branch when the
+change should be looked at (or previewed) before it goes live. A branch is where
+work waits for the owner; `main` is what customers see.
+
+- Merging or cherry-picking a branch into `main` needs the owner's approval of
+  that specific change — show what it changes on the site (§4).
+- Small, owner-requested changes may go straight to `main`.
+- **Deleting a branch needs the owner's explicit approval, branch by branch.**
+  Before asking, say what is on it that is not on `main`
+  (`git cherry -v origin/main origin/<branch>`, plus
+  `git diff --stat origin/main origin/<branch>`). A branch with unshipped work
+  is never deleted on a general "clean up" instruction.
 
 ```sh
 git fetch origin main -q
@@ -119,9 +132,13 @@ git checkout main && git pull --ff-only origin main
 git push origin main
 ```
 
-Older branches were retired on 2026-09-24 and kept as `archive/*` tags (for
-example `archive/code-cleanup-k9isfi`, which holds the unshipped Bouncie job-log
-work). `git tag -l 'archive/*'` lists them.
+As of 2026-09-24, all older branches are still on GitHub. Nothing was archived or
+deleted — the session environment blocks tag creation and branch deletion, so
+deletions are done by the owner on GitHub (Branches page) after approval.
+Branches holding work that exists nowhere else: `claude/code-cleanup-k9isfi`
+(Bouncie job log), `claude/new-session-em1b41` ("Leave a Review" buttons), and
+`arbor-snapshot` / `claude/tree-service-crm-kfllgt` (CRM code — check the
+`Arbo` repo has it before deleting).
 
 Always `npm run build` and confirm the strings you changed appear in `dist/`
 before committing. `scripts/check-prerender.mjs` runs post-build and must pass.
@@ -220,7 +237,7 @@ needs them, and nothing else.
 
 Only the trackers feed `jobLog.json`, because only they place a job in
 a neighborhood on evidence. (That pipeline is not on `main` or the live site; it
-lives in the `archive/code-cleanup-k9isfi` tag. If it ever ships, strip the
+lives on the `claude/code-cleanup-k9isfi` branch. If it ever ships, strip the
 per-job `jobs` array first — the page only needs the totals, and the file is
 bundled into public JavaScript.) See "What the other three cannot do yet" below.
 
