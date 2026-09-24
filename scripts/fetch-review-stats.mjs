@@ -40,24 +40,42 @@ function keep(why) {
   );
 }
 
-async function fetchStats() {
-  if (!API_KEY) return keep(`GOOGLE_PLACES_API_KEY ${keyState}`);
-  if (!PLACE_ID) return keep('GOOGLE_PLACE_ID not set');
-
-  const url =
-    'https://maps.googleapis.com/maps/api/place/details/json' +
-    `?place_id=${encodeURIComponent(PLACE_ID)}&fields=rating,user_ratings_total&key=${API_KEY}`;
-
+async function getJson(url) {
   const ctl = new AbortController();
   const timer = setTimeout(() => ctl.abort(), 8000);
-  let data;
   try {
     const res = await fetch(url, { signal: ctl.signal });
-    data = await res.json();
-  } catch (err) {
-    return keep(`Google unreachable: ${err?.name === 'AbortError' ? 'timeout' : err?.message || err}`);
+    return await res.json();
   } finally {
     clearTimeout(timer);
+  }
+}
+
+// Without GOOGLE_PLACE_ID (the GitHub Action only carries the key), look the
+// listing up by name and city — no street address needed for a business this
+// findable, and none belongs in a build log.
+async function resolvePlaceId() {
+  if (PLACE_ID) return PLACE_ID;
+  const url =
+    'https://maps.googleapis.com/maps/api/place/findplacefromtext/json' +
+    `?input=${encodeURIComponent('Art-is-Tree LLC, Virginia Beach, VA')}&inputtype=textquery&fields=place_id&key=${API_KEY}`;
+  const data = await getJson(url);
+  return data?.candidates?.[0]?.place_id || null;
+}
+
+async function fetchStats() {
+  if (!API_KEY) return keep(`GOOGLE_PLACES_API_KEY ${keyState}`);
+
+  let data;
+  try {
+    const placeId = await resolvePlaceId();
+    if (!placeId) return keep('GOOGLE_PLACE_ID not set and the name lookup found nothing');
+    data = await getJson(
+      'https://maps.googleapis.com/maps/api/place/details/json' +
+        `?place_id=${encodeURIComponent(placeId)}&fields=rating,user_ratings_total&key=${API_KEY}`
+    );
+  } catch (err) {
+    return keep(`Google unreachable: ${err?.name === 'AbortError' ? 'timeout' : err?.message || err}`);
   }
 
   if (data?.status !== 'OK') {

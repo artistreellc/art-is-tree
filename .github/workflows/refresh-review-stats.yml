@@ -1,0 +1,55 @@
+# Daily Google review refresh, run from GitHub instead of Vercel.
+#
+# Runs scripts/fetch-review-stats.mjs — the same script the build runs — and,
+# when Google's rating or count has changed, commits the new
+# src/constants/reviewStats.json and public/llms.txt to main. That push is
+# what makes Vercel rebuild, so the prerendered numbers stay current without
+# anyone touching Vercel.
+#
+# Needs one repository secret: GOOGLE_PLACES_API_KEY (Settings → Secrets and
+# variables → Actions). GOOGLE_PLACE_ID is optional; without it the script
+# looks the listing up by name. With no key set the script keeps the committed
+# values and the job simply finds nothing to commit.
+name: Refresh review stats
+
+on:
+  schedule:
+    - cron: '0 10 * * *' # daily, 10:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-review-stats
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Ask Google for the current rating and count
+        env:
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+          GOOGLE_PLACE_ID: ${{ secrets.GOOGLE_PLACE_ID }}
+        run: node scripts/fetch-review-stats.mjs
+
+      - name: Commit if the numbers changed
+        run: |
+          if git diff --quiet -- src/constants/reviewStats.json public/llms.txt; then
+            echo "No change in review stats."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/constants/reviewStats.json public/llms.txt
+          git commit -m "Reviews: refresh Google rating and count from the Places API"
+          git push origin main
