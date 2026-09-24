@@ -6,7 +6,13 @@ const data = {
   path: '/service-areas/chesapeake',
   geo: { lat: 36.7682, lng: -76.2875 },
   metaTitle: 'Tree Service Chesapeake VA | Removal, Trimming, Stump Grinding & Arborist | Art-is-Tree LLC',
-  metaDesc: 'Tree service in Chesapeake, VA: tree removal, trimming, stump grinding and land clearing. Licensed, insured, BBB A+ with 24/7 storm response. Free estimates.',
+  // Search Console (90 days to Sep 2026): 2,143 impressions, 2 clicks, average
+  // position 22.9 — "crane tree removal chesapeake va" (197) at 11, "tree
+  // removal chesapeake va" (160) at 28, "stump grinding chesapeake va" (144)
+  // at 43. Description and quick answer now carry those terms and the
+  // neighborhoods; the title already did.
+  metaDesc: 'Tree service in Chesapeake, VA: tree removal, crane tree removal, trimming, stump grinding and land clearing across Greenbrier, Great Bridge, Western Branch, Deep Creek and Hickory — storm-cracked pines, sprawling oaks and rural acreage. Licensed, insured, BBB A+ with 24/7 storm response. Free estimates.',
+  answer: 'Art-is-Tree LLC is a licensed, insured tree service in Chesapeake, VA: <strong>tree removal in Chesapeake</strong> from Greenbrier subdivisions to Hickory acreage, crane tree removal for large oaks over homes in Great Bridge and Western Branch, tree trimming, stump grinding, land clearing and 24/7 emergency tree service after storms. BBB A+, free written estimates. Call (757) 319-5131.',
   heroImg: '/images/virginia-beach-crane-operation-oak.webp',
   heroAlt: 'Crane crew removing a large oak beside a Chesapeake home',
   heroSub: 'Tree removal, trimming, stump grinding, land clearing, and 24/7 storm response — from Greenbrier’s subdivisions to Hickory’s open acreage.',

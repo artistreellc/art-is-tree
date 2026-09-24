@@ -5,8 +5,13 @@ const data = {
   city: 'Norfolk',
   path: '/service-areas/norfolk',
   geo: { lat: 36.8508, lng: -76.2859 },
-  metaTitle: 'Tree Service Norfolk VA | Removal & Trimming | Art-is-Tree LLC',
-  metaDesc: 'Tree removal, trimming and stump grinding in Norfolk, VA. Licensed, insured, BBB A+ tree service with 24/7 storm response across Hampton Roads. Free estimates.',
+  // Search Console (90 days to Sep 2026): 4,383 impressions, 6 clicks, average
+  // position 15.6 — "tree service norfolk va" (340) and "tree removal norfolk
+  // va" (197) both at 23. Page-three rankings with page-one impressions: the
+  // title and description now carry the removal term and the neighborhoods.
+  metaTitle: 'Tree Service Norfolk VA | Tree Removal, Trimming & Crane Work in Ghent, Larchmont, Ocean View | Art-is-Tree LLC',
+  metaDesc: 'Tree removal, trimming and stump grinding in Norfolk, VA, on the tight urban lots of Ghent, Larchmont, Colonial Place, Ocean View and Wards Corner — crane-assisted removal over historic homes, spikeless pruning of willow oaks and live oaks. Licensed, insured, BBB A+ tree service with 24/7 storm response across Hampton Roads. Free estimates.',
+  answer: 'Art-is-Tree LLC is a licensed, insured tree service in Norfolk, VA: <strong>tree removal in Norfolk</strong> on tight urban lots, crane-assisted removal over historic homes in Ghent and Larchmont, tree trimming and spikeless pruning of the city’s willow oaks and live oaks, stump grinding, land clearing and 24/7 emergency tree service after tidal flooding and storms. BBB A+, free written estimates. Call (757) 319-5131.',
   heroImg: '/images/virginia-beach-tall-tree-climb.webp',
   heroAlt: 'Art-is-Tree climber high in a mature tree beside a Norfolk home',
   heroSub: 'Tree removal, trimming, crane work, and 24/7 storm response for Norfolk’s historic neighborhoods and tight urban lots.',

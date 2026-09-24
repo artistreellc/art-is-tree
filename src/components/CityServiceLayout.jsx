@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Phone, MapPin, ArrowRight, Axe, Truck, Scissors, CircleOff, Zap, Trees, ShieldCheck, Waves } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import LocalSEOMeta from '@/components/LocalSEOMeta';
+import AnswerBlock from '@/components/AnswerBlock';
 import RelatedCaseStudies from '@/components/RelatedCaseStudies';
 import ServiceLinks from '@/components/ServiceLinks';
 import GoogleMap from '@/components/GoogleMap';
@@ -22,7 +23,9 @@ const SERVICE_HREF = {
   crane: '/services/crane-removal',
   trim: '/services/tree-trimming',
   stump: '/services/stump-grinding',
-  emergency: '/services/emergency-tree-service',
+  // The tile reads "24/7 Emergency Tree Service", so it goes to the page for
+  // the active emergency, not the insurance-claim page it used to point at.
+  emergency: '/emergency',
   land: '/services/land-clearing',
 };
 
@@ -39,6 +42,7 @@ const CityServiceLayout = ({ data }) => {
     neighborhoods, services,
     localTitle, localParagraphs, localImg, localAlt, localCaption, localBadges = [],
     ctaTitle, ctaText, mapQuery, faqs, relatedPreferred, financingText,
+    answer,
   } = data;
 
   // @graph: the city LocalBusiness node (linked up to the global Organization
@@ -113,6 +117,15 @@ const CityServiceLayout = ({ data }) => {
             </div>
           </div>
         </header>
+
+        {/* Quick answer, same as the service pages: the direct answer to
+            "tree service / tree removal in {city}" is the first substantive
+            text a crawler or answer engine reads. Each city supplies its own. */}
+        {answer && (
+          <AnswerBlock label={`Tree service in ${city}`}>
+            <span dangerouslySetInnerHTML={{ __html: answer }} />
+          </AnswerBlock>
+        )}
 
         {/* INTRO + neighborhoods */}
         <section className="container mx-auto px-4 max-w-4xl py-16 md:py-20">

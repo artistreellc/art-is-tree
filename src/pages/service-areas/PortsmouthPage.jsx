@@ -5,8 +5,13 @@ const data = {
   city: 'Portsmouth',
   path: '/service-areas/portsmouth',
   geo: { lat: 36.8354, lng: -76.2983 },
-  metaTitle: 'Tree Service Portsmouth VA | Removal & Trimming | Art-is-Tree LLC',
-  metaDesc: 'Tree removal, trimming, stump grinding and 24/7 emergency tree service in Portsmouth, VA. Licensed, insured, BBB A+. Free estimates from Art-is-Tree LLC.',
+  // Search Console (90 days to Sep 2026): 2,852 impressions, 2 clicks, average
+  // position 9.7 — "tree removal portsmouth va" (193) at 9.9, "tree service
+  // portsmouth va" (170) at 11.5. Page one, no clicks: the title and
+  // description now say what the page does and where, so it earns the click.
+  metaTitle: 'Tree Service Portsmouth VA | Tree Removal, Trimming & Crane Work in Olde Towne, Cradock, Churchland | Art-is-Tree LLC',
+  metaDesc: 'Tree removal, trimming, stump grinding and 24/7 emergency tree service in Portsmouth, VA — heritage oaks over historic homes in Olde Towne, Cradock, Port Norfolk and Churchland, rigged down in sections or lifted out by crane. Licensed, insured, BBB A+. Free estimates from Art-is-Tree LLC.',
+  answer: 'Art-is-Tree LLC is a licensed, insured tree service in Portsmouth, VA: <strong>tree removal in Portsmouth</strong> of heritage oaks, pines and maples over historic homes in Olde Towne, Cradock and Port Norfolk, crane-assisted removal where there is no room to fell, tree trimming and pruning, stump grinding, and 24/7 emergency tree service after storms. BBB A+, free written estimates. Call (757) 319-5131.',
   heroImg: '/images/virginia-beach-crane-rigging-storm.webp',
   heroAlt: 'Art-is-Tree climber rigging a large trunk to a crane in Portsmouth',
   heroSub: 'Careful tree removal, pruning, and crane work for Portsmouth’s historic districts and heritage trees.',
