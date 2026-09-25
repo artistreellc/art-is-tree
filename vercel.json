@@ -40,6 +40,11 @@
       "source": "/case-studies/unlicensed-contractors",
       "destination": "/case-studies/virginia-tree-law",
       "statusCode": 301
+    },
+    {
+      "source": "/v/:path*",
+      "destination": "/",
+      "statusCode": 301
     }
   ],
   "crons": [

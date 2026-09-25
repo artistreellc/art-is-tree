@@ -285,8 +285,10 @@ const FAQPage = () => {
                 <a href="https://dof.virginia.gov/urban-community-forestry/learn-about-urban-community-forestry/tree-care/" target="_blank" rel="noopener noreferrer">Tree Care (dormant-season pruning)</a>.
               </li>
               <li>
+                {/* Citation kept, link removed: the iii.org article URL now
+                    returns an error (Semrush Site Audit, Sep 2026). */}
                 <strong>Insurance coverage:</strong> Insurance Information Institute —{' '}
-                <a href="https://www.iii.org/article/if-a-tree-falls-on-your-house-are-you-covered" target="_blank" rel="noopener noreferrer">If a tree falls on your house, are you covered?</a>
+                <cite>If a tree falls on your house, are you covered?</cite>
               </li>
               <li>
                 <strong>Digging &amp; stump-grinding safety:</strong> Virginia 811 —{' '}

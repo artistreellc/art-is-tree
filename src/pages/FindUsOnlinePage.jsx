@@ -25,9 +25,13 @@ const PARTNERS = [
   { name: "Brinn's Lawn Care", url: 'https://www.facebook.com/brinnslawncare/', tagline: 'Lawn care — Hampton Roads' },
   { name: 'North Landing Firewood & Hauling', url: 'https://northlandingfirewood.com', tagline: 'Firewood, sawmilling & hauling — Virginia Beach' },
   { name: 'Sign Wizards', url: 'https://www.facebook.com/SignWizards.VA/', tagline: 'Signs & banners — Virginia Beach' },
-  { name: 'J.F. Whitlow, Jr. & Sons', url: 'https://www.jfwhitlow.com', tagline: 'Plumbing, heating & cooling — Portsmouth, VA' },
+  // url: null — jfwhitlow.com stopped resolving (Semrush Site Audit, Sep 2026,
+  // "broken external link"). The partner stays listed; restore the url when
+  // their current site is known.
+  { name: 'J.F. Whitlow, Jr. & Sons', url: null, tagline: 'Plumbing, heating & cooling — Portsmouth, VA' },
   { name: 'Hickory Towing', url: 'https://www.hickorytowing.com', tagline: 'Towing & recovery — Chesapeake, VA' },
-  { name: 'Beach Brothers Diving & Salvage', url: 'https://www.beachbrosdive.com', tagline: 'Diving & marine salvage — Virginia Beach' },
+  // url: null — beachbrosdive.com stopped resolving (same audit). Listed, unlinked.
+  { name: 'Beach Brothers Diving & Salvage', url: null, tagline: 'Diving & marine salvage — Virginia Beach' },
   { name: 'Colony Tire & Service', url: 'https://colonytire.com', tagline: 'Tires & auto repair — Hampton Roads' },
   { name: 'Land & Coates', url: 'https://www.landandcoates.net', tagline: 'Outdoor power equipment — Hampton Roads' },
 ];
@@ -86,12 +90,14 @@ const ListingsDropdown = () => {
 // pending logo never shows a broken image.
 const PartnerTile = ({ partner }) => {
   const [logoOk, setLogoOk] = useState(Boolean(partner.logo));
+  // A partner with no working site renders the same tile without a link, so a
+  // dead URL never ships as a broken outbound link.
+  const Tile = partner.url ? 'a' : 'div';
+  const linkProps = partner.url ? { href: partner.url, target: '_blank', rel: 'noopener noreferrer' } : {};
 
   return (
-    <a
-      href={partner.url}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Tile
+      {...linkProps}
       title={partner.name}
       className="group bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col items-center justify-center gap-3 p-6 min-h-[160px] text-center"
     >
@@ -110,7 +116,7 @@ const PartnerTile = ({ partner }) => {
       )}
       <span className="font-bold text-[#1B4D3E] text-base group-hover:text-[#D4AF37] transition-colors">{partner.name}</span>
       {partner.tagline && <span className="text-gray-500 text-xs leading-snug">{partner.tagline}</span>}
-    </a>
+    </Tile>
   );
 };
 
